@@ -3799,13 +3799,12 @@ input, select, textarea {
 				width: 22em;
 				overflow: hidden;
 				-ms-flex: 1;
+				padding: 5%;
 			}
 
 				.wrapper.spotlight .image img {
-                   border-radius: 100%; /* Keep if you want rounded images */
-                   width: 100%;
-                   padding: 5%; /* Add this line to create a 5% padding around the image */
-                   box-sizing: border-box; /* Add this to ensure padding doesn't increase total width/height */
+                    border-radius: 100%;
+                    width: 100%;
                 }
 
 			.wrapper.spotlight .content {

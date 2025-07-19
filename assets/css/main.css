@@ -3802,9 +3802,9 @@ input, select, textarea {
 			}
 
 				.wrapper.spotlight .image img {
-                    border-radius: 100%;
-                    width: 100%;
-                }
+					border-radius: 100%;
+					width: 100%;
+				}
 
 			.wrapper.spotlight .content {
 				width: 100%;

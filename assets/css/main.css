@@ -3399,17 +3399,13 @@ input, select, textarea {
 			margin: 0 0 1.3em 0;
 		}
 
-			#banner .logo .icon {
-				border-radius: 100%;
-				border: solid 2px rgba(255, 255, 255, 0.125);
-				cursor: default;
-				display: inline-block;
-				font-size: 2em;
-				height: 2.25em;
-				line-height: 2.25em;
-				text-align: center;
-				width: 2.25em;
-			}
+			#banner .logo img { /* Add a new rule for your image logo */
+                      max-width: 100%; /* Ensures the image scales down if too large for its container */
+                      height: auto;    /* Maintains aspect ratio */
+                      /* Add any other specific styling for your image here, e.g., */
+                      /* border-radius: 5px; */ /* If you want rounded corners on your image */
+                      /* display: block; */ /* If you want it to be a block element */
+                   }
 
 		#banner h2 {
 			-moz-transition: opacity 0.5s ease, -moz-transform 0.5s ease, -moz-filter 0.25s ease;

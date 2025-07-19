@@ -3939,21 +3939,7 @@ input, select, textarea {
 		}
 
 		@media screen and (max-width: 736px) {
-    /* ... other existing mobile styles ... */
 
-    #one .content p {
-        text-align: left;
-    }
-
-    /* You likely still want the image on top and content below on mobile.
-       If your image and content are still side-by-side on mobile due to
-       flex-direction: row-reverse, you'll need to override that.
-       The text-align: left on the p tag only affects text, not the layout of elements. */
-    #one .inner {
-        flex-direction: column; /* This ensures image and content stack vertically */
-        align-items: center; /* Optional: centers items horizontally when in column mode */
-        text-align: center; /* This might be needed to center headings and buttons if not specific */
-    }
 			.wrapper {
 				margin: 2.5em 0;
 			}

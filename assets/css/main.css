@@ -4177,25 +4177,28 @@ input, select, textarea {
 			padding: 2em 1.5em 0.1em 1.5em ;
 		}
 
-	/* --- CUSTOM: Transparent Sections with Borders --- */
+	/* --- CUSTOM: Transparent Sections with Diagonal Dividers --- */
 
-        /* 1. Set the background of the first five sections to transparent */
-        #one, #two, #three, #four, #five {
-            background-color: transparent !important;
-        }
+    /* 1. Keep the background of the first five sections transparent */
+    #one, #two, #three, #four, #five {
+        background-color: transparent !important;
+    }
 
-        /* 2. Make the slanted SVG dividers transparent, leaving only the border */
-        #one:before, #one:after,
-        #two:before, #two:after,
-        #three:before, #three:after,
-        #four:before, #four:after,
-        #five:before, #five:after {
-            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:transparent%3B' /%3E%3C/svg%3E");
-            box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.125), 0 1px 0 0 rgba(255, 255, 255, 0.125) !important;
-        }
+    /* 2. Restore the diagonal shape with a semi-transparent color and remove the straight line border */
+    #one:before, #one:after,
+    #two:before, #two:after,
+    #three:before, #three:after,
+    #four:before, #four:after,
+    #five:before, #five:after {
+        /* This SVG has a semi-transparent white fill for the diagonal shape */
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:rgba(255, 255, 255, 0.075)%3B' /%3E%3C/svg%3E");
 
-        /* 3. Remove the background from the articles in the sixth section and give them a border */
-        #six .features article {
-            background-color: transparent;
-            border: solid 2px rgba(255, 255, 255, 0.125);
-        }
+        /* Remove the straight-line border from the previous step */
+        box-shadow: none !important;
+    }
+
+    /* 3. Keep the bordered style for articles in the sixth section */
+    #six .features article {
+        background-color: transparent;
+        border: solid 2px rgba(255, 255, 255, 0.125);
+    }

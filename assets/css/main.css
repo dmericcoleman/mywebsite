@@ -3693,7 +3693,7 @@ input, select, textarea {
 		}
 
 		.wrapper.style2 {
-			background-color: #353849;
+			background-color: transparent;
 		}
 
 			.wrapper.style2:before, .wrapper.style2:after {
@@ -3709,7 +3709,7 @@ input, select, textarea {
 			}
 
 		.wrapper.style3 {
-			background-color: #3d4051;
+			background-color: transparent;
 		}
 
 			.wrapper.style3:before, .wrapper.style3:after {
@@ -3725,7 +3725,7 @@ input, select, textarea {
 			}
 
 		.wrapper.style4 {
-			background-color: #454858;
+			background-color: transparent;
 		}
 
 			.wrapper.style4:before, .wrapper.style4:after {
@@ -3741,7 +3741,7 @@ input, select, textarea {
 			}
 
 		.wrapper.style5 {
-			background-color: #4d5060;
+			background-color: transparent;
 		}
 
 			.wrapper.style5:before, .wrapper.style5:after {

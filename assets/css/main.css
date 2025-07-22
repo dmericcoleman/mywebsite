@@ -4001,6 +4001,23 @@ input, select, textarea {
 				width: 12em;
 			}
 
+			/* Makes form fields taller and prevents iOS zoom on focus */
+            #footer form input[type="text"],
+            #footer form input[type="email"],
+            #footer form textarea {
+                font-size: 16px !important;
+                padding-top: 1em;
+                padding-bottom: 1em;
+            }
+
+            /* Increases tappable area for 'Learn More' links */
+            #one .special,
+            #two .special,
+            #three .special {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
 		}
 
 		@media screen and (max-width: 360px) {

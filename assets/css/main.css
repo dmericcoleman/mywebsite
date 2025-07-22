@@ -4177,4 +4177,28 @@ input, select, textarea {
 			padding: 2em 1.5em 0.1em 1.5em ;
 		}
 
-	
+	/* --- CUSTOM: Transparent Sections with Diagonal STROKE Dividers --- */
+
+    /* 1. Keep the background of the first five sections transparent */
+    #one, #two, #three, #four, #five {
+        background-color: transparent !important;
+    }
+
+    /* 2. Restore the diagonal shape as an OUTLINE (stroke) */
+    #one:before, #one:after,
+    #two:before, #two:after,
+    #three:before, #three:after,
+    #four:before, #four:after,
+    #five:before, #five:after {
+        /* This SVG has a transparent fill and a semi-transparent white stroke */
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:transparent;stroke:rgba(255,255,255,0.125);stroke-width:2' /%3E%3C/svg%3E");
+
+        /* Ensure no box-shadow is applied */
+        box-shadow: none !important;
+    }
+
+    /* 3. Keep the bordered style for articles in the sixth section */
+    #six .features article {
+        background-color: transparent;
+        border: solid 2px rgba(255, 255, 255, 0.125);
+    }

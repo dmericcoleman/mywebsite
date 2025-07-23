@@ -4161,27 +4161,4 @@ input, select, textarea {
         }
     }
 
-    /* -- Decorative Line Under Section Headings -- */
-
-    h2.major {
-    	position: relative;
-    	padding-bottom: 1em; /* Makes space for the line */
-    }
-
-    h2.major::after {
-    	content: '';
-    	position: absolute;
-    	bottom: 0;
-    	left: 50%;
-    	transform: translateX(-50%);
-    	width: 50px;
-    	height: 2px;
-    	background-color: rgba(255, 255, 255, 0.25);
-    }
-
-    /* For right-aligned headings in 'alt' sections */
-    .wrapper.spotlight:nth-child(2n - 1) h2.major::after {
-        left: auto;
-        right: 0;
-        transform: none;
-    }
+    

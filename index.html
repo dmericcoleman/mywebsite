@@ -208,31 +208,46 @@
 
 <script>
 	(function($) {
-		// Find the scroll-down arrow
+		// Select the elements we'll need
+		var $window = $(window);
 		var $scrollDown = $('.scroll-down');
+		var $header = $('#header');
 
-		// Check if it exists on the page
+		// Check if the arrow exists on the page
 		if ($scrollDown.length) {
-			// Get the header element
-			var $header = $('#header');
 
-			// Attach a click event listener
+			// --- 1. LOGIC TO HIDE/SHOW ARROW ON SCROLL ---
+			function toggleArrowVisibility() {
+				// If user has scrolled more than 50 pixels from the top...
+				if ($window.scrollTop() > 50) {
+					// ...fade the arrow out.
+					$scrollDown.fadeOut(300);
+				}
+				// Otherwise (if they are at the top)...
+				else {
+					// ...fade the arrow in.
+					$scrollDown.fadeIn(300);
+				}
+			}
+
+			// Run the check when the page loads
+			toggleArrowVisibility();
+
+			// Run the check every time the user scrolls
+			$window.on('scroll', function() {
+				toggleArrowVisibility();
+			});
+
+
+			// --- 2. LOGIC FOR SMOOTH SCROLL ON CLICK ---
 			$scrollDown.on('click', function(event) {
-				// Stop the default link behavior
 				event.preventDefault();
-
-				// Get the target section's ID from the href
 				var target = $(this.hash);
 
-				// If the target section exists...
 				if (target.length) {
-					// Calculate the header's height
 					var headerHeight = $header.outerHeight();
-
-					// Calculate the final scroll position
 					var scrollPosition = target.offset().top - headerHeight;
 
-					// Animate the scroll
 					$('html, body').animate({
 						scrollTop: scrollPosition
 					}, 1000, 'swing');

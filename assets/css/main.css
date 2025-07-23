@@ -4161,4 +4161,8 @@ input, select, textarea {
         }
     }
 
+.logo img {
+    width: 150px;   /* Adjust width */
+    height: auto;   /* Keeps aspect ratio */
+}
 

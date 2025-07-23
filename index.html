@@ -38,7 +38,7 @@
 	<!-- Banner -->
 	<section id="banner">
 		<div class="inner">
-			<div class="logo"><img src="images/1116872_8542 [Converted].png" alt="Logo"></div>
+			<div class="logo"><a href="index.html"><img src="images/1116872_8542 [Converted].png" alt="Logo"></a></div>
 			<h2>Premium Reviews Store</h2>
 			<p>The Reviews You Didn't Know You Needed</p>
 
@@ -199,6 +199,8 @@
 </div>
 
 <!-- Scripts -->
+<a href="#page-wrapper" class="scroll-to-top scrolly"><span class="icon solid fa-chevron-up"></span></a>
+
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/jquery.scrollex.min.js"></script>
 <script src="assets/js/browser.min.js"></script>
@@ -208,10 +210,14 @@
 
 <script>
 	(function($) {
-		// --- Part 1: Logic for the scroll-down arrow ---
+		// --- Get all the elements we'll need ---
 		var $window = $(window);
+		var $header = $('#header');
 		var $scrollDown = $('.scroll-down');
+		var $scrollToTop = $('.scroll-to-top');
+		var $scrolly = $('.scrolly');
 
+		// --- Logic for the scroll-down arrow (hides on scroll) ---
 		if ($scrollDown.length) {
 			function toggleArrowVisibility() {
 				if ($window.scrollTop() > 50) { $scrollDown.fadeOut(300); }
@@ -221,10 +227,20 @@
 			$window.on('scroll', toggleArrowVisibility);
 		}
 
-		// --- Part 2: Global smooth scroll for ALL scrolly links ---
-		var $scrolly = $('.scrolly');
-		var $header = $('#header');
+		// --- Logic for the scroll-to-top arrow (shows on scroll) ---
+		if ($scrollToTop.length) {
+			function toggleTopArrowVisibility() {
+				if ($window.scrollTop() > 300) { // Appears after scrolling 300px
+					$scrollToTop.addClass('visible');
+				} else {
+					$scrollToTop.removeClass('visible');
+				}
+			}
+			toggleTopArrowVisibility();
+			$window.on('scroll', toggleTopArrowVisibility);
+		}
 
+		// --- Global smooth scroll for ALL scrolly links ---
 		if ($scrolly.length) {
 			$scrolly.on('click', function(event) {
 				var href = $(this).attr('href');

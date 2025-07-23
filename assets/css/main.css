@@ -4164,6 +4164,6 @@ input, select, textarea {
     }
 
 .logo img {
-    width: 350px;   /* Adjust width */
+    width: 250px;   /* Adjust width */
     height: auto;   /* Keeps aspect ratio */
 }

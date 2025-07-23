@@ -3378,7 +3378,7 @@ input, select, textarea {
        justify-content: center;
        min-height: 100vh;
        padding: 4em 0;
-       text-align: center;
+       text-align: left;
     }
 
 		#banner .inner {

@@ -206,5 +206,41 @@
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
 
+<script>
+	(function($) {
+		// Find the scroll-down arrow
+		var $scrollDown = $('.scroll-down');
+
+		// Check if it exists on the page
+		if ($scrollDown.length) {
+			// Get the header element
+			var $header = $('#header');
+
+			// Attach a click event listener
+			$scrollDown.on('click', function(event) {
+				// Stop the default link behavior
+				event.preventDefault();
+
+				// Get the target section's ID from the href
+				var target = $(this.hash);
+
+				// If the target section exists...
+				if (target.length) {
+					// Calculate the header's height
+					var headerHeight = $header.outerHeight();
+
+					// Calculate the final scroll position
+					var scrollPosition = target.offset().top - headerHeight;
+
+					// Animate the scroll
+					$('html, body').animate({
+						scrollTop: scrollPosition
+					}, 1000, 'swing');
+				}
+			});
+		}
+	})(jQuery);
+</script>
+
 </body>
 </html>

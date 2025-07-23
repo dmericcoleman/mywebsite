@@ -4167,3 +4167,17 @@ input, select, textarea {
     width: 250px;   /* Adjust width */
     height: auto;   /* Keeps aspect ratio */
 }
+
+.footer-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+
+.footer-form {
+    flex: 1 1 60%;
+}
+
+.footer-contact {
+    flex: 1 1 35%;
+}

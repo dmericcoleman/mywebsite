@@ -4127,44 +4127,37 @@ input, select, textarea {
     	#one::after, #two::after, #three::after, #four::after, #five::after, #six::after { height: 2.5em; bottom: -2.5em; }
     }
 
-    /* -- Scroll Down Arrow (Option 2: Animated Mouse) -- */
+    /* -- Scroll Down Arrow (Option 3: Pulsing Dot) -- */
     .scroll-down {
         position: absolute;
-        bottom: 2em;
+        bottom: 3em;
         left: 50%;
         transform: translateX(-50%);
-        width: 2.5em;
-        height: 4em;
-        border: 2px solid rgba(255, 255, 255, 0.4);
-        border-radius: 2em;
+        width: 24px;
+        height: 24px;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 100%;
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2);
+        animation: pulse 2s infinite;
     }
 
-    .scroll-down::before {
-        content: '';
-        position: absolute;
-        top: 0.75em;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 6px;
-        height: 12px;
-        background: rgba(255, 255, 255, 0.4);
-        border-radius: 3px;
-        animation: scroll-wheel 2s infinite;
+    .scroll-down:hover {
+        animation: none;
     }
 
-    /* Scroll Wheel Animation */
-    @keyframes scroll-wheel {
+    /* Pulse Animation */
+    @keyframes pulse {
         0% {
-            transform: translate(-50%, 0);
-            opacity: 1;
+            transform: translateX(-50%) scale(0.95);
+            box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
         }
-        50% {
-            transform: translate(-50%, 15px);
-            opacity: 0;
+        70% {
+            transform: translateX(-50%) scale(1);
+            box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
         }
         100% {
-            transform: translate(-50%, 0);
-            opacity: 0;
+            transform: translateX(-50%) scale(0.95);
+            box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
         }
     }
 

@@ -4181,3 +4181,30 @@ input, select, textarea {
 .footer-contact {
     flex: 1 1 35%;
 }
+
+/* -- Contact Form Success Message -- */
+
+#form-message {
+	transition: opacity 0.3s ease-in-out;
+	margin-top: 1.5em;
+	padding: 1em 1.5em;
+	border-radius: 5px;
+	font-size: 0.9em;
+	opacity: 0; /* Hidden by default */
+}
+
+#form-message.visible {
+	opacity: 1;
+}
+
+#form-message.success {
+	background: rgba(142, 201, 144, 0.1); /* Soft Green */
+	border: 1px solid rgba(142, 201, 144, 0.5);
+	color: #a6e3a1;
+}
+
+#form-message.error {
+	background: rgba(243, 139, 168, 0.1); /* Soft Red */
+	border: 1px solid rgba(243, 139, 168, 0.5);
+	color: #f38ba8;
+}

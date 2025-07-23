@@ -154,7 +154,7 @@
 		<div class="inner">
 			<h2 class="major" id="contact">Get in touch</h2>
 			<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
-			<form action="https://formsubmit.co/dmericcoleman@gmail.com" method="POST">
+			<form id="contact-form" action="https://formsubmit.co/your@email.com" method="POST">
 				<div class="fields">
 					<div class="field">
 						<label for="name">Name</label>
@@ -172,10 +172,11 @@
 
 				<input type="hidden" name="_next" value="https://premiumreviews.store/thankyou.html">
 				<input type="hidden" name="_captcha" value="false">
-				
+
 				<ul class="actions">
 					<li><input type="submit" value="Send Message" /></li>
 				</ul>
+				<div id="form-message"></div>
 			</form>
 			<ul class="contact">
 				<li class="icon solid fa-home">
@@ -213,19 +214,13 @@
 		var $scrollDown = $('.scroll-down');
 
 		if ($scrollDown.length) {
-			// Function to hide/show arrow on scroll
 			function toggleArrowVisibility() {
-				if ($window.scrollTop() > 50) {
-					$scrollDown.fadeOut(300);
-				} else {
-					$scrollDown.fadeIn(300);
-				}
+				if ($window.scrollTop() > 50) { $scrollDown.fadeOut(300); }
+				else { $scrollDown.fadeIn(300); }
 			}
-			// Run checks on load and on scroll
 			toggleArrowVisibility();
 			$window.on('scroll', toggleArrowVisibility);
 		}
-
 
 		// --- Part 2: Global smooth scroll for ALL scrolly links ---
 		var $scrolly = $('.scrolly');
@@ -234,24 +229,56 @@
 		if ($scrolly.length) {
 			$scrolly.on('click', function(event) {
 				var href = $(this).attr('href');
-
-				// Stop default link behavior
 				event.preventDefault();
-
-				// Get the target element
 				var target = $(href);
-
-				// If the target exists, scroll to it
 				if (target.length) {
 					var headerHeight = $header.outerHeight();
 					var scrollPosition = target.offset().top - headerHeight;
-
-					$('html, body').animate({
-						scrollTop: scrollPosition
-					}, 1000, 'swing');
+					$('html, body').animate({ scrollTop: scrollPosition }, 1000, 'swing');
 				}
 			});
 		}
+
+		// --- Part 3: AJAX Contact Form Submission ---
+		var $contactForm = $('#contact-form');
+
+		$contactForm.on('submit', function(event) {
+			event.preventDefault(); // Stop the form from reloading the page
+			var $form = $(this);
+			var $submitButton = $form.find('input[type="submit"]');
+			var $formMessage = $('#form-message');
+
+			// Temporarily disable the button
+			$submitButton.val('Sending...').prop('disabled', true);
+
+			// Submit the data via AJAX
+			$.ajax({
+				url: $form.attr('action'),
+				method: $form.attr('method'),
+				data: $form.serialize(),
+				dataType: 'json',
+				headers: { 'Accept': 'application/json' },
+				success: function(response) {
+					var userName = $form.find('#name').val();
+					// --- Professional Success Message ---
+					$formMessage.text('Thank you, ' + userName + '! Your message has been sent successfully.');
+					$formMessage.removeClass('error').addClass('success visible');
+					$form[0].reset(); // Clear the form
+					$submitButton.val('Send Message').prop('disabled', false);
+
+					// Hide message on next user action
+					$window.one('click scroll', function() {
+						$formMessage.removeClass('visible');
+					});
+				},
+				error: function(err) {
+					$formMessage.text('Oops! Something went wrong. Please try again later.');
+					$formMessage.removeClass('success').addClass('error visible');
+					$submitButton.val('Send Message').prop('disabled', false);
+				}
+			});
+		});
+
 	})(jQuery);
 </script>
 

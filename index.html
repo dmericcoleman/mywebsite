@@ -204,42 +204,40 @@
 
 <script>
 	(function($) {
-		// Select the elements we'll need
+		// --- Part 1: Logic for the scroll-down arrow ---
 		var $window = $(window);
 		var $scrollDown = $('.scroll-down');
-		var $header = $('#header');
 
-		// Check if the arrow exists on the page
 		if ($scrollDown.length) {
-
-			// --- 1. LOGIC TO HIDE/SHOW ARROW ON SCROLL ---
+			// Function to hide/show arrow on scroll
 			function toggleArrowVisibility() {
-				// If user has scrolled more than 50 pixels from the top...
 				if ($window.scrollTop() > 50) {
-					// ...fade the arrow out.
 					$scrollDown.fadeOut(300);
-				}
-				// Otherwise (if they are at the top)...
-				else {
-					// ...fade the arrow in.
+				} else {
 					$scrollDown.fadeIn(300);
 				}
 			}
-
-			// Run the check when the page loads
+			// Run checks on load and on scroll
 			toggleArrowVisibility();
-
-			// Run the check every time the user scrolls
-			$window.on('scroll', function() {
-				toggleArrowVisibility();
-			});
+			$window.on('scroll', toggleArrowVisibility);
+		}
 
 
-			// --- 2. LOGIC FOR SMOOTH SCROLL ON CLICK ---
-			$scrollDown.on('click', function(event) {
+		// --- Part 2: Global smooth scroll for ALL scrolly links ---
+		var $scrolly = $('.scrolly');
+		var $header = $('#header');
+
+		if ($scrolly.length) {
+			$scrolly.on('click', function(event) {
+				var href = $(this).attr('href');
+
+				// Stop default link behavior
 				event.preventDefault();
-				var target = $(this.hash);
 
+				// Get the target element
+				var target = $(href);
+
+				// If the target exists, scroll to it
 				if (target.length) {
 					var headerHeight = $header.outerHeight();
 					var scrollPosition = target.offset().top - headerHeight;

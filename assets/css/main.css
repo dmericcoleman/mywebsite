@@ -2168,27 +2168,28 @@ input, select, textarea {
 		text-transform: uppercase;
 	}
 
+
 	input[type="text"],
-	input[type="password"],
-	input[type="email"],
-	input[type="tel"],
-	select,
-	textarea {
-		-moz-appearance: none;
-		-webkit-appearance: none;
-		-ms-appearance: none;
-		appearance: none;
-		background: rgba(255, 255, 255, 0.025);
-		border-radius: 5px;
-		border: none;
-		border: solid 2px rgba(255, 255, 255, 0.125);
-		color: inherit;
-		display: block;
-		outline: 0;
-		padding: 0 1em;
-		text-decoration: none;
-		width: 100%;
-	}
+    input[type="password"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+       -moz-appearance: none;
+       -webkit-appearance: none;
+       -ms-appearance: none;
+       appearance: none;
+       background: #000000;
+       border-radius: 5px;
+       border: none;
+       border: solid 2px rgba(255, 255, 255, 0.125);
+       color: inherit;
+       display: block;
+       outline: 0;
+       padding: 0 1em;
+       text-decoration: none;
+       width: 100%;
+    }
 
 		input[type="text"]:invalid,
 		input[type="password"]:invalid,
@@ -2200,13 +2201,13 @@ input, select, textarea {
 		}
 
 		input[type="text"]:focus,
-		input[type="password"]:focus,
-		input[type="email"]:focus,
-		input[type="tel"]:focus,
-		select:focus,
-		textarea:focus {
-			border-color: #5b6ba6;
-		}
+        input[type="password"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        select:focus,
+        textarea:focus {
+           border-color: #ffffff;
+        }
 
 	select {
 		background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='rgba(255, 255, 255, 0.125)' /%3E%3C/svg%3E");
@@ -2902,13 +2903,13 @@ input, select, textarea {
 		}
 
 		input[type="submit"].primary,
-		input[type="reset"].primary,
-		input[type="button"].primary,
-		button.primary,
-		.button.primary {
-			background-color: #4c5c96;
-			box-shadow: none;
-		}
+        input[type="reset"].primary,
+        input[type="button"].primary,
+        button.primary,
+        .button.primary {
+           background-color: #222222;
+           box-shadow: none;
+        }
 
 			input[type="submit"].primary:hover,
 			input[type="reset"].primary:hover,
@@ -3065,20 +3066,20 @@ input, select, textarea {
 /* Header */
 
 	#header {
-		-moz-transition: background-color 0.2s ease-in-out;
-		-webkit-transition: background-color 0.2s ease-in-out;
-		-ms-transition: background-color 0.2s ease-in-out;
-		transition: background-color 0.2s ease-in-out;
-		background-color: rgba(53, 56, 73, 0.95);
-		height: 3.5em;
-		left: 0;
-		line-height: 3.5em;
-		padding: 0 1.25em;
-		position: fixed;
-		top: 0;
-		width: 100%;
-		z-index: 10000;
-	}
+       -moz-transition: background-color 0.2s ease-in-out;
+       -webkit-transition: background-color 0.2s ease-in-out;
+       -ms-transition: background-color 0.2s ease-in-out;
+       transition: background-color 0.2s ease-in-out;
+       background-color: #000000;
+       height: 3.5em;
+       left: 0;
+       line-height: 3.5em;
+       padding: 0 1.25em;
+       position: fixed;
+       top: 0;
+       width: 100%;
+       z-index: 10000;
+    }
 
 		#header h1 {
 			-moz-transition: opacity 0.2s ease-in-out, visibility 0.2s;
@@ -3264,24 +3265,24 @@ input, select, textarea {
 	}
 
 		#menu .inner {
-			padding: 2.5em 1.5em 0.5em 1.5em ;
-			-moz-transform: translateY(0.5em);
-			-webkit-transform: translateY(0.5em);
-			-ms-transform: translateY(0.5em);
-			transform: translateY(0.5em);
-			-moz-transition: opacity 0.35s ease, -moz-transform 0.35s ease;
-			-webkit-transition: opacity 0.35s ease, -webkit-transform 0.35s ease;
-			-ms-transition: opacity 0.35s ease, -ms-transform 0.35s ease;
-			transition: opacity 0.35s ease, transform 0.35s ease;
-			-webkit-overflow-scrolling: touch;
-			background: #4c5c96;
-			border-radius: 5px;
-			display: block;
-			max-width: 100%;
-			opacity: 0;
-			position: relative;
-			width: 18em;
-		}
+              padding: 2.5em 1.5em 0.5em 1.5em ;
+              -moz-transform: translateY(0.5em);
+              -webkit-transform: translateY(0.5em);
+              -ms-transform: translateY(0.5em);
+              transform: translateY(0.5em);
+              -moz-transition: opacity 0.35s ease, -moz-transform 0.35s ease;
+              -webkit-transition: opacity 0.35s ease, -webkit-transform 0.35s ease;
+              -ms-transition: opacity 0.35s ease, -ms-transform 0.35s ease;
+              transition: opacity 0.35s ease, transform 0.35s ease;
+              -webkit-overflow-scrolling: touch;
+              background: #000000;
+              border-radius: 5px;
+              display: block;
+              max-width: 100%;
+              opacity: 0;
+              position: relative;
+              width: 18em;
+           }
 
 		#menu h2 {
 			border-bottom: solid 2px rgba(255, 255, 255, 0.125);
@@ -3735,7 +3736,7 @@ input, select, textarea {
 			background-color: transparent;
 		}
 
-			
+
 
 			.wrapper.style6:before {
 				/*box-shadow: inset 0 -1px 0 0 #555867, 0 1px 0 0 #555867;*/

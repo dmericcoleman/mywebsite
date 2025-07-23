@@ -4088,7 +4088,7 @@ input, select, textarea {
     	background-size: 100% 100%;
     	content: '';
     	display: block;
-    	height: 2.5em;
+    	height: .5em;
     	position: absolute;
     	width: 100%;
     	left: 0;

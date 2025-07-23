@@ -3397,8 +3397,6 @@ input, select, textarea {
 			transform: translateY(0);
 			opacity: 1;
 			margin: 0 0 0.5em 0;
-			width: 350px;   /* Adjust width */
-            height: auto;   /* Keeps aspect ratio */
 		}
 
 			#banner .logo .icon {
@@ -4163,3 +4161,7 @@ input, select, textarea {
         }
     }
 
+.logo img {
+    width: 350px;   /* Adjust width */
+    height: auto;   /* Keeps aspect ratio */
+}

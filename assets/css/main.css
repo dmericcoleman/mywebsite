@@ -4239,3 +4239,30 @@ input, select, textarea {
 	opacity: 1;
 	visibility: visible;
 }
+
+@media screen and (max-width: 736px) {
+	/* Resets the logo's negative margin on mobile */
+	#banner .logo {
+		margin-left: 0;
+	}
+}
+
+@media screen and (max-width: 736px) {
+	/* Makes buttons taller and easier to tap */
+	.button {
+		height: 4em;
+		line-height: 4em;
+	}
+
+	/* Adds more space between social media icons */
+	#footer .contact li {
+		margin: 2em 0 0 0;
+	}
+}
+
+@media screen and (max-width: 736px) {
+	/* Increases line spacing for better readability on phones */
+	.wrapper .content p {
+		line-height: 1.75;
+	}
+}

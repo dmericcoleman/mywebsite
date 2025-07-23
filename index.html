@@ -237,47 +237,6 @@
 				}
 			});
 		}
-
-		// --- Part 3: AJAX Contact Form Submission ---
-		var $contactForm = $('#contact-form');
-
-		$contactForm.on('submit', function(event) {
-			event.preventDefault(); // Stop the form from reloading the page
-			var $form = $(this);
-			var $submitButton = $form.find('input[type="submit"]');
-			var $formMessage = $('#form-message');
-
-			// Temporarily disable the button
-			$submitButton.val('Sending...').prop('disabled', true);
-
-			// Submit the data via AJAX
-			$.ajax({
-				url: $form.attr('action'),
-				method: $form.attr('method'),
-				data: $form.serialize(),
-				dataType: 'json',
-				headers: { 'Accept': 'application/json' },
-				success: function(response) {
-					var userName = $form.find('#name').val();
-					// --- Professional Success Message ---
-					$formMessage.text('Thank you, ' + userName + '! Your message has been sent successfully.');
-					$formMessage.removeClass('error').addClass('success visible');
-					$form[0].reset(); // Clear the form
-					$submitButton.val('Send Message').prop('disabled', false);
-
-					// Hide message on next user action
-					$window.one('click scroll', function() {
-						$formMessage.removeClass('visible');
-					});
-				},
-				error: function(err) {
-					$formMessage.text('Oops! Something went wrong. Please try again later.');
-					$formMessage.removeClass('success').addClass('error visible');
-					$submitButton.val('Send Message').prop('disabled', false);
-				}
-			});
-		});
-
 	})(jQuery);
 </script>
 

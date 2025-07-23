@@ -4158,10 +4158,3 @@ input, select, textarea {
             transform: translateX(-50%) translateY(-15px);
         }
     }
-
-    /* Hide arrow on small screens if it feels cluttered
-    @media screen and (max-width: 736px) {
-    	.scroll-down {
-    		display: none;
-    	}
-    }*/

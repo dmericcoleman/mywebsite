@@ -4159,9 +4159,9 @@ input, select, textarea {
         }
     }
 
-    /* Hide arrow on small screens if it feels cluttered */
+    /* Hide arrow on small screens if it feels cluttered
     @media screen and (max-width: 736px) {
     	.scroll-down {
     		display: none;
     	}
-    }
+    }*/

@@ -4127,37 +4127,35 @@ input, select, textarea {
     	#one::after, #two::after, #three::after, #four::after, #five::after, #six::after { height: 2.5em; bottom: -2.5em; }
     }
 
-    /* -- Scroll Down Arrow (Option 3: Pulsing Dot) -- */
+    /* -- Scroll Down Arrow (Option 1: Minimalist Chevron) -- */
     .scroll-down {
         position: absolute;
         bottom: 3em;
         left: 50%;
         transform: translateX(-50%);
-        width: 24px;
-        height: 24px;
-        background: rgba(255, 255, 255, 0.5);
-        border-radius: 100%;
-        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2);
-        animation: pulse 2s infinite;
+        text-decoration: none;
+        animation: bounce 2.5s infinite;
     }
 
-    .scroll-down:hover {
-        animation: none;
+    .scroll-down::before {
+        content: '\f078'; /* Font Awesome down-chevron icon */
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        font-size: 2.5em;
+        color: rgba(255, 255, 255, 0.4);
+        display: block;
     }
 
-    /* Pulse Animation */
-    @keyframes pulse {
-        0% {
-            transform: translateX(-50%) scale(0.95);
-            box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+    /* Bouncing Animation */
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateX(-50%) translateY(0);
         }
-        70% {
-            transform: translateX(-50%) scale(1);
-            box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+        40% {
+            transform: translateX(-50%) translateY(-25px);
         }
-        100% {
-            transform: translateX(-50%) scale(0.95);
-            box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+        60% {
+            transform: translateX(-50%) translateY(-15px);
         }
     }
 

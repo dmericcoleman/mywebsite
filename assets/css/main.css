@@ -3372,8 +3372,14 @@ input, select, textarea {
 /* Banner */
 
 	#banner {
-		padding: 16em 0 8em 0 ;
-	}
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       min-height: 100vh;
+       padding: 4em 0;
+       text-align: center;
+    }
 
 		#banner .inner {
 			margin: 0 auto;

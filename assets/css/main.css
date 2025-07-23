@@ -3680,7 +3680,7 @@ input, select, textarea {
 		}
 
 		.wrapper.style2 {
-			background-color: #353849;
+			background-color: transparent;
 		}
 
 			.wrapper.style2:before, .wrapper.style2:after {
@@ -3696,7 +3696,7 @@ input, select, textarea {
 			}
 
 		.wrapper.style3 {
-			background-color: #3d4051;
+			background-color: transparent;
 		}
 
 			.wrapper.style3:before, .wrapper.style3:after {
@@ -3712,7 +3712,7 @@ input, select, textarea {
 			}
 
 		.wrapper.style4 {
-			background-color: #454858;
+			background-color: transparent;
 		}
 
 			.wrapper.style4:before, .wrapper.style4:after {
@@ -3728,7 +3728,7 @@ input, select, textarea {
 			}
 
 		.wrapper.style5 {
-			background-color: #4d5060;
+			background-color: transparent;
 		}
 
 			.wrapper.style5:before, .wrapper.style5:after {
@@ -3744,7 +3744,7 @@ input, select, textarea {
 			}
 
 		.wrapper.style6 {
-			background-color: #555867;
+			background-color: transparent;
 		}
 
 			.wrapper.style6:before, .wrapper.style6:after {
@@ -3821,7 +3821,7 @@ input, select, textarea {
 			}
 
 			.wrapper.spotlight.style2 {
-				background-color: #45558d;
+				background-color: transparent;
 			}
 
 				.wrapper.spotlight.style2:before, .wrapper.spotlight.style2:after {
@@ -3837,7 +3837,7 @@ input, select, textarea {
 				}
 
 			.wrapper.spotlight.style3 {
-				background-color: #3f4e85;
+				background-color: transparent;
 			}
 
 				.wrapper.spotlight.style3:before, .wrapper.spotlight.style3:after {
@@ -3853,7 +3853,7 @@ input, select, textarea {
 				}
 
 			.wrapper.spotlight.style4 {
-				background-color: #39477c;
+				background-color: transparent;
 			}
 
 				.wrapper.spotlight.style4:before, .wrapper.spotlight.style4:after {
@@ -3869,7 +3869,7 @@ input, select, textarea {
 				}
 
 			.wrapper.spotlight.style5 {
-				background-color: #324072;
+				background-color: transparent;
 			}
 
 				.wrapper.spotlight.style5:before, .wrapper.spotlight.style5:after {
@@ -3885,7 +3885,7 @@ input, select, textarea {
 				}
 
 			.wrapper.spotlight.style6 {
-				background-color: #2d3a69;
+				background-color: transparent;
 			}
 
 				.wrapper.spotlight.style6:before, .wrapper.spotlight.style6:after {
@@ -4063,15 +4063,15 @@ input, select, textarea {
 	@media screen and (max-width: 1280px) {
 
 		#footer {
-			background-color: #2e3141;
-			background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/bg.jpg");
-			background-size: auto,
- cover;
-			background-position: center,
- center;
-			margin-top: -6.5em;
-			padding-top: 6.5em;
-		}
+              background-color: transparent;
+              background-image: none;
+              background-size: auto,
+         cover;
+              background-position: center,
+         center;
+              margin-top: -6.5em;
+              padding-top: 6.5em;
+           }
 
 	}
 

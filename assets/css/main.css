@@ -4077,7 +4077,7 @@ input, select, textarea {
 
 	}
 
-	/* -- CORRECTED GLOWING LINES -- */
+	/* -- FINAL GLOWING LINES (RELIABLE METHOD) -- */
 
     .wrapper {
     	position: relative;
@@ -4093,7 +4093,9 @@ input, select, textarea {
     	width: 100%;
     	left: 0;
     	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolyline points='0,100 100,0' style='fill:none; stroke:rgba(255, 255, 255, 0.25); stroke-width:2px;' /%3E%3C/svg%3E");
-    	filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.7));
+
+    	/* This new line creates a more reliable glow */
+    	filter: drop-shadow(0 0 1px white) drop-shadow(0 0 6px rgba(255, 255, 255, 0.6));
     }
 
     #one::before {
@@ -4118,7 +4120,6 @@ input, select, textarea {
     	transform: scaleY(-1) scaleX(-1);
     }
 
-    /* These media queries are still correct and do not need to be changed */
     @media screen and (max-width: 980px) {
     	#one::before { height: 4.75em; top: -4.75em; }
     	#one::after, #two::after, #three::after, #four::after, #five::after, #six::after { height: 4.75em; bottom: -4.75em; }

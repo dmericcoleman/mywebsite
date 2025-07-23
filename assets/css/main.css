@@ -3608,13 +3608,13 @@ input, select, textarea {
 	}
 
 	@media screen and (max-width: 736px) {
-
-		#wrapper > header {
-			padding: 6.5em 2em 3em 2em ;
-			background-size: auto,
- 125%;
-			margin-bottom: -2.5em;
-		}
+    	.button.special {
+    		display: block;
+    		max-width: 300px;
+    		margin: 0 auto;
+    		padding: 0 1.5em;
+    	}
+    }
 
 			#wrapper > header h2 {
 				font-size: 1.25em;
@@ -4272,4 +4272,9 @@ input, select, textarea {
 		width: 100%;
 		padding: 0 1.5em;
 	}
+}
+
+/* Removes the underline/border from the banner logo link */
+#banner .logo a {
+	border-bottom: none;
 }

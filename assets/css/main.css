@@ -4071,13 +4071,12 @@ input, select, textarea {
 
 	}
 
-	/* -- SUGGESTION 3: COLOR ACCENTS -- */
+	/* -- SUGGESTION 1: BRIGHTER LINES -- */
 
     .wrapper {
     	position: relative;
     }
 
-    /* This sets up all the dividers */
     #one::after, #two::after, #three::after, #four::after, #five::after, #six::after, #one::before {
     	background-repeat: no-repeat;
     	background-size: 100% 100%;
@@ -4087,37 +4086,24 @@ input, select, textarea {
     	position: absolute;
     	width: 100%;
     	left: 0;
+    	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolyline points='0,100 100,0' style='fill:none; stroke:rgba(255, 255, 255, 0.25); stroke-width:2px;' /%3E%3C/svg%3E");
     }
 
-    #one::before { top: -6.5em; }
-    #one::after, #two::after, #three::after, #four::after, #five::after, #six::after { bottom: -6.5em; }
-
-    /* --- Individual Line Colors --- */
-    #one::before,
-    #one::after {
-    	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolyline points='0,100 100,0' style='fill:none; stroke:rgba(91, 107, 166, 0.3); stroke-width:2px;' /%3E%3C/svg%3E");
-    }
-    #two::after {
-    	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolyline points='0,100 100,0' style='fill:none; stroke:rgba(142, 201, 144, 0.3); stroke-width:2px;' /%3E%3C/svg%3E");
-    }
-    #three::after {
-    	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolyline points='0,100 100,0' style='fill:none; stroke:rgba(227, 127, 132, 0.3); stroke-width:2px;' /%3E%3C/svg%3E");
-    }
-    #four::after {
-    	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolyline points='0,100 100,0' style='fill:none; stroke:rgba(127, 188, 227, 0.3); stroke-width:2px;' /%3E%3C/svg%3E");
-    }
-    #five::after,
-    #six::after {
-    	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolyline points='0,100 100,0' style='fill:none; stroke:rgba(255, 188, 102, 0.3); stroke-width:2px;' /%3E%3C/svg%3E");
+    #one::before {
+    	top: -6.5em;
     }
 
-    /* --- Transforms to flip the lines --- */
+    #one::after, #two::after, #three::after, #four::after, #five::after, #six::after {
+    	bottom: -6.5em;
+    }
+
     #one::after, #three::after, #five::after {
     	-moz-transform: scaleY(-1);
     	-webkit-transform: scaleY(-1);
     	-ms-transform: scaleY(-1);
     	transform: scaleY(-1);
     }
+
     #two::after, #four::after, #six::after {
     	-moz-transform: scaleY(-1) scaleX(-1);
     	-webkit-transform: scaleY(-1) scaleX(-1);
@@ -4125,11 +4111,11 @@ input, select, textarea {
     	transform: scaleY(-1) scaleX(-1);
     }
 
-    /* --- Responsive adjustments --- */
     @media screen and (max-width: 980px) {
     	#one::before { height: 4.75em; top: -4.75em; }
     	#one::after, #two::after, #three::after, #four::after, #five::after, #six::after { height: 4.75em; bottom: -4.75em; }
     }
+
     @media screen and (max-width: 736px) {
     	#one::before { height: 2.5em; top: -2.5em; }
     	#one::after, #two::after, #three::after, #four::after, #five::after, #six::after { height: 2.5em; bottom: -2.5em; }

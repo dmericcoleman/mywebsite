@@ -4077,7 +4077,7 @@ input, select, textarea {
 
 	}
 
-    /* -- FINAL GLOWING LINES (RELIABLE METHOD) -- */
+    /* -- SUGGESTION 1: GRADIENT LINES -- */
 
     .wrapper {
         position: relative;
@@ -4092,41 +4092,11 @@ input, select, textarea {
         position: absolute;
         width: 100%;
         left: 0;
-        /* The points attribute in the polyline has been changed to center the line */
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolyline points='0,75 100,25' style='fill:none; stroke:rgba(255, 255, 255, 0.25); stroke-width:2px;' /%3E%3C/svg%3E");
-        filter: drop-shadow(0 0 1px white) drop-shadow(0 0 6px rgba(255, 255, 255, 0.6));
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:rgba(255,255,255,0)' /%3E%3Cstop offset='50%25' style='stop-color:rgba(255,255,255,0.25)' /%3E%3Cstop offset='100%25' style='stop-color:rgba(255,255,255,0)' /%3E%3C/linearGradient%3E%3C/defs%3E%3Cpolyline points='0,75 100,25' style='fill:none; stroke:url(%23g); stroke-width:2px;' /%3E%3C/svg%3E");
+        filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.5));
     }
 
-    #one::before {
-        top: -12em;
-    }
-
-    #one::after, #two::after, #three::after, #four::after, #five::after, #six::after {
-        bottom: -12em;
-    }
-
-    #one::after, #three::after, #five::after {
-        -moz-transform: scaleY(-1);
-        -webkit-transform: scaleY(-1);
-        -ms-transform: scaleY(-1);
-        transform: scaleY(-1);
-    }
-
-    #two::after, #four::after, #six::after {
-        -moz-transform: scaleY(-1) scaleX(-1);
-        -webkit-transform: scaleY(-1) scaleX(-1);
-        -ms-transform: scaleY(-1) scaleX(-1);
-        transform: scaleY(-1) scaleX(-1);
-    }
-
-    @media screen and (max-width: 980px) {
-        #one::before { height: 4.75em; top: -4.75em; }
-        #one::after, #two::after, #three::after, #four::after, #five::after, #six::after { height: 4.75em; bottom: -4.75em; }
-    }
-    @media screen and (max-width: 736px) {
-        #one::before { height: 2.5em; top: -2.5em; }
-        #one::after, #two::after, #three::after, #four::after, #five::after, #six::after { height: 2.5em; bottom: -2.5em; }
-    }
+    /* ... (The rest of your divider code remains the same) ... */
 
     /* -- Scroll Down Arrow (Option 1: Minimalist Chevron) -- */
     .scroll-down {

@@ -4098,6 +4098,37 @@ input, select, textarea {
 
     /* ... (The rest of your divider code remains the same) ... */
 
+    #one::before {
+        top: -12em;
+    }
+
+    #one::after, #two::after, #three::after, #four::after, #five::after, #six::after {
+        bottom: -12em;
+    }
+
+    #one::after, #three::after, #five::after {
+        -moz-transform: scaleY(-1);
+        -webkit-transform: scaleY(-1);
+        -ms-transform: scaleY(-1);
+        transform: scaleY(-1);
+    }
+
+    #two::after, #four::after, #six::after {
+        -moz-transform: scaleY(-1) scaleX(-1);
+        -webkit-transform: scaleY(-1) scaleX(-1);
+        -ms-transform: scaleY(-1) scaleX(-1);
+        transform: scaleY(-1) scaleX(-1);
+    }
+
+    @media screen and (max-width: 980px) {
+        #one::before { height: 4.75em; top: -4.75em; }
+        #one::after, #two::after, #three::after, #four::after, #five::after, #six::after { height: 4.75em; bottom: -4.75em; }
+    }
+    @media screen and (max-width: 736px) {
+        #one::before { height: 2.5em; top: -2.5em; }
+        #one::after, #two::after, #three::after, #four::after, #five::after, #six::after { height: 2.5em; bottom: -2.5em; }
+    }
+
     /* -- Scroll Down Arrow (Option 1: Minimalist Chevron) -- */
     .scroll-down {
         position: absolute;

@@ -3745,27 +3745,27 @@ input, select, textarea {
 			}
 
 			.wrapper.spotlight .inner {
-				display: -moz-flex;
-				display: -webkit-flex;
-				display: -ms-flex;
-				display: flex;
-				-moz-align-items: center;
-				-webkit-align-items: center;
-				-ms-align-items: center;
-				align-items: center;
-				-moz-flex-direction: row;
-				-webkit-flex-direction: row;
-				-ms-flex-direction: row;
-				flex-direction: row;
-			}
+               display: -moz-flex;
+               display: -webkit-flex;
+               display: -ms-flex;
+               display: flex;
+               -moz-align-items: center;
+               -webkit-align-items: center;
+               -ms-align-items: center;
+               align-items: center;
+               -moz-flex-direction: row;
+               -webkit-flex-direction: row;
+               -ms-flex-direction: row;
+               flex-direction: row;
+            }
 
 			.wrapper.spotlight .image {
-				border-radius: 5px;
-				margin: 0 3em 2em 0;
-				width: 22em;
-				overflow: hidden;
-				-ms-flex: 1;
-			}
+               border-radius: 5px;
+               margin: 0 3em 2em 0;
+               width: 28em;
+               overflow: hidden;
+               -ms-flex: 1;
+            }
 
 				.wrapper.spotlight .image img {
                    border-radius: 5px;

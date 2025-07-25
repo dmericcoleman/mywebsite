@@ -3762,7 +3762,7 @@ input, select, textarea {
 			.wrapper.spotlight .image {
                border-radius: 5px;
                margin: 0 3em 2em 0;
-               width: 45%;
+               width: 65%;
                overflow: hidden;
                -ms-flex: 1;
             }

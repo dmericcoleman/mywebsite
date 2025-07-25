@@ -28,20 +28,6 @@
 		</nav>
 	</header>
 
-	<nav id="menu">
-		<div class="inner">
-			<h2>Menu</h2>
-			<ul class="links">
-				<li><a href="javascript:void(0);" data-href="#one" class="scrolly">Services</a></li>
-				<li><a href="javascript:void(0);" data-href="#pricing" class="scrolly">Pricing</a></li>
-				<li><a href="javascript:void(0);" data-href="#testimonials" class="scrolly">Client Feedback</a></li>
-				<li><a href="javascript:void(0);" data-href="#six" class="scrolly">Articles</a></li>
-				<li><a href="javascript:void(0);" data-href="#contact" class="scrolly">Contact Us</a></li>
-			</ul>
-			<a href="#" class="close">Close</a>
-		</div>
-	</nav>
-
 	<section id="banner">
 		<div class="inner">
 			<div class="logo"><a href="javascript:void(0);" data-href="index.html"><img src="images/1116872_8542 [Converted].png" alt="Logo"></a></div>
@@ -284,6 +270,20 @@
 
 </div>
 
+<nav id="menu">
+	<div class="inner">
+		<h2>Menu</h2>
+		<ul class="links">
+			<li><a href="javascript:void(0);" data-href="#one" class="scrolly">Services</a></li>
+			<li><a href="javascript:void(0);" data-href="#pricing" class="scrolly">Pricing</a></li>
+			<li><a href="javascript:void(0);" data-href="#testimonials" class="scrolly">Client Feedback</a></li>
+			<li><a href="javascript:void(0);" data-href="#six" class="scrolly">Articles</a></li>
+			<li><a href="javascript:void(0);" data-href="#contact" class="scrolly">Contact Us</a></li>
+		</ul>
+		<a href="#" class="close">Close</a>
+	</div>
+</nav>
+
 <a href="#one" class="scroll-to-top scrolly"><span class="icon solid fa-chevron-up"></span></a>
 
 <script src="assets/js/jquery.min.js"></script>
@@ -332,7 +332,6 @@
                 if (lockMenu()) body.classList.remove('is-menu-visible');
             };
 
-            // Toggle menu on button click
             const menuToggle = document.querySelector('a[href="#menu"]');
             if (menuToggle) {
                 menuToggle.addEventListener('click', (e) => {
@@ -346,18 +345,31 @@
             document.addEventListener('keydown', (e) => { if (e.key === 'Escape') hideMenu(); });
         }
 
+        // --- NEW: Scroll-to-top Arrow Logic ---
+        const scrollToTop = document.querySelector('.scroll-to-top');
+        if (scrollToTop) {
+            const toggleTopArrowVisibility = () => {
+                if (window.scrollY > 300) {
+                    scrollToTop.classList.add('visible');
+                } else {
+                    scrollToTop.classList.remove('visible');
+                }
+            };
+            // Run on page load and on every scroll event
+            toggleTopArrowVisibility();
+            window.addEventListener('scroll', toggleTopArrowVisibility);
+        }
+
         // --- Link Handling (Fixes Scrolly and data-href) ---
         const handleLinkClick = (e) => {
             const link = e.currentTarget;
             let href = link.dataset.href || link.getAttribute('href');
 
-            // Handle scrolly links
             if (link.classList.contains('scrolly') && href.startsWith('#')) {
                 e.preventDefault();
                 const targetElement = document.querySelector(href);
                 if (targetElement) {
                     if (menu && body.classList.contains('is-menu-visible')) {
-                        // A simplified version of hideMenu to avoid lock conflicts
                         body.classList.remove('is-menu-visible');
                     }
                     let headerHeight = header ? header.offsetHeight : 0;
@@ -367,9 +379,7 @@
                         behavior: 'smooth'
                     });
                 }
-            }
-            // Handle other data-href links
-            else if (link.dataset.href) {
+            } else if (link.dataset.href) {
                  e.preventDefault();
                  window.location.href = href;
             }
@@ -384,7 +394,6 @@
 
 
         // --- Owl Carousel for Testimonials ---
-        // This requires jQuery, which we are now correctly loading
         var $testimonialCarousel = $('#testimonials .owl-carousel');
         if ($testimonialCarousel.length > 0) {
             $testimonialCarousel.owlCarousel({

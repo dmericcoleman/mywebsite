@@ -3267,6 +3267,7 @@ input, select, textarea {
 		top: 0;
 		visibility: hidden;
 		width: 100%;
+		z-index: 10001;
 	}
 
 		#menu .inner {

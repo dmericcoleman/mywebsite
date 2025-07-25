@@ -4715,35 +4715,36 @@ input, select, textarea {
 /* Responsive adjustments for the new banner layout */
 @media screen and (max-width: 980px) {
     #banner .inner {
-        flex-direction: column; /* Stack content and image vertically */
-        align-items: center; /* Center items when stacked */
-        max-width: 90%; /* Adjust overall width on tablets */
-        padding: 0 3em; /* NEW: Adjusted horizontal padding for tablets */
-        gap: 20em; /* Remove horizontal gap when stacking, use margin-bottom instead */
+        flex-direction: column;
+        align-items: center;
+        max-width: 90%;
+        padding: 0 3em;
+        gap: 0;
     }
 
-    .banner-content,
-    .banner-image {
-        flex: 1 1 100%; /* Each takes full width when stacked */
-        max-width: 100%; /* Each takes full width when stacked */
+    .banner-content { /* Only target content here */
+        flex: 1 1 100%; /* Content takes full width */
+        max-width: 100%;
         padding-right: 0;
         text-align: center;
-        margin-bottom: 3em;
+        margin-bottom: 3em; /* Keep space below content before scroll arrow */
+    }
+
+    .banner-image { /* NEW: Hide the hero image on mobile */
+        display: none;
     }
 
     .banner-content .logo,
     .banner-content h2,
     .banner-content p {
-        text-align: center; /* Center all banner text when stacked */
+        text-align: center;
     }
 
     #banner .actions.special {
-        justify-content: center; /* Center the button when stacked */
+        justify-content: center;
     }
 
-    .banner-image {
-        margin-bottom: 0; /* Remove margin for the last item when stacked */
-    }
+    /* Remove the redundant .banner-image margin-bottom: 0; from here, as it's now display: none */
 }
 
 @media screen and (max-width: 736px) {
@@ -4798,5 +4799,23 @@ input, select, textarea {
     }
     .custom-order-cta p {
         font-size: 1em;
+    }
+}
+
+/* --- Special Button Glow on Mobile Screens --- */
+@media screen and (max-width: 736px) { /* Applies to screens 736px wide and smaller */
+    .button.special {
+        /* Add a subtle, continuous glow to the base state */
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.6) !important; /* A noticeable white glow */
+        /* You can also use your accent blue for the glow:
+        box-shadow: 0 0 15px var(--accent-color) !important; */
+    }
+
+    /* Optional: Enhance the hover/active glow for stronger feedback on tap */
+    .button.special:hover,
+    .button.special:active {
+        box-shadow: 0 0 25px rgba(255, 255, 255, 1) !important; /* Stronger white glow on tap */
+        /* Or stronger blue glow if you chose blue for static glow:
+        box-shadow: 0 0 25px var(--accent-color) !important; */
     }
 }

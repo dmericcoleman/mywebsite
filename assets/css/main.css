@@ -1,5 +1,5 @@
 @import url(fontawesome-all.min.css);
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@400;700&family=Montserrat:wght@700&family=Raleway:wght@400;700&display=swap');
 
 :root {
   --bg-color: #121212; /* Dark Charcoal (Gray) */
@@ -11,7 +11,7 @@
   --star-color: #facc15; /* A nice gold for star ratings */
   --font-body: 'Roboto', sans-serif;
   --font-heading: 'Lora', serif;
-  --font-special: 'Raleway', Helvetica, sans-serif;
+  --font-special: 'Raleway', sans-serif; /* Note: originally it was 'Raleway', Helvetica, sans-serif but Raleway is imported */
 }
 
 html, body, div, span, applet, object,
@@ -123,53 +123,45 @@ input, select, textarea {
 /* Type */
 
 	body, input, select, textarea {
-           background-color: var(--bg-color); /* Use the new background */
-           color: var(--text-color); /* Use the new text color */
-           font-family: 'Lato', sans-serif;
-           font-size: 115%; /* Use a more responsive font size */
-           font-weight: 300;
-           line-height: 1.7; /* Increase for better readability */
-        }
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        font-family: var(--font-body); /* Using the variable for consistency */
+        font-size: 115%;
+        font-weight: 300;
+        line-height: 1.7;
+     }
 
-		@media screen and (max-width: 1680px) {
+	/* Adjusted font sizes for responsiveness, using more specific ranges */
+    @media screen and (max-width: 1680px) { /* XLarge desktop */
+       body, input, select, textarea {
+          font-size: 110%; /* Slightly smaller for larger desktops */
+       }
+    }
 
-			body, input, select, textarea {
-				font-size: 13pt;
-			}
+    @media screen and (max-width: 1280px) { /* Large desktop */
+       body, input, select, textarea {
+          font-size: 105%;
+       }
+    }
 
-		}
+    @media screen and (max-width: 980px) { /* Medium (Tablet Landscape) */
+       body, input, select, textarea {
+          font-size: 100%; /* Default for tablets/smaller desktops */
+       }
+    }
 
-		@media screen and (max-width: 1280px) {
+    @media screen and (max-width: 736px) { /* Small (Tablet Portrait/Mobile Landscape) */
+       body, input, select, textarea {
+          font-size: 100%; /* Keep at 100% for mobile */
+          line-height: 1.6; /* Slightly tighter line height on smaller screens for better density */
+       }
+    }
 
-			body, input, select, textarea {
-				font-size: 12pt;
-			}
-
-		}
-
-		@media screen and (max-width: 980px) {
-
-			body, input, select, textarea {
-				font-size: 12pt;
-			}
-
-		}
-
-		@media screen and (max-width: 736px) {
-
-			body, input, select, textarea {
-				font-size: 12pt;
-			}
-
-		}
-
-		@media screen and (max-width: 480px) {
-
-			body, input, select, textarea {
-				font-size: 12pt;
-			}
-
-		}
+    @media screen and (max-width: 480px) { /* XSmall (Mobile Portrait) */
+       body, input, select, textarea {
+          font-size: 95%; /* Slightly smaller for very small screens to fit more content */
+       }
+    }
 
 	a {
 		-moz-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
@@ -187,16 +179,16 @@ input, select, textarea {
 		}
 
 		a.special:not(.button) {
-			text-decoration: none;
-			border-bottom: 0;
-			display: block;
-			font-family: Raleway, Helvetica, sans-serif;
-			font-size: 0.8em;
-			font-weight: 700;
-			letter-spacing: 0.1em;
-			margin: 0 0 2em 0;
-			text-transform: uppercase;
-		}
+           text-decoration: none;
+           border-bottom: 0;
+           display: block;
+           font-family: var(--font-special); /* Using the variable for consistency */
+           font-size: 0.8em;
+           font-weight: 700;
+           letter-spacing: 0.1em;
+           margin: 0 0 2em 0;
+           text-transform: uppercase;
+        }
 
 			a.special:not(.button):before {
 				-moz-osx-font-smoothing: grayscale;
@@ -252,13 +244,13 @@ input, select, textarea {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-           color: var(--text-color-strong); /* Use the new strong text color */
-           font-family: 'Montserrat', sans-serif;
-           font-weight: 700;
-           letter-spacing: 0.1em;
-           margin: 0 0 1em 0;
-           text-transform: uppercase;
-        }
+        color: var(--text-color-strong);
+        font-family: var(--font-heading); /* Using the variable for consistency */
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        margin: 0 0 1em 0;
+        text-transform: uppercase;
+     }
 
            h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
               color: inherit;
@@ -295,17 +287,23 @@ input, select, textarea {
 		font-size: 0.7em;
 	}
 
-	@media screen and (max-width: 736px) {
-
-		h2 {
-			font-size: 1em;
-		}
-
-		h3 {
-			font-size: 0.8em;
-		}
-
-	}
+	/* Adjusted heading font sizes for better mobile hierarchy */
+    @media screen and (max-width: 736px) {
+       h2 {
+          font-size: 1.1em; /* Slightly larger than original 1em for better impact on mobile */
+       }
+       h3 {
+          font-size: 0.9em; /* Slightly larger than original 0.8em for better impact on mobile */
+       }
+    }
+    @media screen and (max-width: 480px) {
+        h2 {
+           font-size: 1.5em; /* Larger h2 for very small screens, more prominent */
+        }
+        h3 {
+           font-size: 1.2em; /* Larger h3 for very small screens */
+        }
+    }
 
 	sub {
 		font-size: 0.8em;
@@ -2166,15 +2164,15 @@ input, select, textarea {
 		}
 
 	label {
-		color: #ffffff;
-		display: block;
-		font-family: Raleway, Helvetica, sans-serif;
-		font-size: 0.8em;
-		font-weight: 700;
-		letter-spacing: 0.1em;
-		margin: 0 0 0.7em 0;
-		text-transform: uppercase;
-	}
+       color: #ffffff;
+       display: block;
+       font-family: var(--font-special); /* Using the variable for consistency */
+       font-size: 0.8em;
+       font-weight: 700;
+       letter-spacing: 0.1em;
+       margin: 0 0 0.7em 0;
+       text-transform: uppercase;
+    }
 
 
 	input[type="text"],
@@ -3060,36 +3058,45 @@ input, select, textarea {
 				visibility: hidden;
 			}
 
-		@media screen and (max-width: 736px) {
+		@media screen and (max-width: 980px) { /* Adjust breakpoint for header changes */
+           #header {
+              height: 3.5em; /* Slightly smaller header on tablets/mobile */
+              padding: 0 1.5em; /* Smaller padding */
+           }
+           #header h1 {
+             font-size: 0.8em; /* Smaller logo text on mobile */
+           }
+        }
 
-			#header {
-				height: 2.75em;
-				line-height: 2.75em;
-			}
+        @media screen and (max-width: 736px) {
+           #header {
+              height: 2.75em;
+              line-height: 2.75em;
+              padding: 0 1em; /* Even smaller padding on very small screens */
+           }
+              #header nav { /* Keep existing nav rules for mobile */
+                 top: 0;
+                 right: 0;
+                 height: inherit;
+                 line-height: inherit;
+              }
 
-				#header nav {
-					top: 0;
-					right: 0;
-					height: inherit;
-					line-height: inherit;
-				}
+                 #header nav a {
+                    height: inherit;
+                    line-height: inherit;
+                 }
 
-					#header nav a {
-						height: inherit;
-						line-height: inherit;
-					}
+                    #header nav a[href="#menu"] {
+                       box-shadow: none;
+                       padding: 0 1em;
+                       border-radius: 0;
+                    }
 
-						#header nav a[href="#menu"] {
-							box-shadow: none;
-							padding: 0 1em;
-							border-radius: 0;
-						}
+                       #header nav a[href="#menu"]:hover, #header nav a[href="#menu"]:active {
+                          background-color: inherit;
+                       }
 
-							#header nav a[href="#menu"]:hover, #header nav a[href="#menu"]:active {
-								background-color: inherit;
-							}
-
-		}
+        }
 
 		@media screen and (max-width: 480px) {
 
@@ -3123,22 +3130,11 @@ input, select, textarea {
 	}
 
 	#menu {
-       -moz-align-items: center;
-       -webkit-align-items: center;
-       -ms-align-items: center;
-       align-items: center;
-       display: -moz-flex;
-       display: -webkit-flex;
-       display: -ms-flex;
+       /* Changed from center to flex-end for right-aligned menu, aligns content to top */
        display: flex;
-       -moz-justify-content: flex-end;    /* Changed from center */
-       -webkit-justify-content: flex-end; /* Changed from center */
-       -ms-justify-content: flex-end;    /* Changed from center */
-       justify-content: flex-end;       /* Changed from center */
+       justify-content: flex-end;
+       align-items: flex-start; /* Aligns inner content to top */
        pointer-events: none;
-       -moz-transition: opacity 0.35s ease, visibility 0.35s;
-       -webkit-transition: opacity 0.35s ease, visibility 0.35s;
-       -ms-transition: opacity 0.35s ease, visibility 0.35s;
        transition: opacity 0.35s ease, visibility 0.35s;
        -moz-user-select: none;
        -webkit-user-select: none;
@@ -3151,7 +3147,7 @@ input, select, textarea {
        left: 0;
        opacity: 0;
        position: fixed;
-       text-align: center;
+       /* text-align: center; (removed as inner handles text-align) */
        top: 0;
        visibility: hidden;
        width: 100%;
@@ -3159,25 +3155,19 @@ input, select, textarea {
     }
 
 		#menu .inner {
-                  -moz-transform: translateX(100%);
-                  -webkit-transform: translateX(100%);
-                  -ms-transform: translateX(100%);
-                  transform: translateX(100%);
-                  -moz-transition: opacity 0.35s ease, -moz-transform 0.35s ease;
-                  -webkit-transition: opacity 0.35s ease, -webkit-transform 0.35s ease;
-                  -ms-transition: opacity 0.35s ease, -ms-transform 0.35s ease;
-                  transition: opacity 0.35s ease, transform 0.35s ease;
-                  -webkit-overflow-scrolling: touch;
-                  background: var(--bg-color); /* Updated to use theme color */
-                  display: block;
-                  height: 100%;
-                  max-width: 100%;
-                  opacity: 0;
-                  padding: 2.5em 1.5em 0.5em 1.5em;
-                  position: relative;
-                  width: 20em; /* Made slightly wider for a sidebar feel */
-                  text-align: left;
-               }
+                   transform: translateX(100%); /* Start off-screen to the right */
+                   transition: opacity 0.35s ease, transform 0.35s ease;
+                   -webkit-overflow-scrolling: touch;
+                   background: var(--bg-color);
+                   display: block;
+                   height: 100%;
+                   max-width: 100%;
+                   opacity: 0;
+                   padding: 2.5em 1.5em 0.5em 1.5em;
+                   position: relative;
+                   width: 20em;
+                   text-align: left; /* Keep text aligned left within the sliding menu */
+                }
 
 		#menu h2 {
 			border-bottom: solid 2px rgba(255, 255, 255, 0.125);
@@ -3185,22 +3175,24 @@ input, select, textarea {
 		}
 
 		#menu .close {
-			background-image: url("images/close.svg");
-			background-position: 75% 25%;
-			background-repeat: no-repeat;
-			background-size: 2em 2em;
-			border: 0;
-			content: '';
-			display: block;
-			height: 4em;
-			overflow: hidden;
-			position: absolute;
-			right: 0;
-			text-align: center;
-			text-indent: 4em;
-			top: 0;
-			width: 4em;
-		}
+           background-image: url("images/close.svg");
+           background-position: center; /* Centered for easier tapping */
+           background-repeat: no-repeat;
+           background-size: 1.5em 1.5em; /* Smaller icon for better aesthetic */
+           border: 0;
+           content: '';
+           display: block;
+           height: 3.5em; /* Taller for easier tapping */
+           line-height: 3.5em; /* Match height */
+           overflow: hidden;
+           position: absolute;
+           right: 0;
+           text-align: center;
+           text-indent: 4em;
+           top: 0;
+           width: 3.5em; /* Wider for easier tapping */
+           cursor: pointer; /* Indicate it's clickable */
+        }
 
 		#menu .links {
 			list-style: none;
@@ -3209,39 +3201,50 @@ input, select, textarea {
 		}
 
 			#menu .links li {
-				padding: 0;
-			}
+               padding: 0;
+            }
 
-				#menu .links li a {
-					border-radius: 5px;
-					border: 0;
-					display: block;
-					font-family: Raleway, Helvetica, sans-serif;
-					font-size: 0.8em;
-					font-weight: 200;
-					letter-spacing: 0.1em;
-					line-height: 1.85em;
-					padding: 0.75em 0;
-					text-transform: uppercase;
-				}
+               #menu .links li a {
+                  border-radius: 5px;
+                  border: 0;
+                  display: block;
+                  font-family: var(--font-special); /* Using variable */
+                  font-size: 0.9em; /* Slightly larger menu items for better readability */
+                  font-weight: 200;
+                  letter-spacing: 0.1em;
+                  line-height: 2em; /* Taller lines for better tap targets */
+                  padding: 0.75em 0;
+                  text-transform: uppercase;
+                  color: var(--text-color); /* Ensure visibility against dark background */
+               }
 
-					#menu .links li a:hover {
-						background: #45558d;
-					}
+                  #menu .links li a:hover {
+                     background: rgba(255, 255, 255, 0.05); /* Lighter, more subtle hover for menu items */
+                     color: var(--accent-color); /* Highlight text on hover */
+                  }
 
 		@media screen and (max-width: 736px) {
 
-			#menu .inner {
-				max-height: 100%;
-				overflow-y: auto;
-				overflow-x: hidden;
-			}
+           #menu .inner {
+              max-height: 100%;
+              overflow-y: auto;
+              overflow-x: hidden;
+              width: 80%; /* Take up more width on smaller mobile screens (e.g., 20em might be too narrow) */
+              padding: 2em 1em 0.5em 1em; /* Reduced padding for more content space */
+           }
 
-				#menu .inner .close {
-					background-size: 1.5em 1.5em;
-				}
+              #menu .inner .close {
+                 background-size: 1.2em 1.2em; /* Smaller icon for very small screens */
+                 height: 3em; /* Smaller button for very small screens */
+                 width: 3em;
+                 line-height: 3em;
+              }
 
-		}
+              #menu .links li a {
+                 font-size: 0.85em; /* Slightly smaller menu links on very small screens for better fit */
+                 padding: 0.6em 0;
+              }
+        }
 
 	body.is-menu-visible #page-wrapper {
 		-moz-filter: blur(1.5px);
@@ -4069,8 +4072,14 @@ input, select, textarea {
     }
 
 .logo img {
-    width: 200px;   /* Adjust width */
-    height: auto;   /* Keeps aspect ratio */
+    max-width: 150px; /* Reduced max-width for smaller screens */
+    height: auto;
+}
+
+@media screen and (max-width: 736px) {
+    .logo img {
+        max-width: 100px; /* Even smaller on phones */
+    }
 }
 
 .footer-flex {
@@ -4361,62 +4370,63 @@ input, select, textarea {
 	.testimonial-nav .custom-next { right: 30%; }
 }
 
-/* -- Responsive Header Navigation -- */
-
 /* Style the new desktop navigation container */
 #header .desktop-nav {
-	display: none; /* Hidden by default on mobile */
-	align-items: center;
-	gap: 1.5em; /* Space between links */
+    display: none; /* Hidden by default on mobile */
+    align-items: center;
+    gap: 1.5em; /* Space between links */
 }
 
 /* Style the links in the desktop navigation */
 #header .desktop-nav a {
-	color: var(--text-color-strong);
-	font-family: var(--font-special);
-	font-size: 0.8em;
-	font-weight: 700;
-	letter-spacing: 0.1em;
-	text-transform: uppercase;
-	text-decoration: none;
-	border-bottom: none;
+    color: var(--text-color-strong);
+    font-family: var(--font-special);
+    font-size: 0.8em;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: none;
 }
 
 /* Default style for ANY button in the header nav (the outline) */
 #header .desktop-nav a.button {
-	background-color: transparent;
-	box-shadow: inset 0 0 0 2px var(--border-color);
-	padding: 0 1.5em;
-	height: 2.75em;
-	line-height: 2.75em;
+    background-color: transparent;
+    box-shadow: inset 0 0 0 2px var(--border-color);
+    padding: 0 1.5em;
+    height: 2.75em;
+    line-height: 2.75em;
 }
 
 #header .desktop-nav a.button:hover {
-	background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* --- NEW: High-specificity rule to override the outline style --- */
+/* High-specificity rule to override the outline style */
 #header .desktop-nav a.button.special {
     background-color: var(--accent-color);
     box-shadow: none; /* Remove the outline */
 }
 
-/* --- NEW: High-specificity rule for the hover state --- */
+/* High-specificity rule for the hover state */
 #header .desktop-nav a.button.special:hover {
     background-color: var(--text-color-strong); /* Changes to bright white */
 }
 
-
 /* This is the breakpoint where the switch happens */
-/* On screens wider than 980px... */
-@media screen and (min-width: 981px) {
-
-	#header .desktop-nav {
-		display: flex; /* Show the desktop navigation */
-	}
-
-	#header .mobile-nav {
-		display: none; /* Hide the mobile "Menu" button */
-	}
-
+@media screen and (min-width: 981px) { /* Show desktop nav on screens >= 981px */
+    #header .desktop-nav {
+       display: flex; /* Show the desktop navigation */
+    }
+    #header .mobile-nav {
+       display: none; /* Hide the mobile "Menu" button */
+    }
+}
+@media screen and (max-width: 980px) { /* Hide desktop nav and show mobile nav on screens <= 980px */
+    #header .desktop-nav {
+        display: none;
+    }
+    #header .mobile-nav {
+        display: block; /* Show the mobile "Menu" button */
+    }
 }

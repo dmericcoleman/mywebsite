@@ -289,6 +289,9 @@
 <script src="assets/js/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
+<script src="assets/js/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
 <script>
 	document.addEventListener('DOMContentLoaded', function() {
         'use strict';
@@ -357,7 +360,8 @@
                 const targetElement = document.querySelector(href);
                 if (targetElement) {
                     if (menu && body.classList.contains('is-menu-visible')) {
-                         if (lockMenu()) body.classList.remove('is-menu-visible');
+                        // A simplified version of hideMenu to avoid lock conflicts
+                        body.classList.remove('is-menu-visible');
                     }
                     let headerHeight = header ? header.offsetHeight : 0;
                     let scrollPosition = targetElement.offsetTop - headerHeight;
@@ -383,7 +387,7 @@
 
 
         // --- Owl Carousel for Testimonials ---
-        // This requires jQuery, which we are keeping for the carousel
+        // This requires jQuery, which we are now correctly loading
         var $testimonialCarousel = $('#testimonials .owl-carousel');
         if ($testimonialCarousel.length > 0) {
             $testimonialCarousel.owlCarousel({

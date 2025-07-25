@@ -4274,6 +4274,12 @@ input, select, textarea {
 	.wrapper .content p {
 		line-height: 1.75;
 	}
+
+	/* Fixes the 'tight' Get Started buttons in the pricing table */
+	#pricing .button {
+		width: 100%;
+		padding: 0 1.5em;
+	}
 }
 
 /* -- Pricing Section Styles -- */

@@ -4737,11 +4737,11 @@ input, select, textarea {
     .banner-content .logo,
     .banner-content h2,
     .banner-content p {
-        text-align: center;
+        text-align: left;
     }
 
     #banner .actions.special {
-        justify-content: center;
+        justify-content: flex-start;
     }
 
     /* Remove the redundant .banner-image margin-bottom: 0; from here, as it's now display: none */

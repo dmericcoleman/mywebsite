@@ -4361,3 +4361,61 @@ input, select, textarea {
 	font-weight: 700;
 	text-transform: uppercase;
 }
+
+/* -- Testimonials Section Styles -- */
+
+#testimonials .features {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 2em;
+	margin-top: 3em;
+}
+
+.testimonial-card {
+	flex: 1 1 300px;
+	background: rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
+	padding: 2em;
+	display: flex;
+	flex-direction: column;
+}
+
+.testimonial-card blockquote {
+	border-left: 3px solid #ffffff;
+	padding-left: 1.5em;
+	font-style: italic;
+	color: rgba(255, 255, 255, 0.8);
+	flex-grow: 1; /* Makes all cards the same height */
+	margin: 1em 0;
+}
+
+.testimonial-card .author-info {
+	display: flex;
+	align-items: center;
+	margin-top: auto; /* Pushes author to the bottom */
+}
+
+.testimonial-card .author-info img {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin-right: 1em;
+	object-fit: cover;
+}
+
+.testimonial-card .author-info cite {
+	text-align: left;
+	font-style: normal;
+	line-height: 1.4;
+}
+
+.testimonial-card .author-info cite strong {
+	display: block;
+	color: #ffffff;
+}
+
+.testimonial-card .star-rating .icon {
+	color: #fab387; /* Soft Orange */
+	font-size: 0.9em;
+}

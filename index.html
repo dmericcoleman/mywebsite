@@ -5,6 +5,9 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
 	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
 	<link rel="icon" type="image/png" href="/https://github.com/dmericcoleman/mywebsite/favicon-96x96.png" sizes="96x96" />
@@ -152,50 +155,47 @@
 		<section id="testimonials" class="wrapper style3">
 			<div class="inner">
 				<h2 class="major">What Our Clients Say</h2>
-				<section class="features">
-					<article class="testimonial-card">
-						<div class="star-rating">
-							<span class="icon solid fa-star"></span>
-							<span class="icon solid fa-star"></span>
-							<span class="icon solid fa-star"></span>
-							<span class="icon solid fa-star"></span>
-							<span class="icon solid fa-star"></span>
+
+				<div class="testimonial-carousel-container">
+					<div class="owl-carousel owl-theme">
+						<div class="testimonial-card">
+							<div class="star-rating">
+								<span class="icon solid fa-star"></span><span class="icon solid fa-star"></span><span class="icon solid fa-star"></span><span class="icon solid fa-star"></span><span class="icon solid fa-star"></span>
+							</div>
+							<blockquote>“Working with them was a game-changer. Our online reputation has never been stronger, and we saw an immediate increase in customer trust and sales.”</blockquote>
+							<div class="author-info">
+								<img src="images/client01.jpg" alt="Client 1">
+								<cite><strong>Jane Doe</strong><br>CEO, Tech Innovators</cite>
+							</div>
 						</div>
-						<blockquote>“Working with them was a game-changer. Our online reputation has never been stronger, and we saw an immediate increase in customer trust and sales.”</blockquote>
-						<div class="author-info">
-							<img src="images/client01.jpg" alt="Client 1">
-							<cite><strong>Jane Doe</strong><br>CEO, Tech Innovators</cite>
+						<div class="testimonial-card">
+							<div class="star-rating">
+								<span class="icon solid fa-star"></span><span class="icon solid fa-star"></span><span class="icon solid fa-star"></span><span class="icon solid fa-star"></span><span class="icon solid fa-star"></span>
+							</div>
+							<blockquote>“The most reliable and effective review service we've ever used. Their team is professional, and the results speak for themselves. Highly recommended.”</blockquote>
+							<div class="author-info">
+								<img src="images/client02.jpg" alt="Client 2">
+								<cite><strong>John Smith</strong><br>Founder, E-Commerce Hub</cite>
+							</div>
 						</div>
-					</article>
-					<article class="testimonial-card">
-						<div class="star-rating">
-							<span class="icon solid fa-star"></span>
-							<span class="icon solid fa-star"></span>
-							<span class="icon solid fa-star"></span>
-							<span class="icon solid fa-star"></span>
-							<span class="icon solid fa-star"></span>
+						<div class="testimonial-card">
+							<div class="star-rating">
+								<span class="icon solid fa-star"></span><span class="icon solid fa-star"></span><span class="icon solid fa-star"></span><span class="icon solid fa-star"></span><span class="icon solid fa-star"></span>
+							</div>
+							<blockquote>“Our Amazon sales skyrocketed after improving our review profile. Their process is seamless and delivered exactly what was promised.”</blockquote>
+							<div class="author-info">
+								<img src="images/client03.jpg" alt="Client 3">
+								<cite><strong>Emily White</strong><br>Marketing Director, Brand Co.</cite>
+							</div>
 						</div>
-						<blockquote>“The most reliable and effective review service we've ever used. Their team is professional, and the results speak for themselves. Highly recommended.”</blockquote>
-						<div class="author-info">
-							<img src="images/client02.jpg" alt="Client 2">
-							<cite><strong>John Smith</strong><br>Founder, E-Commerce Hub</cite>
-						</div>
-					</article>
-					<article class="testimonial-card">
-						<div class="star-rating">
-							<span class="icon solid fa-star"></span>
-							<span class="icon solid fa-star"></span>
-							<span class="icon solid fa-star"></span>
-							<span class="icon solid fa-star"></span>
-							<span class="icon solid fa-star"></span>
-						</div>
-						<blockquote>“Our Amazon sales skyrocketed after improving our review profile. Their process is seamless and delivered exactly what was promised.”</blockquote>
-						<div class="author-info">
-							<img src="images/client03.jpg" alt="Client 3">
-							<cite><strong>Emily White</strong><br>Marketing Director, Brand Co.</cite>
-						</div>
-					</article>
-				</section>
+					</div>
+
+					<div class="testimonial-nav">
+						<button class="custom-prev"><span class="icon solid fa-chevron-left"></span></button>
+						<button class="custom-next"><span class="icon solid fa-chevron-right"></span></button>
+					</div>
+				</div>
+
 			</div>
 		</section>
 
@@ -287,6 +287,7 @@
 <a href="#one" class="scroll-to-top scrolly"><span class="icon solid fa-chevron-up"></span></a>
 
 <script src="assets/js/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script src="assets/js/jquery.scrollex.min.js"></script>
 <script src="assets/js/browser.min.js"></script>
 <script src="assets/js/breakpoints.min.js"></script>

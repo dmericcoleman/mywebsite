@@ -2852,144 +2852,77 @@ input, select, textarea {
 
 /* Button */
 
-	input[type="submit"],
-	input[type="reset"],
-	input[type="button"],
-	button,
-	.button {
-		-moz-appearance: none;
-		-webkit-appearance: none;
-		-ms-appearance: none;
-		appearance: none;
-		-moz-transition: background-color 0.2s ease-in-out;
-		-webkit-transition: background-color 0.2s ease-in-out;
-		-ms-transition: background-color 0.2s ease-in-out;
-		transition: background-color 0.2s ease-in-out;
-		background-color: transparent;
-		border-radius: 5px;
-		border: 0;
-		box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.125);
-		color: #ffffff !important;
-		cursor: pointer;
-		display: inline-block;
-		font-family: Raleway, Helvetica, sans-serif;
-		font-size: 0.8em;
-		font-weight: 700;
-		height: 3.75em;
-		letter-spacing: 0.1em;
-		line-height: 3.75em;
-		padding: 0 2.25em;
-		text-align: center;
-		text-decoration: none;
-		text-transform: uppercase;
-		white-space: nowrap;
-	}
+    input[type="submit"],
+    input[type="reset"],
+    input[type="button"],
+    button,
+    .button {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        -ms-appearance: none;
+        appearance: none;
+        /* NEW: Added transform and box-shadow for smooth animation */
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+        background-color: transparent;
+        border-radius: 5px;
+        border: 0;
+        box-shadow: inset 0 0 0 2px var(--border-color); /* Uses theme color */
+        color: var(--text-color-strong) !important;
+        cursor: pointer;
+        display: inline-block;
+        font-family: var(--font-special);
+        font-size: 0.8em;
+        font-weight: 700;
+        height: 3.75em;
+        letter-spacing: 0.1em;
+        line-height: 3.75em;
+        padding: 0 2.25em;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        white-space: nowrap;
+    }
 
-		input[type="submit"]:hover,
-		input[type="reset"]:hover,
-		input[type="button"]:hover,
-		button:hover,
-		.button:hover {
-			background-color: rgba(255, 255, 255, 0.025);
-		}
-
-		input[type="submit"]:active,
-		input[type="reset"]:active,
-		input[type="button"]:active,
-		button:active,
-		.button:active {
-			background-color: rgba(255, 255, 255, 0.075);
-		}
-
-		input[type="submit"].icon:before,
-		input[type="reset"].icon:before,
-		input[type="button"].icon:before,
-		button.icon:before,
-		.button.icon:before {
-			margin-right: 0.5em;
-			color: rgba(255, 255, 255, 0.35);
-		}
-
-		input[type="submit"].primary,
-        input[type="reset"].primary,
-        input[type="button"].primary,
-        button.primary,
-        .button.primary {
-           background-color: #222222;
-           box-shadow: none;
+        /* Standard Button Hover: Lifts and border glows */
+        input[type="submit"]:hover,
+        input[type="reset"]:hover,
+        input[type="button"]:hover,
+        button:hover,
+        .button:hover {
+            background-color: transparent; /* Ensure it stays an outline */
+            box-shadow: inset 0 0 0 2px var(--accent-color); /* Border changes to accent color */
+            transform: translateY(-3px); /* Lifts the button slightly */
         }
 
-			input[type="submit"].primary:hover,
-			input[type="reset"].primary:hover,
-			input[type="button"].primary:hover,
-			button.primary:hover,
-			.button.primary:hover {
-				background-color: #53639e;
-			}
+        input[type="submit"]:active,
+        input[type="reset"]:active,
+        input[type="button"]:active,
+        button:active,
+        .button:active {
+            background-color: rgba(255, 255, 255, 0.075);
+            transform: translateY(0); /* Pushes button back down on click */
+        }
 
-			input[type="submit"].primary:active,
-			input[type="reset"].primary:active,
-			input[type="button"].primary:active,
-			button.primary:active,
-			.button.primary:active {
-				background-color: #45558d;
-			}
+        /* --- NEW: Styles for your most important CTA buttons --- */
+        .button.special {
+            background-color: var(--accent-color);
+            color: var(--text-color-strong) !important; /* Changed to white */
+            box-shadow: none; /* No border needed for solid button */
+            font-weight: 700;
+        }
 
-			input[type="submit"].primary.icon:before,
-			input[type="reset"].primary.icon:before,
-			input[type="button"].primary.icon:before,
-			button.primary.icon:before,
-			.button.primary.icon:before {
-				color: #7985b0;
-			}
+        /* Special Button Hover: Fills, lifts, grows, and glows */
+        .button.special:hover {
+            background-color: var(--text-color-strong); /* Changes to bright white */
+            color: #111827 !important;
+            box-shadow: 0 5px 25px -5px var(--accent-color); /* Adds a colored glow */
+            transform: translateY(-4px) scale(1.03); /* Lifts higher and grows slightly */
+        }
 
-		input[type="submit"].fit,
-		input[type="reset"].fit,
-		input[type="button"].fit,
-		button.fit,
-		.button.fit {
-			width: 100%;
-		}
-
-		input[type="submit"].small,
-		input[type="reset"].small,
-		input[type="button"].small,
-		button.small,
-		.button.small {
-			font-size: 0.6em;
-		}
-
-		input[type="submit"].large,
-		input[type="reset"].large,
-		input[type="button"].large,
-		button.large,
-		.button.large {
-			font-size: 1em;
-		}
-
-		input[type="submit"].disabled, input[type="submit"]:disabled,
-		input[type="reset"].disabled,
-		input[type="reset"]:disabled,
-		input[type="button"].disabled,
-		input[type="button"]:disabled,
-		button.disabled,
-		button:disabled,
-		.button.disabled,
-		.button:disabled {
-			opacity: 0.25;
-		}
-
-		@media screen and (max-width: 480px) {
-
-			input[type="submit"],
-			input[type="reset"],
-			input[type="button"],
-			button,
-			.button {
-				padding: 0;
-			}
-
-		}
+        .button.special:active {
+            transform: translateY(0) scale(1); /* Pushes button down on click */
+            background-color: var(--interactive-color);
+        }
 
 /* Features */
 
@@ -3376,54 +3309,49 @@ input, select, textarea {
 			}
 
 		#banner h2 {
-           -moz-transition: opacity 0.5s ease, -moz-transform 0.5s ease, -moz-filter 0.25s ease;
-           -webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease, -webkit-filter 0.25s ease;
-           -ms-transition: opacity 0.5s ease, -ms-transform 0.5s ease, -ms-filter 0.25s ease;
-           transition: opacity 0.5s ease, transform 0.5s ease, filter 0.25s ease;
-           -moz-transform: translateX(0);
-           -webkit-transform: translateX(0);
-           -ms-transform: translateX(0);
-           transform: translateX(0);
-           -moz-transition-delay: 0.65s;
-           -webkit-transition-delay: 0.65s;
-           -ms-transition-delay: 0.65s;
-           transition-delay: 0.65s;
-           -moz-filter: blur(0);
-           -webkit-filter: blur(0);
-           -ms-filter: blur(0);
-           filter: blur(0);
-           opacity: 1;
-           border-bottom: solid 2px rgba(255, 255, 255, 0.125);
-           font-size: 2.25em;
-           margin-bottom: 0;
-           padding-bottom: 0.4em;
-        }
+                   -moz-transition: opacity 0.5s ease, -moz-transform 0.5s ease, -moz-filter 0.25s ease;
+                   -webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease, -webkit-filter 0.25s ease;
+                   -ms-transition: opacity 0.5s ease, -ms-transform 0.5s ease, -ms-filter 0.25s ease;
+                   transition: opacity 0.5s ease, transform 0.5s ease, filter 0.25s ease;
+                   -moz-transform: translateX(0);
+                   -webkit-transform: translateX(0);
+                   -ms-transform: translateX(0);
+                   transform: translateX(0);
+                   -moz-transition-delay: 0.65s;
+                   -webkit-transition-delay: 0.65s;
+                   -ms-transition-delay: 0.65s;
+                   transition-delay: 0.65s;
+                   opacity: 1;
+                   font-size: 2.25em;
+                   line-height: 1.3; /* NEW: Reduces internal font spacing */
+                   border-bottom: solid 2px var(--border-color); /* The line is back */
+                   padding-bottom: 0.3em; /* Space between text and line */
+                   margin-bottom: 0.3em;  /* Space between line and text below */
+                }
 
-		#banner p {
-			-moz-transition: opacity 0.5s ease, -moz-transform 0.5s ease, -moz-filter 0.25s ease;
-			-webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease, -webkit-filter 0.25s ease;
-			-ms-transition: opacity 0.5s ease, -ms-transform 0.5s ease, -ms-filter 0.25s ease;
-			transition: opacity 0.5s ease, transform 0.5s ease, filter 0.25s ease;
-			-moz-transform: translateX(0);
-			-webkit-transform: translateX(0);
-			-ms-transform: translateX(0);
-			transform: translateX(0);
-			-moz-transition-delay: 0.8s;
-			-webkit-transition-delay: 0.8s;
-			-ms-transition-delay: 0.8s;
-			transition-delay: 0.8s;
-			-moz-filter: blur(0);
-			-webkit-filter: blur(0);
-			-ms-filter: blur(0);
-			filter: blur(0);
-			opacity: 1;
-			font-family: Raleway, Helvetica, sans-serif;
-			font-size: 1em;
-			font-weight: 200;
-			letter-spacing: 0.1em;
-			line-height: 2;
-			text-transform: uppercase;
-		}
+               #banner p {
+                  -moz-transition: opacity 0.5s ease, -moz-transform 0.5s ease, -moz-filter 0.25s ease;
+                  -webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease, -webkit-filter 0.25s ease;
+                  -ms-transition: opacity 0.5s ease, -ms-transform 0.5s ease, -ms-filter 0.25s ease;
+                  transition: opacity 0.5s ease, transform 0.5s ease, filter 0.25s ease;
+                  -moz-transform: translateX(0);
+                  -webkit-transform: translateX(0);
+                  -ms-transform: translateX(0);
+                  transform: translateX(0);
+                  -moz-transition-delay: 0.8s;
+                  -webkit-transition-delay: 0.8s;
+                  -ms-transition-delay: 0.8s;
+                  transition-delay: 0.8s;
+                  opacity: 1;
+                  font-family: var(--font-special);
+                  font-size: 1em;
+                  font-weight: 400;
+                  letter-spacing: 0.1em;
+                  line-height: 1.5; /* NEW: Reduces internal font spacing */
+                  text-transform: uppercase;
+                  color: rgba(255, 255, 255, 0.8);
+                  margin-top: 0;
+               }
 
 		@media screen and (max-width: 1280px) {
 
@@ -3729,34 +3657,35 @@ input, select, textarea {
             }
 
 			.wrapper.spotlight .image {
-               border-radius: 5px;
-               margin: 0 3em 2em 0;
-               width: 75%;
-               overflow: hidden;
-               -ms-flex: 1;
-            }
+                           border-radius: 5px;
+                           margin-right: 3em; /* Removed bottom margin */
+                           width: 75%;
+                           overflow: hidden;
+                           -ms-flex: 1;
+                        }
 
-				.wrapper.spotlight .image img {
-                   border-radius: 5px;
-                   width: 100%;
-                }
+                         .wrapper.spotlight .image img {
+                               border-radius: 5px;
+                               width: 100%;
+                            }
 
-			.wrapper.spotlight .content {
-				width: 100%;
-				-ms-flex: 2;
-			}
+                      .wrapper.spotlight .content {
+                         width: 100%;
+                         -ms-flex: 2;
+                      }
 
-			.wrapper.spotlight:nth-child(2n - 1) .inner {
-				-moz-flex-direction: row-reverse;
-				-webkit-flex-direction: row-reverse;
-				-ms-flex-direction: row-reverse;
-				flex-direction: row-reverse;
-				text-align: right;
-			}
+                      .wrapper.spotlight:nth-child(2n - 1) .inner {
+                         -moz-flex-direction: row-reverse;
+                         -webkit-flex-direction: row-reverse;
+                         -ms-flex-direction: row-reverse;
+                         flex-direction: row-reverse;
+                         text-align: right;
+                      }
 
-			.wrapper.spotlight:nth-child(2n - 1) .image {
-				margin: 0 0 2em 3em;
-			}
+                      .wrapper.spotlight:nth-child(2n - 1) .image {
+                         margin-right: 0; /* Reset right margin */
+                         margin-left: 3em; /* Removed bottom margin */
+                      }
 
 			.wrapper.spotlight.style2 {
 				background-color: transparent;
@@ -4048,22 +3977,24 @@ input, select, textarea {
 
     /* -- FINAL GLOWING LINES (RELIABLE METHOD) -- */
 
-    .wrapper {
-        position: relative;
-    }
+        .wrapper {
+            position: relative;
+        }
 
-    #one::after, #two::after, #three::after, #four::after, #five::after, #six::after, #pricing::after, #testimonials::after, #one::before {
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        content: '';
-        display: block;
-        height: 12em;
-        position: absolute;
-        width: 100%;
-        left: 0;
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolyline points='0,75 100,25' style='fill:none; stroke:rgba(255, 255, 255, 0.25); stroke-width:2px;' /%3E%3C/svg%3E");
-        filter: drop-shadow(0 0 1px white) drop-shadow(0 0 6px rgba(255, 255, 255, 0.6));
-    }
+        #one::after, #two::after, #three::after, #four::after, #five::after, #six::after, #pricing::after, #testimonials::after, #one::before {
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            content: '';
+            display: block;
+            height: 12em;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            /* The stroke color in the SVG is now a transparent version of your blue accent color */
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolyline points='0,75 100,25' style='fill:none; stroke:rgba(59, 130, 246, 0.25); stroke-width:2px;' /%3E%3C/svg%3E");
+            /* The glow effect is now a more subtle, single glow using the same blue accent color */
+            filter: drop-shadow(0 0 6px rgba(59, 130, 246, 0.5));
+        }
 
     #one::before {
         top: -12em;
@@ -4451,7 +4382,7 @@ input, select, textarea {
 	border-bottom: none;
 }
 
-/* Style for the "Contact Us" button in the nav */
+/* Default style for ANY button in the header nav (the outline) */
 #header .desktop-nav a.button {
 	background-color: transparent;
 	box-shadow: inset 0 0 0 2px var(--border-color);
@@ -4463,6 +4394,18 @@ input, select, textarea {
 #header .desktop-nav a.button:hover {
 	background-color: rgba(255, 255, 255, 0.1);
 }
+
+/* --- NEW: High-specificity rule to override the outline style --- */
+#header .desktop-nav a.button.special {
+    background-color: var(--accent-color);
+    box-shadow: none; /* Remove the outline */
+}
+
+/* --- NEW: High-specificity rule for the hover state --- */
+#header .desktop-nav a.button.special:hover {
+    background-color: var(--text-color-strong); /* Changes to bright white */
+}
+
 
 /* This is the breakpoint where the switch happens */
 /* On screens wider than 980px... */
@@ -4477,52 +4420,3 @@ input, select, textarea {
 	}
 
 }
-
-/* -- Responsive Header Navigation -- */
-
-/* Style the new desktop navigation container */
-#header .desktop-nav {
-	display: none; /* Hidden by default on mobile */
-	align-items: center;
-	gap: 1.5em; /* Space between links */
-}
-
-/* Style the links in the desktop navigation */
-#header .desktop-nav a {
-	color: var(--text-color-strong);
-	font-family: var(--font-special);
-	font-size: 0.8em;
-	font-weight: 700;
-	letter-spacing: 0.1em;
-	text-transform: uppercase;
-	text-decoration: none;
-	border-bottom: none;
-}
-
-/* Style for the "Contact Us" button in the nav */
-#header .desktop-nav a.button {
-	background-color: transparent;
-	box-shadow: inset 0 0 0 2px var(--border-color);
-	padding: 0 1.5em;
-	height: 2.75em;
-	line-height: 2.75em;
-}
-
-#header .desktop-nav a.button:hover {
-	background-color: rgba(255, 255, 255, 0.1);
-}
-
-/* This is the breakpoint where the switch happens */
-/* On screens wider than 980px... */
-@media screen and (min-width: 981px) {
-
-	#header .desktop-nav {
-		display: flex; /* Show the desktop navigation */
-	}
-
-	#header .mobile-nav {
-		display: none; /* Hide the mobile "Menu" button */
-	}
-
-}
-

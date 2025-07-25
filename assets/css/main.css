@@ -1,3 +1,13 @@
+:root {
+  --bg-color: #111827; /* Dark Navy Blue */
+  --text-color: #d1d5db; /* Light Gray for text */
+  --text-color-strong: #ffffff; /* Pure white for headings/strong text */
+  --border-color: rgba(255, 255, 255, 0.1);
+  --accent-color: #3b82f6; /* A strong, professional blue */
+  --interactive-color: #1e40af; /* A deeper blue for hovers */
+  --star-color: #facc15; /* A nice gold for star ratings */
+}
+
 @import url(fontawesome-all.min.css);
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Montserrat:wght@400;700&display=swap');
 
@@ -116,12 +126,13 @@ input, select, textarea {
 /* Type */
 
 	body, input, select, textarea {
-		color: #ffffff;
-		font-family: 'Lato', sans-serif;
-		font-size: 16.5pt;
-		font-weight: 300;
-		line-height: 1.65;
-	}
+           background-color: var(--bg-color); /* Use the new background */
+           color: var(--text-color); /* Use the new text color */
+           font-family: 'Lato', sans-serif;
+           font-size: 115%; /* Use a more responsive font size */
+           font-weight: 300;
+           line-height: 1.7; /* Increase for better readability */
+        }
 
 		@media screen and (max-width: 1680px) {
 
@@ -244,13 +255,8 @@ input, select, textarea {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #ffffff;
-		font-family: 'Montserrat', sans-serif;
-		font-weight: 700;
-		letter-spacing: 0.1em;
-		margin: 0 0 1em 0;
-		text-transform: uppercase;
-	}
+           color: var(--text-color-strong); /* Use the new strong text color */
+           font-family: 'Montserrat', sans-serif;
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 			color: inherit;
@@ -4414,8 +4420,8 @@ input, select, textarea {
 }
 
 .testimonial-card .star-rating .icon {
-	color: #fab387;
-	font-size: 0.9em;
+    color: var(--star-color);
+    font-size: 0.9em;
 }
 
 /* Custom Navigation Buttons */

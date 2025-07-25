@@ -288,108 +288,113 @@
 
 <script src="assets/js/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-<script src="assets/js/jquery.scrollex.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
 
 <script>
-	(function($) {
-		// --- Get all the elements we'll need ---
-		var $window = $(window);
-		var $header = $('#header');
-		var $menu = $('#menu');
-		var $scrollDown = $('.scroll-down');
-		var $scrollToTop = $('.scroll-to-top');
-		var $scrolly = $('.scrolly');
+	document.addEventListener('DOMContentLoaded', function() {
+        'use strict';
 
-		// --- Logic for the scroll-down arrow (hides on scroll) ---
-		if ($scrollDown.length) {
-			function toggleArrowVisibility() {
-				if ($window.scrollTop() > 50) { $scrollDown.fadeOut(300); }
-				else { $scrollDown.fadeIn(300); }
-			}
-			toggleArrowVisibility();
-			$window.on('scroll', toggleArrowVisibility);
-		}
+        const body = document.body;
+        const header = document.querySelector('#header');
+        const menu = document.querySelector('#menu');
+        const scrollyLinks = document.querySelectorAll('a.scrolly');
+        const dataLinks = document.querySelectorAll('a[data-href]');
 
-		// --- Logic for the scroll-to-top arrow (shows on scroll distance) ---
-		if ($scrollToTop.length) {
-			function toggleTopArrowVisibility() {
-				if ($window.scrollTop() > 300) {
-					$scrollToTop.addClass('visible');
-				} else {
-					$scrollToTop.removeClass('visible');
-				}
-			}
-			toggleTopArrowVisibility();
-			$window.on('scroll', toggleTopArrowVisibility);
-		}
+        // --- Remove Preloader ---
+        setTimeout(() => {
+            body.classList.remove('is-preload');
+        }, 100);
 
-		// --- Global smooth scroll for ALL scrolly links ---
-		if ($scrolly.length) {
-			$scrolly.on('click', function(event) {
-				var href = $(this).attr('href');
-				event.preventDefault();
-				var target = $(href);
-				if (target.length) {
-					var headerHeight = $header.outerHeight();
-					var scrollPosition = target.offset().top - headerHeight;
-					$('html, body').animate({ scrollTop: scrollPosition }, 1000, 'swing');
-				}
-			});
-		}
+        // --- Header Class Toggle ---
+        if (header && header.classList.contains('alt')) {
+            const banner = document.querySelector('#banner');
+            if (banner) {
+                const headerObserver = new IntersectionObserver(
+                    (entries) => {
+                        entries.forEach(entry => {
+                            header.classList.toggle('alt', entry.isIntersecting);
+                        });
+                    }, { rootMargin: `-${header.offsetHeight}px 0px 0px 0px` }
+                );
+                headerObserver.observe(banner);
+            }
+        }
 
-		// --- Logic to handle links without previews ---
-		$('a[data-href]').on('click', function(e) {
-			var url = $(this).data('href');
-			if (url && url !== '#') {
-				window.location.href = url;
-			}
-		});
+        // --- Menu Logic ---
+        if (menu) {
+            let menuLocked = false;
+            const lockMenu = () => {
+                if (menuLocked) return false;
+                menuLocked = true;
+                setTimeout(() => { menuLocked = false; }, 350);
+                return true;
+            };
+            const hideMenu = () => {
+                if (lockMenu()) body.classList.remove('is-menu-visible');
+            };
 
-		// --- Logic for Testimonials Carousel ---
-		var $testimonialCarousel = $('#testimonials .owl-carousel');
-		if ($testimonialCarousel.length) {
-			$testimonialCarousel.owlCarousel({
-				items: 1,
-				loop: true,
-				margin: 30,
-				dots: false,
-				autoplay: true,
-				autoplayTimeout: 7000,
-				autoplayHoverPause: true,
-				responsive:{
-					768:{
-						items: 2
-					},
-					1280:{
-						items: 2
-					}
-				}
-			});
+            // Toggle menu on button click
+            const menuToggle = document.querySelector('a[href="#menu"]');
+            if (menuToggle) {
+                menuToggle.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    if (lockMenu()) body.classList.toggle('is-menu-visible');
+                });
+            }
+            menu.addEventListener('click', (e) => { hideMenu(); });
+            menu.querySelector('.inner').addEventListener('click', (e) => { e.stopPropagation(); });
+            document.addEventListener('keydown', (e) => { if (e.key === 'Escape') hideMenu(); });
+        }
 
-			// Custom Navigation Button Events
-			$('.testimonial-nav .custom-next').click(function() {
-				$testimonialCarousel.trigger('next.owl.carousel');
-			});
-			$('.testimonial-nav .custom-prev').click(function() {
-				$testimonialCarousel.trigger('prev.owl.carousel');
-			});
-		}
+        // --- Link Handling (Fixes Scrolly and data-href) ---
+        const handleLinkClick = (e) => {
+            const link = e.currentTarget;
+            let href = link.dataset.href || link.getAttribute('href');
 
-		// --- NEW: Special handling for scrolly links inside the menu ---
-		$menu.find('a.scrolly').on('click', function(e) {
-			// Stop the menu's default redirect behavior
-			e.preventDefault();
-			e.stopPropagation();
+            // Handle scrolly links
+            if (link.classList.contains('scrolly') && href.startsWith('#')) {
+                e.preventDefault();
+                const targetElement = document.querySelector(href);
+                if (targetElement) {
+                    if (menu && body.classList.contains('is-menu-visible')) {
+                         if (lockMenu()) body.classList.remove('is-menu-visible');
+                    }
+                    let headerHeight = header ? header.offsetHeight : 0;
+                    let scrollPosition = targetElement.offsetTop - headerHeight;
+                    window.scrollTo({
+                        top: scrollPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+            // Handle other data-href links
+            else if (link.dataset.href) {
+                 e.preventDefault();
+                 window.location.href = href;
+            }
+        };
 
-			// Manually hide the menu
-			$menu._hide();
-		});
+        scrollyLinks.forEach(link => link.addEventListener('click', handleLinkClick));
+        dataLinks.forEach(link => {
+            if (!link.classList.contains('scrolly')) {
+                 link.addEventListener('click', handleLinkClick);
+            }
+        });
 
-	})(jQuery);
+
+        // --- Owl Carousel for Testimonials ---
+        // This requires jQuery, which we are keeping for the carousel
+        var $testimonialCarousel = $('#testimonials .owl-carousel');
+        if ($testimonialCarousel.length > 0) {
+            $testimonialCarousel.owlCarousel({
+                items: 1, loop: true, margin: 30, dots: false, autoplay: true,
+                autoplayTimeout: 7000, autoplayHoverPause: true,
+                responsive: { 768: { items: 2 }, 1280: { items: 2 } }
+            });
+            $('.testimonial-nav .custom-next').click(function() { $testimonialCarousel.trigger('next.owl.carousel'); });
+            $('.testimonial-nav .custom-prev').click(function() { $testimonialCarousel.trigger('prev.owl.carousel'); });
+        }
+    });
 </script>
 
 </body>

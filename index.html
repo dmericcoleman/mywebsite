@@ -299,6 +299,7 @@
 		// --- Get all the elements we'll need ---
 		var $window = $(window);
 		var $header = $('#header');
+		var $menu = $('#menu');
 		var $scrollDown = $('.scroll-down');
 		var $scrollToTop = $('.scroll-to-top');
 		var $scrolly = $('.scrolly');
@@ -311,19 +312,6 @@
 			}
 			toggleArrowVisibility();
 			$window.on('scroll', toggleArrowVisibility);
-		}
-
-		// --- Logic for the scroll-to-top arrow (shows on scroll distance) ---
-		if ($scrollToTop.length) {
-			function toggleTopArrowVisibility() {
-				if ($window.scrollTop() > 300) {
-					$scrollToTop.addClass('visible');
-				} else {
-					$scrollToTop.removeClass('visible');
-				}
-			}
-			toggleTopArrowVisibility();
-			$window.on('scroll', toggleTopArrowVisibility);
 		}
 
 		// --- Global smooth scroll for ALL scrolly links ---
@@ -370,6 +358,16 @@
 				$testimonialCarousel.trigger('prev.owl.carousel');
 			});
 		}
+
+		// --- NEW: Special handling for scrolly links inside the menu ---
+		$menu.find('a.scrolly').on('click', function(e) {
+			// Stop the menu's default redirect behavior
+			e.preventDefault();
+			e.stopPropagation();
+
+			// Manually hide the menu
+			$menu._hide();
+		});
 
 	})(jQuery);
 </script>

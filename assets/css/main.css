@@ -4374,8 +4374,7 @@ input, select, textarea {
 	background: rgba(0, 0, 0, 0.1);
 	border-radius: 5px;
 	padding: 2em;
-	display: flex;
-	flex-direction: column;
+	text-align: left;
 }
 
 .testimonial-card blockquote {
@@ -4397,7 +4396,7 @@ input, select, textarea {
 	width: 50px;
 	height: 50px;
 	border-radius: 50%;
-	margin-left: 15px; /* A standard, fixed spacing */
+	margin-right: 15px; /* A standard, fixed spacing */
 	object-fit: cover;
 }
 

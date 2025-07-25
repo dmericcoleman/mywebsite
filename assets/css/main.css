@@ -1,14 +1,17 @@
 @import url(fontawesome-all.min.css);
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@400;700&display=swap');
 
 :root {
-  --bg-color: #111827; /* Dark Navy Blue */
-  --text-color: #d1d5db; /* Light Gray for text */
+  --bg-color: #121212; /* Dark Charcoal (Gray) */
+  --text-color: #e0e0e0; /* Off-white for text */
   --text-color-strong: #ffffff; /* Pure white for headings/strong text */
   --border-color: rgba(255, 255, 255, 0.1);
   --accent-color: #3b82f6; /* A strong, professional blue */
   --interactive-color: #1e40af; /* A deeper blue for hovers */
   --star-color: #facc15; /* A nice gold for star ratings */
+  --font-body: 'Roboto', sans-serif;
+  --font-heading: 'Lora', serif;
+  --font-special: 'Raleway', Helvetica, sans-serif;
 }
 
 html, body, div, span, applet, object,

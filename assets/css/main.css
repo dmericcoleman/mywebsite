@@ -4374,9 +4374,6 @@ input, select, textarea {
 	background: rgba(0, 0, 0, 0.1);
 	border-radius: 5px;
 	padding: 2em;
-	display: flex;
-	flex-direction: column;
-	/* The height: 100% rule has been removed from here */
 }
 
 .testimonial-card blockquote {
@@ -4384,14 +4381,14 @@ input, select, textarea {
 	padding-left: 1.5em;
 	font-style: italic;
 	color: rgba(255, 255, 255, 0.8);
-	flex-grow: 1;
 	margin: 1em 0;
+	/* Removed flex properties to let the carousel control height */
 }
 
 .testimonial-card .author-info {
 	display: flex;
 	align-items: center;
-	margin-top: auto;
+	margin-top: 1.5em; /* Added margin for consistent spacing */
 }
 
 .testimonial-card .author-info img {

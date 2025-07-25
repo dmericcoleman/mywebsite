@@ -4366,7 +4366,7 @@ input, select, textarea {
 
 .testimonial-carousel-container {
 	position: relative;
-	padding: 0 4em; /* Make space for side arrows */
+	padding: 0 4em;
 	margin-top: 3em;
 }
 
@@ -4374,6 +4374,8 @@ input, select, textarea {
 	background: rgba(0, 0, 0, 0.1);
 	border-radius: 5px;
 	padding: 2em;
+	display: flex;
+	flex-direction: column;
 }
 
 .testimonial-card blockquote {
@@ -4381,21 +4383,21 @@ input, select, textarea {
 	padding-left: 1.5em;
 	font-style: italic;
 	color: rgba(255, 255, 255, 0.8);
+	flex-grow: 1;
 	margin: 1em 0;
-	/* Removed flex properties to let the carousel control height */
 }
 
 .testimonial-card .author-info {
 	display: flex;
 	align-items: center;
-	margin-top: 1.5em; /* Added margin for consistent spacing */
+	margin-top: auto;
 }
 
 .testimonial-card .author-info img {
 	width: 50px;
 	height: 50px;
 	border-radius: 50%;
-	margin-right: 1em;
+	margin-right: 0.75em; /* Reduced space */
 	object-fit: cover;
 }
 
@@ -4408,6 +4410,7 @@ input, select, textarea {
 .testimonial-card .author-info cite strong {
 	display: block;
 	color: #ffffff;
+	white-space: nowrap; /* Keeps name on one line */
 }
 
 .testimonial-card .star-rating .icon {
@@ -4437,23 +4440,6 @@ input, select, textarea {
 .testimonial-nav .custom-next { right: 0; }
 .testimonial-nav button .icon { color: rgba(255, 255, 255, 0.5); }
 
-/* Owl Carousel Dots Styling */
-.owl-dots {
-	text-align: center;
-	margin-top: 2em;
-}
-.owl-dot {
-	display: inline-block;
-	width: 12px;
-	height: 12px;
-	background: rgba(255, 255, 255, 0.2) !important;
-	border-radius: 50%;
-	margin: 0 5px;
-	transition: background-color 0.2s ease-in-out;
-}
-.owl-dot.active {
-	background: #ffffff !important;
-}
 
 /* On smaller screens, move arrows below */
 @media screen and (max-width: 736px) {
@@ -4462,9 +4448,9 @@ input, select, textarea {
 	}
 	.testimonial-nav button {
 		top: auto;
-		bottom: -4em;
-		transform: none;
+		bottom: 1em; /* Positioned closer to the slider */
+		transform: translateY(100%);
 	}
-	.testimonial-nav .custom-prev { left: 35%; }
-	.testimonial-nav .custom-next { right: 35%; }
+	.testimonial-nav .custom-prev { left: 30%; }
+	.testimonial-nav .custom-next { right: 30%; }
 }

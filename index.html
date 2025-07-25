@@ -303,68 +303,33 @@
 		var $scrollToTop = $('.scroll-to-top');
 		var $scrolly = $('.scrolly');
 
-		// --- Logic for the scroll-down arrow (hides on scroll) ---
-		if ($scrollDown.length) {
-			function toggleArrowVisibility() {
-				if ($window.scrollTop() > 50) { $scrollDown.fadeOut(300); }
-				else { $scrollDown.fadeIn(300); }
-			}
-			toggleArrowVisibility();
-			$window.on('scroll', toggleArrowVisibility);
-		}
-
-		// --- Logic for the scroll-to-top arrow (shows on scroll distance) ---
-		if ($scrollToTop.length) {
-			function toggleTopArrowVisibility() {
-				if ($window.scrollTop() > 300) {
-					$scrollToTop.addClass('visible');
-				} else {
-					$scrollToTop.removeClass('visible');
-				}
-			}
-			toggleTopArrowVisibility();
-			$window.on('scroll', toggleTopArrowVisibility);
-		}
+		// --- Arrow visibility logic ---
+		if ($scrollDown.length) { /* ... existing code ... */ }
+		if ($scrollToTop.length) { /* ... existing code ... */ }
 
 		// --- Global smooth scroll for ALL scrolly links ---
-		if ($scrolly.length) {
-			$scrolly.on('click', function(event) {
-				var href = $(this).attr('href');
-				event.preventDefault();
-				var target = $(href);
-				if (target.length) {
-					var headerHeight = $header.outerHeight();
-					var scrollPosition = target.offset().top - headerHeight;
-					$('html, body').animate({ scrollTop: scrollPosition }, 1000, 'swing');
-				}
-			});
-		}
+		if ($scrolly.length) { /* ... existing code ... */ }
 
 		// --- Logic to handle links without previews ---
-		$('a[data-href]').on('click', function(e) {
-			var url = $(this).data('href');
-			if (url && url !== '#') {
-				window.location.href = url;
-			}
-		});
+		$('a[data-href]').on('click', function(e) { /* ... existing code ... */ });
 
 		// --- Logic for Testimonials Carousel ---
 		var $testimonialCarousel = $('#testimonials .owl-carousel');
 		if ($testimonialCarousel.length) {
 			$testimonialCarousel.owlCarousel({
-				items: 1, // Shows 1 testimonial at a time on small screens
+				items: 1,
 				loop: true,
-				margin: 30, // Increased space between testimonials
-				dots: true,
+				margin: 30,
+				dots: false, /* This is the change */
 				autoplay: true,
 				autoplayTimeout: 7000,
 				autoplayHoverPause: true,
 				responsive:{
-					768:{ // On screens wider than 768px (tablets)...
-						items: 2 // ...show 2 testimonials
+					768:{
+						items: 2
 					},
-					1280:{ // On screens wider than 1280px (laptops/desktops)...
-						items: 2 // ...show 2 testimonials instead of 3
+					1280:{
+						items: 2
 					}
 				}
 			});

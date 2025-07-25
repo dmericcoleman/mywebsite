@@ -4397,7 +4397,7 @@ input, select, textarea {
 	width: 50px;
 	height: 50px;
 	border-radius: 50%;
-	margin-right: 0.75em; /* Reduced space */
+	margin-right: 15px; /* A standard, fixed spacing */
 	object-fit: cover;
 }
 

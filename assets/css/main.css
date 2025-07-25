@@ -4282,11 +4282,11 @@ input, select, textarea {
 /* -- Pricing Section Styles -- */
 
 #pricing .features {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 2em;
-	margin-top: 3em;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 2em;
+    margin-top: 3em;
 }
 
 #pricing .features article {

@@ -23,7 +23,15 @@
 
 	<header id="header" class="alt">
 		<h1><a href="javascript:void(0);" data-href="index.html">Premium Reviews Store</a></h1>
-		<nav>
+
+		<nav class="desktop-nav">
+			<a href="#one" class="scrolly">Services</a>
+			<a href="#pricing" class="scrolly">Pricing</a>
+			<a href="#testimonials" class="scrolly">Client Feedback</a>
+			<a href="#contact" class="scrolly button">Contact Us</a>
+		</nav>
+
+		<nav class="mobile-nav">
 			<a href="#menu">Menu</a>
 		</nav>
 	</header>
@@ -205,12 +213,12 @@
 					<article>
 						<a href="javascript:void(0);" data-href="https://premiumreviews.store/amazon-reviews-importance.html" class="image"><img src="images/Why-Reviews-Are-Important-on-Amazon-featured.png" alt="How Important Are Amazon Reviews for Your Conversions & Ratings?" /></a>
 						<h3 class="major">How Important Are Amazon Reviews for Your Conversions & Ratings?</h3>
-						<p>Amazon reviews play a dual role: they shape buyer perception and influence Amazon's algorithm, impacting both conversions and visibility.</p>
+						<p>Amazon reviews play a dual role: they shape buyer perception and influence Amazon's algorithm, impacting both conversions and ...</p>
 						<a href="javascript:void(0);" data-href="https://premiumreviews.store/amazon-reviews-importance.html" class="special">Learn more</a>
 					</article>
 					<article>
 						<a href="javascript:void(0);" data-href="https://premiumreviews.store/why-buy-trustpilot-reviews.html" class="image"><img src="images/Buy-Trustpilot-Reviews-Social-Reputation-PRO-1500x750.png" alt="Why Companies Need to Buy Trustpilot Reviews: A Quick Guide" /></a>
-						<h3 class="major">Why Companies Need to Buy Trustpilot Reviews: A Quick Guide</br></br></h3>
+						<h3 class="major">Why Companies Need to Buy Trustpilot Reviews: A Quick Guide</h3>
 						<p>It clearly emphasizes the importance of earning customer trust through real, honest feedback and excellent service. Buying reviews may seem like ...</p>
 						<a href="javascript:void(0);" data-href="https://premiumreviews.store/why-buy-trustpilot-reviews.html" class="special">Learn more</a>
 					</article>
@@ -357,14 +365,23 @@
             menu.addEventListener('click', (e) => { hideMenu(); });
             menu.querySelector('.inner').addEventListener('click', (e) => { e.stopPropagation(); });
             document.addEventListener('keydown', (e) => { if (e.key === 'Escape') hideMenu(); });
+
+            // --- NEW: Added logic for the close button ---
+            const closeButton = menu.querySelector('.close');
+            if (closeButton) {
+                closeButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    hideMenu();
+                });
+            }
         }
 
         // --- Scroll-to-top Arrow Logic ---
         const scrollToTop = document.querySelector('.scroll-to-top');
-        const firstSection = document.querySelector('#one'); // Get the first section
-        if (scrollToTop && firstSection) { // Check that both elements exist
+        const firstSection = document.querySelector('#one');
+        if (scrollToTop && firstSection) {
             const toggleTopArrowVisibility = () => {
-                // Check if the scroll position is past the top of the first section
                 if (window.scrollY > firstSection.offsetTop) {
                     scrollToTop.classList.add('visible');
                 } else {

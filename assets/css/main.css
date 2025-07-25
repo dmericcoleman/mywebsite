@@ -3074,103 +3074,55 @@ input, select, textarea {
 /* Header */
 
 	#header {
-       -moz-transition: background-color 0.2s ease-in-out;
-       -webkit-transition: background-color 0.2s ease-in-out;
-       -ms-transition: background-color 0.2s ease-in-out;
-       transition: background-color 0.2s ease-in-out;
-       background-color: #000000;
-       height: 3.5em;
-       left: 0;
-       line-height: 3.5em;
-       padding: 0 1.25em;
-       position: fixed;
-       top: 0;
-       width: 100%;
-       z-index: 10000;
-    }
+		/* Flexbox for clean alignment */
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		/* Modern "frosted glass" look for the scrolled state */
+		background-color: rgba(18, 18, 18, 0.75); /* Semi-transparent version of our dark gray theme */
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px); /* For Safari */
+		border-bottom: 1px solid var(--border-color); /* Subtle separator line */
+
+		/* Positioning and Sizing */
+		height: 4em;
+		left: 0;
+		padding: 0 2em;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 10000;
+
+		/* Smooth transition for all properties */
+		transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
+	}
 
 		#header h1 {
-			-moz-transition: opacity 0.2s ease-in-out, visibility 0.2s;
-			-webkit-transition: opacity 0.2s ease-in-out, visibility 0.2s;
-			-ms-transition: opacity 0.2s ease-in-out, visibility 0.2s;
-			transition: opacity 0.2s ease-in-out, visibility 0.2s;
 			border-bottom: 0;
-			font-size: 0.8em;
+			font-size: 0.9em;
 			margin-bottom: 0;
-			opacity: 1;
-			visibility: visible;
 		}
 
 			#header h1 a {
 				border: 0;
 			}
 
+		/* This empty nav rule is from the original template, we leave it for now */
 		#header nav {
-			font-family: Raleway, Helvetica, sans-serif;
-			font-size: 0.8em;
-			font-weight: 700;
-			height: 3em;
-			letter-spacing: 0.1em;
-			line-height: 3em;
-			position: absolute;
-			right: 0.7em;
-			text-transform: uppercase;
-			top: 0.7em;
 		}
 
-			#header nav a {
-				border: 0;
-				display: inline-block;
-				padding: 0 1em;
-			}
-
-				#header nav a:before {
-					float: right;
-					margin-left: 0.75em;
-				}
-
-				#header nav a[href="#menu"] {
-					text-decoration: none;
-					-moz-transition: background-color 0.2s ease-in-out;
-					-webkit-transition: background-color 0.2s ease-in-out;
-					-ms-transition: background-color 0.2s ease-in-out;
-					transition: background-color 0.2s ease-in-out;
-					border-radius: 5px;
-					box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.125);
-					padding: 0 1.35em;
-				}
-
-					#header nav a[href="#menu"]:before {
-						-moz-osx-font-smoothing: grayscale;
-						-webkit-font-smoothing: antialiased;
-						display: inline-block;
-						font-style: normal;
-						font-variant: normal;
-						text-rendering: auto;
-						line-height: 1;
-						text-transform: none !important;
-						font-family: 'Font Awesome 5 Free';
-						font-weight: 900;
-					}
-
-					#header nav a[href="#menu"]:before {
-						content: '\f0c9';
-						line-height: inherit;
-					}
-
-					#header nav a[href="#menu"]:hover {
-						background-color: rgba(255, 255, 255, 0.025);
-					}
-
-					#header nav a[href="#menu"]:active {
-						background-color: rgba(255, 255, 255, 0.075);
-					}
-
+		/* This is the transparent state when at the top of the page */
 		#header.alt {
 			background-color: transparent;
+			border-bottom-color: transparent;
+			backdrop-filter: none;
+			-webkit-backdrop-filter: none;
 		}
 
 			#header.alt h1 {
+				/* We keep the original transition for the title */
+				transition: opacity 0.2s ease-in-out, visibility 0.2s;
 				opacity: 0;
 				visibility: hidden;
 			}
@@ -4309,12 +4261,17 @@ input, select, textarea {
 }
 
 #pricing .features article {
-	flex: 1 1 300px; /* A flexible width with a solid base */
-	background-color: rgba(255, 255, 255, 0.025);
-	border: 1px solid rgba(255, 255, 255, 0.1);
-	padding: 1.5em; /* Reduced from 2em */
-	text-align: center;
-	transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    flex: 1 1 300px; /* A flexible width with a solid base */
+    width: auto; /* NEW: Override generic template width */
+    margin: 0;   /* NEW: Override generic template margin */
+    background-color: rgba(30, 41, 59, 0.5); /* Semi-transparent slate color */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--border-color);
+    border-radius: 5px; /* Add a radius for the card look */
+    padding: 1.5em;
+    text-align: center;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 #pricing .features article:hover {
@@ -4472,3 +4429,100 @@ input, select, textarea {
 	.testimonial-nav .custom-prev { left: 30%; }
 	.testimonial-nav .custom-next { right: 30%; }
 }
+
+/* -- Responsive Header Navigation -- */
+
+/* Style the new desktop navigation container */
+#header .desktop-nav {
+	display: none; /* Hidden by default on mobile */
+	align-items: center;
+	gap: 1.5em; /* Space between links */
+}
+
+/* Style the links in the desktop navigation */
+#header .desktop-nav a {
+	color: var(--text-color-strong);
+	font-family: var(--font-special);
+	font-size: 0.8em;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	text-decoration: none;
+	border-bottom: none;
+}
+
+/* Style for the "Contact Us" button in the nav */
+#header .desktop-nav a.button {
+	background-color: transparent;
+	box-shadow: inset 0 0 0 2px var(--border-color);
+	padding: 0 1.5em;
+	height: 2.75em;
+	line-height: 2.75em;
+}
+
+#header .desktop-nav a.button:hover {
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* This is the breakpoint where the switch happens */
+/* On screens wider than 980px... */
+@media screen and (min-width: 981px) {
+
+	#header .desktop-nav {
+		display: flex; /* Show the desktop navigation */
+	}
+
+	#header .mobile-nav {
+		display: none; /* Hide the mobile "Menu" button */
+	}
+
+}
+
+/* -- Responsive Header Navigation -- */
+
+/* Style the new desktop navigation container */
+#header .desktop-nav {
+	display: none; /* Hidden by default on mobile */
+	align-items: center;
+	gap: 1.5em; /* Space between links */
+}
+
+/* Style the links in the desktop navigation */
+#header .desktop-nav a {
+	color: var(--text-color-strong);
+	font-family: var(--font-special);
+	font-size: 0.8em;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	text-decoration: none;
+	border-bottom: none;
+}
+
+/* Style for the "Contact Us" button in the nav */
+#header .desktop-nav a.button {
+	background-color: transparent;
+	box-shadow: inset 0 0 0 2px var(--border-color);
+	padding: 0 1.5em;
+	height: 2.75em;
+	line-height: 2.75em;
+}
+
+#header .desktop-nav a.button:hover {
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* This is the breakpoint where the switch happens */
+/* On screens wider than 980px... */
+@media screen and (min-width: 981px) {
+
+	#header .desktop-nav {
+		display: flex; /* Show the desktop navigation */
+	}
+
+	#header .mobile-nav {
+		display: none; /* Hide the mobile "Menu" button */
+	}
+
+}
+

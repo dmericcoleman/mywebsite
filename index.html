@@ -397,9 +397,13 @@
         var $testimonialCarousel = $('#testimonials .owl-carousel');
         if ($testimonialCarousel.length > 0) {
             $testimonialCarousel.owlCarousel({
-                items: 1, loop: true, margin: 30, dots: false, autoplay: true,
-                autoplayTimeout: 7000, autoplayHoverPause: true,
-                responsive: { 768: { items: 2 }, 1280: { items: 2 } }
+                items: 1,
+                loop: true,
+                margin: 30,
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 7000,
+                autoplayHoverPause: true
             });
             $('.testimonial-nav .custom-next').click(function() { $testimonialCarousel.trigger('next.owl.carousel'); });
             $('.testimonial-nav .custom-prev').click(function() { $testimonialCarousel.trigger('prev.owl.carousel'); });

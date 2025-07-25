@@ -4395,6 +4395,7 @@ input, select, textarea {
 	display: flex;
 	align-items: center;
 	margin-top: auto;
+	padding-left: 1.5em;
 }
 
 .testimonial-card .author-info .author-avatar {

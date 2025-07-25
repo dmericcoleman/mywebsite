@@ -4393,26 +4393,26 @@ input, select, textarea {
 	width: 50px;
 	height: 50px;
 	border-radius: 50%;
-	margin-right: 15px;
+	margin-right: 1em; /* Increased space next to image */
 	background-size: cover;
 	background-position: center;
-	flex-shrink: 0; /* Prevents the image from squishing */
+	flex-shrink: 0;
 }
 
 .testimonial-card .author-info cite {
 	text-align: left;
 	font-style: normal;
-	line-height: 1.4;
+	line-height: 1.3; /* Reduced line height */
 }
 
 .testimonial-card .author-info cite strong {
 	display: block;
 	color: #ffffff;
-	white-space: nowrap; /* Keeps name on one line */
+	white-space: nowrap;
 }
 
 .testimonial-card .star-rating .icon {
-	color: #fab387; /* Soft Orange */
+	color: #fab387;
 	font-size: 0.9em;
 }
 
@@ -4446,7 +4446,7 @@ input, select, textarea {
 	}
 	.testimonial-nav button {
 		top: auto;
-		bottom: 1em; /* Positioned closer to the slider */
+		bottom: 1em;
 		transform: translateY(100%);
 	}
 	.testimonial-nav .custom-prev { left: 30%; }

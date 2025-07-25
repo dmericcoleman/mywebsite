@@ -354,17 +354,17 @@
 			$testimonialCarousel.owlCarousel({
 				items: 1, // Shows 1 testimonial at a time on small screens
 				loop: true,
-				margin: 20, // Space between testimonials
+				margin: 30, // Increased space between testimonials
 				dots: true,
 				autoplay: true,
-				autoplayTimeout: 7000, // Changes slide every 7 seconds
+				autoplayTimeout: 7000,
 				autoplayHoverPause: true,
 				responsive:{
-					768:{ // On screens wider than 768px...
+					768:{ // On screens wider than 768px (tablets)...
 						items: 2 // ...show 2 testimonials
 					},
-					1280:{ // On screens wider than 1280px...
-						items: 3 // ...show 3 testimonials
+					1280:{ // On screens wider than 1280px (laptops/desktops)...
+						items: 2 // ...show 2 testimonials instead of 3
 					}
 				}
 			});

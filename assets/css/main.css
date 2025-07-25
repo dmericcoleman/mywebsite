@@ -1,3 +1,6 @@
+@import url(fontawesome-all.min.css);
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Montserrat:wght@400;700&display=swap');
+
 :root {
   --bg-color: #111827; /* Dark Navy Blue */
   --text-color: #d1d5db; /* Light Gray for text */
@@ -7,15 +10,6 @@
   --interactive-color: #1e40af; /* A deeper blue for hovers */
   --star-color: #facc15; /* A nice gold for star ratings */
 }
-
-@import url(fontawesome-all.min.css);
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Montserrat:wght@400;700&display=swap');
-
-/*
-	Solid State by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -257,12 +251,17 @@ input, select, textarea {
 	h1, h2, h3, h4, h5, h6 {
            color: var(--text-color-strong); /* Use the new strong text color */
            font-family: 'Montserrat', sans-serif;
+           font-weight: 700;
+           letter-spacing: 0.1em;
+           margin: 0 0 1em 0;
+           text-transform: uppercase;
+        }
 
-		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-			color: inherit;
-			text-decoration: none;
-			border-bottom: 0;
-		}
+           h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+              color: inherit;
+              text-decoration: none;
+              border-bottom: 0;
+           }
 
 		h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
 			font-weight: 200;

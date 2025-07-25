@@ -4363,9 +4363,11 @@ input, select, textarea {
 }
 
 /* -- Testimonials Carousel Styles -- */
+
 .testimonial-carousel-container {
 	position: relative;
 	padding: 0 4em; /* Make space for side arrows */
+	margin-top: 3em;
 }
 
 .testimonial-card {
@@ -4374,7 +4376,7 @@ input, select, textarea {
 	padding: 2em;
 	display: flex;
 	flex-direction: column;
-	height: 100%; /* Important for consistent height */
+	/* The height: 100% rule has been removed from here */
 }
 
 .testimonial-card blockquote {

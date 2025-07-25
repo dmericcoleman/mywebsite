@@ -10,8 +10,8 @@
   --interactive-color: #1e40af; /* A deeper blue for hovers */
   --star-color: #facc15; /* A nice gold for star ratings */
   --font-body: 'Roboto', sans-serif;
-  --font-heading: 'Lora', serif;
-  --font-special: 'Raleway', sans-serif; /* Note: originally it was 'Raleway', Helvetica, sans-serif but Raleway is imported */
+  --font-heading: 'Montserrat', sans-serif;
+  --font-special: 'Montserrat', sans-serif;
 }
 
 html, body, div, span, applet, object,
@@ -249,7 +249,7 @@ input, select, textarea {
         font-weight: 700;
         letter-spacing: 0.1em;
         margin: 0 0 1em 0;
-        text-transform: uppercase;
+        text-transform: ;
      }
 
            h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -3282,13 +3282,16 @@ input, select, textarea {
 
 		#banner .inner {
                    margin: 0 auto;
-                   width: 100%; /* Allow it to take full width up to max-width */
-                   max-width: 80em; /* NEW: Increased max-width for content + image */
-                   display: flex; /* Make it a flex container */
-                   flex-wrap: wrap; /* Allow content and image to wrap on smaller screens */
-                   justify-content: space-between; /* Space out content and image */
-                   align-items: center; /* Vertically align items in the middle */
-                   text-align: left; /* Keep default text alignment for content-left */
+                   width: 100%;
+                   max-width: 80em; /* Overall maximum width for the banner content area */
+                   padding: 0 4em; /* NEW: Added horizontal padding for left/right spacing */
+                   box-sizing: border-box; /* Ensure padding is included in the total width */
+                   display: flex;
+                   flex-wrap: wrap;
+                   justify-content: center; /* Changed to center content, then use gap for spacing */
+                   gap: 0em; /* NEW: Explicit gap between content and image columns */
+                   align-items: center;
+                   text-align: left; /* Default text alignment for left-side content */
                 }
 
 		#banner .logo {
@@ -3335,7 +3338,10 @@ input, select, textarea {
                    line-height: 1.3; /* NEW: Reduces internal font spacing */
                    border-bottom: solid 2px var(--border-color); /* The line is back */
                    padding-bottom: 0.3em; /* Space between text and line */
-                   margin-bottom: 0.3em;  /* Space between line and text below */
+                   margin-bottom: 0.3em; /* Space between line and text below */
+                   white-space: nowrap; /* NEW: Prevents text from wrapping */
+                   overflow: ; /* NEW: Hides any overflowing text */
+                   text-overflow: ellipsis; /* NEW: Adds "..." to truncated text */
                 }
 
                #banner p {
@@ -3357,7 +3363,7 @@ input, select, textarea {
                   font-weight: 400;
                   letter-spacing: 0.1em;
                   line-height: 1.5; /* NEW: Reduces internal font spacing */
-                  text-transform: uppercase;
+                  text-transform: ;
                   color: rgba(255, 255, 255, 0.8);
                   margin-top: 0;
                }
@@ -4455,7 +4461,7 @@ input, select, textarea {
     font-size: 0.8em;
     font-weight: 700;
     letter-spacing: 0.1em;
-    text-transform: uppercase;
+    text-transform: ;
     text-decoration: none;
     border-bottom: none;
 }
@@ -4659,7 +4665,7 @@ input, select, textarea {
     .why-it-matters-header-and-button {
         flex-direction: column; /* Stack vertically on mobile */
         align-items: flex-start; /* Align left when stacked */
-        gap: 1em; /* Space between stacked heading and button */
+        gap: 3em; /* Space between stacked heading and button */
     }
     .why-it-matters-header-and-button h2.major {
         width: 100%; /* Heading takes full width when stacked */
@@ -4680,16 +4686,16 @@ input, select, textarea {
 
 /* --- Banner Content and Image Layout (for Hero Image on Right) --- */
 .banner-content {
-    flex: 1 1 55%; /* Allows content to take ~55% width, can shrink */
-    max-width: 55%; /* Max width for content side */
-    padding-right: 3em; /* Space between text content and image */
-    box-sizing: border-box; /* Include padding in width calculation */
+    flex: 1 1 45%; /* Adjusted flex-basis to allow for the new gap and image */
+    max-width: 50%; /* Adjusted max-width */
+    padding-right: 0; /* Removed this, as 'gap' property will handle spacing */
+    box-sizing: border-box;
 }
 
 .banner-image {
-    flex: 1 1 40%; /* Allows image to take ~40% width, can shrink */
-    max-width: 40%; /* Max width for image side */
-    text-align: center; /* Center the image if it's smaller than its container */
+    flex: 1 1 40%; /* Adjusted flex-basis for image */
+    max-width: 45%; /* Adjusted max-width */
+    text-align: center;
 }
 
 .banner-image img {
@@ -4711,15 +4717,17 @@ input, select, textarea {
         flex-direction: column; /* Stack content and image vertically */
         align-items: center; /* Center items when stacked */
         max-width: 90%; /* Adjust overall width on tablets */
+        padding: 0 3em; /* NEW: Adjusted horizontal padding for tablets */
+        gap: 20em; /* Remove horizontal gap when stacking, use margin-bottom instead */
     }
 
     .banner-content,
     .banner-image {
         flex: 1 1 100%; /* Each takes full width when stacked */
         max-width: 100%; /* Each takes full width when stacked */
-        padding-right: 0; /* Remove right padding for stacking */
-        text-align: center; /* Center content when stacked */
-        margin-bottom: 3em; /* Space between stacked content and image */
+        padding-right: 0;
+        text-align: center;
+        margin-bottom: 3em;
     }
 
     .banner-content .logo,
@@ -4739,6 +4747,55 @@ input, select, textarea {
 
 @media screen and (max-width: 736px) {
     #banner .inner {
-        max-width: 95%; /* Even wider on smaller mobiles */
+        max-width: 95%;
+        padding: 0 2em; /* NEW: Adjusted horizontal padding for small mobiles */
+    }
+}
+
+/* --- Custom Order CTA Section Styles --- */
+.custom-order-cta {
+    background-color: rgba(30, 41, 59, 0.3); /* Slightly lighter background than pricing cards */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.08); /* A subtle border */
+    border-radius: 5px;
+    padding: 3em 2em; /* Good internal padding */
+    margin-top: 5em; /* Space from the pricing table above */
+    text-align: center; /* Center all text and the button within this section */
+    max-width: 40em; /* Keep it from stretching too wide on large screens */
+    margin-left: auto; /* Center the block itself */
+    margin-right: auto; /* Center the block itself */
+}
+
+.custom-order-cta h3 {
+    font-size: 1.5em; /* Make the heading stand out */
+    margin-bottom: 0.8em;
+    border-bottom: none; /* No border under this heading */
+    padding-bottom: 0;
+}
+
+.custom-order-cta p {
+    margin-bottom: 2em; /* Space between paragraph and button */
+    font-size: 1.1em; /* Slightly larger text for readability */
+}
+
+.custom-order-cta .actions.special {
+    margin-left: auto;  /* Ensure the actions list is centered */
+    margin-right: auto;
+    /* The 'justify-content: center;' from the global .actions.special will handle centering the button within the list */
+}
+
+/* Responsive adjustments for custom order CTA */
+@media screen and (max-width: 736px) {
+    .custom-order-cta {
+        padding: 2.5em 1.5em;
+        margin-top: 3em; /* Less margin on smaller screens */
+        max-width: 90%; /* Allow it to be wider on smaller screens */
+    }
+    .custom-order-cta h3 {
+        font-size: 1.2em;
+    }
+    .custom-order-cta p {
+        font-size: 1em;
     }
 }

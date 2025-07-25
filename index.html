@@ -44,12 +44,12 @@
 				<p>The Reviews You Didn't Know You Needed</p>
 
 				<ul class="actions special">
-					<li><a href="#contact" class="button special scrolly">Get Started Now</a></li>
+					<li><a href="#pricing" class="button special scrolly">Get Reviews</a></li>
 				</ul>
 			</div>
 
 			<div class="banner-image">
-				<img src="images/reviews-concept-landing-page.png" alt="Positive Reviews" />
+				<img src="images/Gemini_Generated_Image_rzvlg8rzvlg8rzvl.png" alt="Positive Reviews" />
 			</div>
 
 			<a href="#one" class="scroll-down scrolly"></a>
@@ -65,7 +65,7 @@
 				<div class="content">
 					<h2 class="major">Google Reviews</h2>
 					<p>Customers trust reviews more than ads. If your Google profile isn’t convincing, you’re losing business. Let’s fix that — and turn searchers into paying customers.</p>
-					<a href="#contact" class="button special scrolly">Contact Us</a>
+					<a href="#contact" class="button special scrolly">Get Reviews</a>
 				</div>
 			</div>
 		</section>
@@ -76,7 +76,7 @@
 				<div class="content">
 					<h2 class="major">Amazon Reviews</h2>
 					<p>Your product might be great, but without reviews, it’s invisible. Build trust, boost rankings, and dominate Amazon.</p>
-					<a href="#contact" class="button special scrolly">Contact Us</a>
+					<a href="#contact" class="button special scrolly">Get Reviews</a>
 				</div>
 			</div>
 		</section>
@@ -87,7 +87,7 @@
 				<div class="content">
 					<h2 class="major">Verified Trustpilot Reviews</h2>
 					<p>People buy from businesses they trust — and nothing builds trust like verified Trustpilot reviews. Let’s grow yours today.</p>
-					<a href="#contact" class="button special scrolly">Contact Us</a>
+					<a href="#contact" class="button special scrolly">Get Reviews</a>
 				</div>
 			</div>
 		</section>
@@ -98,7 +98,7 @@
 				<div class="content">
 					<h2 class="major">TripAdvisor Reviews</h2>
 					<p>On TripAdvisor, reviews decide who gets the booking. More stars mean more trust, higher rankings, and more customers choosing you over competitors. Let’s make your profile impossible to ignore.</p>
-					<a href="#contact" class="button special scrolly">Contact Us</a>
+					<a href="#contact" class="button special scrolly">Get Reviews</a>
 				</div>
 			</div>
 		</section>
@@ -109,7 +109,7 @@
 				<div class="content">
 					<h2 class="major">Other Platforms</h2>
 					<p>No matter the platform, reviews drive sales. We’ll help you get them — anywhere your customers are looking.</p>
-					<a href="#contact" class="button special scrolly">Contact Us</a>
+					<a href="#contact" class="button special scrolly">Get Reviews</a>
 				</div>
 			</div>
 		</section>
@@ -153,6 +153,14 @@
 						<a href="#contact" class="button scrolly">Get Started</a>
 					</article>
 				</section>
+
+				<div class="custom-order-cta">
+					<h3>Need a Custom Solution?</h3>
+					<p>If our standard plans don't quite fit your unique requirements, we're happy to create a personalized package tailored just for you.</p>
+					<ul class="actions special">
+						<li><a href="#contact" class="button special scrolly">Request a Custom Quote</a></li>
+					</ul>
+				</div>
 			</div>
 		</section>
 
@@ -348,19 +356,23 @@
             window.addEventListener('scroll', handleScrollDownArrow);
         }
 
-        // --- Header Class Toggle ---
-        if (header && header.classList.contains('alt')) {
-            const banner = document.querySelector('#banner');
-            if (banner) {
-                const headerObserver = new IntersectionObserver(
-                    (entries) => {
-                        entries.forEach(entry => {
-                            header.classList.toggle('alt', entry.isIntersecting);
-                        });
-                    }, { rootMargin: `-${header.offsetHeight}px 0px 0px 0px` }
-                );
-                headerObserver.observe(banner);
-            }
+        // --- Header Class Toggle (Updated for immediate effect on scroll) ---
+        if (header) { // Ensure header element exists
+            const toggleHeaderAlt = () => {
+                // If the user has scrolled down by even 1 pixel
+                if (window.scrollY > 0) {
+                    header.classList.remove('alt'); // Remove the 'alt' class (make it solid/prominent)
+                } else {
+                    // If at the very top of the page (scrollY is 0)
+                    header.classList.add('alt'); // Add the 'alt' class (make it transparent/minimal)
+                }
+            };
+
+            // Call the function once when the page loads to set the initial state
+            toggleHeaderAlt();
+
+            // Attach the function to the window's scroll event
+            window.addEventListener('scroll', toggleHeaderAlt);
         }
 
         // --- Menu Logic ---

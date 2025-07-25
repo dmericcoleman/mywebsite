@@ -2901,26 +2901,27 @@ input, select, textarea {
             transform: translateY(0); /* Pushes button back down on click */
         }
 
-        /* --- NEW: Styles for your most important CTA buttons --- */
-        .button.special {
-            background-color: var(--accent-color);
-            color: var(--text-color-strong) !important; /* Changed to white */
-            box-shadow: none; /* No border needed for solid button */
-            font-weight: 700;
-        }
+        /* --- NEW: Styles for your most important CTA buttons (NOW WHITE) --- */
+                .button.special {
+                    background-color: var(--text-color-strong); /* Change to white */
+                    color: #111827 !important; /* Change text to a dark color for readability on white */
+                    box-shadow: none; /* No border needed for solid button */
+                    font-weight: 700;
+                }
 
-        /* Special Button Hover: Fills, lifts, grows, and glows */
-        .button.special:hover {
-            background-color: var(--text-color-strong); /* Changes to bright white */
-            color: #111827 !important;
-            box-shadow: 0 5px 25px -5px var(--accent-color); /* Adds a colored glow */
-            transform: translateY(-4px) scale(1.03); /* Lifts higher and grows slightly */
-        }
+                /* Special Button Hover: Now fills with accent color */
+                .button.special:hover {
+                    background-color: var(--accent-color); /* Fills with your accent blue on hover */
+                    color: var(--text-color-strong) !important; /* Text becomes white on hover */
+                    box-shadow: 0 5px 25px -5px var(--accent-color); /* Still has a colored glow */
+                    transform: translateY(-4px) scale(1.03); /* Lifts higher and grows slightly */
+                }
 
-        .button.special:active {
-            transform: translateY(0) scale(1); /* Pushes button down on click */
-            background-color: var(--interactive-color);
-        }
+                .button.special:active {
+                    transform: translateY(0) scale(1); /* Pushes button back down on click */
+                    background-color: var(--interactive-color); /* Deeper blue on active */
+                    color: var(--text-color-strong) !important; /* Text remains white on active */
+                }
 
 /* Features */
 
@@ -3280,10 +3281,15 @@ input, select, textarea {
     }
 
 		#banner .inner {
-           margin: 0 auto;
-           width: 55em;
-           text-align: left;
-        }
+                   margin: 0 auto;
+                   width: 100%; /* Allow it to take full width up to max-width */
+                   max-width: 80em; /* NEW: Increased max-width for content + image */
+                   display: flex; /* Make it a flex container */
+                   flex-wrap: wrap; /* Allow content and image to wrap on smaller screens */
+                   justify-content: space-between; /* Space out content and image */
+                   align-items: center; /* Vertically align items in the middle */
+                   text-align: left; /* Keep default text alignment for content-left */
+                }
 
 		#banner .logo {
            -moz-transition: opacity 2s ease, -moz-transform 1s ease;
@@ -3355,6 +3361,24 @@ input, select, textarea {
                   color: rgba(255, 255, 255, 0.8);
                   margin-top: 0;
                }
+
+               #banner p {
+                                 /* ... existing p styles ... */
+                                 margin-top: 0;
+                              }
+
+                              #banner .actions.special {
+                                                 margin-top: 2em; /* Space between tagline and button */
+                                                 margin-bottom: 2em; /* Space between button and scroll-down arrow */
+                                                 justify-content: flex-start; /* NEW: Left-align the button */
+                                                 /* You may also want to remove `width: 100%;` or set it to `auto` if it's explicitly set globally
+                                                    and you want the actions list to only take up the width of its content.
+                                                    However, typically 'ul.actions' is already 100% width. */
+                                             }
+
+                              #banner .actions.special li {
+                                  padding: 0; /* Remove default padding for single button in actions list */
+                              }
 
 		@media screen and (max-width: 1280px) {
 
@@ -4001,9 +4025,9 @@ input, select, textarea {
             width: 100%;
             left: 0;
             /* The stroke color in the SVG is now a transparent version of your blue accent color */
-            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolyline points='0,75 100,25' style='fill:none; stroke:rgba(59, 130, 246, 0.25); stroke-width:2px;' /%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolyline points='0,75 100,25' style='fill:none; stroke:rgba(59, 130, 246, 0.5); stroke-width:1.5px;' /%3E%3C/svg%3E");
             /* The glow effect is now a more subtle, single glow using the same blue accent color */
-            filter: drop-shadow(0 0 6px rgba(59, 130, 246, 0.5));
+            filter: drop-shadow(0 0 12px rgba(59, 130, 246, 0.8)); /* Stronger blue glow */
         }
 
     #one::before {
@@ -4449,15 +4473,23 @@ input, select, textarea {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* High-specificity rule to override the outline style */
+/* High-specificity rule for header's special button (NOW WHITE) */
 #header .desktop-nav a.button.special {
-    background-color: var(--accent-color);
-    box-shadow: none; /* Remove the outline */
+    background-color: var(--text-color-strong); /* Change to white */
+    color: #111827 !important; /* Change text to a dark color for readability on white */
+    box-shadow: none; /* No border needed for solid button */
 }
 
-/* High-specificity rule for the hover state */
+/* High-specificity rule for header's special button hover state (NOW FILLS WITH ACCENT) */
 #header .desktop-nav a.button.special:hover {
-    background-color: var(--text-color-strong); /* Changes to bright white */
+    background-color: var(--accent-color); /* Fills with your accent blue on hover */
+    color: var(--text-color-strong) !important; /* Text becomes white on hover */
+}
+
+/* High-specificity rule for header's special button active state */
+#header .desktop-nav a.button.special:active {
+    background-color: var(--interactive-color); /* Deeper blue on active */
+    color: var(--text-color-strong) !important; /* Text remains white on active */
 }
 
 /* This is the breakpoint where the switch happens */
@@ -4646,3 +4678,67 @@ input, select, textarea {
     }
 }
 
+/* --- Banner Content and Image Layout (for Hero Image on Right) --- */
+.banner-content {
+    flex: 1 1 55%; /* Allows content to take ~55% width, can shrink */
+    max-width: 55%; /* Max width for content side */
+    padding-right: 3em; /* Space between text content and image */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.banner-image {
+    flex: 1 1 40%; /* Allows image to take ~40% width, can shrink */
+    max-width: 40%; /* Max width for image side */
+    text-align: center; /* Center the image if it's smaller than its container */
+}
+
+.banner-image img {
+    display: block; /* Remove extra space below image */
+    max-width: 100%; /* Ensure image is responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Adjust banner spacing/alignment for the new layout */
+#banner .actions.special {
+    margin-top: 2em; /* Space between tagline and button */
+    margin-bottom: 2em; /* Space between button and scroll-down arrow */
+    justify-content: flex-start; /* Ensure button remains left-aligned */
+}
+
+/* Responsive adjustments for the new banner layout */
+@media screen and (max-width: 980px) {
+    #banner .inner {
+        flex-direction: column; /* Stack content and image vertically */
+        align-items: center; /* Center items when stacked */
+        max-width: 90%; /* Adjust overall width on tablets */
+    }
+
+    .banner-content,
+    .banner-image {
+        flex: 1 1 100%; /* Each takes full width when stacked */
+        max-width: 100%; /* Each takes full width when stacked */
+        padding-right: 0; /* Remove right padding for stacking */
+        text-align: center; /* Center content when stacked */
+        margin-bottom: 3em; /* Space between stacked content and image */
+    }
+
+    .banner-content .logo,
+    .banner-content h2,
+    .banner-content p {
+        text-align: center; /* Center all banner text when stacked */
+    }
+
+    #banner .actions.special {
+        justify-content: center; /* Center the button when stacked */
+    }
+
+    .banner-image {
+        margin-bottom: 0; /* Remove margin for the last item when stacked */
+    }
+}
+
+@media screen and (max-width: 736px) {
+    #banner .inner {
+        max-width: 95%; /* Even wider on smaller mobiles */
+    }
+}

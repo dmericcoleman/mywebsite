@@ -2937,12 +2937,12 @@ input, select, textarea {
 	}
 
 		.features article {
-              padding: 1.75em 1.75em 0.1em 1.75em ;
-              background-color: transparent;
-              border-radius: 5px;
-              margin: 1.5em 3em 1.5em 0;
-              width: calc(50% - 1.5em);
-           }
+                   padding: 1.75em 1.75em 0.1em 1.75em;
+                   background-color: transparent;
+                   border-radius: 5px;
+                   margin: 0; /* Important: Remove fixed margins for carousel items */
+                   width: 100%; /* Carousel handles width, so set to 100% for individual slides */
+               }
 
 			.features article:nth-child(2n) {
 				margin-right: 0;
@@ -4477,3 +4477,172 @@ input, select, textarea {
         display: block; /* Show the mobile "Menu" button */
     }
 }
+
+/* --- Why It Matters Carousel Container & Navigation --- */
+.why-it-matters-carousel-container {
+    position: relative;
+    padding: 0 4em; /* Match testimonial padding for consistency */
+    margin-top: 3em;
+}
+
+/* Ensure articles within the carousel have a background */
+.why-it-matters-carousel .item article {
+    background-color: rgba(30, 41, 59, 0.5); /* Semi-transparent slate color, similar to pricing */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    height: 100%; /* Ensure all carousel items have same height */
+    display: flex; /* Make content flexible inside article */
+    flex-direction: column; /* Stack image and text */
+}
+
+/* Adjust image within carousel article */
+.why-it-matters-carousel .item article .image {
+    margin-bottom: 1em; /* Reduce space below image */
+    margin-left: -1.75em; /* Keep original negative margin for full-width image */
+    margin-top: -1.75em; /* Keep original negative margin for full-width image */
+    width: calc(100% + 3.5em); /* Keep original width adjustment */
+}
+
+/* Adjust content padding within carousel article */
+.why-it-matters-carousel .item article .content {
+    padding: 0 1.75em 1.75em; /* Add bottom padding */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allow content to grow to fill space */
+}
+
+.why-it-matters-carousel .item article h3.major {
+    margin-bottom: 0.5em; /* Reduce margin below title */
+    border-bottom: none; /* Remove line under title */
+    padding-bottom: 0;
+}
+
+.why-it-matters-carousel .item article p {
+    flex-grow: 1; /* Allow paragraph to take up available space */
+    margin-bottom: 1em; /* Reduce margin below paragraph */
+}
+
+/* Custom Navigation Buttons for Why It Matters */
+.why-it-matters-nav button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: none;
+    border-radius: 50%;
+    width: 3em;
+    height: 3em;
+    line-height: 3em;
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    z-index: 10; /* Ensure buttons are above carousel items */
+}
+.why-it-matters-nav button:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+}
+.why-it-matters-nav .custom-prev { left: 0; }
+.why-it-matters-nav .custom-next { right: 0; }
+.why-it-matters-nav button .icon { color: rgba(255, 255, 255, 0.5); }
+
+
+/* Responsive adjustments for Why It Matters carousel */
+@media screen and (max-width: 980px) {
+    .why-it-matters-carousel-container {
+        padding: 0 3em; /* Adjust padding for tablets */
+    }
+}
+
+@media screen and (max-width: 736px) {
+    .why-it-matters-carousel-container {
+       padding: 0; /* Remove side padding on mobile */
+    }
+    .why-it-matters-nav { /* Make navigation a flex container to center buttons */
+        display: flex;
+        justify-content: center;
+        gap: 2em;
+        margin-top: 1.5em;
+    }
+    .why-it-matters-nav button {
+       position: static;
+       transform: none;
+    }
+    /* Hide Owl dots if they are enabled and you prefer custom nav */
+    .why-it-matters-carousel .owl-dots {
+        display: none !important;
+    }
+}
+@media screen and (max-width: 480px) {
+    .why-it-matters-nav {
+        gap: 1em;
+    }
+    .why-it-matters-nav button {
+        width: 2.5em;
+        height: 2.5em;
+        line-height: 2.5em;
+    }
+}
+
+/* --- Styles for Why It Matters Header and Button --- */
+.why-it-matters-header-and-button {
+    display: flex;
+    justify-content: space-between; /* Pushes heading to left, button to right */
+    align-items: center; /* Vertically aligns items in the middle */
+    margin-bottom: 1em; /* Space below the header line */
+}
+
+.why-it-matters-header-and-button h2.major {
+    margin-bottom: 0; /* Remove default margin from h2 */
+    padding-bottom: 0.4em; /* Keep padding from original h2.major */
+    border-bottom: solid 2px rgba(255, 255, 255, 0.125); /* Keep the border line */
+    flex-grow: 1; /* Allow heading to take available space */
+}
+
+.why-it-matters-header-and-button .actions.compact.header-button {
+    margin-left: 2em; /* Space between heading and button */
+    padding: 0; /* Remove default ul.actions padding */
+    flex-shrink: 0; /* Prevent button from shrinking */
+    white-space: nowrap; /* Keep button on one line */
+}
+
+.why-it-matters-header-and-button .actions.compact.header-button li {
+    padding: 0; /* Remove padding between list items */
+}
+
+/* Specific sizing and alignment for the "Browse All" button,
+   allowing general .button styles to control its appearance */
+.why-it-matters-header-and-button .actions .button {
+    height: 3.25em; /* Slightly adjusted height for header button */
+    line-height: 3.25em;
+    padding: 0 1.8em; /* Adjusted padding */
+    font-size: 0.75em; /* Match carousel nav button font size */
+    /* DO NOT add background-color or box-shadow here.
+       Let the general '.button' rules handle it for the outlined style. */
+}
+
+/* Responsive adjustments for header and button */
+@media screen and (max-width: 736px) {
+    .why-it-matters-header-and-button {
+        flex-direction: column; /* Stack vertically on mobile */
+        align-items: flex-start; /* Align left when stacked */
+        gap: 1em; /* Space between stacked heading and button */
+    }
+    .why-it-matters-header-and-button h2.major {
+        width: 100%; /* Heading takes full width when stacked */
+        border-bottom: none; /* Remove border when stacked (optional, but cleaner) */
+        padding-bottom: 0; /* Remove padding if border is gone */
+    }
+    .why-it-matters-header-and-button .actions.compact.header-button {
+        margin-left: 0; /* Remove left margin when stacked */
+        width: 100%; /* Button takes full width when stacked */
+        text-align: left; /* Align button text to the left */
+    }
+    .why-it-matters-header-and-button .actions .button {
+        width: 100%; /* Force button to full width */
+        min-width: unset; /* Remove min-width constraint */
+        text-align: center; /* Center button text if it takes full width */
+    }
+}
+

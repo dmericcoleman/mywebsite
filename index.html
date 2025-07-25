@@ -196,9 +196,15 @@
 
 		<section id="six" class="wrapper alt style6">
 			<div class="inner">
-				<h2 class="major">Why It Matters</h2>
+				<div class="why-it-matters-header-and-button">
+					<h2 class="major">Why It Matters</h2>
+					<ul class="actions compact header-button">
+						<li><a href="#" class="button">Browse All</a></li>
+					</ul>
+				</div>
 				<p>Discover why reviews aren’t just feedback — they’re powerful tools that build trust, attract customers, and drive business growth. Here’s why investing in your online reputation changes everything.</p>
-				<section class="features">
+				<div class="why-it-matters-carousel-container">
+					<div class="owl-carousel owl-theme why-it-matters-carousel">
 					<article>
 						<a href="javascript:void(0);" data-href="https://premiumreviews.store/why-reviews-are-important.html" class="image"><img src="images/importance-of-customer-reviews.jpg" alt="7 Reasons Online Reviews are Essential for Your Brand" /></a>
 						<h3 class="major">7 Reasons Online Reviews are Essential for Your Brand</h3>
@@ -223,10 +229,11 @@
 						<p>It clearly emphasizes the importance of earning customer trust through real, honest feedback and excellent service. Buying reviews may seem like ...</p>
 						<a href="javascript:void(0);" data-href="https://premiumreviews.store/why-buy-trustpilot-reviews.html" class="special">Learn more</a>
 					</article>
-				</section>
-				<ul class="actions">
-					<li><a href="#" class="button">Browse All</a></li>
-				</ul>
+					</div>
+					<div class="why-it-matters-nav"> <button class="custom-prev"><span class="icon solid fa-chevron-left"></span></button>
+						<button class="custom-next"><span class="icon solid fa-chevron-right"></span></button>
+					</div>
+				</div>
 			</div>
 		</section>
 
@@ -444,6 +451,38 @@
             });
             $('.testimonial-nav .custom-next').click(function() { $testimonialCarousel.trigger('next.owl.carousel'); });
             $('.testimonial-nav .custom-prev').click(function() { $testimonialCarousel.trigger('prev.owl.carousel'); });
+        }
+        // --- Owl Carousel for Why It Matters ---
+        var $whyItMattersCarousel = $('.why-it-matters-carousel');
+        if ($whyItMattersCarousel.length > 0) {
+            $whyItMattersCarousel.owlCarousel({
+                loop: true,
+                margin: 30,
+                nav: false, // Use custom navigation or remove if you prefer Owl's default
+                dots: false, // You can enable dots for navigation if you like
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                responsive: {
+                    0: {
+                        items: 1 // 1 item on very small screens
+                    },
+                    736: {
+                        items: 2 // 2 items on small screens (tablet portrait)
+                    },
+                    980: {
+                        items: 2 // 2 items on larger screens (tablet landscape and up)
+                    }
+                }
+            });
+
+            // If you added custom navigation for "Why It Matters" in HTML, enable it here
+            $('.why-it-matters-nav .custom-next').click(function() {
+                $whyItMattersCarousel.trigger('next.owl.carousel');
+            });
+            $('.why-it-matters-nav .custom-prev').click(function() {
+                $whyItMattersCarousel.trigger('prev.owl.carousel');
+            });
         }
     });
 </script>

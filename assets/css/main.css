@@ -3608,21 +3608,28 @@ input, select, textarea {
 	}
 
 	@media screen and (max-width: 736px) {
-    	.button.special {
-    		display: inline-block;
-    		width: auto;
-    		margin-top: 1em;
-    		padding: 0 1.5em;
-    	}
-			#wrapper > header h2 {
-				font-size: 1.25em;
-			}
+        #wrapper > header {
+            padding: 6.5em 2em 3em 2em ;
+            background-size: auto, 125%;
+            margin-bottom: -2.5em;
+        }
+    }
 
-			#wrapper > header p {
-				font-size: 0.8em;
-			}
+    @media screen and (max-width: 736px) {
+        #wrapper > header {
+            padding: 6.5em 2em 3em 2em ;
+            background-size: auto, 125%;
+            margin-bottom: -2.5em;
+        }
 
-	}
+        #wrapper > header h2 {
+           font-size: 1.25em;
+        }
+
+        #wrapper > header p {
+           font-size: 0.8em;
+        }
+    }
 
 	.wrapper {
 		background-color: transparent;
@@ -4096,8 +4103,6 @@ input, select, textarea {
         filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.5));
     }
 
-    /* ... (The rest of your divider code remains the same) ... */
-
     #one::before {
         top: -12em;
     }
@@ -4255,14 +4260,6 @@ input, select, textarea {
 	.button {
 		height: 4em;
 		line-height: 4em;
-	}
-
-	/* Adjusts the "Contact Us" button layout */
-	.button.special {
-		display: inline-block;
-		width: auto;
-		margin-top: 1em;
-		padding: 0 1.5em;
 	}
 
 	/* Adds more space between social media icons */

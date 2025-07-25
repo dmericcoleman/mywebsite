@@ -4402,7 +4402,7 @@ input, select, textarea {
 .testimonial-card .author-info cite {
 	text-align: left;
 	font-style: normal;
-	line-height: 0.5; /* Reduced line height */
+	line-height: 0.9; /* Reduced line height */
 }
 
 .testimonial-card .author-info cite strong {

@@ -4193,94 +4193,94 @@ input, select, textarea {
 /* -- Pricing Section Styles -- */
 
 #pricing .features {
-	display: flex;
-	flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
-	justify-content: center;
-	gap: 1.5em; /* Reduced from 2em */
-	margin-top: 3em;
+    display: flex;
+    flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
+    justify-content: center; /* ALIGNMENT: Centers the pricing cards when they wrap on the line */
+    gap: 1.5em; /* Reduced from 2em for better density */
+    margin-top: 3em;
 }
 
 #pricing .features article {
-    flex: 1 1 300px; /* A flexible width with a solid base */
-    width: auto; /* NEW: Override generic template width */
-    margin: 0;   /* NEW: Override generic template margin */
+    flex: 1 1 300px; /* A flexible width with a solid base (min-width of 300px) */
+    width: auto; /* Override generic template width if any */
+    margin: 0;   /* Override generic template margin */
     background-color: rgba(30, 41, 59, 0.5); /* Semi-transparent slate color */
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border: 1px solid var(--border-color);
     border-radius: 5px; /* Add a radius for the card look */
     padding: 1.5em;
-    text-align: center;
+    text-align: center; /* ALIGNMENT: Centers content within each pricing card (headings, prices, list) */
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 #pricing .features article:hover {
-	transform: translateY(-5px);
-	box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 #pricing .price {
-	font-size: 3em;
-	font-weight: 700;
-	margin: 0.5em 0;
-	color: #ffffff;
+    font-size: 3em;
+    font-weight: 700;
+    margin: 0.5em 0;
+    color: #ffffff;
 }
 
 #pricing .price sup {
-	font-size: 0.5em;
-	top: -0.75em;
-	font-weight: 400;
+    font-size: 0.5em;
+    top: -0.75em;
+    font-weight: 400;
 }
 
 #pricing .price sub {
-	font-size: 0.3em;
-	bottom: -0.5em;
-	font-weight: 400;
-	color: rgba(255, 255, 255, 0.5);
+    font-size: 0.3em;
+    bottom: -0.5em;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.5);
 }
 
 #pricing .plan-features {
-	list-style: none;
-	padding: 0;
-	margin: 1.5em 0;
+    list-style: none;
+    padding: 0;
+    margin: 1.5em 0;
 }
 
 #pricing .plan-features li {
-	padding: 0.5em 0;
-	border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.5em 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 #pricing .plan-features li:first-child {
-	border-top: none;
+    border-top: none;
 }
 
 /* Featured Plan Highlight */
 #pricing .features article.featured {
-	border-color: #a6e3a1; /* Soft Green Accent */
-	position: relative;
+    border-color: #a6e3a1; /* Soft Green Accent */
+    position: relative;
 }
 
 #pricing .features article.featured::before {
-	content: 'Most Popular';
-	position: absolute;
-	top: -1px;
-	left: 50%;
-	transform: translateX(-50%) translateY(-50%);
-	background: #a6e3a1;
-	color: #111111;
-	padding: 0.3em 1em;
-	border-radius: 5px;
-	font-size: 0.8em;
-	font-weight: 700;
-	text-transform: uppercase;
+    content: 'Most Popular';
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background: #a6e3a1;
+    color: #111111;
+    padding: 0.3em 1em;
+    border-radius: 5px;
+    font-size: 0.8em;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 /* -- Testimonials Carousel Styles -- */
 
 .testimonial-carousel-container {
-	position: relative;
-	padding: 0 4em;
-	margin-top: 3em;
+    position: relative;
+    padding: 0 4em; /* Default large screen padding */
+    margin-top: 3em;
 }
 
 .testimonial-card {
@@ -4358,16 +4358,52 @@ input, select, textarea {
 
 /* On smaller screens, move arrows below */
 @media screen and (max-width: 736px) {
-	.testimonial-carousel-container {
-		padding: 0;
-	}
-	.testimonial-nav button {
-		top: auto;
-		bottom: 1em;
-		transform: translateY(100%);
-	}
-	.testimonial-nav .custom-prev { left: 30%; }
-	.testimonial-nav .custom-next { right: 30%; }
+    .testimonial-carousel-container {
+       padding: 0; /* Remove side padding for full width on small screens */
+    }
+    .testimonial-nav { /* Make navigation a flex container to center buttons */
+        display: flex;
+        justify-content: center; /* ALIGNMENT: Centers the previous/next buttons below the carousel */
+        gap: 2em; /* Space between prev/next buttons */
+        margin-top: 1.5em; /* Space from carousel */
+    }
+    .testimonial-nav button {
+       position: static; /* Remove absolute positioning */
+       transform: none; /* Remove transform */
+    }
+    /* Hide Owl dots if they are enabled and you prefer custom nav */
+    .owl-carousel .owl-dots {
+        display: none !important;
+    }
+}
+@media screen and (max-width: 480px) {
+    .testimonial-card {
+        padding: 1.5em; /* Slightly less padding on very small screens */
+    }
+    .testimonial-card blockquote {
+        font-size: 0.9em; /* Smaller quote font size for very small screens */
+        padding-left: 1em; /* Reduced padding for smaller screens */
+        text-align: left;
+    }
+    .testimonial-card .author-info {
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+        padding-left: 1em;
+        margin-top: 0em;
+    }
+    .testimonial-card .author-info .author-avatar {
+        margin-right: 1em;
+        margin-bottom: 0em;
+    }
+    .testimonial-nav {
+        gap: 1em; /* Reduce gap between buttons on very small screens */
+    }
+    .testimonial-nav button {
+        width: 2.5em; /* Smaller buttons */
+        height: 2.5em;
+        line-height: 2.5em;
+    }
 }
 
 /* Style the new desktop navigation container */

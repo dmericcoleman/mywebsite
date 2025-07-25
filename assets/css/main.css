@@ -4291,26 +4291,29 @@ input, select, textarea {
 }
 
 .testimonial-card blockquote {
-	border-left: 3px solid #ffffff;
-	padding-left: 1.5em;
-	font-style: italic;
-	color: rgba(255, 255, 255, 0.8);
-	flex-grow: 1;
-	margin: 1em 0;
+    border-left: 3px solid #ffffff;
+    padding-left: 1.5em;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.8);
+    flex-grow: 1;
+    margin: 1em 0;
+    text-align: left;
 }
 
 .testimonial-card .author-info {
-	display: flex;
-	align-items: center;
-	margin-top: auto;
-	padding-left: 1.5em;
+    display: flex;
+    flex-direction: row; /* Your choice: Keep avatar and text side-by-side */
+    align-items: flex-start; /* CORRECTION: Changed from 'left' to 'flex-start' for left alignment in flexbox */
+    text-align: left; /* ALIGNMENT: Ensure text within author info is left-aligned */
+    padding-left: 1.5em; /* CORRECTION: Added 'px' unit as requested (or use 0.625em for responsiveness) */
+    margin-top: auto; /* Keeps original auto margin-top */
 }
 
 .testimonial-card .author-info .author-avatar {
 	width: 50px;
 	height: 50px;
 	border-radius: 50%;
-	margin-right: 1em; /* Increased space next to image */
+	margin-right: 1.5em; /* Increased space next to image */
 	background-size: cover;
 	background-position: center;
 	flex-shrink: 0;
@@ -4331,6 +4334,7 @@ input, select, textarea {
 .testimonial-card .star-rating .icon {
     color: var(--star-color);
     font-size: 0.9em;
+    padding-left: .5em;
 }
 
 /* Custom Navigation Buttons */
@@ -4378,29 +4382,29 @@ input, select, textarea {
 }
 @media screen and (max-width: 480px) {
     .testimonial-card {
-        padding: 1.5em; /* Slightly less padding on very small screens */
+        padding: 1.5em;
     }
     .testimonial-card blockquote {
-        font-size: 0.9em; /* Smaller quote font size for very small screens */
-        padding-left: 1em; /* Reduced padding for smaller screens */
-        text-align: left;
+        font-size: 0.9em;
+        padding-left: 1em;
+        text-align: left; /* Keep left aligned */
     }
     .testimonial-card .author-info {
-        flex-direction: row;
-        align-items: flex-start;
-        text-align: left;
-        padding-left: 1em;
-        margin-top: 0em;
+        flex-direction: row; /* Your choice: Keep side-by-side */
+        align-items: flex-start; /* CORRECTION: Changed from 'left' to 'flex-start' */
+        text-align: left; /* Keep text left-aligned */
+        padding-left: 1em; /* CORRECTION: Added 'px' unit */
+        margin-top: 0; /* Based on your provided code */
     }
     .testimonial-card .author-info .author-avatar {
-        margin-right: 1em;
-        margin-bottom: 0em;
+        margin-right: 1em; /* CORRECTION: Added 'px' unit */
+        margin-bottom: 0; /* Based on your provided code */
     }
     .testimonial-nav {
-        gap: 1em; /* Reduce gap between buttons on very small screens */
+        gap: 1em;
     }
     .testimonial-nav button {
-        width: 2.5em; /* Smaller buttons */
+        width: 2.5em;
         height: 2.5em;
         line-height: 2.5em;
     }

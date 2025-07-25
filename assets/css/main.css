@@ -4700,8 +4700,9 @@ input, select, textarea {
 
 .banner-image img {
     display: block; /* Remove extra space below image */
-    max-width: 100%; /* Ensure image is responsive */
+    max-width: 75%; /* Ensure image is responsive */
     height: auto; /* Maintain aspect ratio */
+    margin-left: 7em;
 }
 
 /* Adjust banner spacing/alignment for the new layout */

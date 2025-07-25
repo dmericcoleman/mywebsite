@@ -4290,12 +4290,12 @@ input, select, textarea {
 }
 
 #pricing .features article {
-	flex: 1 1 300px;
-	background-color: rgba(255, 255, 255, 0.025);
-	border: 1px solid rgba(255, 255, 255, 0.1);
-	padding: 2em;
-	text-align: center;
-	transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    flex: 1 1 30%;
+    background-color: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2em;
+    text-align: center;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 #pricing .features article:hover {

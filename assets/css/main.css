@@ -4362,23 +4362,19 @@ input, select, textarea {
 	text-transform: uppercase;
 }
 
-/* -- Testimonials Section Styles -- */
-
-#testimonials .features {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 2em;
-	margin-top: 3em;
+/* -- Testimonials Carousel Styles -- */
+.testimonial-carousel-container {
+	position: relative;
+	padding: 0 4em; /* Make space for side arrows */
 }
 
 .testimonial-card {
-	flex: 1 1 300px;
 	background: rgba(0, 0, 0, 0.1);
 	border-radius: 5px;
 	padding: 2em;
 	display: flex;
 	flex-direction: column;
+	height: 100%; /* Important for consistent height */
 }
 
 .testimonial-card blockquote {
@@ -4386,14 +4382,14 @@ input, select, textarea {
 	padding-left: 1.5em;
 	font-style: italic;
 	color: rgba(255, 255, 255, 0.8);
-	flex-grow: 1; /* Makes all cards the same height */
+	flex-grow: 1;
 	margin: 1em 0;
 }
 
 .testimonial-card .author-info {
 	display: flex;
 	align-items: center;
-	margin-top: auto; /* Pushes author to the bottom */
+	margin-top: auto;
 }
 
 .testimonial-card .author-info img {
@@ -4418,4 +4414,58 @@ input, select, textarea {
 .testimonial-card .star-rating .icon {
 	color: #fab387; /* Soft Orange */
 	font-size: 0.9em;
+}
+
+/* Custom Navigation Buttons */
+.testimonial-nav button {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background: rgba(255, 255, 255, 0.1) !important;
+	border: none;
+	border-radius: 50%;
+	width: 3em;
+	height: 3em;
+	line-height: 3em;
+	padding: 0;
+	cursor: pointer;
+	transition: background-color 0.2s ease-in-out;
+}
+.testimonial-nav button:hover {
+	background: rgba(255, 255, 255, 0.2) !important;
+}
+.testimonial-nav .custom-prev { left: 0; }
+.testimonial-nav .custom-next { right: 0; }
+.testimonial-nav button .icon { color: rgba(255, 255, 255, 0.5); }
+
+/* Owl Carousel Dots Styling */
+.owl-dots {
+	text-align: center;
+	margin-top: 2em;
+}
+.owl-dot {
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	background: rgba(255, 255, 255, 0.2) !important;
+	border-radius: 50%;
+	margin: 0 5px;
+	transition: background-color 0.2s ease-in-out;
+}
+.owl-dot.active {
+	background: #ffffff !important;
+}
+
+/* On smaller screens, move arrows below */
+@media screen and (max-width: 736px) {
+	.testimonial-carousel-container {
+		padding: 0;
+	}
+	.testimonial-nav button {
+		top: auto;
+		bottom: -4em;
+		transform: none;
+	}
+	.testimonial-nav .custom-prev { left: 35%; }
+	.testimonial-nav .custom-next { right: 35%; }
 }

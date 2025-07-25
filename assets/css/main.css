@@ -4282,20 +4282,20 @@ input, select, textarea {
 /* -- Pricing Section Styles -- */
 
 #pricing .features {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    gap: 2em;
-    margin-top: 3em;
+	display: flex;
+	flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
+	justify-content: center;
+	gap: 1.5em; /* Reduced from 2em */
+	margin-top: 3em;
 }
 
 #pricing .features article {
-    flex: 1 1 30%;
-    background-color: rgba(255, 255, 255, 0.025);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 2em;
-    text-align: center;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+	flex: 1 1 300px; /* A flexible width with a solid base */
+	background-color: rgba(255, 255, 255, 0.025);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	padding: 1.5em; /* Reduced from 2em */
+	text-align: center;
+	transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 #pricing .features article:hover {

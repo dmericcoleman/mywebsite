@@ -340,13 +340,43 @@
 			});
 		}
 
-		// --- NEW: Logic to handle links without previews ---
+		// --- Logic to handle links without previews ---
 		$('a[data-href]').on('click', function(e) {
 			var url = $(this).data('href');
 			if (url && url !== '#') {
 				window.location.href = url;
 			}
 		});
+
+		// --- Logic for Testimonials Carousel ---
+		var $testimonialCarousel = $('#testimonials .owl-carousel');
+		if ($testimonialCarousel.length) {
+			$testimonialCarousel.owlCarousel({
+				items: 1, // Shows 1 testimonial at a time on small screens
+				loop: true,
+				margin: 20, // Space between testimonials
+				dots: true,
+				autoplay: true,
+				autoplayTimeout: 7000, // Changes slide every 7 seconds
+				autoplayHoverPause: true,
+				responsive:{
+					768:{ // On screens wider than 768px...
+						items: 2 // ...show 2 testimonials
+					},
+					1280:{ // On screens wider than 1280px...
+						items: 3 // ...show 3 testimonials
+					}
+				}
+			});
+
+			// Custom Navigation Button Events
+			$('.testimonial-nav .custom-next').click(function() {
+				$testimonialCarousel.trigger('next.owl.carousel');
+			});
+			$('.testimonial-nav .custom-prev').click(function() {
+				$testimonialCarousel.trigger('prev.owl.carousel');
+			});
+		}
 
 	})(jQuery);
 </script>

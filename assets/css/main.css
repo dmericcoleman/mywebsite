@@ -4445,7 +4445,7 @@ input, select, textarea {
         display: flex;
         justify-content: center; /* ALIGNMENT: Centers the previous/next buttons below the carousel */
         gap: 2em; /* Space between prev/next buttons */
-        margin-top: .5em; /* Space from carousel */
+        margin-top: 1.5em; /* Space from carousel */
     }
     .testimonial-nav button {
        position: static; /* Remove absolute positioning */
@@ -4563,7 +4563,7 @@ input, select, textarea {
 .why-it-matters-carousel-container {
 	position: relative;
 	padding: 0 4em;
-	margin-top: 3em;
+	margin-top: 1.5em;
 }
 
 /* Custom Navigation Buttons for Why It Matters */
@@ -5089,3 +5089,13 @@ a.mobile-menu-button {
 	}
 }
 
+/* --- Truncates Article Text to 3 Lines on Mobile --- */
+@media screen and (max-width: 736px) {
+	.why-it-matters-carousel article p {
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 3;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}

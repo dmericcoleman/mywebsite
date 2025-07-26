@@ -4868,3 +4868,15 @@ input, select, textarea {
 		background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolyline points='0,75 100,25' style='fill:none; stroke:rgba(59, 130, 246, 0.5); stroke-width:2.5px;' /%3E%3C/svg%3E");
 	}
 }
+
+/* --- Testimonial Title Line Break on Mobile --- */
+@media screen and (max-width: 736px) {
+	.testimonial-card .author-info .client-title,
+	.testimonial-card .author-info .client-company {
+		display: block; /* Stacks the title and company on mobile */
+	}
+
+	.testimonial-card .author-info .client-company {
+		margin-left: 0; /* Ensures no extra indent on mobile */
+	}
+}

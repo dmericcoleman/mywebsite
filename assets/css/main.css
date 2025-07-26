@@ -4350,14 +4350,14 @@ input, select, textarea {
 .testimonial-card .author-info cite {
 	text-align: left;
 	font-style: normal;
-	line-height: 1.5; /* Increased from 0.9 for better readability */
+	line-height: 0.9;
 }
 
 .testimonial-card .author-info cite strong {
 	display: block;
 	color: #ffffff;
 	white-space: nowrap;
-	margin-bottom: 0.25em; /* Controls the space below the name */
+	margin-bottom: 0em; /* Controls the space below the name */
 }
 
 .testimonial-card .star-rating .icon {

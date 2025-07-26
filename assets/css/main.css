@@ -2899,18 +2899,20 @@ input, select, textarea {
 
         /* --- NEW: Styles for your most important CTA buttons (NOW WHITE) --- */
                 .button.special {
-                    background-color: var(--text-color-strong); /* Change to white */
-                    color: #111827 !important; /* Change text to a dark color for readability on white */
-                    box-shadow: none; /* No border needed for solid button */
-                    font-weight: 700;
+                	background-color: var(--text-color-strong);
+                	color: #111827 !important;
+                	box-shadow: none;
+                	font-weight: 700;
+                	animation: subtle-glow 3s infinite ease-in-out; /* <-- Add this line */
                 }
 
                 /* Special Button Hover: Now fills with accent color */
                 .button.special:hover {
-                    background-color: var(--accent-color); /* Fills with your accent blue on hover */
-                    color: var(--text-color-strong); /* Text becomes white on hover */
-                    box-shadow: 0 5px 25px -5px var(--accent-color); /* Still has a colored glow */
-                    transform: translateY(-4px) scale(1.03); /* Lifts higher and grows slightly */
+                	background-color: var(--accent-color);
+                	color: var(--text-color-strong) !important;
+                	transform: translateY(-4px) scale(1.03);
+                	animation: none; /* <-- Stops the pulse on hover */
+                	box-shadow: 0 0 25px var(--accent-color); /* <-- A better glow effect */
                 }
 
                 .button.special:active {
@@ -2955,17 +2957,6 @@ input, select, textarea {
                                       /* REMOVED: overflow: hidden, border-radius, and box-shadow from this container */
                                       /* We will apply border-radius and box-shadow directly to the img with !important */
                                   }
-
-                        /* The actual image within the article image container */
-                        /* Highly targeted styles for images within the "Why It Matters" carousel articles */
-                        .why-it-matters-carousel .item article .image img {
-                            width: 100% !important; /* Ensure image fills the container, !important to override */
-                            height: auto !important; /* Maintain aspect ratio, !important to override */
-                            display: block !important; /* Ensure it's a block element, !important to override */
-                            border-radius: 15px !important; /* Apply consistent border-radius, !important to override */
-                            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important; /* Apply box-shadow, !important to override */
-                            object-fit: cover; /* Good practice for responsive images */
-                        }
 
 		@media screen and (max-width: 980px) {
 
@@ -3324,28 +3315,29 @@ input, select, textarea {
 			}
 
 		#banner h2 {
-                           -moz-transition: opacity 0.5s ease, -moz-transform 0.5s ease, -moz-filter 0.25s ease;
-                           -webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease, -webkit-filter 0.25s ease;
-                           -ms-transition: opacity 0.5s ease, -ms-transform 0.5s ease, -ms-filter 0.25s ease;
-                           transition: opacity 0.5s ease, transform 0.5s ease, filter 0.25s ease;
-                           -moz-transform: translateX(0);
-                           -webkit-transform: translateX(0);
-                           -ms-transform: translateX(0);
-                           transform: translateX(0);
-                           -moz-transition-delay: 0.65s;
-                           -webkit-transition-delay: 0.65s;
-                           -ms-transition-delay: 0.65s;
-                           transition-delay: 0.65s;
-                           opacity: 1;
-                           font-size: 2.25em; /* Keep this size, should fit now with new flex properties */
-                           line-height: 1.2;
-                           border-bottom: solid 2px var(--border-color);
-                           padding-bottom: 0.3em;
-                           margin-bottom: 0.3em;
-                           white-space: nowrap; /* CRITICAL: Prevents text from wrapping */
-                           overflow: visible; /* Ensure the full text is always visible */
-                           text-overflow: clip; /* No ellipsis */
-                        }
+           -moz-transition: opacity 0.5s ease, -moz-transform 0.5s ease, -moz-filter 0.25s ease;
+           -webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease, -webkit-filter 0.25s ease;
+           -ms-transition: opacity 0.5s ease, -ms-transform 0.5s ease, -ms-filter 0.25s ease;
+           transition: opacity 0.5s ease, transform 0.5s ease, filter 0.25s ease;
+           -moz-transform: translateX(0);
+           -webkit-transform: translateX(0);
+           -ms-transform: translateX(0);
+           transform: translateX(0);
+           -moz-transition-delay: 0.65s;
+           -webkit-transition-delay: 0.65s;
+           -ms-transition-delay: 0.65s;
+           transition-delay: 0.65s;
+           opacity: 1;
+           font-size: 2.25em;
+           line-height: 1.2;
+           border-bottom: solid 2px var(--border-color);
+           padding-bottom: 0.3em;
+           margin-bottom: 0.3em;
+           white-space: nowrap;
+           overflow: visible;
+           text-overflow: clip;
+           display: inline-block; /* Add this line */
+        }
 
                #banner p {
                   -moz-transition: opacity 0.5s ease, -moz-transform 0.5s ease, -moz-filter 0.25s ease;
@@ -4478,15 +4470,18 @@ input, select, textarea {
 
 /* High-specificity rule for header's special button (NOW WHITE) */
 #header .desktop-nav a.button.special {
-    background-color: var(--text-color-strong); /* Change to white */
-    color: #111827 !important; /* Change text to a dark color for readability on white */
-    box-shadow: none; /* No border needed for solid button */
+	background-color: var(--text-color-strong);
+	color: #111827 !important;
+	box-shadow: none;
+	animation: subtle-glow 3s infinite ease-in-out; /* <-- Add this line */
 }
 
 /* High-specificity rule for header's special button hover state (NOW FILLS WITH ACCENT) */
 #header .desktop-nav a.button.special:hover {
-    background-color: var(--accent-color); /* Fills with your accent blue on hover */
-    color: var(--text-color-strong); /* Text becomes white on hover */
+	background-color: var(--accent-color);
+	color: var(--text-color-strong) !important;
+	animation: none; /* <-- Stops the pulse on hover */
+	box-shadow: 0 0 20px var(--accent-color); /* <-- A better glow effect */
 }
 
 /* High-specificity rule for header's special button active state */
@@ -4515,69 +4510,29 @@ input, select, textarea {
 
 /* --- Why It Matters Carousel Container & Navigation --- */
 .why-it-matters-carousel-container {
-    position: relative;
-    padding: 0 4em; /* Match testimonial padding for consistency */
-    margin-top: 3em;
-}
-
-/* Ensure articles within the carousel have a background */
-.why-it-matters-carousel .item article {
-    background-color: rgba(30, 41, 59, 0.5); /* Semi-transparent slate color, similar to pricing */
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
-    height: 100%; /* Ensure all carousel items have same height */
-    display: flex; /* Make content flexible inside article */
-    flex-direction: column; /* Stack image and text */
-}
-
-/* Adjust image within carousel article */
-.why-it-matters-carousel .item article .image {
-    margin-bottom: 1em;
-    margin-left: -1.75em; /* Keeps the image extending to the left */
-    margin-top: -1.75em; /* Keeps the image extending to the top */
-    width: calc(100% + 3.5em); /* Keeps the image extending to the right */
-    overflow: visible; /* Ensure it doesn't clip if the image itself has padding/margin issues */
-}
-
-/* Adjust content padding within carousel article */
-.why-it-matters-carousel .item article .content {
-    padding: 0 1.75em 1.75em; /* Add bottom padding */
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1; /* Allow content to grow to fill space */
-}
-
-.why-it-matters-carousel .item article h3.major {
-    margin-bottom: 0.5em; /* Reduce margin below title */
-    border-bottom: none; /* Remove line under title */
-    padding-bottom: 0;
-}
-
-.why-it-matters-carousel .item article p {
-    flex-grow: 1; /* Allow paragraph to take up available space */
-    margin-bottom: 1em; /* Reduce margin below paragraph */
+	position: relative;
+	padding: 0 4em;
+	margin-top: 3em;
 }
 
 /* Custom Navigation Buttons for Why It Matters */
 .why-it-matters-nav button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.1) !important;
-    border: none;
-    border-radius: 50%;
-    width: 3em;
-    height: 3em;
-    line-height: 3em;
-    padding: 0;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-    z-index: 10; /* Ensure buttons are above carousel items */
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background: rgba(255, 255, 255, 0.1) !important;
+	border: none;
+	border-radius: 50%;
+	width: 3em;
+	height: 3em;
+	line-height: 3em;
+	padding: 0;
+	cursor: pointer;
+	transition: background-color 0.2s ease-in-out;
+	z-index: 10;
 }
 .why-it-matters-nav button:hover {
-    background: rgba(255, 255, 255, 0.2) !important;
+	background: rgba(255, 255, 255, 0.2) !important;
 }
 .why-it-matters-nav .custom-prev { left: 0; }
 .why-it-matters-nav .custom-next { right: 0; }
@@ -4586,46 +4541,44 @@ input, select, textarea {
 
 /* Responsive adjustments for Why It Matters carousel */
 @media screen and (max-width: 980px) {
-    .why-it-matters-carousel-container {
-        padding: 0 3em; /* Adjust padding for tablets */
-    }
+	.why-it-matters-carousel-container {
+		padding: 0 3em;
+	}
 }
-
 @media screen and (max-width: 736px) {
-    .why-it-matters-carousel-container {
-       padding: 0; /* Remove side padding on mobile */
-    }
-    .why-it-matters-nav { /* Make navigation a flex container to center buttons */
-        display: flex;
-        justify-content: center;
-        gap: 2em;
-        margin-top: 1.5em;
-    }
-    .why-it-matters-nav button {
-       position: static;
-       transform: none;
-    }
-    /* Hide Owl dots if they are enabled and you prefer custom nav */
-    .why-it-matters-carousel .owl-dots {
-        display: none !important;
-    }
+	.why-it-matters-carousel-container {
+		padding: 0;
+	}
+	.why-it-matters-nav {
+		display: flex;
+		justify-content: center;
+		gap: 2em;
+		margin-top: 1.5em;
+	}
+	.why-it-matters-nav button {
+		position: static;
+		transform: none;
+	}
+	.why-it-matters-carousel .owl-dots {
+		display: none !important;
+	}
 }
 @media screen and (max-width: 480px) {
-    .why-it-matters-nav {
-        gap: 1em;
-    }
-    .why-it-matters-nav button {
-        width: 2.5em;
-        height: 2.5em;
-        line-height: 2.5em;
-    }
+	.why-it-matters-nav {
+		gap: 1em;
+	}
+	.why-it-matters-nav button {
+		width: 2.5em;
+		height: 2.5em;
+		line-height: 2.5em;
+	}
 }
 
 /* --- Styles for Why It Matters Header and Button --- */
 .why-it-matters-header-and-button {
     display: flex;
     justify-content: space-between; /* Pushes heading to left, button to right */
-    align-items: center; /* Vertically aligns items in the middle */
+    align-items: baseline; /* Changed from 'center' to 'baseline' */
     margin-bottom: 1em; /* Space below the header line */
 }
 
@@ -4691,8 +4644,8 @@ input, select, textarea {
 }
 
 .banner-image {
-    flex: 0 0 35%; /* Set a fixed basis (e.g., 35%) for the image column, preventing grow/shrink. Adjust this to control overall image size. */
-    max-width: 35%; /* Max width should match flex-basis for consistent behavior. */
+    flex: 0 0 45%; /* Set a fixed basis (e.g., 35%) for the image column, preventing grow/shrink. Adjust this to control overall image size. */
+    max-width: 45%; /* Max width should match flex-basis for consistent behavior. */
     text-align: right; /* CRITICAL: Right-align the content (the <img>) within this container. */
 }
 
@@ -4819,24 +4772,92 @@ input, select, textarea {
     }
 }
 
-/* --- CRITICAL FIX FOR OWL CAROUSEL ARTICLE IMAGES --- */
-/* This targets the <img> element directly within an owl-carousel item,
-   forcing border-radius and box-shadow to apply. */
-.why-it-matters-carousel .owl-item img {
-    border-radius: 15px !important; /* Forces rounded corners */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important; /* Forces shadow */
-    overflow: hidden !important; /* Should help ensure clipping */
-    /* If the image still looks stretched, you might also need: */
-    /* object-fit: cover !important; */
-}
-
-/* Also ensure the direct container for the image allows for overflow:hidden if needed */
-.why-it-matters-carousel .owl-item .image {
-    overflow: hidden !important;
-    border-radius: 15px !important; /* Add it here too, just in case */
-}
-
 /* Ensure any conflicting border-radius on a less specific selector is removed, if it still exists */
 /* If you still have .features article .image img with border-radius, remove it. */
 /* If you still have .features article .image with border-radius, remove it. */
 
+/* Make each box take up half the space */
+.custom-quotes-container .custom-order-cta {
+	flex: 1; /* Allows both boxes to grow and be equal width */
+	min-width: 300px; /* Prevents them from getting too squished */
+	margin-top: 0; /* Reset margin from original rule */
+	display: flex;
+	flex-direction: column; /* Align content vertically */
+	max-width: 100%; /* Add this line to override the old style */
+}
+
+/* Make paragraphs in both boxes grow to push buttons down */
+.custom-quotes-container .custom-order-cta p {
+	flex-grow: 1;
+}
+
+/* --- Animation for Subtle Button Glow --- */
+@keyframes subtle-glow {
+	0% {
+		box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+	}
+	50% {
+		box-shadow: 0 0 16px rgba(255, 255, 255, 0.5);
+	}
+	100% {
+		box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+	}
+}
+
+/* --- Custom Quote Carousel --- */
+.custom-quote-carousel-container {
+	position: relative;
+	margin-top: 5em;
+	padding: 0 4em; /* Provides space for nav arrows on desktop */
+}
+
+.custom-quote-carousel .custom-order-cta {
+	margin-top: 0;
+	display: flex;
+	flex-direction: column;
+	/* Ensures all slides are the same height */
+	height: 100%;
+}
+
+.custom-quote-carousel .custom-order-cta p {
+	flex-grow: 1; /* Pushes button to the bottom */
+}
+
+/* Custom Navigation for Quote Carousel */
+.custom-quote-nav button {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background: rgba(255, 255, 255, 0.1) !important;
+	border: none;
+	border-radius: 50%;
+	width: 3em;
+	height: 3em;
+	line-height: 3em;
+	padding: 0;
+	cursor: pointer;
+	transition: background-color 0.2s ease-in-out;
+}
+.custom-quote-nav button:hover {
+	background: rgba(255, 255, 255, 0.2) !important;
+}
+.custom-quote-nav .custom-prev { left: 0; }
+.custom-quote-nav .custom-next { right: 0; }
+.custom-quote-nav button .icon { color: rgba(255, 255, 255, 0.5); }
+
+/* Responsive adjustments for quote carousel */
+@media screen and (max-width: 736px) {
+	.custom-quote-carousel-container {
+		padding: 0;
+	}
+	.custom-quote-nav {
+		display: flex;
+		justify-content: center;
+		gap: 2em;
+		margin-top: 1.5em;
+	}
+	.custom-quote-nav button {
+		position: static;
+		transform: none;
+	}
+}

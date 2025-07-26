@@ -50,7 +50,7 @@
 			</div>
 
 			<div class="banner-image">
-				<img src="images/Gemini_Generated_Image_qhheo2qhheo2qhhe (1).png" alt="Positive Reviews" />
+				<img src="images/Gemini_Generated_Image_hgsznhhgsznhhgsz.png" alt="Positive Reviews" />
 			</div>
 
 			<a href="#one" class="scroll-down scrolly"></a>
@@ -155,12 +155,27 @@
 					</article>
 				</section>
 
-				<div class="custom-order-cta">
-					<h3>Need a Custom Solution?</h3>
-					<p>If our standard plans don't quite fit your unique requirements, we're happy to create a personalized package tailored just for you.</p>
-					<ul class="actions special">
-						<li><a href="#contact" class="button special scrolly">Request a Custom Quote</a></li>
-					</ul>
+				<div class="custom-quote-carousel-container">
+					<div class="owl-carousel owl-theme custom-quote-carousel">
+						<div class="custom-order-cta">
+							<h3>Custom Amazon Quote</h3>
+							<p>Need a higher volume, specific product targeting, or a unique delivery schedule? We'll create a plan that fits your exact Amazon needs.</p>
+							<ul class="actions special">
+								<li><a href="#contact" class="button special scrolly">Request Amazon Quote</a></li>
+							</ul>
+						</div>
+						<div class="custom-order-cta">
+							<h3>Need a Custom Solution?</h3>
+							<p>If our standard plans don't quite fit your unique requirements, we're happy to create a personalized package for any platform.</p>
+							<ul class="actions special">
+								<li><a href="#contact" class="button special scrolly">Request a General Quote</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="custom-quote-nav">
+						<button class="custom-prev"><span class="icon solid fa-chevron-left"></span></button>
+						<button class="custom-next"><span class="icon solid fa-chevron-right"></span></button>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -504,6 +519,26 @@
             });
             $('.why-it-matters-nav .custom-prev').click(function() {
                 $whyItMattersCarousel.trigger('prev.owl.carousel');
+            });
+
+            // --- Owl Carousel for Custom Quotes ---
+        var $customQuoteCarousel = $('.custom-quote-carousel');
+        if ($customQuoteCarousel.length > 0) {
+            $customQuoteCarousel.owlCarousel({
+                items: 1,
+                loop: true,
+                dots: false,
+                nav: false,
+                autoplay: true,
+                autoplayTimeout: 8000,
+                autoplayHoverPause: true
+            });
+
+            $('.custom-quote-nav .custom-next').click(function() {
+                $customQuoteCarousel.trigger('next.owl.carousel');
+            });
+            $('.custom-quote-nav .custom-prev').click(function() {
+                $customQuoteCarousel.trigger('prev.owl.carousel');
             });
         }
     });

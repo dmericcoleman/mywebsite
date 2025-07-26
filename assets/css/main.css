@@ -105,10 +105,6 @@ input, select, textarea {
 		box-sizing: inherit;
 	}
 
-	body {
-       background-color: #000000;
-    }
-
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 			-moz-animation: none !important;
 			-webkit-animation: none !important;
@@ -2865,7 +2861,7 @@ input, select, textarea {
         border-radius: 5px;
         border: 0;
         box-shadow: inset 0 0 0 2px var(--border-color); /* Uses theme color */
-        color: var(--text-color-strong) !important;
+        color: var(--text-color-strong);
         cursor: pointer;
         display: inline-block;
         font-family: var(--font-special);
@@ -2912,7 +2908,7 @@ input, select, textarea {
                 /* Special Button Hover: Now fills with accent color */
                 .button.special:hover {
                     background-color: var(--accent-color); /* Fills with your accent blue on hover */
-                    color: var(--text-color-strong) !important; /* Text becomes white on hover */
+                    color: var(--text-color-strong); /* Text becomes white on hover */
                     box-shadow: 0 5px 25px -5px var(--accent-color); /* Still has a colored glow */
                     transform: translateY(-4px) scale(1.03); /* Lifts higher and grows slightly */
                 }
@@ -2920,7 +2916,7 @@ input, select, textarea {
                 .button.special:active {
                     transform: translateY(0) scale(1); /* Pushes button back down on click */
                     background-color: var(--interactive-color); /* Deeper blue on active */
-                    color: var(--text-color-strong) !important; /* Text remains white on active */
+                    color: var(--text-color-strong); /* Text remains white on active */
                 }
 
 /* Features */
@@ -3528,14 +3524,6 @@ input, select, textarea {
 	}
 
 	@media screen and (max-width: 736px) {
-        #wrapper > header {
-            padding: 6.5em 2em 3em 2em ;
-            background-size: auto, 125%;
-            margin-bottom: -2.5em;
-        }
-    }
-
-    @media screen and (max-width: 736px) {
         #wrapper > header {
             padding: 6.5em 2em 3em 2em ;
             background-size: auto, 125%;
@@ -4486,13 +4474,13 @@ input, select, textarea {
 /* High-specificity rule for header's special button hover state (NOW FILLS WITH ACCENT) */
 #header .desktop-nav a.button.special:hover {
     background-color: var(--accent-color); /* Fills with your accent blue on hover */
-    color: var(--text-color-strong) !important; /* Text becomes white on hover */
+    color: var(--text-color-strong); /* Text becomes white on hover */
 }
 
 /* High-specificity rule for header's special button active state */
 #header .desktop-nav a.button.special:active {
     background-color: var(--interactive-color); /* Deeper blue on active */
-    color: var(--text-color-strong) !important; /* Text remains white on active */
+    color: var(--text-color-strong); /* Text remains white on active */
 }
 
 /* This is the breakpoint where the switch happens */

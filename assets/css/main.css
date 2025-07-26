@@ -4593,10 +4593,7 @@ input, select, textarea {
 }
 
 .why-it-matters-header-and-button .actions.compact.header-button {
-    margin-left: 2em; /* Space between heading and button */
-    padding: 0; /* Remove default ul.actions padding */
-    flex-shrink: 0; /* Prevent button from shrinking */
-    white-space: nowrap; /* Keep button on one line */
+	display: none; /* Hides the button container on mobile */
 }
 
 .why-it-matters-header-and-button .actions.compact.header-button li {

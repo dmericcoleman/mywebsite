@@ -3422,8 +3422,9 @@ input, select, textarea {
 					}
 
 				#banner h2 {
-					font-size: 1.5em;
-				}
+                	font-size: 1.5em;
+                	white-space: normal; /* Allows the text to wrap */
+                }
 
 				#banner p {
 					font-size: 0.8em;

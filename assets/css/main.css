@@ -3938,8 +3938,9 @@ input, select, textarea {
     	#banner .inner {
         	max-width: 100%;
         	width: 100%;
-        	padding: 2em 1em; /* Add padding here instead of the parent */
-        	margin: auto 0; /* This is the key change for vertical centering */
+        	/* This adds padding to account for the phone's status bar */
+        	padding: calc(2em + env(safe-area-inset-top)) 1em 2em;
+        	margin: auto 0; /* This keeps the content vertically centered */
         }
     	#banner .logo {
     		margin: 0 0 1em 0;

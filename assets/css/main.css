@@ -3248,8 +3248,10 @@ input, select, textarea {
     	flex-direction: column;
     	align-items: center;
     	min-height: 100vh;
-    	/* REMOVED padding and justify-content from here */
     	text-align: left;
+    	/* Add padding to respect mobile system UI (notches, bars) */
+    	padding-top: env(safe-area-inset-top);
+    	padding-bottom: env(safe-area-inset-bottom);
     }
 
 		#banner .inner {

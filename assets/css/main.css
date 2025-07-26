@@ -3331,13 +3331,13 @@ input, select, textarea {
                    transition-delay: 0.65s;
                    opacity: 1;
                    font-size: 2.25em;
-                   line-height: 1.3; /* NEW: Reduces internal font spacing */
+                   line-height: 1.2; /* NEW: Reduces internal font spacing */
                    border-bottom: solid 2px var(--border-color); /* The line is back */
                    padding-bottom: 0.3em; /* Space between text and line */
                    margin-bottom: 0.3em; /* Space between line and text below */
-                   white-space: nowrap; /* NEW: Prevents text from wrapping */
-                   overflow: hidden; /* NEW: Hides any overflowing text */
-                   text-overflow: ellipsis; /* NEW: Adds "..." to truncated text */
+                   white-space: normal; /* NEW: Prevents text from wrapping */
+                   overflow: visible; /* NEW: Hides any overflowing text */
+                   text-overflow: clip; /* NEW: Adds "..." to truncated text */
                 }
 
                #banner p {
@@ -4700,12 +4700,14 @@ input, select, textarea {
 /* Responsive adjustments for the new banner layout */
 @media screen and (max-width: 980px) {
     #banner .inner {
-        flex-direction: column;
-        align-items: flex-start;
-        max-width: 90%;
-        padding: 0 1em;
-        gap: 0;
-    }
+            flex-direction: column;
+            align-items: flex-start;
+            max-width: 100%; /* Make it take full available width */
+            width: 100%;     /* Explicitly ensure it takes full width */
+            padding: 0 1.5em; /* Adjust padding for a comfortable left/right margin */
+            margin: 0;       /* Remove auto margins that might center it */
+            gap: 0;
+        }
 
     .banner-content { /* Only target content here */
         flex: 1 1 100%; /* Content takes full width */
@@ -4734,8 +4736,10 @@ input, select, textarea {
 
 @media screen and (max-width: 736px) {
     #banner .inner {
-        max-width: 95%;
-        padding: 0 1em; /* NEW: Adjusted horizontal padding for small mobiles */
+        max-width: 100%; /* Make it take full available width */
+        width: 100%;     /* Explicitly ensure it takes full width */
+        padding: 0 1em; /* Adjust padding for a comfortable left/right margin on smallest screens */
+        margin: 0;       /* Remove auto margins that might center it */
     }
 }
 

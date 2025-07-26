@@ -1,75 +1,625 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Why Online Reviews Are Important - Premium Reviews Store</title>
+    <title>7 Reasons Online Reviews are Essential for Your Brand - Premium Reviews Store</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <style>
+        /* Article Detail Page Specific Styles (Embedded as requested) */
+        #article-7-reasons-reviews {
+            padding-top: 2.5em; /* Adjust as needed for space from header */
+            padding-bottom: 5em; /* Adjust as needed for space from footer */
+            background-color: var(--bg-color); /* Ensure consistent background */
+        }
+
+        #article-7-reasons-reviews .inner {
+            max-width: 65em; /* Adjust for optimal article readability width */
+            padding: 3em 4em; /* Consistent padding inside the article content area */
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        #article-7-reasons-reviews header.major {
+            text-align: left; /* Ensure article title section is left-aligned */
+            margin-bottom: 3em;
+            border-bottom: solid 2px rgba(255, 255, 255, 0.125);
+            padding-bottom: 1.5em;
+        }
+
+        #article-7-reasons-reviews header.major h2 {
+            font-size: 2.5em; /* Larger title for article page */
+            margin-bottom: 0.5em;
+            border-bottom: none; /* Remove line under title, as header.major has one */
+            padding-bottom: 0;
+        }
+
+        .article-meta {
+            color: var(--text-color);
+            font-size: 0.9em;
+            margin-top: 0.5em;
+        }
+
+        .article-meta .author {
+            font-weight: 700;
+            color: var(--text-color-strong);
+        }
+
+        .main-article-image.image { /* Apply the .image styling we worked on */
+            width: 100%; /* Make main image full width of its container */
+            margin: 2em 0 3em 0; /* Adjust spacing around the main article image */
+            border-radius: 15px; /* Apply rounded corners directly to this image */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Apply shadow directly to this image */
+            overflow: hidden; /* Ensure clipping for rounded corners */
+        }
+
+        .main-article-image.image img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 15px; /* Redundant if parent has overflow:hidden but good for consistency */
+        }
+
+        .article-content h3.major { /* Subheadings within the article body */
+            font-size: 1.8em; /* Slightly smaller than main h2, but prominent */
+            margin-top: 2.5em;
+            margin-bottom: 1em;
+            border-bottom: none; /* Remove horizontal rule from subheadings */
+            padding-bottom: 0;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5em; /* Space between paragraphs */
+            line-height: 1.7;
+        }
+
+        .article-content figure.image {
+            margin: 2.5em 0; /* Space around embedded images in content */
+            width: 100%; /* Ensure content images are full width */
+            text-align: center; /* Center images if they are smaller */
+            border-radius: 15px; /* Apply rounded corners to embedded images */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Apply shadow to embedded images */
+            overflow: hidden; /* Ensure clipping */
+        }
+
+        .article-content figure.image img {
+            width: 100%; /* Image fills its figure container */
+            height: auto;
+            display: block;
+            border-radius: 15px; /* Redundant if parent has overflow:hidden but good for consistency */
+        }
+
+        .article-content ul.article-list { /* Style for unordered lists in article */
+            list-style: disc; /* Use bullet points */
+            padding-left: 2em; /* Indent lists */
+            margin-bottom: 2em;
+        }
+
+        .article-content ul.article-list li {
+            margin-bottom: 0.5em;
+            line-height: 1.6;
+        }
+
+        .article-content strong, .article-content b {
+            color: var(--text-color-strong);
+        }
+
+        .article-author-box {
+            display: flex;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.05); /* Subtle background for author box */
+            border-radius: 5px;
+            padding: 2em;
+            margin-top: 4em;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1.5em;
+            flex-shrink: 0;
+        }
+
+        .author-info h4 {
+            font-size: 1.2em;
+            margin-bottom: 0.2em;
+            border-bottom: none; /* Remove border from author name */
+            padding-bottom: 0;
+        }
+
+        .author-info p {
+            font-size: 0.95em;
+            margin-bottom: 0.5em;
+            color: var(--text-color);
+        }
+
+        .author-info .author-job {
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        /* Media queries for responsiveness within the article */
+        @media screen and (max-width: 736px) {
+            #article-7-reasons-reviews .inner {
+                padding: 2em 1.5em; /* Smaller padding on mobile */
+            }
+            #article-7-reasons-reviews header.major h2 {
+                font-size: 2em; /* Adjust title size for mobile */
+            }
+            .main-article-image.image,
+            .article-content figure.image {
+                margin: 1.5em 0 2em 0; /* Adjust image spacing on mobile */
+            }
+            .article-content h3.major {
+                font-size: 1.5em;
+                margin-top: 2em;
+            }
+            .article-author-box {
+                flex-direction: column;
+                text-align: center;
+            }
+            .author-avatar {
+                margin-right: 0;
+                margin-bottom: 1em;
+            }
+        }
+    </style>
 </head>
 <body class="is-preload">
 
 <div id="page-wrapper">
 
-    <header id="header">
-       <h1><a href="index.html">Premium Reviews Store</a></h1>
-       <nav>
-          <a href="#menu">Menu</a>
-       </nav>
+    <header id="header" class="alt">
+        <h1><a href="javascript:void(0);" data-href="index.html">Premium Reviews Store</a></h1>
+
+        <nav class="desktop-nav">
+            <a href="#one" class="scrolly">Services</a>
+            <a href="#pricing" class="scrolly">Pricing</a>
+            <a href="#testimonials" class="scrolly">Client Feedback</a>
+            <a href="#contact" class="scrolly button special">Contact Us</a>
+        </nav>
+
+        <nav class="mobile-nav">
+            <a href="#menu">Menu</a>
+        </nav>
     </header>
 
-    <nav id="menu">
-       <div class="inner">
-          <h2>Menu</h2>
-          <ul class="links">
-             <li><a href="index.html">Home</a></li>
-             <li><a href="generic.html">Generic</a></li>
-             <li><a href="elements.html">Elements</a></li>
-             <li><a href="#">Log In</a></li>
-             <li><a href="#">Sign Up</a></li>
-          </ul>
-          <a href="#" class="close">Close</a>
-       </div>
-    </nav>
+    <section id="article-7-reasons-reviews" class="wrapper">
+        <div class="inner">
+            <header class="major">
+                <h2>7 Reasons Online Reviews are Essential for Your Brand</h2>
+                <p class="article-meta">
+                    Updated on July 17th 2025 by <span class="author">Writers Name</span> | 10 min read
+                </p>
+                <div class="main-article-image image">
+                    <img src="https://mention.com/wp-content/uploads/2018/09/7-Reasons-Online-Reviews-are-Essential-for-Your-Brand-Header.png" alt="7 Reasons Online Reviews are Essential for Your Brand - Header" />
+                </div>
+            </header>
 
-    <section id="wrapper">
-        <section class="wrapper" style="padding: 8em 0;">
-            <div class="inner">
-                <h2 class="major">Why Online Reviews Are So Important</h2>
-                <p>Customer reviews are one of the most powerful tools a business can use. They provide valuable feedback, build trust with potential customers, and create a sense of community around your brand. In today's competitive marketplace, understanding the power of reviews can be the advantage you need to stand out.</p>
+            <div class="article-content">
+                <p>Having easy access to the web has radically changed the way people shop for almost everything today.</p>
 
-                <hr class="major" />
+                <p>From mobile phones to dental services, it’s rare to blindly make a purchase decision without reading through several online reviews. In 2016, <a href="https://brightlocal.com/learn/local-consumer-review-survey">90% of shoppers</a> read at least one online review before deciding to visit a business (especially local businesses).</p>
 
-                <h3>1. Establish Trust and Legitimize Your Brand</h3>
-                <p>For new customers, online reviews are a form of social proof. They legitimize your business and provide the reassurance needed to make a purchase. Feedback from other customers builds confidence and shows why you're a better choice than your competitors.</p>
+                <p>More importantly, <a href="https://reviewtrackers.com/online-reviews-survey">94% of online shoppers</a> reported that<strong> a negative review has convinced them to avoid visiting a business.</strong></p>
 
-                <h3>2. Boost Your Online Visibility (SEO)</h3>
-                <p>One of the lesser-known benefits of reviews is their impact on search engine optimization. Google considers online reviews a key factor in its rankings, especially for local businesses. The more reviews you have—particularly those containing relevant keywords and your location—the higher you are likely to rank in search results.</p>
+                <p>But why do people read reviews in the first place?</p>
 
-                <h3>3. Gain Invaluable Feedback About Your Business</h3>
-                <p>Reviews don't just provide information to customers; they give you priceless insight into what's working and what needs improvement. Testimonials are a brilliant way to track customer satisfaction and understand what your audience truly wants. This allows you to resolve issues, improve your services, and build customer loyalty.</p>
-                
-                <h3>4. Turn Negative Feedback into a Positive</h3>
-                <p>Ignoring negative reviews can be tempting, but responding to them is essential for maintaining a positive reputation. By thanking the customer for their feedback, offering a solution, and inviting them to connect further, you can turn a negative situation into an opportunity to showcase your excellent customer service.</p>
+                <p>The answer is simple: uncertainty.</p>
 
-                <hr class="major" />
-                
-                <ul class="actions">
-                    <li><a href="index.html" class="button">Return to Homepage</a></li>
+                <p>People crave reassurance that they’re making the right decision, particularly when it comes to parting with their hard-earned money.</p>
+
+                <p>Online reviews represent real-life experiences, offering potential customers a glimpse into the quality, value, and reliability of the product or service they’re considering.</p>
+
+                <p>They provide a form of social proof that is much more relatable than advertising and can significantly influence purchasing decisions.</p>
+
+                <p>This means that whatever your industry, having a positive online presence gives you several key advantages, which is why it’s becoming a key part of branding.</p>
+
+                <p>Understanding why business owners need online reviews will help you optimize your customer experience and create a positive online footprint on review websites. Let’s review these seven reasons why your consumers’ published experiences with your brand are vital.</p>
+
+                <h3 class="major">1. Social Proof Drives Purchases</h3>
+
+                <p>We’re more likely to make a purchase if others around us—even total strangers—agree that it is a good decision. Today, <a href="https://mention.com/en/blog/online-reputation-management-tools">online customer reviews</a> are the biggest source of social proof, and they have a clear impact on sales.</p>
+
+                <p>For example, Seriously Silly Socks has been able to drive 60% higher average order value on the company’s website than its other sales channels, and it’s likely that the 3000 five-star reviews that populate the ecommerce site’s various product pages have helped a great deal.</p>
+
+                <figure class="image">
+                    <img src="https://mention.com/wp-content/uploads/2018/09/image6.png" alt="online-reviews-socks.jpg"/>
+                </figure>
+
+                <p>“We encourage reviews by emailing customers after purchase and offering a discount coupon in return for a completed review,” Andrew Gill, the owner of the company, <a href="https://bigcommerce.com/case-study/seriously-silly-socks">recently told BigCommerce</a> in an interview for a case study.</p>
+
+                <p>“This has been a major difference from the start of our journey to selling directly from our store and has reduced our reliance on shopping channels. Customer feedback creates that ‘social-proof’ trust that encourages other visitors to our store to buy.”</p>
+
+                <p>Great results can turn potential customers into buyers.</p>
+
+                <h3 class="major">2. Online Reviews Make You More Visible</h3>
+
+                <p><strong>Being a successful brand also means you’re a visible one.</strong></p>
+
+                <p>Most shoppers use search engines like Google and Bing or social media platforms like Facebook to make purchase decisions. These review websites platforms have unique ways of indexing and surfacing content, and they value original and fresh content. Positive reviews on review sites can help feed the content machine, keeping your brand favored by algorithms and improve your search results.</p>
+
+                <figure class="image">
+                    <img src="https://mention.com/wp-content/uploads/2018/09/image4.png" alt="online-reviews-seo.jpg"/>
+                </figure>
+
+                <p><em>Image source: </em><a href="https://yotpo.com/blog/reviews-seo"><em>https://www.yotpo.com/blog/reviews-seo/</em></a></p>
+
+                <p>Online customer reviews give you a steady pipeline of (hopefully) positive content that search engines value highly when choosing which results to return.</p>
+
+                <p>When you’re ranked higher, <strong>algorithms and people alike tend to see your website as an authority in your industry, which also leads to more exposure.</strong></p>
+
+                <h3 class="major">3. Online Reviews Make You Look Trustworthy</h3>
+
+                <p>Your brand can build significant trust and credibility from a steady stream of positive reviews.</p>
+
+                <p>One of the more interesting findings of recent research is just how powerful reviews are at building your company’s online identity.</p>
+
+                <p>Many shoppers distrust businesses that have negative reviews and ratings below (or even above) four stars. This leaves a small margin of error at the top, but <strong>companies with better average ratings are significantly more likely to see views converted to traffic and sales.</strong></p>
+
+                <figure class="image">
+                    <img src="https://mention.com/wp-content/uploads/2018/09/image7.png" alt="online-reviews-brightlocal.jpg"/>
+                </figure>
+
+                <p><em>Image Source: </em><a href="https://brightlocal.com/learn/local-consumer-review-survey"><em>https://www.brightlocal.com/learn/local-consumer-review-survey/</em></a></p>
+
+                <p>The way customers are talking about you is just as important as the fact that they’re saying your name. Having a highly positive footprint will eventually help you drive more sales.</p>
+
+                <p>But don’t fall into the trap of using fake reviews. They are easily spotted, and have a long-term negative impact to your business.</p>
+
+                <h3 class="major">4. Online Reviews Expand the Conversation About You</h3>
+
+                <p>Very good (or bad) reviews have a way of quickly spreading.</p>
+
+                <p><strong>Encouraging consumers to review your company on business review websites is an easy way to expand your brand’s reach.</strong></p>
+
+                <p>When people have good things to say, they are also more likely to share their reviews on more sites, including external websites like Yelp, FourSquare, and TripAdvisor – especially for local businesses.</p>
+
+                <p>These hubs are vital to your search engine online presence, as Google collects data from its sites when building its own results ranking. Even on an individual level, having positive reviews on review platforms can help push further reviews.</p>
+
+                <p>For example, the Search Influence agency recently teamed up with GetFiveStars to reach out to patients of Houston-based orthopedic surgeon Dr. K. Mathew Warnock, generating his first 100 five-star reviews over the course of just five months.</p>
+
+                <p>When these reviews were published on Warnock’s site, it not only lifted his organic search traffic by 23% but also snowballed to prompt more reviews on review sites like Google+, Facebook, and Healthgrades, the latter being especially important to his vertical.</p>
+
+                <figure class="image">
+                    <img src="https://mention.com/wp-content/uploads/2018/09/image5.png" alt="online-reviews-mathiew.jpg"/>
+                </figure>
+
+                <p><em>Image Source: https://www.healthgrades.com/physician/dr-k-warnock-ymtfn</em></p>
+
+                <p>Reviews on your website are always useful, but happy customers are likely to share their thoughts on as many places as possible, increasing your multi-channel footprint.</p>
+
+                <h3 class="major">5. Online Reviews Are Increasingly Essential to Decision Making</h3>
+
+                <p>A proactively cultivated brand increases your online visibility, and today, that means encouraging several ways for people to talk about you. Social media is a great tool, but the ability for customers to talk about you on other channels is a crucial component of your presence.</p>
+
+                <p><a href="https://socialmediatoday.com/marketing/new-study-highlights-importance-online-reviews-local-search">Almost two-thirds of shoppers</a> think that online reviews are an essential part of the decision-making process. When they want to know the best places to go, they’re more likely to turn to Google, Yelp, and TripAdvisor than they are to a newspaper or even their friends and family.</p>
+
+                <figure class="image">
+                    <img src="https://mention.com/wp-content/uploads/2018/09/image3.png" alt="online-reviews-stats.jpg"/>
+                </figure>
+
+                <p><em>Image Source: https://www.reviewtrackers.com/online-reviews-survey/</em></p>
+
+                <p>By focusing on creating a stream of positive reviews, your brand is more likely to show up when customers are making their next shopping decision. Product reviews on the best review sites can significantly enhance your marketing efforts, and help potential customers make their decision.</p>
+
+                <h3 class="major">6. Online Reviews Have a Clear Impact on Sales</h3>
+
+                <p>Case studies and theory can be misleading. Reality doesn’t always follow a logic, and there are always outliers. But there’s a growing body of benchmark data that proves that <strong>good reviews do empirically lead to increased revenue.</strong></p>
+
+                <p>A study by the <a href="https://hbs.edu/faculty/Pages/item.aspx?num=41233">Harvard Business School</a> found that online reviews can demonstrably impact your bottom line. Brands that are viewed positively have better sales, but even improving your star rating can have a positive effect on your sales.</p>
+
+                <p>According to the study, a one-star improvement on Yelp.com leads to a boost of 5% to 9% on sales in the short term. Even a small improvement can have a massive impact.</p>
+
+                <figure class="image">
+                    <img src="https://mention.com/wp-content/uploads/2018/09/image2.png" alt="online-reviews-reviews.jpg"/>
+                </figure>
+
+                <p><em>Image Source: https://blog.reevoo.com/ratings-reviews-landscape/</em></p>
+
+                <p>In a 2016 study, Revoo found that online reviews drive an <a href="https://blog.reevoo.com/ratings-reviews-landscape">average of 18% sales uplift</a>, with benefits including increased conversion rates, order sizes and repeat order rates. That’s why it’s important to avoid getting negative reviews. And a landmark Berkeley study from as long ago as 2011 found that a half-star improvement for a restaurant made it <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1468-0297.2012.02512.x">30% to 49% more likely</a> to fill up at peak hours. If readers like what they see, they’ll show it with their wallets.</p>
+
+                <h3 class="major">7. Online Reviews Give You An Open Line to Consumers</h3>
+
+                <p>More than simply posting reviews, consumers today expect companies to respond to their comments.</p>
+
+                <p>Online customer feedback also gives you a forum to be frank with consumers and reinforce positive reviews with thanks, or promotions. More importantly, they also give you a way to quickly rectify a poor review and show that you care.</p>
+
+                <p>Medical company MedQuest, for instance, was able to significantly improve its review ratings and volume by improving the rate at which it responded to both negative and positive responses. The company’s review volume on Facebook soared by 163%, while it got 23% more reviews on Google.</p>
+
+                <p>“Our new focus on patient experience goes hand in hand with <a href="">monitoring</a> and responding to online reviews — especially any negative ones,” MedQuest’s Dave Hidding recently told Reputation.com in a case study.</p>
+
+                <figure class="image">
+                    <img src="https://mention.com/wp-content/uploads/2018/09/image1.jpg" alt="online-reviews-graph.jpg"/>
+                </figure>
+
+                <p><em>Image source: </em><a href="https://reputation.com/resources/case-study/medquest-increases-patient-acquisition-and-retention-through-improved-review-responding"><em>https://www.reputation.com/resources/case-study/medquest-increases-patient-acquisition-and-retention-through-improved-review-responding/</em></a></p>
+
+                <p>The immediacy of these reviews and the personalized responses also mean that they give your brand a face. Having a friendly, open-to-feedback appearance can work wonders for your brand.</p>
+
+                <h3 class="major">You’re Under Review</h3>
+
+                <p>The way you market your brand is important, but having people talk about you is a great way to enhance your message.</p>
+
+                <p>Encouraging positive conversations about your brand is a powerful strategy to significantly enhance your marketing efforts.</p>
+
+                <p>How to get customer reviews?</p>
+
+                <ul class="article-list">
+                    <li><strong>Speak Up, Just Ask!</strong>: Who says you can’t ask? Drop your customers a friendly email or a quick notification post-purchase or service. A little nudge can go a long way!</li>
+                    <li><strong>Smooth Sailing</strong>: Keep it Simple: Don’t send your customers on a wild goose chase. Make the review process as easy as slicing pie by providing direct links to your review pages in your emails, on your snazzy website, and across your social media channels, for example, in your <a href="https://mention.com/en/blog/best-instagram-captions/" target="_blank" rel="noreferrer noopener">Instagram captions</a>.</li>
+                    <li><strong>Show Some Love</strong>: Engage with Reviews: Whether they are brimming with praise or filled with constructive feedback, respond to all reviews, especially the negative reviews. This not only shows you value every piece of feedback, but it also encourages others to chip in their two cents, as they see you’re managing reviews.</li>
+                    <li><strong>Sweeten the Deal</strong>: Offer Incentives: How about a little something for their time? Offering incentives such as discounts on future purchases can act like a carrot, enticing customers to share their experiences. That’ll improve customer satisfaction even more.</li>
+                    <li><strong>Be Social, Leverage Social Media</strong>: Encourage your happy customers to paint the town red with their positive experiences on social media. Add them to add a review in your <a href="https://mention.com/en/blog/best-instagram-captions//">Instagram captions</a> for example. Or use <a href="https://mention.com/en/blog/social-listening/">social listening</a> to find satisfied clients who could leave a positive review. This not only kickstarts more customer reviews, but it also increases your online visibility.</li>
                 </ul>
 
+                <p>Remember, each business has its unique charm and what works wonders for one might just not strike the same chord for another. The secret sauce here is to make the review process an absolute breeze and to actively show that customer feedback is not just welcomed, it’s celebrated!</p>
             </div>
-        </section>
+
+            <div class="article-author-box">
+                <img src="https://secure.gravatar.com/avatar/1d5284e4168e0f59a558d6889b469c1c2f3319eb88976a8fbb04f86124e04dae?s=80&d=mm&r=g" alt="Writer's Name" class="author-avatar" />
+                <div class="author-info">
+                    <h4>Writer's Name</h4>
+                    <p>Writer's Name is a freelance writer at Assignment Bro, blogger, and digital media journalist. He has a management degree in Supply Chain & Operations Management and Marketing and boasts a wide-ranging background in digital media.</p>
+                    <p class="author-job">Guest Blogger @Premium Reviews Store</p>
+                </div>
+            </div>
+        </div>
     </section>
 
 </div>
 
+<nav id="menu">
+    <div class="inner">
+        <h2>Menu</h2>
+        <ul class="links">
+            <li><a href="javascript:void(0);" data-href="index.html#one" class="scrolly">Services</a></li>
+            <li><a href="javascript:void(0);" data-href="index.html#pricing" class="scrolly">Pricing</a></li>
+            <li><a href="javascript:void(0);" data-href="index.html#testimonials" class="scrolly">Client Feedback</a></li>
+            <li><a href="javascript:void(0);" data-href="index.html#six" class="scrolly">Articles</a></li>
+            <li><a href="javascript:void(0);" data-href="index.html#contact" class="scrolly">Contact Us</a></li>
+        </ul>
+        <a href="#" class="close">Close</a>
+    </div>
+</nav>
+
+<a href="#one" class="scroll-to-top scrolly"><span class="icon solid fa-chevron-up"></span></a>
+
 <script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.scrollex.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        'use strict';
+
+        const body = document.body;
+        const header = document.querySelector('#header');
+        const menu = document.querySelector('#menu');
+        const scrollyLinks = document.querySelectorAll('a.scrolly');
+        const dataLinks = document.querySelectorAll('a[data-href]');
+
+        // --- Remove Preloader ---
+        setTimeout(() => {
+            body.classList.remove('is-preload');
+        }, 100);
+
+        // --- Scroll-Down Arrow Logic ---
+        const scrollDown = document.querySelector('.scroll-down');
+        if (scrollDown) {
+            const handleScrollDownArrow = () => {
+                if (window.scrollY > 50) {
+                    scrollDown.classList.add('is-hidden');
+                } else {
+                    scrollDown.classList.remove('is-hidden');
+                }
+            };
+            handleScrollDownArrow();
+            window.addEventListener('scroll', handleScrollDownArrow);
+        }
+
+        // --- Header Class Toggle (Updated for immediate effect on scroll) ---
+        if (header) { // Ensure header element exists
+            const toggleHeaderAlt = () => {
+                // If the user has scrolled down by even 1 pixel
+                if (window.scrollY > 0) {
+                    header.classList.remove('alt'); // Remove the 'alt' class (make it solid/prominent)
+                } else {
+                    // If at the very top of the page (scrollY is 0)
+                    header.classList.add('alt'); // Add the 'alt' class (make it transparent/minimal)
+                }
+            };
+
+            // Call the function once when the page loads to set the initial state
+            toggleHeaderAlt();
+
+            // Attach the function to the window's scroll event
+            window.addEventListener('scroll', toggleHeaderAlt);
+        }
+
+        // --- Menu Logic ---
+        if (menu) {
+            let menuLocked = false;
+            const lockMenu = () => {
+                if (menuLocked) return false;
+                menuLocked = true;
+                setTimeout(() => { menuLocked = false; }, 350);
+                return true;
+            };
+            const hideMenu = () => {
+                if (lockMenu()) body.classList.remove('is-menu-visible');
+            };
+
+            const menuToggle = document.querySelector('a[href="#menu"]');
+            if (menuToggle) {
+                menuToggle.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    if (lockMenu()) body.classList.toggle('is-menu-visible');
+                });
+            }
+            menu.addEventListener('click', (e) => { hideMenu(); });
+            menu.querySelector('.inner').addEventListener('click', (e) => { e.stopPropagation(); });
+            document.addEventListener('keydown', (e) => { if (e.key === 'Escape') hideMenu(); });
+
+            // --- NEW: Added logic for the close button ---
+            const closeButton = menu.querySelector('.close');
+            if (closeButton) {
+                closeButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    hideMenu();
+                });
+            }
+        }
+
+        // --- Scroll-to-top Arrow Logic ---
+        const scrollToTop = document.querySelector('.scroll-to-top');
+        const firstSection = document.querySelector('#one'); // Assumes #one is the first section below banner
+        if (scrollToTop && firstSection) {
+            const toggleTopArrowVisibility = () => {
+                // Adjust this condition if #one is not the first section on this specific page
+                if (window.scrollY > (firstSection ? firstSection.offsetTop : 0)) {
+                    scrollToTop.classList.add('visible');
+                } else {
+                    scrollToTop.classList.remove('visible');
+                }
+            };
+            toggleTopArrowVisibility();
+            window.addEventListener('scroll', toggleTopArrowVisibility);
+        } else if (scrollToTop) { // Fallback if #one isn't present (e.g., on an article page)
+            const toggleTopArrowVisibility = () => {
+                if (window.scrollY > 200) { // Show after scrolling 200px
+                    scrollToTop.classList.add('visible');
+                } else {
+                    scrollToTop.classList.remove('visible');
+                }
+            };
+            toggleTopArrowVisibility();
+            window.addEventListener('scroll', toggleTopArrowVisibility);
+        }
+
+
+        // --- Link Handling (Fixes Scrolly and data-href) ---
+        const handleLinkClick = (e) => {
+            const link = e.currentTarget;
+            let href = link.dataset.href || link.getAttribute('href');
+
+            // If it's an internal scrolly link OR a data-href link pointing to a hash on the current page
+            if (link.classList.contains('scrolly') && href.startsWith('#')) {
+                e.preventDefault();
+                const targetElement = document.querySelector(href);
+                if (targetElement) {
+                    if (menu && body.classList.contains('is-menu-visible')) {
+                        body.classList.remove('is-menu-visible');
+                    }
+                    let headerHeight = header ? header.offsetHeight : 0;
+                    let scrollPosition = targetElement.offsetTop - headerHeight;
+                    window.scrollTo({
+                        top: scrollPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+            // If it's a data-href that points to a different page OR a scrolly link to a different page hash
+            else if (link.dataset.href && !href.startsWith('#')) {
+                 e.preventDefault();
+                 window.location.href = href;
+            } else if (link.classList.contains('scrolly') && href.includes('#') && !href.startsWith('#')) {
+                // Handle scrolly links that point to a hash on a different page (e.g., index.html#section)
+                e.preventDefault();
+                const [page, hash] = href.split('#');
+                if (page === window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1)) {
+                    // Same page, just scroll
+                    const targetElement = document.querySelector(`#${hash}`);
+                    if (targetElement) {
+                        if (menu && body.classList.contains('is-menu-visible')) {
+                            body.classList.remove('is-menu-visible');
+                        }
+                        let headerHeight = header ? header.offsetHeight : 0;
+                        let scrollPosition = targetElement.offsetTop - headerHeight;
+                        window.scrollTo({
+                            top: scrollPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                } else {
+                    // Navigate to different page and then scroll
+                    window.location.href = href;
+                }
+            }
+        };
+
+        scrollyLinks.forEach(link => link.addEventListener('click', handleLinkClick));
+        dataLinks.forEach(link => {
+            if (!link.classList.contains('scrolly')) { // Avoid double-attaching if scrolly and data-href exist
+                 link.addEventListener('click', handleLinkClick);
+            }
+        });
+
+
+        // --- Owl Carousel for Testimonials (only if elements exist) ---
+        var $testimonialCarousel = $('#testimonials .owl-carousel');
+        if ($testimonialCarousel.length > 0) {
+            $testimonialCarousel.owlCarousel({
+                items: 1,
+                loop: true,
+                margin: 30,
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 7000,
+                autoplayHoverPause: true
+            });
+            $('.testimonial-nav .custom-next').click(function() { $testimonialCarousel.trigger('next.owl.carousel'); });
+            $('.testimonial-nav .custom-prev').click(function() { $testimonialCarousel.trigger('prev.owl.carousel'); });
+        }
+        // --- Owl Carousel for Why It Matters (only if elements exist) ---
+        var $whyItMattersCarousel = $('.why-it-matters-carousel');
+        if ($whyItMattersCarousel.length > 0) {
+            $whyItMattersCarousel.owlCarousel({
+                loop: true,
+                margin: 30,
+                nav: false,
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    736: {
+                        items: 2
+                    },
+                    980: {
+                        items: 2
+                    }
+                }
+            });
+
+            $('.why-it-matters-nav .custom-next').click(function() {
+                $whyItMattersCarousel.trigger('next.owl.carousel');
+            });
+            $('.why-it-matters-nav .custom-prev').click(function() {
+                $whyItMattersCarousel.trigger('prev.owl.carousel');
+            });
+        }
+    });
+</script>
 
 </body>
 </html>

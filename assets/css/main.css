@@ -147,11 +147,11 @@ input, select, textarea {
     }
 
     @media screen and (max-width: 736px) { /* Small (Tablet Portrait/Mobile Landscape) */
-       body, input, select, textarea {
-          font-size: 100%; /* Keep at 100% for mobile */
-          line-height: 1.6; /* Slightly tighter line height on smaller screens for better density */
-       }
-    }
+           body, input, select, textarea {
+              font-size: 100%; /* Ensure base font size is consistent */
+              line-height: 1.6; /* Slightly tighter line height on smaller screens for better density */
+           }
+        }
 
     @media screen and (max-width: 480px) { /* XSmall (Mobile Portrait) */
        body, input, select, textarea {
@@ -2945,20 +2945,27 @@ input, select, textarea {
 				margin-right: 0;
 			}
 
-			.features article .image {
-				border-radius: 5px 5px 0 0;
-				display: block;
-				margin-bottom: 1.75em;
-				margin-left: -1.75em;
-				margin-top: -1.75em;
-				position: relative;
-				width: calc(100% + 3.5em);
-			}
+			/* The container for the article image */
+                      .features article .image {
+                                      margin-bottom: 1.75em;
+                                      margin-left: -1.75em; /* Original negative margin for layout */
+                                      margin-top: -1.75em; /* Original negative margin for layout */
+                                      position: relative;
+                                      width: calc(100% + 3.5em); /* Original width for layout */
+                                      /* REMOVED: overflow: hidden, border-radius, and box-shadow from this container */
+                                      /* We will apply border-radius and box-shadow directly to the img with !important */
+                                  }
 
-				.features article .image img {
-					border-radius: 5px 5px 0 0;
-					width: 100%;
-				}
+                        /* The actual image within the article image container */
+                        /* Highly targeted styles for images within the "Why It Matters" carousel articles */
+                        .why-it-matters-carousel .item article .image img {
+                            width: 100% !important; /* Ensure image fills the container, !important to override */
+                            height: auto !important; /* Maintain aspect ratio, !important to override */
+                            display: block !important; /* Ensure it's a block element, !important to override */
+                            border-radius: 15px !important; /* Apply consistent border-radius, !important to override */
+                            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important; /* Apply box-shadow, !important to override */
+                            object-fit: cover; /* Good practice for responsive images */
+                        }
 
 		@media screen and (max-width: 980px) {
 
@@ -3277,18 +3284,18 @@ input, select, textarea {
     }
 
 		#banner .inner {
-                   margin: 0 auto;
-                   width: 100%;
-                   max-width: 80em; /* Overall maximum width for the banner content area */
-                   padding: 0 4em; /* NEW: Added horizontal padding for left/right spacing */
-                   box-sizing: border-box; /* Ensure padding is included in the total width */
-                   display: flex;
-                   flex-wrap: wrap;
-                   justify-content: center; /* Changed to center content, then use gap for spacing */
-                   gap: 0em; /* NEW: Explicit gap between content and image columns */
-                   align-items: center;
-                   text-align: left; /* Default text alignment for left-side content */
-                }
+                           margin: 0 auto; /* Centers the whole inner container on the page */
+                           width: 100%;
+                           max-width: 85em; /* Define the maximum width for the entire banner content area */
+                           padding: 0 4em; /* CRITICAL: This sets the exact, equal left and right outer margins. */
+                           box-sizing: border-box;
+                           display: flex;
+                           flex-wrap: nowrap; /* Prevents columns from wrapping */
+                           justify-content: space-between; /* CRITICAL: Pushes content to the left and image to the right edge of the padded area. */
+                           gap: 0; /* Let 'space-between' handle the dynamic space in the middle. */
+                           align-items: center;
+                           text-align: left; /* Ensures overall text alignment within this container is left */
+                        }
 
 		#banner .logo {
            -moz-transition: opacity 2s ease, -moz-transform 1s ease;
@@ -3317,28 +3324,28 @@ input, select, textarea {
 			}
 
 		#banner h2 {
-                   -moz-transition: opacity 0.5s ease, -moz-transform 0.5s ease, -moz-filter 0.25s ease;
-                   -webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease, -webkit-filter 0.25s ease;
-                   -ms-transition: opacity 0.5s ease, -ms-transform 0.5s ease, -ms-filter 0.25s ease;
-                   transition: opacity 0.5s ease, transform 0.5s ease, filter 0.25s ease;
-                   -moz-transform: translateX(0);
-                   -webkit-transform: translateX(0);
-                   -ms-transform: translateX(0);
-                   transform: translateX(0);
-                   -moz-transition-delay: 0.65s;
-                   -webkit-transition-delay: 0.65s;
-                   -ms-transition-delay: 0.65s;
-                   transition-delay: 0.65s;
-                   opacity: 1;
-                   font-size: 2.25em;
-                   line-height: 1.2; /* NEW: Reduces internal font spacing */
-                   border-bottom: solid 2px var(--border-color); /* The line is back */
-                   padding-bottom: 0.3em; /* Space between text and line */
-                   margin-bottom: 0.3em; /* Space between line and text below */
-                   white-space: normal; /* NEW: Prevents text from wrapping */
-                   overflow: visible; /* NEW: Hides any overflowing text */
-                   text-overflow: clip; /* NEW: Adds "..." to truncated text */
-                }
+                           -moz-transition: opacity 0.5s ease, -moz-transform 0.5s ease, -moz-filter 0.25s ease;
+                           -webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease, -webkit-filter 0.25s ease;
+                           -ms-transition: opacity 0.5s ease, -ms-transform 0.5s ease, -ms-filter 0.25s ease;
+                           transition: opacity 0.5s ease, transform 0.5s ease, filter 0.25s ease;
+                           -moz-transform: translateX(0);
+                           -webkit-transform: translateX(0);
+                           -ms-transform: translateX(0);
+                           transform: translateX(0);
+                           -moz-transition-delay: 0.65s;
+                           -webkit-transition-delay: 0.65s;
+                           -ms-transition-delay: 0.65s;
+                           transition-delay: 0.65s;
+                           opacity: 1;
+                           font-size: 2.25em; /* Keep this size, should fit now with new flex properties */
+                           line-height: 1.2;
+                           border-bottom: solid 2px var(--border-color);
+                           padding-bottom: 0.3em;
+                           margin-bottom: 0.3em;
+                           white-space: nowrap; /* CRITICAL: Prevents text from wrapping */
+                           overflow: visible; /* Ensure the full text is always visible */
+                           text-overflow: clip; /* No ellipsis */
+                        }
 
                #banner p {
                   -moz-transition: opacity 0.5s ease, -moz-transform 0.5s ease, -moz-filter 0.25s ease;
@@ -3675,17 +3682,20 @@ input, select, textarea {
             }
 
 			.wrapper.spotlight .image {
-                           border-radius: 5px;
-                           margin-right: 3em; /* Removed bottom margin */
-                           width: 75%;
-                           overflow: hidden;
-                           -ms-flex: 1;
+                           margin-right: 3em; /* Existing margin, keep it for layout */
+                           width: 75%; /* Existing width, keep it for layout */
+                           -ms-flex: 1; /* Existing flex property, keep it for layout */
+                           overflow: hidden; /* Crucial: Clips the content to the rounded border */
+                           border-radius: 15px; /* Apply the rounded corners to the container */
+                           box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Apply the shadow to the container */
                         }
 
-                         .wrapper.spotlight .image img {
-                               border-radius: 5px;
-                               width: 100%;
-                            }
+                        .wrapper.spotlight .image img {
+                            width: 100%; /* Image must fill 100% of its container */
+                            height: auto; /* Maintain aspect ratio */
+                            display: block; /* Ensure it behaves as a block element */
+                            /* Remove any border-radius here to avoid conflict with parent's overflow:hidden */
+                        }
 
                       .wrapper.spotlight .content {
                          width: 100%;
@@ -3701,8 +3711,8 @@ input, select, textarea {
                       }
 
                       .wrapper.spotlight:nth-child(2n - 1) .image {
-                         margin-right: 0; /* Reset right margin */
-                         margin-left: 3em; /* Removed bottom margin */
+                          margin-right: 0; /* Reset right margin */
+                          margin-left: 3em; /* Keep existing margin */
                       }
 
 			.wrapper.spotlight.style2 {
@@ -4176,9 +4186,11 @@ input, select, textarea {
 	visibility: visible;
 }
 
-/* Removes the underline/border from the banner logo link */
+/* Removes the underline/border from the banner logo link and ensures block display for alignment */
 #banner .logo a {
-	border-bottom: none;
+    border-bottom: none;
+    display: block; /* Ensure it's a block element to properly inherit text-align: left from parent */
+    text-align: left; /* Explicitly left-align the logo link just to be safe */
 }
 
 /* -- COMBINED MOBILE STYLES (736px and below) -- */
@@ -4522,10 +4534,11 @@ input, select, textarea {
 
 /* Adjust image within carousel article */
 .why-it-matters-carousel .item article .image {
-    margin-bottom: 1em; /* Reduce space below image */
-    margin-left: -1.75em; /* Keep original negative margin for full-width image */
-    margin-top: -1.75em; /* Keep original negative margin for full-width image */
-    width: calc(100% + 3.5em); /* Keep original width adjustment */
+    margin-bottom: 1em;
+    margin-left: -1.75em; /* Keeps the image extending to the left */
+    margin-top: -1.75em; /* Keeps the image extending to the top */
+    width: calc(100% + 3.5em); /* Keeps the image extending to the right */
+    overflow: visible; /* Ensure it doesn't clip if the image itself has padding/margin issues */
 }
 
 /* Adjust content padding within carousel article */
@@ -4671,23 +4684,27 @@ input, select, textarea {
 
 /* --- Banner Content and Image Layout (for Hero Image on Right) --- */
 .banner-content {
-    flex: 1 1 45%; /* Adjusted flex-basis to allow for the new gap and image */
-    max-width: 50%; /* Adjusted max-width */
-    padding-right: 0; /* Removed this, as 'gap' property will handle spacing */
+    flex: 1 1 auto; /* Allow content to GROW (flex-grow: 1) and SHRINK (flex-shrink: 1), with an initial basis of 'auto' (content width). */
+    max-width: 60%; /* Limit the maximum width of the content column to leave room for the image. Adjust as needed. */
     box-sizing: border-box;
+    min-width: fit-content; /* CRITICAL: Ensure the title never truncates and pushes the layout if necessary. */
 }
 
 .banner-image {
-    flex: 1 1 40%; /* Adjusted flex-basis for image */
-    max-width: 45%; /* Adjusted max-width */
-    text-align: center;
+    flex: 0 0 35%; /* Set a fixed basis (e.g., 35%) for the image column, preventing grow/shrink. Adjust this to control overall image size. */
+    max-width: 35%; /* Max width should match flex-basis for consistent behavior. */
+    text-align: right; /* CRITICAL: Right-align the content (the <img>) within this container. */
 }
 
 .banner-image img {
-    display: block; /* Remove extra space below image */
-    max-width: 75%; /* Ensure image is responsive */
+    display: block;
+    width: 100%; /* Keep the desired smaller width for the image itself */
     height: auto; /* Maintain aspect ratio */
-    margin-left: 7em;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    margin-left: auto; /* CRITICAL: Push the image to the right within its parent .banner-image container. */
+    margin-right: 0; /* Ensure no conflicting right margin. */
+    border-radius: 15px; /* Keep border-radius on the image */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Keep box-shadow on the image */
 }
 
 /* Adjust banner spacing/alignment for the new layout */
@@ -4699,23 +4716,16 @@ input, select, textarea {
 
 /* Responsive adjustments for the new banner layout */
 @media screen and (max-width: 980px) {
-    #banner .inner {
-            flex-direction: column;
-            align-items: flex-start;
-            max-width: 100%; /* Make it take full available width */
-            width: 100%;     /* Explicitly ensure it takes full width */
-            padding: 0 1.5em; /* Adjust padding for a comfortable left/right margin */
-            margin: 0;       /* Remove auto margins that might center it */
-            gap: 0;
-        }
+        /* ... existing #banner .inner and other rules for this breakpoint */
 
-    .banner-content { /* Only target content here */
-        flex: 1 1 100%; /* Content takes full width */
-        max-width: 100%;
-        padding-right: 0;
-        text-align: left;
-        margin-bottom: 3em; /* Keep space below content before scroll arrow */
-    }
+        .banner-content { /* For mobile/tablet, content should take full width */
+            flex: 0 0 100%; /* Fixed basis of 100%, no grow/shrink */
+            max-width: 100%; /* Ensure it takes full width */
+            padding-right: 0; /* No specific padding on the right */
+            text-align: left; /* Keep left alignment */
+            margin-bottom: 3em; /* Space below content before scroll arrow */
+            min-width: auto; /* Allow it to shrink naturally on mobile */
+        }
 
     .banner-image { /* NEW: Hide the hero image on mobile */
         display: none;
@@ -4808,3 +4818,25 @@ input, select, textarea {
         box-shadow: 0 0 25px var(--accent-color) !important; */
     }
 }
+
+/* --- CRITICAL FIX FOR OWL CAROUSEL ARTICLE IMAGES --- */
+/* This targets the <img> element directly within an owl-carousel item,
+   forcing border-radius and box-shadow to apply. */
+.why-it-matters-carousel .owl-item img {
+    border-radius: 15px !important; /* Forces rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important; /* Forces shadow */
+    overflow: hidden !important; /* Should help ensure clipping */
+    /* If the image still looks stretched, you might also need: */
+    /* object-fit: cover !important; */
+}
+
+/* Also ensure the direct container for the image allows for overflow:hidden if needed */
+.why-it-matters-carousel .owl-item .image {
+    overflow: hidden !important;
+    border-radius: 15px !important; /* Add it here too, just in case */
+}
+
+/* Ensure any conflicting border-radius on a less specific selector is removed, if it still exists */
+/* If you still have .features article .image img with border-radius, remove it. */
+/* If you still have .features article .image with border-radius, remove it. */
+

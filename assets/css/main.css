@@ -4353,9 +4353,9 @@ input, select, textarea {
 /* -- Testimonials Carousel Styles -- */
 
 .testimonial-carousel-container {
-    position: relative;
-    padding: 0 4em; /* Default large screen padding */
-    margin-top: 3em;
+	position: relative;
+	padding: 0 4em; /* Default large screen padding */
+	margin-top: 0em; /* Reduced from 3em */
 }
 
 .testimonial-card {
@@ -4410,7 +4410,7 @@ input, select, textarea {
 .testimonial-card .star-rating .icon {
     color: var(--star-color);
     font-size: 0.9em;
-    padding-left: 0em;
+    padding-left: 0.5em;
 }
 
 /* Custom Navigation Buttons */
@@ -4445,7 +4445,7 @@ input, select, textarea {
         display: flex;
         justify-content: center; /* ALIGNMENT: Centers the previous/next buttons below the carousel */
         gap: 2em; /* Space between prev/next buttons */
-        margin-top: 1.5em; /* Space from carousel */
+        margin-top: .5em; /* Space from carousel */
     }
     .testimonial-nav button {
        position: static; /* Remove absolute positioning */
@@ -4458,11 +4458,12 @@ input, select, textarea {
 }
 @media screen and (max-width: 480px) {
     .testimonial-card {
-        padding: 1.5em;
+        padding: 0em;
     }
     .testimonial-card blockquote {
         font-size: 0.9em;
         padding-left: 1em;
+        padding-right: 1em;
         text-align: left; /* Keep left aligned */
     }
     .testimonial-card .author-info {
@@ -4790,6 +4791,10 @@ input, select, textarea {
     .custom-order-cta p {
         font-size: 1em;
     }
+    /* Makes custom quote carousel cards full-width on mobile */
+    .custom-quote-carousel .custom-order-cta {
+    	max-width: 100%;
+    }
 }
 
 /* --- Special Button Glow on Mobile Screens --- */
@@ -5062,3 +5067,25 @@ body.is-menu-visible .menu-toggle .bar:nth-child(3) {
 	width: auto; /* Maintains the correct aspect ratio */
 	vertical-align: middle; /* Ensures it's centered vertically */
 }
+
+/* --- Remove Unwanted Underlines on Icon/Button Links --- */
+.scroll-down,
+.scroll-to-top,
+a.mobile-menu-button {
+	border-bottom: none;
+}
+
+/* --- Consistent Mobile Pricing Spacing --- */
+@media screen and (max-width: 736px) {
+	/* Stack the 3 main pricing cards vertically */
+	#pricing .features {
+		flex-direction: column;
+		gap: 2em; /* This creates a perfect 2em space between each card */
+	}
+
+	/* Adjust the space above the custom quote carousel */
+	.custom-quote-carousel-container {
+		margin-top: 2em; /* This matches the 2em gap from the cards above */
+	}
+}
+

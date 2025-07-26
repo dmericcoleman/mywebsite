@@ -3244,13 +3244,12 @@ input, select, textarea {
 /* Banner */
 
 	#banner {
-       display: flex;
-       flex-direction: column;
-       align-items: center;
-       justify-content: center;
-       min-height: 100vh;
-       padding: 4em 0;
-       text-align: left;
+    	display: flex;
+    	flex-direction: column;
+    	align-items: center;
+    	min-height: 100vh;
+    	/* REMOVED padding and justify-content from here */
+    	text-align: left;
     }
 
 		#banner .inner {
@@ -3935,8 +3934,11 @@ input, select, textarea {
     		margin-bottom: 0; /* Ensures no overlap */
     	}
     	#banner .inner {
-    		max-width: 100%; width: 100%; padding: 0 1em; margin: 0;
-    	}
+        	max-width: 100%;
+        	width: 100%;
+        	padding: 2em 1em; /* Add padding here instead of the parent */
+        	margin: auto 0; /* This is the key change for vertical centering */
+        }
     	#banner .logo {
     		margin: 0 0 1em 0;
     	}
@@ -4074,8 +4076,8 @@ input, select, textarea {
     @media screen and (max-width: 736px) {
     	#banner {
         	min-height: 100svh;
-        	padding: 2em; /* Reduced vertical padding to prevent overflow */
         	margin-bottom: 0;
+        	/* Padding is now handled by the .inner element */
         }
 
     	.wrapper {

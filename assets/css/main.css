@@ -5103,10 +5103,15 @@ a.mobile-menu-button {
 /* --- Truncates Article Titles to 2 Lines on Mobile --- */
 @media screen and (max-width: 736px) {
 	.why-it-matters-carousel article h3.major {
+		line-height: 1.4; /* Set a consistent line height */
+		max-height: 2.8em; /* Enforce a max height of exactly 2 lines (1.4 * 2) */
 		display: -webkit-box;
 		-webkit-box-orient: vertical;
 		-webkit-line-clamp: 2;
 		overflow: hidden;
 		text-overflow: ellipsis;
+		margin-bottom: 0.5em;
+        border-bottom: none;
+        padding-bottom: 0;
 	}
 }

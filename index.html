@@ -489,39 +489,34 @@
             $('.testimonial-nav .custom-next').click(function() { $testimonialCarousel.trigger('next.owl.carousel'); });
             $('.testimonial-nav .custom-prev').click(function() { $testimonialCarousel.trigger('prev.owl.carousel'); });
         }
+
         // --- Owl Carousel for Why It Matters ---
         var $whyItMattersCarousel = $('.why-it-matters-carousel');
         if ($whyItMattersCarousel.length > 0) {
             $whyItMattersCarousel.owlCarousel({
                 loop: true,
                 margin: 30,
-                nav: false, // Use custom navigation or remove if you prefer Owl's default
-                dots: false, // You can enable dots for navigation if you like
+                nav: false,
+                dots: false,
                 autoplay: true,
                 autoplayTimeout: 5000,
                 autoplayHoverPause: true,
                 responsive: {
-                    0: {
-                        items: 1 // 1 item on very small screens
-                    },
-                    736: {
-                        items: 2 // 2 items on small screens (tablet portrait)
-                    },
-                    980: {
-                        items: 2 // 2 items on larger screens (tablet landscape and up)
-                    }
+                    0: { items: 1 },
+                    736: { items: 2 },
+                    980: { items: 2 }
                 }
             });
 
-            // If you added custom navigation for "Why It Matters" in HTML, enable it here
             $('.why-it-matters-nav .custom-next').click(function() {
                 $whyItMattersCarousel.trigger('next.owl.carousel');
             });
             $('.why-it-matters-nav .custom-prev').click(function() {
                 $whyItMattersCarousel.trigger('prev.owl.carousel');
             });
+        }
 
-            // --- Owl Carousel for Custom Quotes ---
+        // --- Owl Carousel for Custom Quotes ---
         var $customQuoteCarousel = $('.custom-quote-carousel');
         if ($customQuoteCarousel.length > 0) {
             $customQuoteCarousel.owlCarousel({
@@ -541,6 +536,7 @@
                 $customQuoteCarousel.trigger('prev.owl.carousel');
             });
         }
+
     });
 </script>
 

@@ -3908,53 +3908,120 @@ input, select, textarea {
 
     }
 
-	@media screen and (max-width: 736px) {
+    @media screen and (max-width: 736px) {
+    	/* --- HEADER --- */
+    	#header {
+    		height: 4em;
+    		line-height: 4em;
+    		padding: 0 1.5em;
+    	}
+    	#header nav {
+    		top: 0; right: 0; height: inherit; line-height: inherit;
+    	}
+    	#header nav a {
+    		height: inherit; line-height: inherit;
+    	}
+    	#header nav a[href="#menu"] {
+    		box-shadow: none; padding: 0 1em; border-radius: 0;
+    	}
+    	#header nav a[href="#menu"]:hover, #header nav a[href="#menu"]:active {
+    		background-color: inherit;
+    	}
 
-       #footer {
-          margin-top: -2.5em;
-          padding-top: 2.5em;
-       }
+    	/* --- BANNER (FULL SCREEN & POSITIONING FIX) --- */
+    	#banner {
+    		min-height: 100svh;
+    		padding: 2em;
+    		margin-bottom: 0; /* Ensures no overlap */
+    	}
+    	#banner .inner {
+    		max-width: 100%; width: 100%; padding: 0 1em; margin: 0;
+    	}
+    	#banner .logo {
+    		margin: 0 0 1em 0;
+    	}
+    	#banner .logo .icon {
+    		font-size: 1.5em;
+    	}
+    	#banner h2 {
+    		font-size: 1.5em; white-space: normal;
+    	}
+    	#banner p {
+    		font-size: 0.8em;
+    	}
 
-           #footer .inner {
-              padding: 2em 2em 0.1em 2em ;
-              text-align: left; /* ALIGNMENT: Ensure overall footer content is left-aligned on phones */
-           }
+    	/* --- GENERAL SECTIONS & DIAGONAL LINES (POSITIONING FIX) --- */
+    	.wrapper {
+    		margin: 3.5em 0;
+    	}
+    	.wrapper:before, .wrapper:after {
+    		height: 3.5em;
+    	}
+    	.wrapper:before {
+    		top: -3.5em;
+    	}
+    	.wrapper:after {
+    		bottom: -3.5em;
+    	}
+    	.wrapper .inner {
+    		padding: 2em 2em 0.1em 2em;
+    	}
+    	#one::before, #one::after, #two::after, #three::after, #four::after, #five::after, #six::after, #pricing::after, #testimonials::after {
+    		height: 3.5em;
+    	}
+    	#one::before {
+    		top: -3.5em; /* Aligns line within the top margin */
+    	}
+    	#one::after, #two::after, #three::after, #four::after, #five::after, #six::after, #pricing::after, #testimonials::after {
+    		bottom: -3.5em;
+    	}
 
-              #footer .inner form {
-                 margin: 0 0 3em 0;
-              }
-
-              #footer .inner .contact {
-                 margin: 0 0 3em 0;
-                 text-align: left; /* ALIGNMENT: Explicitly left-align contact list on phones */
-              }
-
+    	/* --- OTHER MOBILE STYLES --- */
+    	#wrapper > header {
+    		padding: 6.5em 2em 3em 2em; background-size: auto, 125%; margin-bottom: -3.5em;
+    	}
+    	#wrapper > header h2 {
+    		font-size: 1.25em;
+    	}
+    	#wrapper > header p {
+    		font-size: 0.8em;
+    	}
+    	.wrapper.spotlight .inner {
+    		align-items: flex-start;
+    	}
+    	.wrapper.spotlight .image {
+    		width: 19em; margin: 0 1.75em 2em 0;
+    	}
+    	.wrapper.spotlight:nth-child(2n - 1) .image {
+    		margin: 0 0 2em 1.75em;
+    	}
+    	h2 { font-size: 1.1em; }
+    	h3 { font-size: 0.9em; }
+    	body, input, select, textarea { font-size: 100%; line-height: 1.6; }
+    	.logo img { max-width: 100px; }
+    	.button { height: 3.5rem; line-height: 3.5rem; }
+    	#footer .contact li { margin: 2em 0 0 0; }
+    	.wrapper .content p { line-height: 1.75; }
+    	#pricing .button { width: 100%; padding: 0 1.5em; }
+    	.testimonial-carousel-container, .why-it-matters-carousel-container, .custom-quote-carousel-container { padding: 0; }
+    	.testimonial-nav, .why-it-matters-nav, .custom-quote-nav { display: flex; justify-content: center; gap: 2em; margin-top: 1.5em; }
+    	.testimonial-nav button, .why-it-matters-nav button, .custom-quote-nav button { position: static; transform: none; }
+    	.owl-carousel .owl-dots { display: none !important; }
+    	.why-it-matters-header-and-button { flex-direction: column; align-items: flex-start; gap: 1.5em; }
+        .why-it-matters-header-and-button h2.major { width: 100%; border-bottom: none; padding-bottom: 0; }
+        .why-it-matters-header-and-button .actions.compact.header-button { margin-left: 0; width: 100%; text-align: left; }
+    	.why-it-matters-header-and-button .actions .button { width: 100%; min-width: unset; text-align: center; }
+    	.custom-order-cta { padding: 2.5em 1.5em; margin-top: 3em; max-width: 90%; }
+        .custom-order-cta h3 { font-size: 1.2em; }
+        .custom-order-cta p { font-size: 1em; }
+    	.button.special { box-shadow: 0 0 15px rgba(255, 255, 255, 0.6) !important; }
+        .button.special:hover, .button.special:active { box-shadow: 0 0 25px rgba(255, 255, 255, 1) !important; }
+    	#one::after, #two::after, #three::after, #four::after, #five::after, #six::after, #pricing::after, #testimonials::after {
+           background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolyline points='0,75 100,25' style='fill:none; stroke:rgba(59, 130, 246, 0.5); stroke-width:2.5px;' /%3E%3C/svg%3E");
+        }
+    	.testimonial-card .author-info .client-title, .testimonial-card .author-info .client-company { display: block; }
+        .testimonial-card .author-info .client-company { margin-left: 0; }
     }
-
-	@media screen and (max-width: 480px) {
-
-       #footer .inner .copyright li {
-          border-left: 0;
-          display: block;
-          margin: 0.5em 0 0 0; /* Reduced margin */
-          padding-left: 0;
-          font-size: 0.8em; /* Smaller font for copyright */
-          text-align: left; /* ALIGNMENT: Explicitly left-align individual copyright lines */
-       }
-
-          #footer .inner .copyright li:first-child {
-             margin-top: 0;
-          }
-
-    }
-
-	@media screen and (max-width: 360px) {
-
-		#footer .inner {
-			padding: 2em 1.5em 0.1em 1.5em ;
-		}
-
-	}
 
     /* -- FINAL GLOWING LINES (RELIABLE METHOD) -- */
 
@@ -4006,10 +4073,10 @@ input, select, textarea {
     }
     @media screen and (max-width: 736px) {
     	#banner {
-    		min-height: 100svh;
-    		padding: 4em 2em;
-    		margin-bottom: 0;
-    	}
+        	min-height: 100svh;
+        	padding: 2em; /* Reduced vertical padding to prevent overflow */
+        	margin-bottom: 0;
+        }
 
     	.wrapper {
     		margin: 2.5em 0;
@@ -4671,36 +4738,6 @@ input, select, textarea {
 
     /* Remove the redundant .banner-image margin-bottom: 0; from here, as it's now display: none */
 }
-
-#banner {
-	min-height: 100svh; /* Use "small viewport height" for mobile */
-	padding: 4em 2em; /* Adjusted padding for better content centering */
-	margin-bottom: -2.5em;
-}
-
-	#banner .inner {
-		max-width: 100%;
-		width: 100%;
-		padding: 0 1em;
-		margin: 0;
-	}
-
-	#banner .logo {
-		margin: 0 0 1em 0;
-	}
-
-		#banner .logo .icon {
-			font-size: 1.5em;
-		}
-
-	#banner h2 {
-		font-size: 1.5em;
-		white-space: normal; /* Allows the text to wrap */
-	}
-
-	#banner p {
-		font-size: 0.8em;
-	}
 
 /* --- Custom Order CTA Section Styles --- */
 .custom-order-cta {

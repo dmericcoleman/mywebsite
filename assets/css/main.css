@@ -3025,10 +3025,11 @@ input, select, textarea {
 	}
 
 		#header h1 {
-			border-bottom: 0;
-			font-size: 0.9em;
-			margin-bottom: 0;
-		}
+        	border-bottom: 0;
+        	font-size: 0.9em;
+        	margin-bottom: 0;
+        	flex-grow: 0; /* Add this line */
+        }
 
 			#header h1 a {
 				border: 0;
@@ -3383,33 +3384,6 @@ input, select, textarea {
 				}
 
 		}
-
-		#banner {
-        	padding: 8em 2em 6em 2em ;
-        	margin-bottom: -2.5em;
-        }
-
-        	/* This new rule fixes the container stretching issue */
-        	.banner-content {
-        		min-width: 0;
-        	}
-
-        	#banner .logo {
-        		margin: 0 0 1em 0;
-        	}
-
-        		#banner .logo .icon {
-        			font-size: 1.5em;
-        		}
-
-        	#banner h2 {
-        		font-size: 1.5em;
-        		white-space: normal; /* This allows the title to wrap */
-        	}
-
-        	#banner p {
-        		font-size: 0.8em;
-        	}
 
 		body.is-preload #banner .logo {
 			-moz-transform: translateY(0.5em);
@@ -4160,9 +4134,9 @@ input, select, textarea {
 
 /* Removes the underline/border from the banner logo link and ensures block display for alignment */
 #banner .logo a {
-    border-bottom: none;
-    display: block; /* Ensure it's a block element to properly inherit text-align: left from parent */
-    text-align: left; /* Explicitly left-align the logo link just to be safe */
+	border-bottom: none;
+	display: inline-block; /* This makes the link only as wide as the logo */
+	text-align: left;
 }
 
 /* -- COMBINED MOBILE STYLES (736px and below) -- */
@@ -4675,14 +4649,35 @@ input, select, textarea {
     /* Remove the redundant .banner-image margin-bottom: 0; from here, as it's now display: none */
 }
 
-@media screen and (max-width: 736px) {
-    #banner .inner {
-        max-width: 100%; /* Make it take full available width */
-        width: 100%;     /* Explicitly ensure it takes full width */
-        padding: 0 1em; /* Adjust padding for a comfortable left/right margin on smallest screens */
-        margin: 0;       /* Remove auto margins that might center it */
-    }
+#banner {
+	min-height: 100svh; /* Use "small viewport height" for mobile */
+	padding: 4em 2em; /* Adjusted padding for better content centering */
+	margin-bottom: -2.5em;
 }
+
+	#banner .inner {
+		max-width: 100%;
+		width: 100%;
+		padding: 0 1em;
+		margin: 0;
+	}
+
+	#banner .logo {
+		margin: 0 0 1em 0;
+	}
+
+		#banner .logo .icon {
+			font-size: 1.5em;
+		}
+
+	#banner h2 {
+		font-size: 1.5em;
+		white-space: normal; /* Allows the text to wrap */
+	}
+
+	#banner p {
+		font-size: 0.8em;
+	}
 
 /* --- Custom Order CTA Section Styles --- */
 .custom-order-cta {
@@ -4963,7 +4958,8 @@ body.is-menu-visible .menu-toggle .bar:nth-child(3) {
 	transform: scaleX(1); /* Grow the line to full width on hover */
 }
 
-/* --- Mobile Menu Button (Outline Style) --- */
+/* --- Mobile Menu Button (Dynamic Scroll Style) --- */
+/* This is the default style for the button (when scrolled down) */
 #header .mobile-nav a.mobile-menu-button {
 	display: inline-block;
 	height: 2.75em;
@@ -4976,15 +4972,28 @@ body.is-menu-visible .menu-toggle .bar:nth-child(3) {
 	font-weight: 700;
 	letter-spacing: 0.1em;
 	text-transform: uppercase;
-	transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
 
-	/* Outline style with a blue border and white text */
+	/* "Normal" button style: faint border, white text */
 	background-color: transparent;
-	box-shadow: inset 0 0 0 2px var(--accent-color);
-	color: var(--text-color-strong) !important; /* Changed to white */
+	box-shadow: inset 0 0 0 2px var(--border-color);
+	color: var(--text-color-strong) !important;
 }
 
-/* Add a "tapped" effect for mobile */
+/* This style applies ONLY when at the top of the page */
+#header.alt .mobile-nav a.mobile-menu-button {
+	/* Prominent style: blue border */
+	box-shadow: inset 0 0 0 2px var(--accent-color);
+}
+
+/* A "tapped" effect for both states */
 #header .mobile-nav a.mobile-menu-button:active {
-	background-color: rgba(59, 130, 246, 0.15); /* Faint blue glow when tapped */
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Sticky Header Logo Size --- */
+#header h1 a.header-logo img {
+	height: 2.5em; /* Controls the height of the logo */
+	width: auto; /* Maintains the correct aspect ratio */
+	vertical-align: middle; /* Ensures it's centered vertically */
 }

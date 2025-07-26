@@ -2924,16 +2924,16 @@ input, select, textarea {
 /* Features */
 
 	.features {
-		display: -moz-flex;
-		display: -webkit-flex;
-		display: -ms-flex;
-		display: flex;
-		-moz-flex-wrap: wrap;
-		-webkit-flex-wrap: wrap;
-		-ms-flex-wrap: wrap;
-		flex-wrap: wrap;
-		margin: 0 0 2em 0;
-	}
+    	display: -moz-flex;
+    	display: -webkit-flex;
+    	display: -ms-flex;
+    	display: flex;
+    	-moz-flex-wrap: wrap;
+    	-webkit-flex-wrap: wrap;
+    	-ms-flex-wrap: wrap;
+    	flex-wrap: wrap;
+    	margin: 0 0 0 0; /* Changed bottom margin from 2em to 0 */
+    }
 
 		.features article {
                    padding: 1.75em 1.75em 0.1em 1.75em;
@@ -4053,9 +4053,9 @@ input, select, textarea {
         #one::after, #two::after, #three::after, #four::after, #five::after, #six::after, #pricing::after, #testimonials::after { bottom: -4.75em; }
     }
     @media screen and (max-width: 736px) {
-        #one::before, #one::after, #two::after, #three::after, #four::after, #five::after, #six::after, #pricing::after, #testimonials::after { height: 2.5em; }
-        #one::before { top: -2.5em; }
-        #one::after, #two::after, #three::after, #four::after, #five::after, #six::after, #pricing::after, #testimonials::after { bottom: -2.5em; }
+    	#one::before, #one::after, #two::after, #three::after, #four::after, #five::after, #six::after, #pricing::after, #testimonials::after { height: 2.5em; }
+    	#one::before { top: -3.75em; }
+    	#one::after, #two::after, #three::after, #four::after, #five::after, #six::after, #pricing::after, #testimonials::after { bottom: -3.75em; }
     }
 
     /* -- Scroll Down Arrow (Option 1: Minimalist Chevron) -- */
@@ -4807,10 +4807,9 @@ input, select, textarea {
 /* --- Custom Quote Carousel --- */
 .custom-quote-carousel-container {
 	position: relative;
-	margin-top: 5em;
+	margin-top: 1em; /* Reduced from 5em */
 	padding: 0 4em; /* Provides space for nav arrows on desktop */
 }
-
 .custom-quote-carousel .custom-order-cta {
 	margin-top: 0;
 	display: flex;
@@ -4865,7 +4864,7 @@ input, select, textarea {
 /* --- Thicker Diagonal Lines for Mobile --- */
 @media screen and (max-width: 736px) {
 	#one::after, #two::after, #three::after, #four::after, #five::after, #six::after, #pricing::after, #testimonials::after, #one::before {
-		background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolyline points='0,75 100,25' style='fill:none; stroke:rgba(59, 130, 246, 0.5); stroke-width:5.5px;' /%3E%3C/svg%3E");
+		background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolyline points='0,75 100,25' style='fill:none; stroke:rgba(59, 130, 246, 0.5); stroke-width:9px;' /%3E%3C/svg%3E");
 	}
 }
 

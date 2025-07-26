@@ -249,7 +249,7 @@ input, select, textarea {
         font-weight: 700;
         letter-spacing: 0.1em;
         margin: 0 0 1em 0;
-        text-transform: ;
+        text-transform: none;
      }
 
            h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -3340,7 +3340,7 @@ input, select, textarea {
                    padding-bottom: 0.3em; /* Space between text and line */
                    margin-bottom: 0.3em; /* Space between line and text below */
                    white-space: nowrap; /* NEW: Prevents text from wrapping */
-                   overflow: ; /* NEW: Hides any overflowing text */
+                   overflow: hidden; /* NEW: Hides any overflowing text */
                    text-overflow: ellipsis; /* NEW: Adds "..." to truncated text */
                 }
 
@@ -3363,15 +3363,12 @@ input, select, textarea {
                   font-weight: 400;
                   letter-spacing: 0.1em;
                   line-height: 1.5; /* NEW: Reduces internal font spacing */
-                  text-transform: ;
+                  text-transform: none;
                   color: rgba(255, 255, 255, 0.8);
                   margin-top: 0;
                }
 
-               #banner p {
-                                 /* ... existing p styles ... */
-                                 margin-top: 0;
-                              }
+
 
                               #banner .actions.special {
                                                  margin-top: 2em; /* Space between tagline and button */
@@ -4461,7 +4458,7 @@ input, select, textarea {
     font-size: 0.8em;
     font-weight: 700;
     letter-spacing: 0.1em;
-    text-transform: ;
+    text-transform: none;
     text-decoration: none;
     border-bottom: none;
 }
@@ -4718,7 +4715,7 @@ input, select, textarea {
         flex-direction: column;
         align-items: center;
         max-width: 90%;
-        padding: 0 3em;
+        padding: 0 1em;
         gap: 0;
     }
 
@@ -4750,7 +4747,7 @@ input, select, textarea {
 @media screen and (max-width: 736px) {
     #banner .inner {
         max-width: 95%;
-        padding: 0 2em; /* NEW: Adjusted horizontal padding for small mobiles */
+        padding: 0 1em; /* NEW: Adjusted horizontal padding for small mobiles */
     }
 }
 

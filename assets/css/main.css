@@ -4879,3 +4879,91 @@ input, select, textarea {
 		margin-top: .5em; /* Ensures no extra indent on mobile */
 	}
 }
+
+/* --- Professional Mobile Menu Styles --- */
+
+/* 1. Base style for the new hamburger button */
+.menu-toggle {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	width: 28px; /* Button width */
+	height: 24px; /* Button height */
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* 2. Style for the three bars of the icon */
+.menu-toggle .bar {
+	width: 100%;
+	height: 3px; /* Thickness of the bars */
+	background-color: var(--text-color-strong);
+	border-radius: 2px;
+	transition: all 0.3s ease-in-out;
+}
+
+/* 3. Animation: Hamburger icon transforms into an "X" when menu is visible */
+body.is-menu-visible .menu-toggle .bar:nth-child(1) {
+	transform: translateY(10px) rotate(45deg);
+}
+body.is-menu-visible .menu-toggle .bar:nth-child(2) {
+	opacity: 0;
+}
+body.is-menu-visible .menu-toggle .bar:nth-child(3) {
+	transform: translateY(-10px) rotate(-45deg);
+}
+
+
+/* 4. Smoother animation for the menu panel sliding in */
+#menu .inner {
+	transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* 5. Style the "Close" link into a proper "X" icon */
+#menu .close {
+	background-image: none; /* Remove old background image */
+	transition: transform 0.3s ease-in-out;
+}
+#menu .close:hover {
+	transform: rotate(90deg);
+}
+#menu .close::before,
+#menu .close::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 24px; /* Width of the X lines */
+	height: 3px;  /* Thickness of the X lines */
+	background-color: var(--text-color-strong);
+	border-radius: 2px;
+}
+#menu .close::before {
+	transform: translate(-50%, -50%) rotate(45deg);
+}
+#menu .close::after {
+	transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* 6. Improved styling for links inside the menu */
+#menu .links li a {
+	transition: background-color 0.2s ease-in-out, padding-left 0.2s ease-in-out;
+}
+#menu .links li a:hover {
+	padding-left: 0.5em; /* Nudge text on hover */
+	background-color: rgba(255, 255, 255, 0.05);
+	color: var(--text-color-strong);
+}
+
+/* 7. Hide the old mobile nav text link */
+#header nav a[href="#menu"] {
+	text-indent: -9999px; /* Hides the original "Menu" text */
+	width: 4em;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

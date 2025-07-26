@@ -3406,31 +3406,32 @@ input, select, textarea {
 
 		}
 
-		@media screen and (max-width: 736px) {
+		#banner {
+        	padding: 8em 2em 6em 2em ;
+        	margin-bottom: -2.5em;
+        }
 
-			#banner {
-				padding: 8em 2em 6em 2em ;
-				margin-bottom: -2.5em;
-			}
+        	/* This new rule fixes the container stretching issue */
+        	.banner-content {
+        		min-width: 0;
+        	}
 
-				#banner .logo {
-					margin: 0 0 1em 0;
-				}
+        	#banner .logo {
+        		margin: 0 0 1em 0;
+        	}
 
-					#banner .logo .icon {
-						font-size: 1.5em;
-					}
+        		#banner .logo .icon {
+        			font-size: 1.5em;
+        		}
 
-				#banner h2 {
-                	font-size: 1.5em;
-                	white-space: normal; /* Allows the text to wrap */
-                }
+        	#banner h2 {
+        		font-size: 1.5em;
+        		white-space: normal; /* This allows the title to wrap */
+        	}
 
-				#banner p {
-					font-size: 0.8em;
-				}
-
-		}
+        	#banner p {
+        		font-size: 0.8em;
+        	}
 
 		body.is-preload #banner .logo {
 			-moz-transform: translateY(0.5em);

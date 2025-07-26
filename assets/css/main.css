@@ -4005,9 +4005,27 @@ input, select, textarea {
         #one::after, #two::after, #three::after, #four::after, #five::after, #six::after, #pricing::after, #testimonials::after { bottom: -4.75em; }
     }
     @media screen and (max-width: 736px) {
-    	#one::before, #one::after, #two::after, #three::after, #four::after, #five::after, #six::after, #pricing::after, #testimonials::after { height: 2.5em; }
-    	#one::before { top: -3.75em; }
-    	#one::after, #two::after, #three::after, #four::after, #five::after, #six::after, #pricing::after, #testimonials::after { bottom: -3.75em; }
+    	#banner {
+    		min-height: 100svh;
+    		padding: 4em 2em;
+    		margin-bottom: 0;
+    	}
+
+    	.wrapper {
+    		margin: 2.5em 0;
+    	}
+
+    	#one::before, #one::after, #two::after, #three::after, #four::after, #five::after, #six::after, #pricing::after, #testimonials::after {
+    		height: 2.5em;
+    	}
+
+    	#one::before {
+    		top: -2.5em; /* Corrected from -3.75em */
+    	}
+
+    	#one::after, #two::after, #three::after, #four::after, #five::after, #six::after, #pricing::after, #testimonials::after {
+    		bottom: -3.75em;
+    	}
     }
 
     /* -- Scroll Down Arrow (Option 1: Minimalist Chevron) -- */
@@ -4141,6 +4159,11 @@ input, select, textarea {
 
 /* -- COMBINED MOBILE STYLES (736px and below) -- */
 @media screen and (max-width: 736px) {
+    #banner {
+    	min-height: 100svh; /* Use "small viewport height" for mobile */
+    	padding: 4em 2em; /* Adjusted padding for better content centering */
+    	margin-bottom: 0; /* Changed from -2.5em to 0 */
+    }
 
 	/* Resets the logo's negative margin */
 	#banner .logo {

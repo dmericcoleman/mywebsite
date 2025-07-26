@@ -4350,7 +4350,7 @@ input, select, textarea {
 .testimonial-card .author-info cite {
 	text-align: left;
 	font-style: normal;
-	line-height: 0.9;
+	line-height: .7;
 }
 
 .testimonial-card .author-info cite strong {
@@ -4363,7 +4363,7 @@ input, select, textarea {
 .testimonial-card .star-rating .icon {
     color: var(--star-color);
     font-size: 0.9em;
-    padding-left: .5em;
+    padding-left: 0em;
 }
 
 /* Custom Navigation Buttons */
@@ -4877,6 +4877,6 @@ input, select, textarea {
 	}
 
 	.testimonial-card .author-info .client-company {
-		margin-left: 0; /* Ensures no extra indent on mobile */
+		margin-top: .5em; /* Ensures no extra indent on mobile */
 	}
 }

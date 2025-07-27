@@ -2663,7 +2663,7 @@ input, select, textarea {
        ul.contact li {
           overflow-wrap: break-word; /* SPACING UPDATE: Prevents long text from overflowing */
           text-decoration: none;
-          margin: 2.5em 0 0 0;
+          margin: 1.5em 0 0 0;
           padding: 0 0 0 3.25em;
           position: relative;
        }

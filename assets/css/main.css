@@ -424,6 +424,7 @@ input, select, textarea {
           align-items: flex-start;
           padding: 1.25em 0;
           border-top: solid 1px var(--border-color);
+          overflow-wrap: break-word; /* Allows long text to wrap */
        }
 
           ul.contact li:first-child {
@@ -718,6 +719,7 @@ input, select, textarea {
 /* Banner */
 
     #banner {
+        position: relative; /* Required for the overlay */
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -728,6 +730,22 @@ input, select, textarea {
         padding-left: 2em;
         padding-right: 2em;
         text-align: left;
+    }
+
+    #banner::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4); /* Subtle dark overlay */
+        z-index: 0;
+    }
+
+    #banner .inner {
+        position: relative; /* Ensures content appears above the overlay */
+        z-index: 1;
     }
 
        #banner .inner {
@@ -775,7 +793,7 @@ input, select, textarea {
 
 
 /* Wrapper */
-    .wrapper, #footer {
+    .wrapper {
         padding: 6em 0;
         border-bottom: 1px solid var(--border-color);
         background-color: var(--bg-color);
@@ -842,9 +860,10 @@ input, select, textarea {
 
 /* Footer */
     #footer {
-        /* Padding is now handled by the .wrapper, #footer rule */
+        padding: 6em 0;
+        border-bottom: 1px solid var(--border-color);
     }
-    
+
     #footer .inner {
        padding: 0;
        display: flex;
@@ -1226,25 +1245,23 @@ input, select, textarea {
     .custom-order-cta h3 { font-size: 1.5em; }
 
 /* Mobile Menu Button */
-    #header .mobile-nav a.mobile-menu-button {
-        display: inline-block;
-        height: 2.75em;
-        line-height: 2.75em;
-        padding: 0 1.25em;
-        border-radius: 5px;
-        text-decoration: none;
-        font-family: var(--font-special);
-        font-size: 0.8em;
-        font-weight: 700;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
-        background-color: transparent;
-        box-shadow: inset 0 0 0 1px var(--border-color);
-        color: var(--text-color-strong) !important;
-        border-bottom: 0;
+    #header .mobile-nav .mobile-menu-button {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 28px;
+        height: 24px;
+        background: transparent;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        box-sizing: border-box;
     }
 
-    #header.alt .mobile-nav a.mobile-menu-button {
-        box-shadow: inset 0 0 0 1px var(--accent-color);
+    #header .mobile-nav .mobile-menu-button .bar {
+        width: 100%;
+        height: 3px;
+        background-color: var(--text-color-strong);
+        border-radius: 2px;
+        transition: all 0.3s ease-in-out;
     }

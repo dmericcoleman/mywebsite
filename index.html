@@ -33,7 +33,11 @@
 		</nav>
 
 		<nav class="mobile-nav">
-			<a href="#menu" class="mobile-menu-button">Menu</a>
+			<button class="mobile-menu-button" aria-label="Open Menu" aria-expanded="false" aria-controls="menu">
+				<span class="bar"></span>
+				<span class="bar"></span>
+				<span class="bar"></span>
+			</button>
 		</nav>
 	</header>
 
@@ -424,7 +428,7 @@
                 if (lockMenu()) body.classList.remove('is-menu-visible');
             };
 
-            const menuToggle = document.querySelector('a[href="#menu"]');
+            const menuToggle = document.querySelector('.mobile-menu-button');
             if (menuToggle) {
                 menuToggle.addEventListener('click', (e) => {
                     e.preventDefault();

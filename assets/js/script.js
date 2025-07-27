@@ -56,10 +56,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.themeToggle = document.querySelector('.theme-toggle');
                 if (!this.themeToggle) return;
 
-                this.prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-                this.savedTheme = localStorage.getItem('theme') || (this.prefersDark.matches ? 'dark' : 'light');
+                // UPDATED: The logic now defaults to 'dark' if no theme is saved in localStorage.
+                const savedTheme = localStorage.getItem('theme') || 'dark';
 
-                this.applyTheme(this.savedTheme);
+                this.applyTheme(savedTheme);
                 this.addEventListeners();
             },
             applyTheme(theme) {
@@ -81,6 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.header = document.getElementById('header');
                 this.menuToggle = document.querySelector('.mobile-menu-toggle');
                 this.mobileMenu = document.getElementById('mobile-menu');
+                this.closeMenuBtn = document.querySelector('.close-menu-btn'); // Get close button
+                this.menuOverlay = document.getElementById('menu-overlay'); // Get overlay
 
                 if (this.header) this.initStickyHeader();
                 if (this.menuToggle && this.mobileMenu) this.initMobileMenu();
@@ -93,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 handleScroll();
             },
             initMobileMenu() {
-                const focusableElements = Array.from(this.mobileMenu.querySelectorAll('a[href]'));
+                const focusableElements = Array.from(this.mobileMenu.querySelectorAll('a[href], button'));
                 const firstFocusableEl = focusableElements[0];
                 const lastFocusableEl = focusableElements[focusableElements.length - 1];
 
@@ -112,27 +114,40 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 };
 
+                const handleEscKey = (e) => {
+                    if (e.key === 'Escape') {
+                        this.toggleMenu(false);
+                    }
+                };
+
                 const toggleMenu = (isOpen) => {
                     document.body.classList.toggle('menu-open', isOpen);
                     this.menuToggle.setAttribute('aria-expanded', isOpen);
                     if (isOpen) {
                         document.addEventListener('keydown', trapFocus);
-                        firstFocusableEl.focus();
+                        document.addEventListener('keydown', handleEscKey);
+                        this.closeMenuBtn.focus();
                     } else {
                         document.removeEventListener('keydown', trapFocus);
+                        document.removeEventListener('keydown', handleEscKey);
                         this.menuToggle.focus();
                     }
                 };
 
-                this.menuToggle.addEventListener('click', () => toggleMenu(!document.body.classList.contains('menu-open')));
+                this.toggleMenu = toggleMenu; // Make it accessible to other methods
+
+                this.menuToggle.addEventListener('click', () => this.toggleMenu(!document.body.classList.contains('menu-open')));
+                this.closeMenuBtn.addEventListener('click', () => this.toggleMenu(false));
+                this.menuOverlay.addEventListener('click', () => this.toggleMenu(false));
 
                 this.mobileMenu.addEventListener('click', (e) => {
                     if (e.target.tagName === 'A') {
-                        toggleMenu(false);
+                        this.toggleMenu(false);
                     }
                 });
             }
         },
+
 
         // =================================================================
         // ON-SCROLL ANIMATIONS MODULE

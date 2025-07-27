@@ -3336,7 +3336,7 @@ input, select, textarea {
                   font-family: var(--font-special);
                   font-size: 1em;
                   font-weight: 400;
-                  letter-spacing: 0.1em;
+                  letter-spacing: 0em;
                   line-height: 1.5; /* NEW: Reduces internal font spacing */
                   text-transform: none;
                   color: rgba(255, 255, 255, 0.8);

@@ -1,5 +1,5 @@
 @import url(fontawesome-all.min.css);
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@400;700&family=Montserrat:wght@700&family=Raleway:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Raleway:200,700|Source+Sans+Pro:300,600,300italic,600italic");
 
 :root {
   --bg-color: #121212; /* Dark Charcoal (Gray) */
@@ -9,9 +9,9 @@
   --accent-color: #3b82f6; /* A strong, professional blue */
   --interactive-color: #1e40af; /* A deeper blue for hovers */
   --star-color: #facc15; /* A nice gold for star ratings */
-  --font-body: 'Roboto', sans-serif;
-  --font-heading: 'Montserrat', sans-serif;
-  --font-special: 'Montserrat', sans-serif;
+  --font-body: 'Source Sans Pro', sans-serif;
+  --font-heading: 'Raleway', sans-serif;
+  --font-special: 'Raleway', sans-serif;
 }
 
 html, body, div, span, applet, object,
@@ -2663,7 +2663,7 @@ input, select, textarea {
        ul.contact li {
           overflow-wrap: break-word; /* SPACING UPDATE: Prevents long text from overflowing */
           text-decoration: none;
-          margin: 1.5em 0 0 0;
+          margin: 2.5em 0 0 0;
           padding: 0 0 0 3.25em;
           position: relative;
        }
@@ -2702,7 +2702,7 @@ input, select, textarea {
        @media screen and (max-width: 736px) {
 
           ul.contact li {
-             margin: 1em 0 0 0; /* SPACING UPDATE */
+             margin: 1.5em 0 0 0; /* SPACING UPDATE */
           }
 
        }

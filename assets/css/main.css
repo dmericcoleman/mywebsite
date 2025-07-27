@@ -3464,10 +3464,8 @@ input, select, textarea {
 
 		#wrapper > header {
 			padding: 11em 3em 7.375em 3em ;
-			background-size: auto,
- cover;
-			background-position: center,
- 0% 0%;
+			background-size: auto, cover;
+			background-position: center, 0% 0%;
 			margin-bottom: -4.75em;
 		}
 
@@ -3939,7 +3937,7 @@ input, select, textarea {
         	max-width: 100%;
         	width: 100%;
         	/* This adds padding to account for the phone's status bar */
-        	padding: 1em;
+        	padding: calc(2em + env(safe-area-inset-top)) 1em 2em;
         	margin: auto 0; /* This keeps the content vertically centered */
         }
     	#banner .logo {
@@ -4724,7 +4722,7 @@ input, select, textarea {
             max-width: 100%; /* Ensure it takes full width */
             padding-right: 0; /* No specific padding on the right */
             text-align: left; /* Keep left alignment */
-            margin-bottom: 3em; /* Space below content before scroll arrow */
+            margin-bottom: 0em; /* Space below content before scroll arrow */
             min-width: auto; /* Allow it to shrink naturally on mobile */
         }
 

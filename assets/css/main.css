@@ -2702,7 +2702,7 @@ input, select, textarea {
        @media screen and (max-width: 736px) {
 
           ul.contact li {
-             margin: 1.5em 0 0 0; /* SPACING UPDATE */
+             margin: 1em 0 0 0; /* SPACING UPDATE */
           }
 
        }

@@ -1,0 +1,577 @@
+/* ==================================================
+   TABLE OF CONTENTS
+   1.  :root        - CSS Variables & Theming
+   2.  Base         - Reset & Foundational Styles
+   3.  Typography   - Fluid Sizing with clamp()
+   4.  Layout       - Containers & Section Helpers
+   5.  Components   - Buttons, Cards, Forms
+   6.  Header       - Sticky Header & Navigation
+   7.  Main Content - Hero, Services, Testimonials, etc.
+   8.  Footer       - Layout & Styling
+   9.  Animations   - Scroll & Hover Effects
+   10. Media Queries- Responsive Breakpoints
+===================================================== */
+
+/* 1. :root - CSS Variables & Theming */
+:root {
+    /* Fonts */
+    --font-heading: 'Raleway', sans-serif;
+    --font-body: 'Source Sans Pro', sans-serif;
+
+    /* Light Mode Colors (Default) */
+    --color-bg: #F9FAFB;
+    --color-bg-alt: #FFFFFF;
+    --color-text: #374151;
+    --color-heading: #111827;
+    --color-border: #E5E7EB;
+    --color-accent: #D9A443; /* Gold accent for light mode */
+    --color-accent-hover: #C0903A;
+    /* IMPROVED: Increased overlay opacity for better contrast */
+    --hero-overlay: linear-gradient(45deg, rgba(20, 20, 20, 0.85), rgba(50, 50, 50, 0.65));
+
+    /* Dark Mode Colors */
+    --dark-bg: #111827;
+    --dark-bg-alt: #1F2937;
+    --dark-text: #D1D5DB;
+    --dark-heading: #F9FAFB;
+    --dark-border: #374151;
+    --dark-accent: #f0c674; /* Gold accent for dark mode */
+    --dark-accent-hover: #D6B16A;
+    /* IMPROVED: Increased overlay opacity for better contrast */
+    --dark-hero-overlay: linear-gradient(45deg, rgba(0, 0, 0, 0.9), rgba(17, 24, 39, 0.7));
+
+    /* Sizing & Effects */
+    --spacing-unit: 1rem;
+    --container-width: 1200px;
+    --header-height: 70px;
+    --radius: 1rem;
+    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-dark: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+    --transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+body.dark-mode {
+    --color-bg: var(--dark-bg);
+    --color-bg-alt: var(--dark-bg-alt);
+    --color-text: var(--dark-text);
+    --color-heading: var(--dark-heading);
+    --color-border: var(--dark-border);
+    --color-accent: var(--dark-accent);
+    --color-accent-hover: var(--dark-accent-hover);
+    --hero-overlay: var(--dark-hero-overlay);
+    --shadow: var(--shadow-dark);
+}
+
+/* 2. Base - Reset & Foundational Styles */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--header-height) + 1rem);
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color var(--transition), color var(--transition);
+}
+
+img, picture, svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 3. Typography - Fluid Sizing with clamp() */
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--color-heading);
+    text-wrap: balance;
+    transition: color var(--transition);
+}
+
+h1 { font-size: clamp(2.5rem, 5vw + 1rem, 4.5rem); }
+h2 { font-size: clamp(2rem, 4vw + 1rem, 3.25rem); }
+h3 { font-size: clamp(1.25rem, 2vw + 0.5rem, 1.75rem); }
+p, li, a, input, textarea, label { font-size: clamp(1rem, 1vw + 0.5rem, 1.125rem); }
+
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+a:hover { color: var(--color-accent-hover); }
+
+/* 4. Layout - Containers & Section Helpers */
+.container {
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 clamp(1.5rem, 5vw, 3rem);
+}
+
+section {
+    padding: clamp(4rem, 10vw, 8rem) 0;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto clamp(3rem, 8vw, 5rem);
+}
+.section-header p {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    color: var(--color-text);
+    opacity: 0.9;
+}
+
+/* 5. Components - Buttons, Cards, Forms */
+
+/* -- Accessibility: Visible Focus Styles -- */
+:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 5px color-mix(in srgb, var(--color-bg) 50%, transparent);
+}
+
+/* Remove outline for non-keyboard focus (optional but clean) */
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+.button {
+    display: inline-block;
+    padding: 0.8em 2em;
+    font-family: var(--font-body);
+    font-weight: 600;
+    border-radius: var(--radius);
+    cursor: pointer;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: all var(--transition);
+    font-size: clamp(1rem, 1vw + 0.5rem, 1.1rem);
+    position: relative;
+}
+
+.button-primary {
+    background-color: var(--color-accent);
+    color: var(--dark-bg);
+    font-weight: 800;
+}
+.button-primary:hover {
+    background-color: var(--color-accent-hover);
+    transform: scale(1.05);
+    box-shadow: 0 0 20px 0px color-mix(in srgb, var(--color-accent) 40%, transparent);
+}
+
+.card {
+    background-color: var(--color-bg-alt);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition);
+}
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+body.dark-mode .card:hover {
+     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.25);
+}
+
+/* 6. Header - Sticky Header & Navigation */
+#header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: transparent;
+    border-bottom: 1px solid transparent;
+    transition: all var(--transition);
+}
+#header.scrolled {
+    background-color: color-mix(in srgb, var(--color-bg) 85%, transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-color: var(--color-border);
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--header-height);
+}
+
+.header-logo img {
+    height: clamp(30px, 5vw, 40px);
+    width: auto; /* Add this line to maintain aspect ratio */
+}
+
+.desktop-nav { display: none; }
+.nav-controls { display: flex; align-items: center; gap: 1rem; }
+
+.theme-toggle {
+    background: none;
+    border: none;
+    color: var(--color-heading);
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    display: flex;
+    transition: color var(--transition), background-color var(--transition);
+}
+.theme-toggle:hover { background-color: color-mix(in srgb, var(--color-border) 50%, transparent); }
+.theme-toggle .fa-sun { display: none; }
+body.dark-mode .theme-toggle .fa-moon { display: none; }
+body.dark-mode .theme-toggle .fa-sun { display: block; }
+
+.mobile-menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.mobile-menu-toggle .bar {
+    width: 24px;
+    height: 3px;
+    background-color: var(--color-heading);
+    border-radius: 2px;
+    transition: all var(--transition);
+}
+
+#mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: min(80vw, 300px);
+    height: 100vh;
+    background-color: var(--color-bg-alt);
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6rem 2rem;
+    gap: 2rem;
+    transition: transform var(--transition);
+    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+}
+#mobile-menu a {
+    font-size: 1.5rem;
+    font-weight: 800;
+    font-family: var(--font-heading);
+    color: var(--color-heading);
+}
+
+body.menu-open #mobile-menu { transform: translateX(-100%); }
+body.menu-open .mobile-menu-toggle .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+body.menu-open .mobile-menu-toggle .bar:nth-child(2) { opacity: 0; }
+body.menu-open .mobile-menu-toggle .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* Style for the active navigation link */
+.desktop-nav a[aria-current="page"],
+#mobile-menu a[aria-current="page"] {
+    color: var(--color-accent);
+    font-weight: 800; /* Make it bolder */
+}
+
+/* 7. Main Content - Styles for Each Section */
+/* Hero */
+#hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #F9FAFB;
+    background: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2670&auto=format&fit=crop') no-repeat center center/cover;
+    overflow: hidden;
+}
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: var(--hero-overlay);
+}
+.hero-container { position: relative; z-index: 2; }
+#hero h1 { color: #FFFFFF; }
+#hero .subtitle {
+    font-size: clamp(1.125rem, 2vw, 1.5rem);
+    max-width: 700px;
+    margin: 1.5rem auto 2.5rem;
+    color: #E5E7EB;
+}
+
+/* Services */
+.services-grid { display: grid; gap: 2rem; }
+.service-card { padding: 2rem; text-align: center; }
+.service-card .card-icon { font-size: 3rem; color: var(--color-accent); margin-bottom: 1.5rem; }
+.service-card h3 { margin-bottom: 1rem; }
+
+/* Testimonials */
+.testimonial-slider-wrapper { position: relative; overflow: hidden; }
+.testimonial-slider { display: flex; transition: transform var(--transition); }
+.testimonial-slide {
+    flex: 0 0 100%;
+    text-align: center;
+    padding: 1rem;
+}
+.testimonial-slide blockquote {
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    font-style: italic;
+    border-left: 4px solid var(--color-accent);
+    padding-left: 2rem;
+    text-align: left;
+    margin: 0 auto 2rem;
+    max-width: 750px;
+    color: var(--color-text);
+}
+.testimonial-slide cite { display: inline-flex; align-items: center; gap: 1rem; }
+.testimonial-slide cite img { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; }
+.testimonial-slide cite div { text-align: left; }
+.testimonial-slide cite strong { color: var(--color-heading); }
+.testimonial-slide cite span { opacity: 0.8; }
+.slider-nav { display: flex; justify-content: center; gap: 1rem; margin-top: 2rem; }
+.slider-nav button {
+    background: var(--color-bg-alt);
+    color: var(--color-heading);
+    border: 1px solid var(--color-border);
+    width: 50px; height: 50px;
+    border-radius: 50%; cursor: pointer;
+    transition: all var(--transition);
+}
+.slider-nav button:hover { background-color: var(--color-accent); color: var(--dark-bg); border-color: var(--color-accent); }
+
+/* Pricing */
+.pricing-grid { display: grid; gap: 2rem; }
+.pricing-card { text-align: center; padding: 2.5rem; }
+.pricing-card.featured {
+    border: 2px solid var(--color-accent);
+    transform: scale(1.05);
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+}
+.featured-badge {
+    background-color: var(--color-accent);
+    color: var(--dark-bg);
+    padding: 0.3rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 99px;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+.price { font-family: var(--font-heading); font-size: 4rem; font-weight: 800; margin: 0.5rem 0 0.25rem; }
+.price sup { font-size: 1.75rem; top: -1.5rem; }
+.price-note { opacity: 0.8; margin-bottom: 2rem; }
+.price-custom-icon { font-size: 3rem; color: var(--color-accent); margin: 1.5rem 0; }
+.plan-features { list-style: none; margin-bottom: 2.5rem; flex-grow: 1; }
+.plan-features li { padding: 0.8rem 0; border-top: 1px solid var(--color-border); }
+.plan-features li:first-of-type { border-top: none; }
+.pricing-card .button { width: 100%; margin-top: auto; }
+
+/* Articles */
+.articles-grid { display: grid; gap: 2rem; }
+.article-image-link img { aspect-ratio: 16 / 10; object-fit: cover; }
+.article-card .card-content { padding: 2rem; }
+.article-card .card-content h3 { font-size: 1.4rem; }
+.article-card .card-content p { flex-grow: 1; margin: 1rem 0; }
+.read-more { font-weight: 600; display: inline-block; }
+.read-more i { margin-left: 0.5rem; transition: transform var(--transition); }
+.read-more:hover i { transform: translateX(5px); }
+
+/* Contact Form */
+fieldset {
+    border: 0;
+}
+.form-field {
+    margin-bottom: 2.5rem; /* Increased margin to make space for error messages */
+    position: relative;
+}
+.error-message {
+    position: absolute;
+    bottom: -1.75rem;
+    left: 0;
+    color: #EF4444; /* A vivid red for errors */
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+/* Styles for an input field when it's invalid */
+.form-field input[aria-invalid="true"],
+.form-field textarea[aria-invalid="true"] {
+    border-color: #EF4444;
+}
+.form-field input[aria-invalid="true"]:focus,
+.form-field textarea[aria-invalid="true"]:focus {
+    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.2); /* Red focus glow */
+}
+.contact-form { max-width: 800px; margin: 0 auto; }
+.form-field { margin-bottom: 2rem; }
+.form-field label { display: block; margin-bottom: 0.75rem; font-weight: 600; }
+.form-field input, .form-field textarea {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background-color: var(--color-bg-alt);
+    color: var(--color-text);
+    transition: all var(--transition);
+}
+.form-field input:focus, .form-field textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent) 20%, transparent);
+}
+.contact-form button { width: 100%; padding: 1.25rem; }
+.form-message {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: var(--radius);
+    text-align: center;
+    display: none;
+}
+.form-message.success { background-color: #10B981; color: white; }
+.form-message.error { background-color: #EF4444; color: white; }
+
+/* 8. Footer - Layout & Styling */
+#footer {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+    padding-top: clamp(4rem, 10vw, 6rem);
+    font-size: 1rem;
+}
+.footer-container { display: grid; gap: 3rem; padding-bottom: 3rem; }
+#footer h3 { font-size: 1.25rem; color: var(--dark-heading); margin-bottom: 1.5rem; }
+.footer-logo img {
+    height: 40px;
+    width: auto; /* Add this line to maintain aspect ratio */
+    margin-bottom: 1rem;
+}
+.footer-contact ul { list-style: none; }
+.footer-contact li { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+.footer-contact a { color: var(--dark-text); }
+.footer-contact a:hover { color: var(--dark-accent); }
+.social-icons { display: flex; gap: 1.5rem; }
+.social-icons a { font-size: 1.75rem; color: var(--dark-text); transition: all var(--transition); }
+.social-icons a:hover { color: var(--dark-accent); transform: scale(1.1); }
+.footer-legal {
+    border-top: 1px solid var(--dark-border);
+    padding: 2rem 0;
+    text-align: center;
+}
+.footer-legal p { font-size: 0.9rem; color: #9CA3AF; margin: 0; }
+
+/* 9. Animations - Scroll & Hover Effects */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s var(--transition), transform 0.8s var(--transition);
+}
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Detailed Feature Sections */
+        .feature-section {
+            padding: clamp(3rem, 8vw, 6rem) 0; /* Tighter padding for these sections */
+        }
+        .feature-grid {
+            display: grid;
+            align-items: center;
+            gap: clamp(2rem, 5vw, 4rem);
+        }
+        .feature-image img {
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+        .feature-content h2 {
+            margin-bottom: 1.5rem;
+        }
+        .feature-content p {
+            margin-bottom: 2rem;
+        }
+
+/* 10. Media Queries - Responsive Breakpoints */
+/* Tablet */
+@media (min-width: 768px) {
+    .desktop-nav { display: flex; align-items: center; gap: 2rem; }
+    .mobile-menu-toggle { display: none; }
+    .feature-grid {
+                    grid-template-columns: 1fr 1fr;
+                }
+                .feature-grid.layout-reversed .feature-image {
+                    grid-column: 2 / 3;
+                    grid-row: 1 / 2;
+                }
+                .feature-grid.layout-reversed .feature-content {
+                    grid-column: 1 / 2;
+                    grid-row: 1 / 2;
+                }
+    .contact-form button { width: auto; }
+    .services-grid { grid-template-columns: repeat(3, 1fr); }
+    .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+    .articles-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-container { grid-template-columns: 2fr 1fr 1fr; text-align: left; }
+    .footer-contact li, .social-icons { justify-content: flex-start; }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .pricing-grid { grid-template-columns: repeat(4, 1fr); }
+    .articles-grid { grid-template-columns: repeat(3, 1fr); }
+    .slider-nav { display: none; } /* Hide buttons on desktop, rely on auto-rotate */
+}
+
+/* 11. ACCESSIBILITY STYLES */
+/* ================================================== */
+
+/* Hides element visually but keeps it accessible to screen readers */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* "Skip to Content" link styling */
+.skip-to-content {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    background-color: var(--color-accent);
+    color: var(--dark-bg);
+    padding: 1rem 1.5rem;
+    z-index: 9999;
+    transition: top var(--transition);
+    font-weight: 600;
+}
+
+.skip-to-content:focus {
+    top: 0;
+}

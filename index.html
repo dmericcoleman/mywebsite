@@ -1,568 +1,489 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 <head>
-	<title>Premium Reviews Store</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+	<!-- ================== CORE META ================== -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	<!-- ================== SEO & SOCIAL META ================== -->
+	<title>Premium Reviews Store | Drive Growth & Build Trust</title>
+	<meta name="description" content="Elevate your brand with high-quality reviews that build unshakable trust and drive growth. Expert review management for Google, Amazon, and more.">
+	<link rel="canonical" href="https://premiumreviews.store/">
 
-	<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-	<link rel="shortcut icon" href="/favicon.ico" />
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-	<link rel="manifest" href="/site.webmanifest" />
+	<!-- Open Graph and Twitter Card meta tags for social sharing -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://premiumreviews.store/">
+	<meta property="og:title" content="Premium Reviews Store | Drive Growth & Build Trust">
+	<meta property="og:description" content="Elevate your brand with high-quality reviews for Google, Amazon, and more.">
+	<meta property="og:image" content="https://premiumreviews.store/images/social-share-card.png">
+	<meta property="og:site_name" content="Premium Reviews Store">
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:url" content="https://premiumreviews.store/">
+	<meta name="twitter:title" content="Premium Reviews Store | Drive Growth & Build Trust">
+	<meta name="twitter:description" content="Elevate your brand with high-quality reviews for Google, Amazon, and more.">
+	<meta name="twitter:image" content="https://premiumreviews.store/images/social-share-card.png">
+
+	<!-- ================== FONTS & ICONS ================== -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preload" href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Source+Sans+Pro:wght@400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<noscript><link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet"></noscript>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<!-- Favicons -->
+	<link rel="icon" href="/favicon.ico" sizes="any">
+	<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+	<!-- ================== CRITICAL CSS ================== -->
+	<!-- Inlined Critical CSS for above-the-fold content for instant rendering -->
+	<style id="critical-css">
+		:root{--header-height:70px;--color-dark:#111827;--color-white:#FFFFFF;--color-accent:#f0c674;--dark-bg:#111827;--font-heading:'Raleway',sans-serif;--font-body:'Source Sans Pro',sans-serif;--radius:1rem;--transition:0.4s cubic-bezier(0.25, 0.8, 0.25, 1);--color-bg:var(--dark-bg);--color-text:var(--dark-text);--color-heading:var(--dark-heading)}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-height) + 1rem)}body{font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.7;transition:background-color var(--transition),color var(--transition)}.container{width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(1.5rem, 5vw, 3rem)}h1{font-family:var(--font-heading);font-weight:800;line-height:1.2;color:var(--color-heading);text-wrap:balance;transition:color var(--transition)}h1{font-size:clamp(2.5rem, 5vw + 1rem, 4.5rem)}p{font-size:clamp(1rem, 1vw + .5rem, 1.125rem)}.button{display:inline-block;padding:.8em 2em;font-family:var(--font-body);font-weight:600;border-radius:var(--radius);cursor:pointer;text-align:center;border:2px solid transparent;transition:all var(--transition);font-size:clamp(1rem, 1vw + .5rem, 1.1rem)}.button-primary{background-color:var(--color-accent);color:var(--dark-bg);font-weight:800}#header{position:sticky;top:0;width:100%;z-index:1000;background-color:transparent;border-bottom:1px solid transparent;transition:all var(--transition)}.header-container{display:flex;justify-content:space-between;align-items:center;height:var(--header-height)}.header-logo img{height:clamp(30px, 5vw, 40px)}.nav-controls{display:flex;align-items:center;gap:1rem}.desktop-nav{display:none}.theme-toggle{color:var(--color-heading)}.mobile-menu-toggle .bar{background-color:var(--color-heading)}.theme-toggle,.mobile-menu-toggle{background:none;border:none;cursor:pointer;display:flex}#hero{position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;color:#F9FAFB;background:url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2670&auto=format&fit=crop') no-repeat center center/cover;overflow:hidden}.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(17, 24, 39, 0.6))}.hero-container{position:relative;z-index:2}#hero h1{color:#FFFFFF}#hero .subtitle{font-size:clamp(1.125rem, 2vw, 1.5rem);max-width:700px;margin:1.5rem auto 2.5rem;color:#E5E7EB}.animate-on-scroll{opacity:0;transform:translateY(30px);transition:opacity .8s var(--transition),transform .8s var(--transition)}.animate-on-scroll.is-visible{opacity:1;transform:translateY(0)}
+	</style>
+
+	<!-- Asynchronously loaded full stylesheet -->
+	<link rel="stylesheet" href="assets/css/style.css" media="print" onload="this.media='all'">
+	<noscript><link rel="stylesheet" href="assets/css/style.css"></noscript>
+
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@graph": [
+				{
+					"@type": "Organization",
+					"@id": "https://premiumreviews.store/#organization",
+					"name": "Premium Reviews Store",
+					"url": "https://premiumreviews.store/",
+					"logo": "https://premiumreviews.store/images/Logo.png",
+					"contactPoint": {
+						"@type": "ContactPoint",
+						"telephone": "+1-916-907-6120",
+						"contactType": "Customer Service"
+					},
+					"address": {
+						"@type": "PostalAddress",
+						"streetAddress": "34 Jeanette Ave",
+						"addressLocality": "Staten Island",
+						"addressRegion": "NY",
+						"postalCode": "10312",
+						"addressCountry": "US"
+					},
+					"sameAs": [
+						"https://twitter.com/your-profile",
+						"https://facebook.com/your-profile",
+						"https://instagram.com/your-profile"
+					]
+				},
+				{
+					"@type": "WebSite",
+					"@id": "https://premiumreviews.store/#website",
+					"url": "https://premiumreviews.store/",
+					"name": "Premium Reviews Store",
+					"description": "Elevate your brand with high-quality reviews that build unshakable trust and drive growth.",
+					"publisher": {
+						"@id": "https://premiumreviews.store/#organization"
+					}
+				},
+				{
+					"@type": "Service",
+					"serviceType": "Online Reputation Management",
+					"provider": {
+						"@id": "https://premiumreviews.store/#organization"
+					},
+					"name": "High-Quality Review Services",
+					"description": "Expert review management services for Google, Amazon, and Trustpilot to build trust and drive growth.",
+					"offers": [
+						{
+							"@type": "Offer",
+							"name": "Starter Plan",
+							"price": "199.00",
+							"priceCurrency": "USD"
+						},
+						{
+							"@type": "Offer",
+							"name": "Pro Plan",
+							"price": "349.00",
+							"priceCurrency": "USD"
+						},
+						{
+							"@type": "Offer",
+							"name": "Enterprise Plan",
+							"price": "599.00",
+							"priceCurrency": "USD"
+						}
+					]
+				}
+			]
+		}
+	</script>
 
 </head>
-<body class="is-preload">
+<body>
 
-<div id="page-wrapper">
+<a href="#main-content" class="skip-to-content">Skip to main content</a>
 
-	<header id="header" class="alt">
-		<h1><a href="javascript:void(0);" data-href="index.html" class="header-logo"><img src="images/Logo.png" alt="Premium Reviews Store Home"></a></h1>
-
-		<nav class="desktop-nav">
-			<a href="#one" class="scrolly">Services</a>
-			<a href="#pricing" class="scrolly">Pricing</a>
-			<a href="#testimonials" class="scrolly">Client Feedback</a>
-			<a href="#contact" class="scrolly button special">Contact Us</a>
-		</nav>
-
-		<nav class="mobile-nav">
-			<button class="mobile-menu-button" aria-label="Open Menu" aria-expanded="false" aria-controls="menu">
-				<span class="bar"></span>
-				<span class="bar"></span>
-				<span class="bar"></span>
+<header id="header" role="banner">
+	<div class="container header-container">
+		<a href="#" class="header-logo" aria-label="Premium Reviews Store Home">
+			<img src="images/Logo.png" alt="Premium Reviews Store Logo" width="200" height="40">
+		</a>
+		<div class="nav-controls">
+			<nav class="desktop-nav" role="navigation" aria-label="Main Navigation">
+				<a href="#services">Services</a>
+				<a href="#testimonials">Testimonials</a>
+				<a href="#pricing">Pricing</a>
+				<a href="#articles">Articles</a>
+				<a href="#contact" class="button">Contact Us</a>
+			</nav>
+			<button class="theme-toggle" aria-label="Toggle dark and light mode" title="Toggle Theme">
+				<i class="fa-solid fa-moon" aria-hidden="true"></i>
+				<i class="fa-solid fa-sun" aria-hidden="true"></i>
 			</button>
-		</nav>
-	</header>
-
-	<section id="banner">
-		<div class="inner">
-			<div class="banner-content">
-				<div class="logo"><a href="javascript:void(0);" data-href="index.html"><img src="images/Logo.png" alt="Logo"></a></div>
-				<h2>Premium Reviews Store</h2>
-				<p>The Reviews You Didn't Know You Needed</p>
-
-				<ul class="actions special">
-					<li><a href="#pricing" class="button special scrolly">Get Reviews</a></li>
-				</ul>
-			</div>
-
-			<div class="banner-image">
-				<img src="images/Gemini_Generated_Image_hgsznhhgsznhhgsz.png" alt="Positive Reviews" />
-			</div>
-
-			<a href="#one" class="scroll-down scrolly"></a>
-
+			<button class="mobile-menu-toggle" aria-label="Open Menu" aria-expanded="false" aria-controls="mobile-menu">
+				<span class="bar"></span><span class="bar"></span><span class="bar"></span>
+			</button>
 		</div>
-	</section>
-
-	<section id="wrapper">
-
-		<section id="one" class="wrapper spotlight style1">
-			<div class="inner">
-				<a href="javascript:void(0);" data-href="#one" class="image"><img src="images/How-to-Leave-a-Google-Review-1024x651.webp" alt="Google Reviews"/></a>
-				<div class="content">
-					<h2 class="major">Google Reviews</h2>
-					<p>Customers trust reviews more than ads. If your Google profile isn’t convincing, you’re losing business. Let’s fix that — and turn searchers into paying customers.</p>
-					<a href="#contact" class="button special scrolly">Get Reviews</a>
-				</div>
-			</div>
-		</section>
-
-		<section id="two" class="wrapper alt spotlight style2">
-			<div class="inner">
-				<a href="javascript:void(0);" data-href="#two" class="image"><img src="images/Amazon-Product-Reviews-.jpg.webp" alt="Amazon Reviews"/></a>
-				<div class="content">
-					<h2 class="major">Amazon Reviews</h2>
-					<p>Your product might be great, but without reviews, it’s invisible. Build trust, boost rankings, and dominate Amazon.</p>
-					<a href="#contact" class="button special scrolly">Get Reviews</a>
-				</div>
-			</div>
-		</section>
-
-		<section id="three" class="wrapper spotlight style3">
-			<div class="inner">
-				<a href="javascript:void(0);" data-href="#three" class="image"><img src="images/TP_widgets_Pink.png" alt="Verified Trustpilot Reviews"/></a>
-				<div class="content">
-					<h2 class="major">Verified Trustpilot Reviews</h2>
-					<p>People buy from businesses they trust — and nothing builds trust like verified Trustpilot reviews. Let’s grow yours today.</p>
-					<a href="#contact" class="button special scrolly">Get Reviews</a>
-				</div>
-			</div>
-		</section>
-
-		<section id="four" class="wrapper alt spotlight style4">
-			<div class="inner">
-				<a href="javascript:void(0);" data-href="#four" class="image"><img src="images/tripadvisor-hero.png" alt="TripAdvisor Reviews"/></a>
-				<div class="content">
-					<h2 class="major">TripAdvisor Reviews</h2>
-					<p>On TripAdvisor, reviews decide who gets the booking. More stars mean more trust, higher rankings, and more customers choosing you over competitors. Let’s make your profile impossible to ignore.</p>
-					<a href="#contact" class="button special scrolly">Get Reviews</a>
-				</div>
-			</div>
-		</section>
-
-		<section id="five" class="wrapper spotlight style5">
-			<div class="inner">
-				<a href="javascript:void(0);" data-href="#five" class="image"><img src="images/google-review-and-seo.webp" alt="Other Platforms"/></a>
-				<div class="content">
-					<h2 class="major">Other Platforms</h2>
-					<p>No matter the platform, reviews drive sales. We’ll help you get them — anywhere your customers are looking.</p>
-					<a href="#contact" class="button special scrolly">Get Reviews</a>
-				</div>
-			</div>
-		</section>
-
-		<section id="pricing" class="wrapper alt style2">
-			<div class="inner">
-				<h2 class="major">Our Pricing</h2>
-				<p>Choose a plan that's right for your business. All plans are designed to build your brand's credibility and drive growth.</p>
-				<section class="features">
-					<article>
-						<h3 class="major">Starter</h3>
-						<div class="price"><sup>$</sup>199<sub>/ per platform</sub></div>
-						<ul class="plan-features">
-							<li>15 High-Quality Reviews</li>
-							<li>Google, Amazon, or Trustpilot</li>
-							<li>Drip-Feed Delivery</li>
-							<li>Dedicated Support</li>
-						</ul>
-						<a href="#contact" class="button scrolly">Get Started</a>
-					</article>
-					<article class="featured">
-						<h3 class="major">Pro</h3>
-						<div class="price"><sup>$</sup>349<sub>/ per platform</sub></div>
-						<ul class="plan-features">
-							<li>30 High-Quality Reviews</li>
-							<li>Google, Amazon, or Trustpilot</li>
-							<li>Drip-Feed Delivery</li>
-							<li>Dedicated Support</li>
-						</ul>
-						<a href="#contact" class="button special scrolly">Get Started</a>
-					</article>
-					<article>
-						<h3 class="major">Enterprise</h3>
-						<div class="price"><sup>$</sup>599<sub>/ per platform</sub></div>
-						<ul class="plan-features">
-							<li>60 High-Quality Reviews</li>
-							<li>All Major Platforms</li>
-							<li>Drip-Feed Delivery</li>
-							<li>Priority Support</li>
-						</ul>
-						<a href="#contact" class="button scrolly">Get Started</a>
-					</article>
-				</section>
-
-				<div class="custom-quote-carousel-container">
-					<div class="owl-carousel owl-theme custom-quote-carousel">
-						<div class="custom-order-cta">
-							<h3>Custom Amazon Quote</h3>
-							<ul class="plan-features">
-								<div class="price">$$$</div>
-								<li>Custom Volume?</li>
-								<li>Specific Product Targeting?</li>
-								<li>Unique Delivery Schedule?</li>
-								<li>Priority Support</li>
-							</ul>
-							<a href="#contact" class="button special scrolly">Get Started</a>
-						</div>
-						<div class="custom-order-cta">
-							<h3>Custom Quote?</h3>
-							<ul class="plan-features">
-								<div class="price">$$$</div>
-								<li>Tailored Number of Reviews</li>
-								<li>Platform Flexibility</li>
-								<li>Custom Delivery Schedule</li>
-								<li>Dedicated Support</li>
-							</ul>
-							<a href="#contact" class="button special scrolly">Contact Us</a>
-						</div>
-					</div>
-					<div class="custom-quote-nav">
-						<button class="custom-prev"><span class="icon solid fa-chevron-left"></span></button>
-						<button class="custom-next"><span class="icon solid fa-chevron-right"></span></button>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section id="testimonials" class="wrapper style3">
-			<div class="inner">
-				<h2 class="major">What Our Clients Say</h2>
-
-				<div class="testimonial-carousel-container">
-					<div class="owl-carousel owl-theme">
-						<div class="testimonial-card">
-							<div class="star-rating">
-								<span class="icon solid fa-star"></span><span class="icon solid fa-star"></span><span class="icon solid fa-star"></span><span class="icon solid fa-star"></span><span class="icon solid fa-star"></span>
-							</div>
-							<blockquote>“Working with them was a game-changer. Our online reputation has never been stronger, and we saw an immediate increase in customer trust and sales.”</blockquote>
-							<div class="author-info">
-								<div class="author-avatar" style="background-image: url('images/danny-ocean-ehUYU820lcA-unsplash.webp');"></div>
-								<cite>
-									<strong>Jane Doe</strong><br>
-									<span class="client-title">CEO,</span>
-									<span class="client-company">Tech Innovators</span>
-								</cite>
-							</div>
-						</div>
-						<div class="testimonial-card">
-							<div class="star-rating">
-								<span class="icon solid fa-star"></span><span class="icon solid fa-star"></span><span class="icon solid fa-star"></span><span class="icon solid fa-star"></span><span class="icon solid fa-star"></span>
-							</div>
-							<blockquote>“The most reliable and effective review service we've ever used. Their team is professional, and the results speak for themselves. Highly recommended.”</blockquote>
-							<div class="author-info">
-								<div class="author-avatar" style="background-image: url('images/kshitiz-kandel-kK9ub8l0674-unsplash.webp');"></div>
-								<cite>
-									<strong>John Smith</strong><br>
-									<span class="client-title">Founder,</span>
-									<span class="client-company">E-Commerce Hub</span>
-								</cite>
-							</div>
-						</div>
-						<div class="testimonial-card">
-							<div class="star-rating">
-								<span class="icon solid fa-star"></span><span class="icon solid fa-star"></span><span class="icon solid fa-star"></span><span class="icon solid fa-star"></span><span class="icon solid fa-star"></span>
-							</div>
-							<blockquote>“Our Amazon sales skyrocketed after improving our review profile. Their process is seamless and delivered exactly what was promised.”</blockquote>
-							<div class="author-info">
-								<div class="author-avatar" style="background-image: url('images/filip-rankovic-grobgaard-pdyZM-wbgZw-unsplash.webp');"></div>
-								<cite>
-									<strong>Emily White</strong><br>
-									<span class="client-title">Marketing Director,</span>
-									<span class="client-company">Brand Co.</span>
-								</cite>
-							</div>
-						</div>
-					</div>
-
-					<div class="testimonial-nav">
-						<button class="custom-prev"><span class="icon solid fa-chevron-left"></span></button>
-						<button class="custom-next"><span class="icon solid fa-chevron-right"></span></button>
-					</div>
-				</div>
-
-			</div>
-		</section>
-
-		<section id="six" class="wrapper alt style6">
-			<div class="inner">
-				<div class="why-it-matters-header-and-button">
-					<h2 class="major">Why It Matters</h2>
-					<ul class="actions compact header-button">
-						<li><a href="#" class="button">Browse All</a></li>
-					</ul>
-				</div>
-				<p>Discover why reviews aren’t just feedback — they’re powerful tools that build trust, attract customers, and drive business growth. Here’s why investing in your online reputation changes everything.</p>
-				<div class="why-it-matters-carousel-container">
-					<div class="owl-carousel owl-theme why-it-matters-carousel">
-					<article>
-						<a href="javascript:void(0);" data-href="https://premiumreviews.store/why-reviews-are-important.html" class="image"><img src="images/importance-of-customer-reviews.webp" alt="7 Reasons Online Reviews are Essential for Your Brand" /></a>
-						<h3 class="major">7 Reasons Online Reviews are Essential for Your Brand</h3>
-						<p>Positive reviews on review sites can help feed the content machine, keeping your brand favored by algorithms and improve your search results.</p>
-						<a href="javascript:void(0);" data-href="https://premiumreviews.store/why-reviews-are-important.html" class="special">Learn more</a>
-					</article>
-					<article>
-						<a href="javascript:void(0);" data-href="https://premiumreviews.store/google-review-stats.html" class="image"><img src="images/impactful-google-review-statistics.png" alt="Impactful Google Review Statistics" /></a>
-						<h3 class="major">20 Google Review Statistics You Must Know in 2025</h3>
-						<p>Google reviews are important for small and local businesses as they relay customer experience to potential customers. As such, good reviews...</p>
-						<a href="javascript:void(0);" data-href="https://premiumreviews.store/google-review-stats.html" class="special">Learn more</a>
-					</article>
-					<article>
-						<a href="javascript:void(0);" data-href="https://premiumreviews.store/amazon-reviews-importance.html" class="image"><img src="images/Why-Reviews-Are-Important.png" alt="How Important Are Amazon Reviews for Your Conversions & Ratings?" /></a>
-						<h3 class="major">How Important Are Amazon Reviews for Your Conversions & Ratings?</h3>
-						<p>Amazon reviews play a dual role: they shape buyer perception and influence Amazon's algorithm, impacting both conversions and ...</p>
-						<a href="javascript:void(0);" data-href="https://premiumreviews.store/amazon-reviews-importance.html" class="special">Learn more</a>
-					</article>
-					<article>
-						<a href="javascript:void(0);" data-href="https://premiumreviews.store/why-buy-trustpilot-reviews.html" class="image"><img src="images/Buy-Trustpilot-Reviews.png" alt="Why Companies Need to Buy Trustpilot Reviews: A Quick Guide" /></a>
-						<h3 class="major">Why Companies Need to Buy Trustpilot Reviews: A Quick Guide</h3>
-						<p>It clearly emphasizes the importance of earning customer trust through real, honest feedback and excellent service. Buying reviews may seem like ...</p>
-						<a href="javascript:void(0);" data-href="https://premiumreviews.store/why-buy-trustpilot-reviews.html" class="special">Learn more</a>
-					</article>
-					</div>
-					<div class="why-it-matters-nav"> <button class="custom-prev"><span class="icon solid fa-chevron-left"></span></button>
-						<button class="custom-next"><span class="icon solid fa-chevron-right"></span></button>
-					</div>
-				</div>
-			</div>
-		</section>
-
-	</section>
-
-	<section id="footer">
-		<div class="inner">
-			<h2 class="major" id="contact">Get in touch</h2>
-			<p>Whether it’s Google, Amazon, Facebook, Trustpilot, or any platform your customers use — your reviews decide your success. Let’s build a profile that makes you the obvious choice. Contact us today.</p>
-			<form action="https://formsubmit.co/premiumreviewsstore@gmail.com" method="POST">
-				<div class="fields">
-					<div class="field">
-						<label for="name">Name</label>
-						<input type="text" name="name" id="name" required>
-					</div>
-					<div class="field">
-						<label for="email">Email</label>
-						<input type="email" name="email" id="email" required>
-					</div>
-					<div class="field">
-						<label for="message">Message</label>
-						<textarea name="message" id="message" rows="4" required></textarea>
-					</div>
-				</div>
-
-				<input type="hidden" name="_next" value="https://premiumreviews.store/thankyou.html">
-				<input type="hidden" name="_captcha" value="false">
-
-				<ul class="actions">
-					<li><input type="submit" value="Send Message" /></li>
-				</ul>
-			</form>
-			<ul class="contact">
-				<li class="icon solid fa-home">
-					Premium Reviews Store<br />
-					34 Jeanette Ave<br />
-					Staten Island, NY 10312
-				</li>
-				<li class="icon brands fa-whatsapp" style="display: flex; align-items: center; gap: 1em; flex-wrap: wrap;">
-					<a href="javascript:void(0);" data-href="https://wa.me/19169076120">(916) 907-6120</a>
-					<span style="font-size: 0.8em; font-style: italic; opacity: 0.7; display: inline-flex; align-items: center;">
-                   <span class="icon solid fa-phone-slash" style="margin-right: 0.5em;"></span>(Text Only)
-                </span>
-				</li>
-				<li class="icon solid fa-envelope"><a href="javascript:void(0);" data-href="mailto:premiumreviewsstore@gmail.com">premiumreviewsstore@gmail.com</a></li>
-				<li class="icon brands fa-twitter"><a href="javascript:void(0);" data-href="https://twitter.com/premiumreviewsstore">twitter.com/premiumreviewsstore</a></li>
-				<li class="icon brands fa-facebook-f"><a href="javascript:void(0);" data-href="https://facebook.com/premiumreviewsstore">facebook.com/premiumreviewsstore</a></li>
-				<li class="icon brands fa-instagram"><a href="javascript:void(0);" data-href="https://instagram.com/premiumreviewsstore">instagram.com/premiumreviewsstore</a></li>
-			</ul>
-			<ul class="copyright">
-				<li>&copy; Premium Reviews Store. All rights reserved.</li>
-			</ul>
-		</div>
-	</section>
-
-</div>
-
-<nav id="menu">
-	<div class="inner">
-		<h2>Menu</h2>
-		<ul class="links">
-			<li><a href="javascript:void(0);" data-href="#one" class="scrolly">Services</a></li>
-			<li><a href="javascript:void(0);" data-href="#pricing" class="scrolly">Pricing</a></li>
-			<li><a href="javascript:void(0);" data-href="#testimonials" class="scrolly">Client Feedback</a></li>
-			<li><a href="javascript:void(0);" data-href="#six" class="scrolly">Articles</a></li>
-			<li><a href="javascript:void(0);" data-href="#contact" class="scrolly">Contact Us</a></li>
-		</ul>
-		<a href="#" class="close" aria-label="Close Menu"></a>
 	</div>
+</header>
+
+<nav id="mobile-menu" role="navigation" aria-label="Mobile Navigation">
+	<a href="#services">Services</a>
+	<a href="#testimonials">Testimonials</a>
+	<a href="#pricing">Pricing</a>
+	<a href="#articles">Articles</a>
+	<a href="#contact">Contact Us</a>
 </nav>
 
-<a href="#one" class="scroll-to-top scrolly"><span class="icon solid fa-chevron-up"></span></a>
+<main id="main-content">
 
-<script src="assets/js/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+	<section id="hero" aria-labelledby="hero-heading">
+		<div class="hero-overlay"></div>
+		<div class="container hero-container animate-on-scroll">
+			<h1 id="hero-heading">Premium Reviews Store</h1>
+			<p class="subtitle">High-Quality Reviews That Build Unshakable Trust & Drive Growth.</p>
+			<a href="#contact" class="button button-primary">Request a Free Quote</a>
+		</div>
+	</section>
 
-<script>
-	document.addEventListener('DOMContentLoaded', function() {
-        'use strict';
+	<section id="services" aria-labelledby="services-heading">
+		<div class="container">
+			<div class="section-header animate-on-scroll">
+				<h2 id="services-heading">Your Reputation, Perfected.</h2>
+				<p>Credibility is non-negotiable. We help you earn it everywhere that matters.</p>
+			</div>
+			<div class="services-grid">
+				<article class="card service-card animate-on-scroll" aria-labelledby="google-reviews-heading">
+					<div class="card-icon" aria-hidden="true"><i class="fa-brands fa-google"></i></div>
+					<h3 id="google-reviews-heading">Google Reviews</h3>
+					<p>Dominate local search and win customer trust. More positive reviews mean higher rankings and more leads.</p>
+				</article>
+				<article class="card service-card animate-on-scroll" style="transition-delay: 0.2s;" aria-labelledby="amazon-reviews-heading">
+					<div class="card-icon" aria-hidden="true"><i class="fa-brands fa-amazon"></i></div>
+					<h3 id="amazon-reviews-heading">Amazon Reviews</h3>
+					<p>Turn your product's potential into profit. Build the social proof needed to climb Amazon's rankings and boost conversions.</p>
+				</article>
+				<article class="card service-card animate-on-scroll" style="transition-delay: 0.4s;" aria-labelledby="trustpilot-reviews-heading">
+					<div class="card-icon" aria-hidden="true"><i class="fa-solid fa-star"></i></div>
+					<h3 id="trustpilot-reviews-heading">Trustpilot Reviews</h3>
+					<p>Establish your brand as a market leader. Verified Trustpilot reviews are the ultimate signal of quality and satisfaction.</p>
+				</article>
+			</div>
+		</div>
+	</section>
 
-        const body = document.body;
-        const header = document.querySelector('#header');
-        const menu = document.querySelector('#menu');
-        const scrollyLinks = document.querySelectorAll('a.scrolly');
-        const dataLinks = document.querySelectorAll('a[data-href]');
+	<section class="feature-section animate-on-scroll" aria-labelledby="google-feature-heading">
+		<div class="container feature-grid">
+			<div class="feature-image">
+				<img src="images/How-to-Leave-a-Google-Review-1024x651.webp"
+					 srcset="images/How-to-Leave-a-Google-Review-500.webp 500w, images/How-to-Leave-a-Google-Review-1024x651.webp 1024w"
+					 sizes="(max-width: 768px) 100vw, 50vw"
+					 alt="A person's hands holding a smartphone displaying the Google Reviews interface."
+					 loading="lazy" width="1024" height="651">
+			</div>
+			<div class="feature-content">
+				<h2 id="google-feature-heading">Turn Searchers into Customers</h2>
+				<p>If your Google Business Profile isn’t convincing, you’re losing business. Let us build a profile that makes you the obvious choice, driving local traffic and converting searchers into loyal customers.</p>
+				<a href="#contact" class="button">Boost My Google Profile</a>
+			</div>
+		</div>
+	</section>
 
-        // --- Remove Preloader ---
-        setTimeout(() => {
-            body.classList.remove('is-preload');
-        }, 100);
+	<section class="feature-section section-bg-light animate-on-scroll" aria-labelledby="amazon-feature-heading">
+		<div class="container feature-grid layout-reversed">
+			<div class="feature-image">
+				<img src="images/Amazon-Product-Reviews-.jpg.webp"
+					 srcset="images/Amazon-Product-Reviews-500.webp 500w, images/Amazon-Product-Reviews-.jpg.webp 800w"
+					 sizes="(max-width: 768px) 100vw, 50vw"
+					 alt="A laptop screen showing a product on Amazon with a prominent five-star rating."
+					 loading="lazy" width="800" height="534">
+			</div>
+			<div class="feature-content">
+				<h2 id="amazon-feature-heading">Dominate the Amazon Marketplace</h2>
+				<p>Without reviews, your product is invisible. We help you build the powerful social proof needed to climb Amazon's rankings, build trust, and significantly increase sales velocity.</p>
+				<a href="#contact" class="button">Increase Amazon Sales</a>
+			</div>
+		</div>
+	</section>
 
-        // --- Scroll-Down Arrow Logic ---
-        const scrollDown = document.querySelector('.scroll-down');
-        if (scrollDown) {
-            const handleScrollDownArrow = () => {
-                if (window.scrollY > 50) {
-                    scrollDown.classList.add('is-hidden');
-                } else {
-                    scrollDown.classList.remove('is-hidden');
-                }
-            };
-            handleScrollDownArrow();
-            window.addEventListener('scroll', handleScrollDownArrow);
-        }
+	<section class="feature-section animate-on-scroll" aria-labelledby="trustpilot-feature-heading">
+		<div class="container feature-grid">
+			<div class="feature-image">
+				<img src="images/TP_widgets_Pink.png" alt="The Trustpilot logo with five green stars on a bright pink background." loading="lazy" width="800" height="450">
+			</div>
+			<div class="feature-content">
+				<h2 id="trustpilot-feature-heading">Build Unshakable Trust with Trustpilot</h2>
+				<p>People buy from businesses they trust. We help you gather the verified reviews that signal quality and reliability to customers worldwide, setting you apart from the competition.</p>
+				<a href="#contact" class="button">Improve My TrustScore</a>
+			</div>
+		</div>
+	</section>
 
-        // --- Header Class Toggle (Updated for immediate effect on scroll) ---
-        if (header) { // Ensure header element exists
-            const toggleHeaderAlt = () => {
-                // If the user has scrolled down by even 1 pixel
-                if (window.scrollY > 0) {
-                    header.classList.remove('alt'); // Remove the 'alt' class (make it solid/prominent)
-                } else {
-                    // If at the very top of the page (scrollY is 0)
-                    header.classList.add('alt'); // Add the 'alt' class (make it transparent/minimal)
-                }
-            };
+	<section class="feature-section section-bg-light animate-on-scroll" aria-labelledby="tripadvisor-feature-heading">
+		<div class="container feature-grid layout-reversed">
+			<div class="feature-image">
+				<img src="images/tripadvisor-hero.png" alt="The TripAdvisor logo with its owl icon over a photograph of a tropical beach destination." loading="lazy" width="1000" height="563">
+			</div>
+			<div class="feature-content">
+				<h2 id="tripadvisor-feature-heading">Become the Top Choice on TripAdvisor</h2>
+				<p>On TripAdvisor, reviews decide who gets the booking. More stars mean more trust and higher rankings. Let’s make your profile impossible for potential customers to ignore.</p>
+				<a href="#contact" class="button">Get More Bookings</a>
+			</div>
+		</div>
+	</section>
 
-            // Call the function once when the page loads to set the initial state
-            toggleHeaderAlt();
+	<section class="feature-section animate-on-scroll" aria-labelledby="other-platforms-heading">
+		<div class="container feature-grid">
+			<div class="feature-image">
+				<img src="images/google-review-and-seo.webp" alt="A graphic showing various review platform logos like Yelp, Facebook, and Google connected to SEO concepts." loading="lazy" width="800" height="533">
+			</div>
+			<div class="feature-content">
+				<h2 id="other-platforms-heading">Credibility, on Any Platform</h2>
+				<p>No matter where your customers are looking, reviews drive their decisions. We help you build a powerful and consistent reputation across the entire digital landscape.</p>
+				<a href="#contact" class="button">Discuss My Platform</a>
+			</div>
+		</div>
+	</section>
 
-            // Attach the function to the window's scroll event
-            window.addEventListener('scroll', toggleHeaderAlt);
-        }
+	<section id="testimonials" aria-labelledby="testimonials-heading">
+		<div class="container">
+			<div class="section-header animate-on-scroll">
+				<h2 id="testimonials-heading">Trusted by Growing Brands</h2>
+				<p>Here’s how we’ve made an impact for businesses like yours.</p>
+			</div>
+			<div class="testimonial-slider-wrapper animate-on-scroll">
+				<div class="testimonial-slider">
+					<article class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="Testimonial 1 of 3">
+						<blockquote>“A total game-changer for our online reputation. The process was seamless, and the impact on sales was immediate. We finally look as good online as we are in reality.”</blockquote>
+						<cite>
+							<img src="images/danny-ocean-ehUYU820lcA-unsplash-100.webp"
+								 srcset="images/danny-ocean-ehUYU820lcA-unsplash-100.webp 100w, images/danny-ocean-ehUYU820lcA-unsplash-200.webp 200w"
+								 sizes="60px"
+								 alt="Headshot of Jane Doe, a satisfied client." width="60" height="60" loading="lazy">
+							<div><strong>Jane Doe</strong><span>CEO, Tech Innovators</span></div>
+						</cite>
+					</article>
+					<article class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="Testimonial 2 of 3">
+						<blockquote>“The most reliable and effective review service we've ever used. Their team is professional, the results speak for themselves, and our Amazon rankings have never been better.”</blockquote>
+						<cite>
+							<img src="images/kshitiz-kandel-kK9ub8l0674-unsplash-100.webp"
+								 srcset="images/kshitiz-kandel-kK9ub8l0674-unsplash-100.webp 100w, images/kshitiz-kandel-kK9ub8l0674-unsplash-200.webp 200w"
+								 sizes="60px"
+								 alt="Headshot of John Smith, a satisfied client." width="60" height="60" loading="lazy">
+							<div><strong>John Smith</strong><span>Founder, E-Commerce Hub</span></div>
+						</cite>
+					</article>
+					<article class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="Testimonial 3 of 3">
+						<blockquote>“Our Trustpilot score is now a key asset in our marketing. The investment paid for itself within the first month. I cannot recommend their service enough.”</blockquote>
+						<cite>
+							<img src="images/filip-rankovic-grobgaard-pdyZM-wbgZw-unsplash-100.webp"
+								 srcset="images/filip-rankovic-grobgaard-pdyZM-wbgZw-unsplash-100.webp 100w, images/filip-rankovic-grobgaard-pdyZM-wbgZw-unsplash-200.webp 200w"
+								 sizes="60px"
+								 alt="Headshot of Emily White, a satisfied client." width="60" height="60" loading="lazy">
+							<div><strong>Emily White</strong><span>Director, Brand Co.</span></div>
+						</cite>
+					</article>
+				</div>
+				<div class="slider-nav">
+					<button class="slider-prev" aria-label="Previous testimonial"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></button>
+					<button class="slider-next" aria-label="Next testimonial"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+				</div>
+			</div>
+		</div>
+	</section>
 
-        // --- Menu Logic ---
-        if (menu) {
-            let menuLocked = false;
-            const lockMenu = () => {
-                if (menuLocked) return false;
-                menuLocked = true;
-                setTimeout(() => { menuLocked = false; }, 350);
-                return true;
-            };
-            const hideMenu = () => {
-                if (lockMenu()) body.classList.remove('is-menu-visible');
-            };
+	<section id="pricing" aria-labelledby="pricing-heading">
+		<div class="container">
+			<div class="section-header animate-on-scroll">
+				<h2 id="pricing-heading">Transparent Pricing</h2>
+				<p>Choose a plan that builds your brand's credibility and drives growth. No hidden fees, just results.</p>
+			</div>
+			<div class="pricing-grid">
+				<article class="card pricing-card animate-on-scroll" aria-labelledby="starter-plan-heading">
+					<h3 id="starter-plan-heading">Starter</h3>
+					<div class="price"><sup>$</sup>199</div>
+					<p class="price-note">Per Platform</p>
+					<ul class="plan-features">
+						<li>15 High-Quality Reviews</li>
+						<li>Google, Amazon, or Trustpilot</li>
+						<li>Drip-Feed Delivery</li>
+						<li>Dedicated Support</li>
+					</ul>
+					<a href="#contact" class="button">Get Started</a>
+				</article>
+				<article class="card pricing-card featured animate-on-scroll" style="transition-delay: 0.2s;" aria-labelledby="pro-plan-heading">
+					<div class="featured-badge">Most Popular</div>
+					<h3 id="pro-plan-heading">Pro</h3>
+					<div class="price"><sup>$</sup>349</div>
+					<p class="price-note">Per Platform</p>
+					<ul class="plan-features">
+						<li>30 High-Quality Reviews</li>
+						<li>Google, Amazon, or Trustpilot</li>
+						<li>Drip-Feed Delivery</li>
+						<li>Dedicated Support</li>
+					</ul>
+					<a href="#contact" class="button button-primary">Get Started</a>
+				</article>
+				<article class="card pricing-card animate-on-scroll" style="transition-delay: 0.4s;" aria-labelledby="enterprise-plan-heading">
+					<h3 id="enterprise-plan-heading">Enterprise</h3>
+					<div class="price"><sup>$</sup>599</div>
+					<p class="price-note">Per Platform</p>
+					<ul class="plan-features">
+						<li>60 High-Quality Reviews</li>
+						<li>All Major Platforms</li>
+						<li>Drip-Feed Delivery</li>
+						<li>Priority Support</li>
+					</ul>
+					<a href="#contact" class="button">Get Started</a>
+				</article>
+				<article class="card pricing-card animate-on-scroll" style="transition-delay: 0.6s;" aria-labelledby="custom-plan-heading">
+					<h3 id="custom-plan-heading">Custom Solution</h3>
+					<div class="price-custom-icon" aria-hidden="true"><i class="fa-solid fa-comments-dollar"></i></div>
+					<p class="price-note">Need a tailored plan for multiple platforms, bulk orders, or unique schedules? Let's build a solution for you.</p>
+					<a href="#contact" class="button">Request a Quote</a>
+				</article>
+			</div>
+		</div>
+	</section>
 
-            const menuToggle = document.querySelector('.mobile-menu-button');
-            if (menuToggle) {
-                menuToggle.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    if (lockMenu()) body.classList.toggle('is-menu-visible');
-                });
-            }
-            menu.addEventListener('click', (e) => { hideMenu(); });
-            menu.querySelector('.inner').addEventListener('click', (e) => { e.stopPropagation(); });
-            document.addEventListener('keydown', (e) => { if (e.key === 'Escape') hideMenu(); });
+	<section id="articles" class="section-bg-light" aria-labelledby="articles-heading">
+		<div class="container">
+			<div class="section-header animate-on-scroll">
+				<h2 id="articles-heading">Why It Matters</h2>
+				<p>Discover why reviews are powerful tools that build trust, attract customers, and drive business growth.</p>
+			</div>
+			<div class="articles-grid">
+				<article class="card article-card animate-on-scroll" aria-labelledby="article-1-heading">
+					<a href="#" class="article-image-link" aria-label="Read more about 7 Reasons Online Reviews are Essential">
+						<img src="images/importance-of-customer-reviews.webp" alt="A vibrant graphic illustrating the positive impact of customer reviews on a brand." loading="lazy" width="600" height="338">
+					</a>
+					<div class="card-content">
+						<h3 id="article-1-heading">7 Reasons Online Reviews are Essential for Your Brand</h3>
+						<p>Positive reviews feed the content machine, keeping your brand favored by algorithms and improving search results.</p>
+						<a href="#" class="read-more">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+					</div>
+				</article>
+				<article class="card article-card animate-on-scroll" style="transition-delay: 0.2s;" aria-labelledby="article-2-heading">
+					<a href="#" class="article-image-link" aria-label="Read more about 20 Google Review Statistics">
+						<img src="images/impactful-google-review-statistics.png" alt="A bar chart with rising trends, titled 'Impactful Google Review Statistics'." loading="lazy" width="600" height="338">
+					</a>
+					<div class="card-content">
+						<h3 id="article-2-heading">20 Google Review Statistics You Must Know in 2025</h3>
+						<p>Good reviews on Google are crucial for small businesses as they directly influence a potential customer's decision.</p>
+						<a href="#" class="read-more">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+					</div>
+				</article>
+				<article class="card article-card animate-on-scroll" style="transition-delay: 0.4s;" aria-labelledby="article-3-heading">
+					<a href="#" class="article-image-link" aria-label="Read more about How Amazon Reviews Impact Conversions">
+						<img src="images/Why-Reviews-Are-Important.png" alt="An illustration of a large five-star review symbol next to a shopping cart icon." loading="lazy" width="600" height="338">
+					</a>
+					<div class="card-content">
+						<h3 id="article-3-heading">How Amazon Reviews Impact Conversions & Ratings</h3>
+						<p>Amazon reviews shape buyer perception and influence the platform's algorithm, impacting both visibility and sales.</p>
+						<a href="#" class="read-more">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+					</div>
+				</article>
+			</div>
+		</div>
+	</section>
 
-            // --- NEW: Added logic for the close button ---
-            const closeButton = menu.querySelector('.close');
-            if (closeButton) {
-                closeButton.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    hideMenu();
-                });
-            }
-        }
+	<section id="contact" aria-labelledby="contact-heading">
+		<div class="container">
+			<div class="section-header animate-on-scroll">
+				<h2 id="contact-heading">Ready to Build Your Reputation?</h2>
+				<p>Tell us about your goals. We'll get back to you within one business day with a plan to get you there.</p>
+			</div>
+			<form id="contact-form" class="contact-form animate-on-scroll" novalidate>
+				<fieldset>
+					<legend class="sr-only">Contact Information Form</legend>
+					<div class="form-field">
+						<label for="name">Name</label>
+						<input type="text" name="name" id="name" required placeholder="Your Name" autocomplete="name" aria-invalid="false">
+						<div class="error-message" aria-live="polite"></div>
+					</div>
+					<div class="form-field">
+						<label for="email">Email</label>
+						<input type="email" name="email" id="email" required placeholder="your@email.com" autocomplete="email" aria-invalid="false">
+						<div class="error-message" aria-live="polite"></div>
+					</div>
+					<div class="form-field">
+						<label for="message">How can we help?</label>
+						<textarea name="message" id="message" rows="5" required placeholder="Tell us about your project..." aria-invalid="false"></textarea>
+						<div class="error-message" aria-live="polite"></div>
+					</div>
+				</fieldset>
+				<button type="submit" id="submit-button" class="button button-primary">Send Message</button>
+				<p id="form-message" class="form-message" role="status" aria-live="polite"></p>
+			</form>
+		</div>
+	</section>
 
-        // --- Scroll-to-top Arrow Logic ---
-        const scrollToTop = document.querySelector('.scroll-to-top');
-        const firstSection = document.querySelector('#one');
-        if (scrollToTop && firstSection) {
-            const toggleTopArrowVisibility = () => {
-                if (window.scrollY > firstSection.offsetTop) {
-                    scrollToTop.classList.add('visible');
-                } else {
-                    scrollToTop.classList.remove('visible');
-                }
-            };
-            toggleTopArrowVisibility();
-            window.addEventListener('scroll', toggleTopArrowVisibility);
-        }
+</main>
 
-        // --- Link Handling (Fixes Scrolly and data-href) ---
-        const handleLinkClick = (e) => {
-            const link = e.currentTarget;
-            let href = link.dataset.href || link.getAttribute('href');
+<footer id="footer" role="contentinfo">
+	<div class="container footer-container">
+		<div class="footer-column footer-about">
+			<a href="#" class="footer-logo"><img src="images/Logo.png" alt="Premium Reviews Store Logo" width="200" height="40" loading="lazy"></a>
+			<p>Building trust and driving growth through authentic, high-quality reviews on the world's most important platforms.</p>
+		</div>
+		<div class="footer-column footer-contact">
+			<h3>Contact Us</h3>
+			<address>
+				<ul>
+					<li><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><a href="https://wa.me/19169076120">(916) 907-6120</a></li>
+					<li><i class="fa-solid fa-envelope" aria-hidden="true"></i><a href="mailto:premiumreviewsstore@gmail.com">premiumreviewsstore@gmail.com</a></li>
+					<li><i class="fa-solid fa-location-dot" aria-hidden="true"></i><a href="https://maps.google.com/?q=Staten+Island,+NY" target="_blank" rel="noopener noreferrer">Staten Island, NY, USA</a></li>
+				</ul>
+			</address>
+		</div>
+		<div class="footer-column footer-social">
+			<h3>Follow Us</h3>
+			<nav class="social-nav" aria-label="Social Media">
+				<div class="social-icons">
+					<a href="#" aria-label="Twitter">
+						<i class="fa-brands fa-twitter" aria-hidden="true"></i>
+						<span class="sr-only">Twitter</span>
+					</a>
+					<a href="#" aria-label="Facebook">
+						<i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+						<span class="sr-only">Facebook</span>
+					</a>
+					<a href="#" aria-label="Instagram">
+						<i class="fa-brands fa-instagram" aria-hidden="true"></i>
+						<span class="sr-only">Instagram</span>
+					</a>
+				</div>
+			</nav>
+		</div>
+	</div>
+	<div class="footer-legal">
+		<div class="container">
+			<p>&copy; <span id="current-year">2025</span> Premium Reviews Store. All Rights Reserved.</p>
+		</div>
+	</div>
+</footer>
 
-            if (link.classList.contains('scrolly') && href.startsWith('#')) {
-                e.preventDefault();
-                const targetElement = document.querySelector(href);
-                if (targetElement) {
-                    if (menu && body.classList.contains('is-menu-visible')) {
-                        body.classList.remove('is-menu-visible');
-                    }
-                    let headerHeight = header ? header.offsetHeight : 0;
-                    let scrollPosition = targetElement.offsetTop - headerHeight;
-                    window.scrollTo({
-                        top: scrollPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            } else if (link.dataset.href) {
-                 e.preventDefault();
-                 window.location.href = href;
-            }
-        };
-
-        scrollyLinks.forEach(link => link.addEventListener('click', handleLinkClick));
-        dataLinks.forEach(link => {
-            if (!link.classList.contains('scrolly')) {
-                 link.addEventListener('click', handleLinkClick);
-            }
-        });
-
-        // --- Owl Carousel for Testimonials ---
-        var $testimonialCarousel = $('#testimonials .owl-carousel');
-        if ($testimonialCarousel.length > 0) {
-            $testimonialCarousel.owlCarousel({
-                items: 1,
-                loop: true,
-                margin: 30,
-                dots: false,
-                autoplay: true,
-                autoplayTimeout: 7000,
-                autoplayHoverPause: true
-            });
-            $('.testimonial-nav .custom-next').click(function() { $testimonialCarousel.trigger('next.owl.carousel'); });
-            $('.testimonial-nav .custom-prev').click(function() { $testimonialCarousel.trigger('prev.owl.carousel'); });
-        }
-
-        // --- Owl Carousel for Why It Matters ---
-        var $whyItMattersCarousel = $('.why-it-matters-carousel');
-        if ($whyItMattersCarousel.length > 0) {
-            $whyItMattersCarousel.owlCarousel({
-                loop: true,
-                margin: 30,
-                nav: false,
-                dots: false,
-                autoplay: true,
-                autoplayTimeout: 5000,
-                autoplayHoverPause: true,
-                responsive: {
-                    0: { items: 1 },
-                    736: { items: 2 },
-                    980: { items: 2 }
-                }
-            });
-
-            $('.why-it-matters-nav .custom-next').click(function() {
-                $whyItMattersCarousel.trigger('next.owl.carousel');
-            });
-            $('.why-it-matters-nav .custom-prev').click(function() {
-                $whyItMattersCarousel.trigger('prev.owl.carousel');
-            });
-        }
-
-        // --- Owl Carousel for Custom Quotes ---
-        var $customQuoteCarousel = $('.custom-quote-carousel');
-        if ($customQuoteCarousel.length > 0) {
-            $customQuoteCarousel.owlCarousel({
-                items: 1,
-                loop: true,
-                dots: false,
-                nav: false,
-                autoplay: true,
-                autoplayTimeout: 8000,
-                autoplayHoverPause: true
-            });
-
-            $('.custom-quote-nav .custom-next').click(function() {
-                $customQuoteCarousel.trigger('next.owl.carousel');
-            });
-            $('.custom-quote-nav .custom-prev').click(function() {
-                $customQuoteCarousel.trigger('prev.owl.carousel');
-            });
-        }
-
-    });
-</script>
-
+<script src="assets/js/script.js" defer></script>
 </body>
 </html>

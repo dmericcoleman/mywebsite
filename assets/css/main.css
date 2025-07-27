@@ -3249,18 +3249,18 @@ input, select, textarea {
     }
 
        #banner .inner {
-                           margin: 0 auto;
-                           width: 100%;
-                           max-width: 85em;
-                           padding: 0 4em;
-                           box-sizing: border-box;
-                           display: flex;
-                           flex-wrap: nowrap;
-                           justify-content: space-between;
-                           gap: 0;
-                           align-items: center;
-                           text-align: left;
-                        }
+           margin: 0 auto;
+           width: 55em; /* UPDATED: Matches other sections */
+           max-width: 100%; /* UPDATED: Ensures it's responsive */
+           padding: 0; /* UPDATED: Removes horizontal padding */
+           box-sizing: border-box;
+           display: flex;
+           flex-wrap: nowrap;
+           justify-content: space-between;
+           gap: 0;
+           align-items: center;
+           text-align: left;
+        }
 
        #banner .logo {
            -moz-transition: opacity 2s ease, -moz-transform 1s ease;
@@ -3475,7 +3475,7 @@ input, select, textarea {
 
     .wrapper {
        background-color: transparent;
-       margin: 12em 0;
+       margin: 6.5em 0; /* UPDATED: Reduces vertical space between sections */
        position: relative;
     }
 

@@ -775,17 +775,17 @@ input, select, textarea {
 
 
 /* Wrapper */
-    .wrapper {
+    .wrapper, #footer {
         padding: 6em 0;
         border-bottom: 1px solid var(--border-color);
         background-color: var(--bg-color);
     }
 
-    section:first-of-type.wrapper {
+    #wrapper {
         border-top: 1px solid var(--border-color);
     }
 
-    .wrapper.alt {
+    .wrapper.alt, #footer {
         background-color: var(--bg-color-light);
     }
 
@@ -842,9 +842,9 @@ input, select, textarea {
 
 /* Footer */
     #footer {
-        padding: 4em 0;
-        background: var(--bg-color-light);
+        /* Padding is now handled by the .wrapper, #footer rule */
     }
+    
     #footer .inner {
        padding: 0;
        display: flex;

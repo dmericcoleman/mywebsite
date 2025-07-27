@@ -3936,8 +3936,8 @@ input, select, textarea {
     	#banner .inner {
         	max-width: 100%;
         	width: 100%;
-        	/* This adds padding to account for the phone's status bar */
-        	padding: calc(2em + env(safe-area-inset-top)) 1em 2em;
+        	/* This adds padding to account for the phone's status bar
+        	padding: calc(2em + env(safe-area-inset-top)) 1em 2em;*/
         	margin: auto 0; /* This keeps the content vertically centered */
         }
     	#banner .logo {

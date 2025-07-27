@@ -3885,7 +3885,7 @@ input, select, textarea {
        }
 
            #footer .inner {
-              padding: 3em 3em 1em 3em ;
+              padding: 3em 2em 1em 2em ;
               display: block; /* Ensures form and contact stack */
               width: 100%;
               text-align: left; /* ALIGNMENT: Changed to LEFT-ALIGN overall footer content on tablets */

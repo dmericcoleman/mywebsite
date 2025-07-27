@@ -3258,7 +3258,7 @@ input, select, textarea {
                            margin: 0 auto; /* Centers the whole inner container on the page */
                            width: 100%;
                            max-width: 85em; /* Define the maximum width for the entire banner content area */
-                           padding: 0 4em; /* CRITICAL: This sets the exact, equal left and right outer margins. */
+                           padding: 0 2em; /* CRITICAL: This sets the exact, equal left and right outer margins. */
                            box-sizing: border-box;
                            display: flex;
                            flex-wrap: nowrap; /* Prevents columns from wrapping */

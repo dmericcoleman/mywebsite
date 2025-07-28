@@ -24,21 +24,16 @@
     --color-text: #374151;
     --color-heading: #111827;
     --color-border: #E5E7EB;
-    --color-accent: #D9A443; /* Gold accent for light mode */
+    --color-accent: #D9A443;
     --color-accent-hover: #C0903A;
-    /* WCAG COMPLIANT: Increased overlay opacity for better contrast */
-        --hero-overlay: linear-gradient(45deg, rgba(17, 24, 39, 0.9), rgba(17, 24, 39, 0.8));
+    --hero-overlay: linear-gradient(45deg, rgba(17, 24, 39, 0.9), rgba(17, 24, 39, 0.8));
 
-        /* Dark Mode Colors */
-        --dark-bg: #111827;
-        --dark-bg-alt: #1F2937;
-        --dark-text: #D1D5DB;
-        --dark-heading: #F9FAFB;
-        --dark-border: #374151;
-        --dark-accent: #f0c674; /* Gold accent for dark mode */
-        --dark-accent-hover: #D6B16A;
-        /* WCAG COMPLIANT: Increased overlay opacity for better contrast */
-        --dark-hero-overlay: linear-gradient(45deg, rgba(0, 0, 0, 0.95), rgba(17, 24, 39, 0.85));
+    /* Neutral & Status Colors */
+    --color-star-rating: #ffc107;
+    --color-error: #EF4444;
+    --color-error-glow: rgba(239, 68, 68, 0.2);
+    --color-success: #10B981;
+    --color-footer-muted: #9CA3AF;
 
     /* Sizing & Effects */
     --spacing-unit: 1rem;
@@ -46,20 +41,19 @@
     --header-height: 70px;
     --radius: 1rem;
     --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --shadow-dark: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
     --transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 body.dark-mode {
-    --color-bg: var(--dark-bg);
-    --color-bg-alt: var(--dark-bg-alt);
-    --color-text: var(--dark-text);
-    --color-heading: var(--dark-heading);
-    --color-border: var(--dark-border);
-    --color-accent: var(--dark-accent);
-    --color-accent-hover: var(--dark-accent-hover);
-    --hero-overlay: var(--dark-hero-overlay);
-    --shadow: var(--shadow-dark);
+    --color-bg: #111827;
+    --color-bg-alt: #1F2937;
+    --color-text: #D1D5DB;
+    --color-heading: #F9FAFB;
+    --color-border: #374151;
+    --color-accent: #f0c674;
+    --color-accent-hover: #D6B16A;
+    --hero-overlay: linear-gradient(45deg, rgba(0, 0, 0, 0.95), rgba(17, 24, 39, 0.85));
+    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
 }
 
 /* 2. Base - Reset & Foundational Styles */
@@ -251,24 +245,25 @@ section {
     font-weight: 800;
     border-color: var(--color-accent); /* Added for a smooth hover transition */
 }
-.button-primary:hover {
-    /* ADD THIS CODE: Default styles for secondary/outline buttons */
-    .button:not(.button-primary) {
-        border-color: var(--color-border);
-        background-color: transparent;
-        color: var(--color-heading);
-    }
+/* Default styles for secondary/outline buttons */
+.button:not(.button-primary) {
+    border-color: var(--color-border);
+    background-color: transparent;
+    color: var(--color-heading);
+}
 
-    .button:not(.button-primary):hover {
-        background-color: var(--color-bg-alt);
-        border-color: var(--color-accent);
-        color: var(--color-accent);
-    }
+.button:not(.button-primary):hover {
+    background-color: var(--color-bg-alt);
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+.button-primary:hover {
     background-color: transparent;
     color: var(--color-accent);
-    border-color: var(--color-accent); /* Ensures the border is visible on hover */
-    transform: scale(1.05);
-    box-shadow: none; /* Removed the glow for a cleaner inverted look */
+    border-color: var(--color-accent);
+    transform: translateY(-2px); /* Switched from scale to translate for a smoother effect */
+    box-shadow: none;
 }
 
 .card {
@@ -535,6 +530,26 @@ body.menu-open #menu-overlay {
 .service-card .card-icon { font-size: 3rem; color: var(--color-accent); margin-bottom: 1.5rem; }
 .service-card h3 { margin-bottom: 1rem; }
 
+/* Detailed Feature Sections */
+        .feature-section {
+            padding: clamp(3rem, 8vw, 6rem) 0; /* Tighter padding for these sections */
+        }
+        .feature-grid {
+            display: grid;
+            align-items: center;
+            gap: clamp(2rem, 5vw, 4rem);
+        }
+        .feature-image img {
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+        .feature-content h2 {
+            margin-bottom: 1.5rem;
+        }
+        .feature-content p {
+            margin-bottom: 2rem;
+        }
+
 /* Testimonials */
 .testimonial-slider-wrapper { position: relative; overflow: hidden; }
 .testimonial-slider { display: flex; transition: transform var(--transition); }
@@ -555,7 +570,7 @@ body.menu-open #menu-overlay {
 }
 .testimonial-slide cite { display: inline-flex; align-items: center; gap: 1rem; }
 .star-rating {
-    color: #ffc107; /* A gold/yellow color for the stars */
+    color: var(--color-star-rating);
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
 }
@@ -579,7 +594,6 @@ body.menu-open #menu-overlay {
 .pricing-card { text-align: center; padding: 2.5rem; }
 .pricing-card.featured {
     border: 2px solid var(--color-accent);
-    transform: scale(1.05);
     box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
 }
 .featured-badge {
@@ -633,18 +647,18 @@ fieldset {
     position: absolute;
     bottom: -1.75rem;
     left: 0;
-    color: #EF4444; /* A vivid red for errors */
+    color: var(--color-error);
     font-size: 0.875rem;
     font-weight: 600;
 }
 /* Styles for an input field when it's invalid */
 .form-field input[aria-invalid="true"],
 .form-field textarea[aria-invalid="true"] {
-    border-color: #EF4444;
+    border-color: var(--color-error);
 }
 .form-field input[aria-invalid="true"]:focus,
 .form-field textarea[aria-invalid="true"]:focus {
-    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.2); /* Red focus glow */
+    box-shadow: 0 0 0 4px var(--color-error-glow);
 }
 .contact-form { max-width: 800px; margin: 0 auto; }
 .form-field { margin-bottom: 2rem; }
@@ -671,8 +685,8 @@ fieldset {
     text-align: center;
     display: none;
 }
-.form-message.success { background-color: #10B981; color: white; }
-.form-message.error { background-color: #EF4444; color: white; }
+.form-message.success { background-color: var(--color-success); color: white; }
+.form-message.error { background-color: var(--color-error); color: white; }
 
 /* 8. Footer - Layout & Styling */
 #footer {
@@ -700,7 +714,7 @@ fieldset {
     padding: 2rem 0;
     text-align: center;
 }
-.footer-legal p { font-size: 0.9rem; color: #9CA3AF; margin: 0; }
+.footer-legal p { font-size: 0.9rem; color: var(--color-footer-muted); margin: 0; }
 .footer-legal-container {
     display: flex;
     flex-direction: column;
@@ -716,7 +730,7 @@ fieldset {
 }
 
 .footer-legal-nav a {
-    color: #9CA3AF;
+    color: var(--color-footer-muted);
     transition: color var(--transition);
 }
 
@@ -744,42 +758,24 @@ fieldset {
     transform: translateY(0);
 }
 
-/* Detailed Feature Sections */
-        .feature-section {
-            padding: clamp(3rem, 8vw, 6rem) 0; /* Tighter padding for these sections */
-        }
-        .feature-grid {
-            display: grid;
-            align-items: center;
-            gap: clamp(2rem, 5vw, 4rem);
-        }
-        .feature-image img {
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-        }
-        .feature-content h2 {
-            margin-bottom: 1.5rem;
-        }
-        .feature-content p {
-            margin-bottom: 2rem;
-        }
-
 /* 10. Media Queries - Responsive Breakpoints */
 /* Tablet */
 @media (min-width: 768px) {
     .desktop-nav { display: flex; align-items: center; gap: 2rem; }
     .mobile-menu-toggle { display: none; }
+
     .feature-grid {
-                    grid-template-columns: 1fr 1fr;
-                }
-                .feature-grid.layout-reversed .feature-image {
-                    grid-column: 2 / 3;
-                    grid-row: 1 / 2;
-                }
-                .feature-grid.layout-reversed .feature-content {
-                    grid-column: 1 / 2;
-                    grid-row: 1 / 2;
-                }
+        grid-template-columns: 1fr 1fr;
+    }
+    .feature-grid.layout-reversed .feature-image {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+    .feature-grid.layout-reversed .feature-content {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
     .contact-form button { width: auto; }
     .services-grid { grid-template-columns: repeat(3, 1fr); }
     .pricing-grid { grid-template-columns: repeat(2, 1fr); }

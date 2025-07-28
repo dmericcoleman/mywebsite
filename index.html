@@ -8,7 +8,11 @@
 	<!-- ================== SEO & SOCIAL META ================== -->
 	<title>Premium Reviews Store | Drive Growth & Build Trust</title>
 	<meta name="description" content="Elevate your brand with high-quality reviews that build unshakable trust and drive growth. Expert review management for Google, Amazon, and more.">
+	<meta name="robots" content="index, follow">
 	<link rel="canonical" href="https://premiumreviews.store/">
+	<link rel="alternate" hreflang="en" href="https://premiumreviews.store/">
+	<link rel="alternate" hreflang="es" href="https://premiumreviews.store/es/">
+	<link rel="alternate" hreflang="x-default" href="https://premiumreviews.store/">
 
 	<!-- Open Graph and Twitter Card meta tags for social sharing -->
 	<meta property="og:type" content="website">
@@ -27,6 +31,7 @@
 	<!-- ================== FONTS & ICONS ================== -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preload" as="image" href="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2670&auto=format&fit=crop" fetchpriority="high">
 	<link rel="preload" href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Source+Sans+Pro:wght@400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 	<noscript><link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet"></noscript>
 
@@ -119,8 +124,62 @@
 		}
 	</script>
 
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "FAQPage",
+			"mainEntity": [
+				{
+					"@type": "Question",
+					"name": "What is Premium Reviews Store?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "Premium Reviews Store is an online reputation management service that helps businesses build trust through high-quality reviews on platforms like Google, Amazon, and Trustpilot."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "How do I request a review?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "Simply contact us through our 'Contact Us' page, and we will guide you through the process of getting high-quality reviews for your business."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "Is there any hidden fee in your pricing plans?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "No, our pricing plans are transparent, and there are no hidden fees. You only pay for the plan you choose, and everything is upfront."
+					}
+				},
+				{
+					"@type": "Question",
+					"name": "Can I change my review plan later?",
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": "Yes, you can upgrade or downgrade your plan anytime. We offer flexible options to cater to your business's needs."
+					}
+				}
+			]
+		}
+	</script>
+
+
+
 </head>
-<body>
+<body class="no-js">
+<script>document.body.classList.remove('no-js');</script>
+
+<div id="cookie-consent-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie Consent Banner" hidden>
+	<div class="container cookie-banner-container">
+		<p class="cookie-banner-text">We use cookies to enhance your experience. By clicking "Accept", you agree to our use of cookies. <a href="/privacy-policy" class="cookie-learn-more">Learn More</a>.</p>
+		<div class="cookie-banner-actions">
+			<button id="cookie-decline" class="button">Decline</button>
+			<button id="cookie-accept" class="button button-primary">Accept</button>
+		</div>
+	</div>
+</div>
 
 <a href="#main-content" class="skip-to-content">Skip to main content</a>
 
@@ -419,7 +478,7 @@
 				<h2 id="contact-heading">Ready to Build Your Reputation?</h2>
 				<p>Tell us about your goals. We'll get back to you within one business day with a plan to get you there.</p>
 			</div>
-			<form id="contact-form" class="contact-form animate-on-scroll" novalidate>
+			<form id="contact-form" class="contact-form animate-on-scroll" method="POST" action="https://example.com/your-form-handler" novalidate>
 				<fieldset>
 					<legend class="sr-only">Contact Information Form</legend>
 					<div class="form-field">
@@ -443,8 +502,63 @@
 			</form>
 		</div>
 	</section>
-
 </main>
+
+<section id="faq" aria-labelledby="faq-heading">
+	<div class="container">
+		<div class="section-header animate-on-scroll">
+			<h2 id="faq-heading">Frequently Asked Questions</h2>
+			<p>Here are some of the most common questions we get from our customers.</p>
+		</div>
+
+		<div class="faq-list animate-on-scroll">
+			<div class="faq-item">
+				<h3>
+					<button class="faq-question-btn" aria-expanded="false" aria-controls="faq1-answer">
+						<span>What is Premium Reviews Store?</span>
+						<i class="fa-solid fa-plus faq-icon" aria-hidden="true"></i>
+					</button>
+				</h3>
+				<div id="faq1-answer" class="faq-answer-wrapper" role="region" aria-labelledby="faq1-question">
+					<p class="faq-answer">Premium Reviews Store is an online reputation management service that helps businesses build trust through high-quality reviews on platforms like Google, Amazon, and Trustpilot.</p>
+				</div>
+			</div>
+			<div class="faq-item">
+				<h3>
+					<button class="faq-question-btn" aria-expanded="false" aria-controls="faq2-answer">
+						<span>How do I request a review?</span>
+						<i class="fa-solid fa-plus faq-icon" aria-hidden="true"></i>
+					</button>
+				</h3>
+				<div id="faq2-answer" class="faq-answer-wrapper" role="region" aria-labelledby="faq2-question">
+					<p class="faq-answer">Simply contact us through our "Contact Us" page, and we will guide you through the process of getting high-quality reviews for your business.</p>
+				</div>
+			</div>
+			<div class="faq-item">
+				<h3>
+					<button class="faq-question-btn" aria-expanded="false" aria-controls="faq3-answer">
+						<span>Is there any hidden fee in your pricing plans?</span>
+						<i class="fa-solid fa-plus faq-icon" aria-hidden="true"></i>
+					</button>
+				</h3>
+				<div id="faq3-answer" class="faq-answer-wrapper" role="region" aria-labelledby="faq3-question">
+					<p class="faq-answer">No, our pricing plans are transparent, and there are no hidden fees. You only pay for the plan you choose, and everything is upfront.</p>
+				</div>
+			</div>
+			<div class="faq-item">
+				<h3>
+					<button class="faq-question-btn" aria-expanded="false" aria-controls="faq4-answer">
+						<span>Can I change my review plan later?</span>
+						<i class="fa-solid fa-plus faq-icon" aria-hidden="true"></i>
+					</button>
+				</h3>
+				<div id="faq4-answer" class="faq-answer-wrapper" role="region" aria-labelledby="faq4-question">
+					<p class="faq-answer">Yes, you can upgrade or downgrade your plan anytime. We offer flexible options to cater to your business's needs.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 
 <footer id="footer" role="contentinfo">
 	<div class="container footer-container">
@@ -483,8 +597,12 @@
 		</div>
 	</div>
 	<div class="footer-legal">
-		<div class="container">
-			<p>&copy; <span id="current-year">2025</span> Premium Reviews Store. All Rights Reserved.</p>
+		<div class="container footer-legal-container">
+			<p>© <span id="current-year">2025</span> Premium Reviews Store. All Rights Reserved.</p>
+			<nav class="footer-legal-nav" aria-label="Legal">
+				<a href="/privacy-policy">Privacy Policy</a>
+				<a href="/terms-of-service">Terms of Service</a>
+			</nav>
 		</div>
 	</div>
 </footer>

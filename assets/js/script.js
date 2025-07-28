@@ -16,11 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
          * Initializes all the application modules.
          */
         init() {
+            this.cookieBanner.init();
             this.theme.init();
             this.header.init();
             this.animations.init();
             this.testimonialSlider.init();
             this.contactForm.init();
+            this.faqAccordion.init();
             this.navigationObserver.init(); // Added for aria-current
             this.misc.init();
         },
@@ -47,6 +49,48 @@ document.addEventListener('DOMContentLoaded', () => {
                 };
             }
         },
+
+        // =================================================================
+                // COOKIE CONSENT MODULE
+                // =================================================================
+                cookieBanner: {
+                    init() {
+                        this.banner = document.getElementById('cookie-consent-banner');
+                        if (!this.banner) return;
+
+                        const consent = localStorage.getItem('cookie_consent');
+                        if (!consent) {
+                            this.showBanner();
+                        }
+
+                        this.acceptBtn = document.getElementById('cookie-accept');
+                        this.declineBtn = document.getElementById('cookie-decline');
+
+                        this.acceptBtn.addEventListener('click', () => this.handleConsent(true));
+                        this.declineBtn.addEventListener('click', () => this.handleConsent(false));
+                    },
+                    showBanner() {
+                        this.banner.hidden = false;
+                        // Use a short timeout to allow the element to be rendered before starting the transition
+                        setTimeout(() => {
+                            this.banner.classList.add('is-visible');
+                        }, 50);
+                    },
+                    hideBanner() {
+                        this.banner.classList.remove('is-visible');
+                        // Wait for the transition to finish before setting hidden attribute
+                        this.banner.addEventListener('transitionend', () => {
+                            this.banner.hidden = true;
+                        }, { once: true });
+                    },
+                    handleConsent(didAccept) {
+                        // In a real app, you would enable/disable tracking scripts here based on `didAccept`
+                        // For this example, we just record that a choice was made.
+                        localStorage.setItem('cookie_consent', didAccept ? 'accepted' : 'declined');
+                        this.hideBanner();
+                        console.log(`Cookie consent: ${didAccept ? 'Accepted' : 'Declined'}`);
+                    }
+                },
 
         // =================================================================
         // THEME TOGGLE MODULE
@@ -355,6 +399,45 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(() => { this.formMessage.style.display = 'none'; }, 5000);
             }
         },
+
+        // =================================================================
+                // FAQ ACCORDION MODULE
+                // =================================================================
+                faqAccordion: {
+                    init() {
+                        const faqItems = document.querySelectorAll('.faq-item');
+                        if (faqItems.length === 0) return;
+
+                        faqItems.forEach(item => {
+                            const button = item.querySelector('.faq-question-btn');
+                            const answerWrapper = item.querySelector('.faq-answer-wrapper');
+                            const icon = item.querySelector('.faq-icon');
+
+                            button.addEventListener('click', () => {
+                                const isOpened = button.getAttribute('aria-expanded') === 'true';
+
+                                button.setAttribute('aria-expanded', !isOpened);
+                                item.classList.toggle('open');
+                                icon.classList.toggle('fa-plus');
+                                icon.classList.toggle('fa-times');
+
+                                // Optional: Close other items when one is opened
+                                /*
+                                if (!isOpened) {
+                                    faqItems.forEach(otherItem => {
+                                        if (otherItem !== item) {
+                                            otherItem.classList.remove('open');
+                                            otherItem.querySelector('.faq-question-btn').setAttribute('aria-expanded', 'false');
+                                            otherItem.querySelector('.faq-icon').classList.remove('fa-times');
+                                            otherItem.querySelector('.faq-icon').classList.add('fa-plus');
+                                        }
+                                    });
+                                }
+                                */
+                            });
+                        });
+                    }
+                },
 
         // =================================================================
         // NAVIGATION OBSERVER MODULE (for aria-current)

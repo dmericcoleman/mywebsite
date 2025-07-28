@@ -26,19 +26,19 @@
     --color-border: #E5E7EB;
     --color-accent: #D9A443; /* Gold accent for light mode */
     --color-accent-hover: #C0903A;
-    /* IMPROVED: Increased overlay opacity for better contrast */
-    --hero-overlay: linear-gradient(45deg, rgba(20, 20, 20, 0.85), rgba(50, 50, 50, 0.65));
+    /* WCAG COMPLIANT: Increased overlay opacity for better contrast */
+        --hero-overlay: linear-gradient(45deg, rgba(17, 24, 39, 0.9), rgba(17, 24, 39, 0.8));
 
-    /* Dark Mode Colors */
-    --dark-bg: #111827;
-    --dark-bg-alt: #1F2937;
-    --dark-text: #D1D5DB;
-    --dark-heading: #F9FAFB;
-    --dark-border: #374151;
-    --dark-accent: #f0c674; /* Gold accent for dark mode */
-    --dark-accent-hover: #D6B16A;
-    /* IMPROVED: Increased overlay opacity for better contrast */
-    --dark-hero-overlay: linear-gradient(45deg, rgba(0, 0, 0, 0.9), rgba(17, 24, 39, 0.7));
+        /* Dark Mode Colors */
+        --dark-bg: #111827;
+        --dark-bg-alt: #1F2937;
+        --dark-text: #D1D5DB;
+        --dark-heading: #F9FAFB;
+        --dark-border: #374151;
+        --dark-accent: #f0c674; /* Gold accent for dark mode */
+        --dark-accent-hover: #D6B16A;
+        /* WCAG COMPLIANT: Increased overlay opacity for better contrast */
+        --dark-hero-overlay: linear-gradient(45deg, rgba(0, 0, 0, 0.95), rgba(17, 24, 39, 0.85));
 
     /* Sizing & Effects */
     --spacing-unit: 1rem;
@@ -135,6 +135,88 @@ section {
     opacity: 0.9;
 }
 
+/* FAQ Section Styles */
+#faq {
+    background-color: var(--color-bg-alt);
+    transition: background-color var(--transition);
+}
+
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.faq-item {
+    background-color: var(--color-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--color-border);
+    transition: background-color var(--transition), border-color var(--transition);
+}
+
+.faq-item h3 {
+    margin: 0;
+    font-size: 1rem; /* Reset heading font size */
+}
+
+.faq-question-btn {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    cursor: pointer;
+    font-family: var(--font-heading);
+    font-size: clamp(1.2rem, 2vw, 1.4rem);
+    font-weight: 700;
+    color: var(--color-heading);
+    transition: color var(--transition);
+}
+
+.faq-question-btn:hover {
+    color: var(--color-accent);
+}
+
+.faq-icon {
+    color: var(--color-accent);
+    font-size: 1.2rem;
+    transition: transform var(--transition);
+}
+
+.faq-item.open .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-answer-wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s var(--transition);
+}
+
+.faq-item.open .faq-answer-wrapper {
+    grid-template-rows: 1fr;
+}
+
+.faq-answer {
+    overflow: hidden;
+    color: var(--color-text);
+    line-height: 1.6;
+    padding: 0 2rem; /* Set horizontal padding */
+    /* Add transition for padding to sync with the wrapper's animation */
+    transition: padding-top 0.5s var(--transition), padding-bottom 0.5s var(--transition);
+}
+
+.faq-item.open .faq-answer {
+    padding-top: 0.5rem; /* Add a little top padding when open for spacing */
+    padding-bottom: 1.5rem; /* Add bottom padding when open */
+}
+
 /* 5. Components - Buttons, Cards, Forms */
 
 /* -- Accessibility: Visible Focus Styles -- */
@@ -204,6 +286,66 @@ section {
 }
 body.dark-mode .card:hover {
      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.25);
+}
+
+/* -- Cookie Consent Banner -- */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--color-bg-alt);
+    padding: 1.5rem 0;
+    z-index: 2000;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+    border-top: 1px solid var(--color-border);
+    transform: translateY(100%);
+    transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1),
+                background-color var(--transition),
+                border-color var(--transition);
+}
+
+.cookie-banner.is-visible {
+    transform: translateY(0);
+}
+
+.cookie-banner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+.cookie-banner-text {
+    margin: 0;
+    font-size: clamp(0.9rem, 1vw + 0.5rem, 1rem);
+}
+
+.cookie-learn-more {
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.cookie-banner-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.cookie-banner-actions .button {
+    padding: 0.6em 1.5em;
+    font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+    .cookie-banner-container {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+    .cookie-banner-text {
+        margin-right: 2rem;
+    }
 }
 
 /* 6. Header - Sticky Header & Navigation */
@@ -372,6 +514,13 @@ body.menu-open #menu-overlay {
     background: var(--hero-overlay);
 }
 .hero-container { position: relative; z-index: 2; }
+
+/* Add text shadow for guaranteed contrast against the background image */
+#hero h1,
+#hero .subtitle {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+}
+
 #hero h1 { color: #FFFFFF; }
 #hero .subtitle {
     font-size: clamp(1.125rem, 2vw, 1.5rem);
@@ -537,6 +686,37 @@ fieldset {
     text-align: center;
 }
 .footer-legal p { font-size: 0.9rem; color: #9CA3AF; margin: 0; }
+.footer-legal-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-legal-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1.5rem; /* Vertical and horizontal gap */
+}
+
+.footer-legal-nav a {
+    color: #9CA3AF;
+    transition: color var(--transition);
+}
+
+.footer-legal-nav a:hover {
+    color: var(--dark-accent);
+    text-decoration: underline;
+}
+
+/* On tablets and larger, show copyright and links on the same line */
+@media (min-width: 768px) {
+    .footer-legal-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
 
 /* 9. Animations - Scroll & Hover Effects */
 .animate-on-scroll {
@@ -631,4 +811,78 @@ fieldset {
 
 .skip-to-content:focus {
     top: 0;
+}
+
+/* ==================================================
+   12. NO-JS FALLBACKS
+   ================================================== */
+
+/* When JS is disabled, ensure essential content is visible and usable. */
+
+/* FAQ: Display all answers statically */
+.no-js .faq-answer-wrapper {
+    grid-template-rows: 1fr;
+}
+.no-js .faq-answer {
+    padding-top: 0.5rem;
+    padding-bottom: 1.5rem;
+}
+.no-js .faq-icon {
+    display: none; /* Hide the +/- icon that requires JS */
+}
+.no-js .faq-question-btn {
+    cursor: default;
+}
+.no-js .faq-question-btn:hover {
+    color: var(--color-heading);
+}
+
+/* Mobile Menu: Hide the hamburger button and display links as a static list */
+.no-js .mobile-menu-toggle,
+.no-js .close-menu-btn,
+.no-js #menu-overlay {
+    display: none;
+}
+
+.no-js #mobile-menu {
+    position: static;
+    transform: none;
+    height: auto;
+    width: 100%;
+    padding: 1rem 0;
+    margin: 0 auto;
+    box-shadow: none;
+    background-color: transparent;
+    border-top: 1px solid var(--color-border);
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+}
+
+.no-js #mobile-menu a {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Testimonials: Convert slider to a horizontally scrollable list */
+.no-js .testimonial-slider-wrapper {
+    overflow-x: auto;
+    padding-bottom: 1rem; /* Space for scrollbar */
+}
+.no-js .testimonial-slider {
+    width: max-content; /* Allow flex items to define total width */
+    gap: 2rem;
+}
+.no-js .testimonial-slide {
+    width: 80vw; /* Each slide takes up most of the viewport */
+    max-width: 450px;
+}
+.no-js .slider-nav {
+    display: none; /* Hide the JS-powered buttons */
+}
+
+/* Hide theme toggle as it's purely JS-driven */
+.no-js .theme-toggle {
+    display: none;
 }

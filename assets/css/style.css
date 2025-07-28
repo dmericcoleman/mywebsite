@@ -554,6 +554,11 @@ body.menu-open #menu-overlay {
     color: var(--color-text);
 }
 .testimonial-slide cite { display: inline-flex; align-items: center; gap: 1rem; }
+.star-rating {
+    color: #ffc107; /* A gold/yellow color for the stars */
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
 .testimonial-slide cite img { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; }
 .testimonial-slide cite div { text-align: left; }
 .testimonial-slide cite strong { color: var(--color-heading); }
@@ -600,6 +605,16 @@ body.menu-open #menu-overlay {
 .articles-grid { display: grid; gap: 2rem; }
 .article-image-link img { aspect-ratio: 16 / 10; object-fit: cover; }
 .article-card .card-content { padding: 2rem; }
+.article-meta {
+    margin-bottom: 0.75rem;
+}
+
+.article-meta time {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text);
+    opacity: 0.8;
+}
 .article-card .card-content h3 { font-size: 1.4rem; }
 .article-card .card-content p { flex-grow: 1; margin: 1rem 0; }
 .read-more { font-weight: 600; display: inline-block; }

@@ -527,7 +527,32 @@ body.menu-open #menu-overlay {
 /* Services */
 .services-grid { display: grid; gap: 2rem; }
 .service-card { padding: 2rem; text-align: center; }
-.service-card .card-icon { font-size: 3rem; color: var(--color-accent); margin-bottom: 1.5rem; }
+.card-icon-wrapper {
+    height: 48px; /* Set the height on the wrapper */
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.service-card .card-icon {
+    max-height: 100%; /* Ensure logo fits inside the wrapper */
+    width: auto;
+    object-fit: contain;
+}
+
+/* Dark Mode Logo Logic */
+.logo-dark {
+    display: none; /* Hide the dark logo by default */
+}
+
+body.dark-mode .logo-light {
+    display: none; /* When dark mode is on, hide the light logo */
+}
+
+body.dark-mode .logo-dark {
+    display: block; /* When dark mode is on, show the dark logo */
+}
 .service-card h3 { margin-bottom: 1rem; }
 
 /* Detailed Feature Sections */

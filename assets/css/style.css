@@ -576,12 +576,15 @@ body.menu-open #menu-overlay {
         }
 
 /* Testimonials */
-.testimonial-slider-wrapper { position: relative; overflow: hidden; }
+.testimonial-slider-wrapper {
+    position: relative;
+    overflow: hidden;
+}
 .swiper-slide {
     text-align: center;
     padding: 1rem;
 }
-.testimonial-slide blockquote {
+.swiper-slide blockquote {
     font-size: clamp(1.2rem, 2vw, 1.6rem);
     font-style: italic;
     border-left: 4px solid var(--color-accent);
@@ -591,40 +594,57 @@ body.menu-open #menu-overlay {
     max-width: 750px;
     color: var(--color-text);
 }
-.testimonial-slide cite { display: inline-flex; align-items: center; gap: 1rem; }
+.swiper-slide cite {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+}
 .star-rating {
     color: var(--color-star-rating);
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
 }
-.testimonial-slide cite img { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; }
-.testimonial-slide cite div { text-align: left; }
-.testimonial-slide cite strong { color: var(--color-heading); }
-.testimonial-slide cite span { opacity: 0.8; }
-.slider-nav { display: flex; justify-content: center; gap: 1rem; margin-top: 2rem; }
+.swiper-slide cite img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.swiper-slide cite .client-details {
+    text-align: left;
+}
+.swiper-slide cite .client-name,
+.swiper-slide cite .client-title {
+    display: block; /* This makes each part take up its own line */
+}
+.swiper-slide cite .client-name {
+    color: var(--color-heading);
+}
+.swiper-slide cite .client-title {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    line-height: 1.4;
+}
+.slider-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
 .slider-nav button {
     background: var(--color-bg-alt);
     color: var(--color-heading);
     border: 1px solid var(--color-border);
     width: 50px; height: 50px;
-    border-radius: 50%; cursor: pointer;
+    border-radius: 50%;
+    cursor: pointer;
     transition: all var(--transition);
 }
-.testimonial-slide cite .client-name,
-.testimonial-slide cite .client-title {
-    display: block; /* This makes each part take up its own line */
+.slider-nav button:hover {
+    background-color: var(--color-accent);
+    color: var(--dark-bg);
+    border-color: var(--color-accent);
 }
-
-.testimonial-slide cite .client-name {
-    color: var(--color-heading);
-}
-
-.testimonial-slide cite .client-title {
-    font-size: 0.9rem;
-    opacity: 0.8;
-    line-height: 1.4;
-}
-.slider-nav button:hover { background-color: var(--color-accent); color: var(--dark-bg); border-color: var(--color-accent); }
 
 /* Pricing */
 .pricing-grid { display: grid; gap: 2rem; }

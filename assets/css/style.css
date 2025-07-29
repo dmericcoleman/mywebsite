@@ -894,6 +894,7 @@ fieldset {
     justify-content: center;
     flex-wrap: wrap;
     gap: 1rem 2rem;
+    display: flex !important; /* This ensures it overrides the 'hidden' attribute */
 }
 
 .no-js #mobile-menu a {

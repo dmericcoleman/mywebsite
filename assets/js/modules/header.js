@@ -46,6 +46,7 @@ export const header = {
         };
 
         const toggleMenu = (isOpen) => {
+            this.mobileMenu.hidden = !isOpen; // <-- ADD THIS LINE
             document.body.classList.toggle('menu-open', isOpen);
             this.menuToggle.setAttribute('aria-expanded', isOpen);
             if (isOpen) {

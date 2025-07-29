@@ -537,32 +537,32 @@ body.menu-open #menu-overlay {
     overflow: hidden;
     padding-top: 0;
     padding-bottom: 0;
-
-    /* Mobile-first: Load the smallest image by default */
-    background-image: url('../images/hero-bg-768.webp');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
+    /* The #hero element now only has the solid background color. */
+    background-color: var(--dark-bg);
 }
 
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    /* The overlay now has both the gradient AND the mobile-first background image, layered together. */
+    background: var(--hero-overlay), url('images/hero-bg-768.webp') no-repeat center center / cover;
+}
+
+/* The media queries now target the .hero-overlay to swap images seamlessly. */
 /* Load a larger image for tablet-sized screens and up */
 @media (min-width: 768px) {
-    #hero {
-        background-image: url('../images/hero-bg-1200.webp');
+    .hero-overlay {
+        background-image: var(--hero-overlay), url('images/hero-bg-1200.webp');
     }
 }
 
 /* Load the largest image for desktop screens and up */
 @media (min-width: 1200px) {
-    #hero {
-        background-image: url('../images/hero-bg-1920.webp');
+    .hero-overlay {
+        background-image: var(--hero-overlay), url('images/hero-bg-1920.webp');
     }
 }
-.hero-overlay {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: var(--hero-overlay);
-}
+
 .hero-container { position: relative; z-index: 2; }
 
 /* Add text shadow for guaranteed contrast against the background image */

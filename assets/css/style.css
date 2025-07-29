@@ -546,11 +546,11 @@ body.menu-open #menu-overlay {
     display: none; /* Hide the dark logo by default */
 }
 
-body.dark-mode .logo-light {
+.dark-mode .logo-light {
     display: none; /* When dark mode is on, hide the light logo */
 }
 
-body.dark-mode .logo-dark {
+.dark-mode .logo-dark {
     display: block; /* When dark mode is on, show the dark logo */
 }
 .service-card h3 { margin-bottom: 1rem; }

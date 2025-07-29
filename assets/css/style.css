@@ -539,20 +539,20 @@ body.menu-open #menu-overlay {
     padding-bottom: 0;
 
     /* Mobile-first: Load smallest image by default with a dark fallback color */
-    background: var(--dark-bg) url('images/hero-bg-768.webp') no-repeat center center / cover;
+    background: var(--dark-bg) url('../images/hero-bg-768.webp') no-repeat center center / cover;
 }
 
 /* Load a larger image for tablet-sized screens and up */
 @media (min-width: 768px) {
     #hero {
-        background-image: url('images/hero-bg-1200.webp');
+        background-image: url('../images/hero-bg-1200.webp');
     }
 }
 
 /* Load the largest image for desktop screens and up */
 @media (min-width: 1200px) {
     #hero {
-        background-image: url('images/hero-bg-1920.webp');
+        background-image: url('../images/hero-bg-1920.webp');
     }
 }
 

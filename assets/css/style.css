@@ -270,10 +270,15 @@ section {
     background-color: var(--color-bg-alt);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
-    overflow: hidden;
+    /* overflow: hidden; <-- REMOVED FROM HERE */
     display: flex;
     flex-direction: column;
     transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition);
+}
+
+/* Add this new rule to keep article images clipped correctly */
+.article-card {
+    overflow: hidden;
 }
 .card:hover {
     transform: translateY(-8px);
@@ -648,20 +653,31 @@ body.menu-open #menu-overlay {
 
 /* Pricing */
 .pricing-grid { display: grid; gap: 2rem; }
-.pricing-card { text-align: center; padding: 2.5rem; }
+
+.pricing-card {
+    text-align: center;
+    padding: 3.5rem 2.5rem 2.5rem; /* Give all cards more top padding */
+    position: relative;
+}
+
 .pricing-card.featured {
     border: 2px solid var(--color-accent);
     box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
 }
+
 .featured-badge {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the badge on the top border */
+
     background-color: var(--color-accent);
     color: var(--dark-bg);
-    padding: 0.3rem 1rem;
+    padding: 0.4em 1.5em;
     font-size: 0.9rem;
-    font-weight: 600;
+    font-weight: 700;
     border-radius: 99px;
-    display: inline-block;
-    margin-bottom: 1.5rem;
+    white-space: nowrap; /* Ensures "Most Popular" stays on one line */
 }
 .price { font-family: var(--font-heading); font-size: 4rem; font-weight: 800; margin: 0.5rem 0 0.25rem; }
 .price sup { font-size: 1.75rem; top: -1.5rem; }

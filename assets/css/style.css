@@ -534,10 +534,29 @@ body.menu-open #menu-overlay {
     justify-content: center;
     text-align: center;
     color: #F9FAFB;
-    background: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2670&auto=format&fit=crop') no-repeat center center/cover;
     overflow: hidden;
-    padding-top: 0; /* Add this line */
-    padding-bottom: 0; /* Add this line */
+    padding-top: 0;
+    padding-bottom: 0;
+
+    /* Mobile-first: Load the smallest image by default */
+    background-image: url('../images/hero-bg-768.webp');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+/* Load a larger image for tablet-sized screens and up */
+@media (min-width: 768px) {
+    #hero {
+        background-image: url('../images/hero-bg-1200.webp');
+    }
+}
+
+/* Load the largest image for desktop screens and up */
+@media (min-width: 1200px) {
+    #hero {
+        background-image: url('../images/hero-bg-1920.webp');
+    }
 }
 .hero-overlay {
     position: absolute;

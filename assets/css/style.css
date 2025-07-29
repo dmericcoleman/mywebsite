@@ -348,6 +348,37 @@ section {
     }
 }
 
+/* -- Floating WhatsApp Button -- */
+.whatsapp-button {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1000;
+
+    /* Styling */
+    background-color: #25D366; /* Official WhatsApp Green */
+    color: #FFFFFF;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+
+    /* Icon alignment */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+
+    /* Animation */
+    transition: all var(--transition);
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
 /* 6. Header - Sticky Header & Navigation */
 #header {
     position: sticky;

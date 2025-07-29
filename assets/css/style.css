@@ -239,6 +239,12 @@ section {
     position: relative;
 }
 
+/* Add this new rule for a subtle click effect */
+.button:active {
+    transform: scale(0.98);
+    filter: brightness(0.95);
+}
+
 .button-primary {
     background-color: var(--color-accent);
     color: var(--dark-bg);
@@ -281,7 +287,7 @@ section {
     overflow: hidden;
 }
 .card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-8px) rotate(-1deg);
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
 }
 .dark-mode .card:hover {
@@ -406,7 +412,8 @@ section {
 
 .header-logo img {
     height: clamp(30px, 5vw, 40px);
-    width: auto; /* Add this line to maintain aspect ratio */
+    width: auto;
+    aspect-ratio: 694 / 629; /* Add this line */
 }
 
 .desktop-nav { display: none; }
@@ -524,6 +531,12 @@ body.menu-open #menu-overlay {
     font-weight: 800; /* Make it bolder */
 }
 
+/* -- Style for buttons inside the header -- */
+#header .button {
+    font-size: 0.9rem;
+    padding: 0.6em 1.6em;
+}
+
 /* 7. Main Content - Styles for Each Section */
 /* Hero */
 #hero {
@@ -592,6 +605,15 @@ body.menu-open #menu-overlay {
     max-height: 100%; /* Ensure logo fits inside the wrapper */
     width: auto;
     object-fit: contain;
+}
+
+/* Add a transition-delay to each service card */
+.service-card:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.service-card:nth-child(3) {
+    transition-delay: 0.4s;
 }
 
 /* Dark Mode Logo Logic */
@@ -753,6 +775,12 @@ body.menu-open #menu-overlay {
 .article-card .card-content h3 { font-size: 1.4rem; }
 .article-card .card-content p { flex-grow: 1; margin: 1rem 0; }
 .read-more { font-weight: 600; display: inline-block; }
+
+/* Add this new rule */
+.read-more:active {
+    transform: scale(0.97);
+}
+
 .read-more i { margin-left: 0.5rem; transition: transform var(--transition); }
 .read-more:hover i { transform: translateX(5px); }
 
@@ -877,6 +905,23 @@ fieldset {
 .animate-on-scroll.is-visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* -- Staggered Animations for Card Grids -- */
+.service-card:nth-child(2),
+.pricing-card:nth-child(2),
+.article-card:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.service-card:nth-child(3),
+.pricing-card:nth-child(3),
+.article-card:nth-child(3) {
+    transition-delay: 0.4s;
+}
+
+.pricing-card:nth-child(4) {
+    transition-delay: 0.6s;
 }
 
 /* 10. Media Queries - Responsive Breakpoints */
@@ -1007,3 +1052,35 @@ fieldset {
     display: none;
 }
 
+/* ==================================================
+   13. ACCESSIBILITY - REDUCED MOTION
+   ================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    /* Turn off all transitions and animations */
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    /* Reset hover effects */
+    .card:hover {
+        transform: none;
+    }
+
+    .button:hover {
+        transform: none;
+    }
+
+    .read-more:hover i {
+        transform: none;
+    }
+
+    /* Make scroll-animated elements visible by default */
+    .animate-on-scroll {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

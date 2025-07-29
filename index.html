@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-	<head>
 		<script>
 			(function() {
               try {
@@ -73,6 +72,7 @@
 	<!-- Asynchronously loaded full stylesheet -->
 	<link rel="stylesheet" href="assets/css/style.css" media="print" onload="this.media='all'">
 	<noscript><link rel="stylesheet" href="assets/css/style.css"></noscript>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 	<script type="application/ld+json">
 		{
@@ -419,54 +419,52 @@
 				<h2 id="testimonials-heading">Trusted by Growing Brands</h2>
 				<p>Here’s how we’ve made an impact for businesses like yours.</p>
 			</div>
-			<div class="testimonial-slider-wrapper animate-on-scroll">
-				<div class="testimonial-slider">
-					<article class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="Testimonial 1 of 3">
+
+			<div class="testimonial-slider-wrapper swiper animate-on-scroll">
+				<div class="swiper-wrapper">
+					<article class="swiper-slide" role="group" aria-label="Testimonial 1 of 3">
 						<blockquote>“A total game-changer for our online reputation. The process was seamless, and the impact on sales was immediate. We finally look as good online as we are in reality.”</blockquote>
 						<cite>
-							<img src="images/danny-ocean-ehUYU820lcA-unsplash-100.webp"
-								 srcset="images/danny-ocean-ehUYU820lcA-unsplash-100.webp 100w, images/danny-ocean-ehUYU820lcA-unsplash-200.webp 200w"
-								 sizes="60px"
-								 alt="Headshot of Jane Doe, a satisfied client." width="60" height="60" loading="lazy">
-							<div>
+							<img src="images/danny-ocean-ehUYU820lcA-unsplash-100.webp" srcset="images/danny-ocean-ehUYU820lcA-unsplash-100.webp 100w, images/danny-ocean-ehUYU820lcA-unsplash-200.webp 200w" sizes="60px" alt="Headshot of Jane Doe, a satisfied client." width="60" height="60" loading="lazy">
+							<div class="client-details">
 								<div class="star-rating" aria-label="5 out of 5 stars">
 									<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
 								</div>
-								<strong>Jane Doe</strong><span>CEO, Tech Innovators</span>
+								<strong class="client-name">Jane Doe</strong>
+								<span class="client-title">CEO, Tech Innovators</span>
 							</div>
 						</cite>
 					</article>
-					<article class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="Testimonial 2 of 3">
+
+					<article class="swiper-slide" role="group" aria-label="Testimonial 2 of 3">
 						<blockquote>“The most reliable and effective review service we've ever used. Their team is professional, the results speak for themselves, and our Amazon rankings have never been better.”</blockquote>
 						<cite>
-							<img src="images/kshitiz-kandel-kK9ub8l0674-unsplash-100.webp"
-								 srcset="images/kshitiz-kandel-kK9ub8l0674-unsplash-100.webp 100w, images/kshitiz-kandel-kK9ub8l0674-unsplash-200.webp 200w"
-								 sizes="60px"
-								 alt="Headshot of John Smith, a satisfied client." width="60" height="60" loading="lazy">
-							<div>
+							<img src="images/kshitiz-kandel-kK9ub8l0674-unsplash-100.webp" srcset="images/kshitiz-kandel-kK9ub8l0674-unsplash-100.webp 100w, images/kshitiz-kandel-kK9ub8l0674-unsplash-200.webp 200w" sizes="60px" alt="Headshot of John Smith, a satisfied client." width="60" height="60" loading="lazy">
+							<div class="client-details">
 								<div class="star-rating" aria-label="5 out of 5 stars">
 									<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
 								</div>
-								<strong>John Smith</strong><span>Founder, E-Commerce Hub</span>
+								<strong class="client-name">John Smith</strong>
+								<span class="client-title">Founder, E-Commerce Hub</span>
 							</div>
 						</cite>
 					</article>
-					<article class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="Testimonial 3 of 3">
+
+					<article class="swiper-slide" role="group" aria-label="Testimonial 3 of 3">
 						<blockquote>“Our Trustpilot score is now a key asset in our marketing. The investment paid for itself within the first month. I cannot recommend their service enough.”</blockquote>
 						<cite>
-							<img src="images/filip-rankovic-grobgaard-pdyZM-wbgZw-unsplash-100.webp"
-								 srcset="images/filip-rankovic-grobgaard-pdyZM-wbgZw-unsplash-100.webp 100w, images/filip-rankovic-grobgaard-pdyZM-wbgZw-unsplash-200.webp 200w"
-								 sizes="60px"
-								 alt="Headshot of Emily White, a satisfied client." width="60" height="60" loading="lazy">
-							<div>
+							<img src="images/filip-rankovic-grobgaard-pdyZM-wbgZw-unsplash-100.webp" srcset="images/filip-rankovic-grobgaard-pdyZM-wbgZw-unsplash-100.webp 100w, images/filip-rankovic-grobgaard-pdyZM-wbgZw-unsplash-200.webp 200w" sizes="60px" alt="Headshot of Emily White, a satisfied client." width="60" height="60" loading="lazy">
+							<div class="client-details">
 								<div class="star-rating" aria-label="5 out of 5 stars">
 									<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
 								</div>
-								<strong>Emily White</strong><span>Director, Brand Co.</span>
+								<strong class="client-name">Emily White</strong>
+								<span class="client-title">Director, Brand Co.</span>
 							</div>
 						</cite>
 					</article>
 				</div>
+
 				<div class="slider-nav">
 					<button class="slider-prev" aria-label="Previous testimonial"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></button>
 					<button class="slider-next" aria-label="Next testimonial"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
@@ -717,6 +715,7 @@
 	</div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="assets/js/app.js" type="module" defer></script>
 </body>
 </html>

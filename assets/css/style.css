@@ -612,6 +612,20 @@ body.menu-open #menu-overlay {
     border-radius: 50%; cursor: pointer;
     transition: all var(--transition);
 }
+.testimonial-slide cite .client-name,
+.testimonial-slide cite .client-title {
+    display: block; /* This makes each part take up its own line */
+}
+
+.testimonial-slide cite .client-name {
+    color: var(--color-heading);
+}
+
+.testimonial-slide cite .client-title {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    line-height: 1.4;
+}
 .slider-nav button:hover { background-color: var(--color-accent); color: var(--dark-bg); border-color: var(--color-accent); }
 
 /* Pricing */

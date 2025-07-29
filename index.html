@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
+	<head>
+		<script>
+			(function() {
+              try {
+                const theme = localStorage.getItem('theme') || 'dark'; // Default to dark
+                if (theme === 'dark') {
+                  document.documentElement.classList.add('dark-mode');
+                }
+              } catch (e) {}
+            })();
+		</script>
+		<meta charset="UTF-8">
+		...
 	<!-- ================== CORE META ================== -->
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -46,6 +59,17 @@
 	<!-- Inlined Critical CSS for above-the-fold content for instant rendering -->
 	<style id="critical-css">
 		:root{--header-height:70px;--color-dark:#111827;--color-white:#FFFFFF;--color-accent:#f0c674;--dark-bg:#111827;--font-heading:'Raleway',sans-serif;--font-body:'Source Sans Pro',sans-serif;--radius:1rem;--transition:0.4s cubic-bezier(0.25, 0.8, 0.25, 1);--color-bg:var(--dark-bg);--color-text:var(--dark-text);--color-heading:var(--dark-heading)}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-height) + 1rem)}body{font-family:var(--font-body);background-color:var(--color-bg);color:var(--color-text);line-height:1.7;transition:background-color var(--transition),color var(--transition)}a{color:var(--color-accent);text-decoration:none}.container{width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(1.5rem, 5vw, 3rem)}h1{font-family:var(--font-heading);font-weight:800;line-height:1.2;color:var(--color-heading);text-wrap:balance;transition:color var(--transition)}h1{font-size:clamp(2.5rem, 5vw + 1rem, 4.5rem)}p{font-size:clamp(1rem, 1vw + .5rem, 1.125rem)}.button{display:inline-block;padding:.8em 2em;font-family:var(--font-body);font-weight:600;border-radius:var(--radius);cursor:pointer;text-align:center;border:2px solid transparent;transition:all var(--transition);font-size:clamp(1rem, 1vw + .5rem, 1.1rem)}.button-primary{background-color:var(--color-accent);color:var(--dark-bg);font-weight:800}#header{position:sticky;top:0;width:100%;z-index:1000;background-color:transparent;border-bottom:1px solid transparent;transition:all var(--transition)}.header-container{display:flex;justify-content:space-between;align-items:center;height:var(--header-height)}.header-logo img{height:clamp(30px, 5vw, 40px);width:auto}.nav-controls{display:flex;align-items:center;gap:1rem}.desktop-nav{display:none}.theme-toggle{color:var(--color-heading)}.mobile-menu-toggle .bar{background-color:var(--color-heading)}.theme-toggle,.mobile-menu-toggle{background:none;border:none;cursor:pointer;display:flex}#hero{position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;color:#F9FAFB;background:url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2670&auto=format&fit=crop') no-repeat center center/cover;overflow:hidden}.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(45deg, rgba(0, 0, 0, 0.9), rgba(17, 24, 39, 0.7))}.hero-container{position:relative;z-index:2}#hero h1{color:#FFFFFF}#hero .subtitle{font-size:clamp(1.125rem, 2vw, 1.5rem);max-width:700px;margin:1.5rem auto 2.5rem;color:#E5E7EB}.animate-on-scroll{opacity:0;transform:translateY(30px);transition:opacity .8s var(--transition),transform .8s var(--transition)}.animate-on-scroll.is-visible{opacity:1;transform:translateY(0)}@media (min-width: 768px){.desktop-nav{display:flex;align-items:center;gap:2rem}.mobile-menu-toggle{display:none}}
+		/* Hides components before main CSS loads to prevent flash */
+		.skip-to-content {
+    		position: absolute;
+    		top: -100px; /* Hide off-screen */
+    		left: 0;
+    		z-index: 9999;
+		}
+		#mobile-menu {
+    		position: fixed;
+    		transform: translateX(100%); /* Hide off-screen */
+		}
 	</style>
 
 	<!-- Asynchronously loaded full stylesheet -->
@@ -322,7 +346,7 @@
 		<div class="container feature-grid">
 			<div class="feature-image">
 				<img src="images/How-to-Leave-a-Google-Review-1024x651.webp"
-					 srcset="images/How-to-Leave-a-Google-Review-500.webp 500w, images/How-to-Leave-a-Google-Review-1024x651.webp 1024w"
+					 srcset="images/How-to-Leave-a-Google-Review-1024x651.webp 500w, images/How-to-Leave-a-Google-Review-1024x651.webp 1024w"
 					 sizes="(max-width: 768px) 100vw, 50vw"
 					 alt="A person's hands holding a smartphone displaying the Google Reviews interface."
 					 loading="lazy" width="1024" height="651">
@@ -339,7 +363,7 @@
 		<div class="container feature-grid layout-reversed">
 			<div class="feature-image">
 				<img src="images/Amazon-Product-Reviews-.jpg.webp"
-					 srcset="images/Amazon-Product-Reviews-500.webp 500w, images/Amazon-Product-Reviews-.jpg.webp 800w"
+					 srcset="images/Amazon-Product-Reviews-.jpg.webp 500w, images/Amazon-Product-Reviews-.jpg.webp 800w"
 					 sizes="(max-width: 768px) 100vw, 50vw"
 					 alt="A laptop screen showing a product on Amazon with a prominent five-star rating."
 					 loading="lazy" width="800" height="534">

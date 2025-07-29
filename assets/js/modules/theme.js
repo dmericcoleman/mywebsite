@@ -9,11 +9,12 @@ export const theme = {
         this.addEventListeners();
     },
     applyTheme(theme) {
-        document.body.classList.toggle('dark-mode', theme === 'dark');
+        document.documentElement.classList.toggle('dark-mode', theme === 'dark');
     },
+
     addEventListeners() {
         this.themeToggle.addEventListener('click', () => {
-            const newTheme = document.body.classList.toggle('dark-mode') ? 'dark' : 'light';
+            const newTheme = document.documentElement.classList.toggle('dark-mode') ? 'dark' : 'light';
             localStorage.setItem('theme', newTheme);
         });
     }

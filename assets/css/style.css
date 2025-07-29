@@ -44,7 +44,7 @@
     --transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-body.dark-mode {
+.dark-mode {
     --color-bg: #111827;
     --color-bg-alt: #1F2937;
     --color-text: #D1D5DB;

@@ -279,7 +279,7 @@ section {
     transform: translateY(-8px);
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
 }
-body.dark-mode .card:hover {
+.dark-mode .card:hover {
      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.25);
 }
 
@@ -389,8 +389,8 @@ body.dark-mode .card:hover {
 }
 .theme-toggle:hover { background-color: color-mix(in srgb, var(--color-border) 50%, transparent); }
 .theme-toggle .fa-sun { display: none; }
-body.dark-mode .theme-toggle .fa-moon { display: none; }
-body.dark-mode .theme-toggle .fa-sun { display: block; }
+.dark-mode .theme-toggle .fa-moon { display: none; }
+.dark-mode .theme-toggle .fa-sun { display: block; }
 
 .mobile-menu-toggle {
     background: none;
@@ -577,9 +577,7 @@ body.menu-open #menu-overlay {
 
 /* Testimonials */
 .testimonial-slider-wrapper { position: relative; overflow: hidden; }
-.testimonial-slider { display: flex; transition: transform var(--transition); }
-.testimonial-slide {
-    flex: 0 0 100%;
+.swiper-slide {
     text-align: center;
     padding: 1rem;
 }
@@ -916,19 +914,6 @@ fieldset {
     font-weight: 600;
 }
 
-/* Testimonials: Convert slider to a horizontally scrollable list */
-.no-js .testimonial-slider-wrapper {
-    overflow-x: auto;
-    padding-bottom: 1rem; /* Space for scrollbar */
-}
-.no-js .testimonial-slider {
-    width: max-content; /* Allow flex items to define total width */
-    gap: 2rem;
-}
-.no-js .testimonial-slide {
-    width: 80vw; /* Each slide takes up most of the viewport */
-    max-width: 450px;
-}
 .no-js .slider-nav {
     display: none; /* Hide the JS-powered buttons */
 }

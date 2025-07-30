@@ -450,6 +450,7 @@
          }
 
          /* 7. Main Content - Hero */
+         /* 7. Main Content - Hero */
          #hero {
              position: relative;
              min-height: 100svh;
@@ -461,34 +462,21 @@
              overflow: hidden;
              padding-top: 0;
              padding-bottom: 0;
-             background-color: var(--dark-bg); /* Fallback color */
-         }
-
-         .hero-image-wrapper, .hero-bg-img {
-             position: absolute;
-             top: 0;
-             left: 0;
-             width: 100%;
-             height: 100%;
-             z-index: -1;
-         }
-
-         .hero-bg-img {
-             object-fit: cover;
-             object-position: center center;
+             /* Mobile-first background image, aligned to the center */
+             background: var(--dark-bg) url('assets/images/hero-bg-768.webp') no-repeat center center / cover;
          }
 
          /* Load a larger image for tablet-sized screens and up */
          @media (min-width: 768px) {
              #hero {
-                 background-image: url('../images/hero-bg-1200.webp');
+                 background-image: url('assets/images/hero-bg-1200.webp');
              }
          }
 
          /* Load the largest image for desktop screens and up */
          @media (min-width: 1200px) {
              #hero {
-                 background-image: url('../images/hero-bg-1920.webp');
+                 background-image: url('assets/images/hero-bg-1920.webp');
              }
          }
 
@@ -809,11 +797,6 @@
 <main id="main-content">
 
 	<section id="hero" aria-labelledby="hero-heading">
-		<picture class="hero-image-wrapper">
-			<source media="(min-width: 1200px)" srcset="assets/images/hero-bg-1920.webp">
-			<source media="(min-width: 768px)" srcset="assets/images/hero-bg-1200.webp">
-			<img src="assets/images/hero-bg-768.webp" alt="Abstract background image representing trust and quality." class="hero-bg-img">
-		</picture>
 		<div class="hero-overlay"></div>
 		<div class="container hero-container">
 			<h1 id="hero-heading">Premium Reviews Store</h1>

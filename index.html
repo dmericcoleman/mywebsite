@@ -509,8 +509,8 @@
 
          /* 9. Animations - Scroll & Hover Effects */
          .animate-on-scroll {
-             opacity: 0;
-             transform: translateY(30px);
+             opacity: 1; /* Changed from 0 to 1 */
+             transform: translateY(0); /* Changed from 30px to 0 */
              transition: opacity 0.8s var(--transition), transform 0.8s var(--transition);
          }
          .animate-on-scroll.is-visible {

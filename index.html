@@ -245,9 +245,8 @@
          }
          /* If you want card hover effects immediately, add this too. Usually, not critical. */
          /* .card:hover {
-             transform: translateY(-8px) rotate(-1deg);
-             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-         }
+    		box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+			}
          .dark-mode .card:hover {
              box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.25);
          } */
@@ -518,15 +517,15 @@
 
 
          /* 9. Animations - Scroll & Hover Effects */
-         .animate-on-scroll {
-             opacity: 0;
-             transform: translateY(30px);
-             transition: opacity 0.8s var(--transition), transform 0.8s var(--transition);
-         }
-         .animate-on-scroll.is-visible {
-             opacity: 1;
-             transform: translateY(0);
-         }
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s var(--transition), transform 0.8s var(--transition);
+}
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 
          /* 10. Media Queries - Responsive Breakpoints */
          /* Tablet */
@@ -1233,6 +1232,25 @@
 </a>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+        const scrollElements = document.querySelectorAll('.animate-on-scroll');
+        if (scrollElements.length > 0) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            scrollElements.forEach(element => {
+                observer.observe(element);
+            });
+        }
+    });
+</script>
 <script src="assets/js/app.js" type="module" defer></script>
 </body>
 </html>

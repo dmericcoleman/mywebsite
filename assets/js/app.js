@@ -44,20 +44,4 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
     });
 
-    // --- Animate on Scroll ---
-    const scrollElements = document.querySelectorAll('.animate-on-scroll');
-    if (scrollElements.length > 0) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-
-        scrollElements.forEach(element => {
-            observer.observe(element);
-        });
-    }
 });

@@ -54,520 +54,518 @@
 
 	<!-- ================== CRITICAL CSS ================== -->
 	<!-- Inlined Critical CSS for above-the-fold content for instant rendering -->
-	<style id="critical-css">
-		/* ==================================================
+    <style id="critical-css">
+        /* ==================================================
            Critical CSS for immediate display (Above-the-Fold)
            This block is automatically generated. Do not edit directly.
            ===================================================== */
 
-        :root {
-            /* Fonts */
-            --font-heading: 'Raleway', sans-serif;
-            --font-body: 'Source Sans Pro', sans-serif;
+         :root {
+             /* Fonts */
+             --font-heading: 'Raleway', sans-serif;
+             --font-body: 'Source Sans Pro', sans-serif;
 
-            /* Light Mode Colors (Default) */
-            --color-bg: #F9FAFB;
-            --color-bg-alt: #FFFFFF; /* ADDED for cards/sections */
-            --color-text: #374151;
-            --color-heading: #111827;
-            --color-border: #E5E7EB; /* ADDED for borders */
-            --color-accent: #D9A443;
-            --color-accent-hover: #C0903A; /* ADDED for hover states */
-            --hero-overlay: linear-gradient(45deg, rgba(17, 24, 39, 0.9), rgba(17, 24, 39, 0.8));
+             /* Light Mode Colors (Default) */
+             --color-bg: #F9FAFB;
+             --color-bg-alt: #FFFFFF;
+             --color-text: #374151;
+             --color-heading: #111827;
+             --color-border: #E5E7EB;
+             --color-accent: #A07200; /* UPDATED for significantly better contrast */
+             --color-accent-hover: #8A6200; /* UPDATED hover for new accent */
+             --hero-overlay: linear-gradient(45deg, rgba(17, 24, 39, 0.9), rgba(17, 24, 39, 0.8));
 
-            /* Neutral & Status Colors (Only critical ones if visible above fold) */
-            --color-star-rating: #ffc107; /* ADDED if testimonials are above fold */
+             /* Neutral & Status Colors (Only critical ones if visible above fold) */
+             --color-star-rating: #ffc107;
 
-            /* Dark-specific colors, also defined here so they can be referenced */
-            --color-dark-bg: #111827;
-            --color-dark-text: #D1D5DB;
-            --color-dark-heading: #F9FAFB;
-            --color-dark-accent: #f0c674;
-            --color-dark-border: #374151;
+             /* Dark-specific colors, also defined here so they can be referenced */
+             --color-dark-bg: #111827;
+             --color-dark-text: #D1D5DB;
+             --color-dark-heading: #F9FAFB;
+             --color-dark-accent: #D9A443; /* UPDATED (using previous light mode accent) for better dark mode contrast */
+             --color-dark-border: #374151;
 
-            /* Sizing & Effects */
-            --spacing-unit: 1rem; /* ADDED if used for critical spacing */
-            --container-width: 1200px;
-            --header-height: 70px;
-            --radius: 1rem;
-            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* ADDED for card/image shadows */
-            --transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
+             /* Sizing & Effects */
+             --spacing-unit: 1rem;
+             --container-width: 1200px;
+             --header-height: 70px;
+             --radius: 1rem;
+             --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+             --transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+         }
 
-        .dark-mode {
-            --color-bg: #111827;
-            --color-bg-alt: #1F2937; /* ADDED */
-            --color-text: #D1D5DB;
-            --color-heading: #F9FAFB;
-            --color-border: #374151; /* ADDED */
-            --color-accent: #f0c674;
-            --color-accent-hover: #D6B16A; /* ADDED */
-            --hero-overlay: linear-gradient(45deg, rgba(0, 0, 0, 0.95), rgba(17, 24, 39, 0.85));
-            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.25); /* ADDED */
-        }
+         .dark-mode {
+             --color-bg: #111827;
+             --color-bg-alt: #1F2937;
+             --color-text: #D1D5DB;
+             --color-heading: #F9FAFB;
+             --color-border: #374151;
+             --color-accent: #D9A443; /* UPDATED (using previous light mode accent) for better dark mode contrast */
+             --color-accent-hover: #C0903A; /* UPDATED (using previous light mode hover accent) */
+             --hero-overlay: linear-gradient(45deg, rgba(0, 0, 0, 0.95), rgba(17, 24, 39, 0.85));
+             --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+         }
 
-        /* 2. Base - Reset & Foundational Styles */
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+         /* 2. Base - Reset & Foundational Styles */
+         *, *::before, *::after {
+             box-sizing: border-box;
+             margin: 0;
+             padding: 0;
+         }
 
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: calc(var(--header-height) + 1rem);
-        }
+         html {
+             scroll-behavior: smooth;
+             scroll-padding-top: calc(var(--header-height) + 1rem);
+         }
 
-        body {
-            font-family: var(--font-body);
-            background-color: var(--color-bg);
-            color: var(--color-text);
-            line-height: 1.7;
-            /* -webkit-font-smoothing: antialiased; */ /* Keep if you want, but less critical */
-            /* -moz-osx-font-smoothing: grayscale; */ /* Keep if you want, but less critical */
-            transition: background-color var(--transition), color var(--transition);
-        }
+         body {
+             font-family: var(--font-body);
+             background-color: var(--color-bg);
+             color: var(--color-text);
+             line-height: 1.7;
+             /* -webkit-font-smoothing: antialiased; */
+             /* -moz-osx-font-smoothing: grayscale; */
+             transition: background-color var(--transition), color var(--transition);
+         }
 
-        /* img, picture, svg */ /* Not critical for feel unless specific styling needed for above-fold images */
-        /* { display: block; max-width: 100%; height: auto; } */
+         /* img, picture, svg */
 
+         /* 3. Typography - Fluid Sizing with clamp() */
+         h1, h2, h3 {
+             font-family: var(--font-heading);
+             font-weight: 800;
+             line-height: 1.2;
+             color: var(--color-heading);
+             text-wrap: balance;
+             transition: color var(--transition);
+         }
 
-        /* 3. Typography - Fluid Sizing with clamp() */
-        h1, h2, h3 { /* h2/h3 if they appear above fold, e.g., section headers */
-            font-family: var(--font-heading);
-            font-weight: 800;
-            line-height: 1.2;
-            color: var(--color-heading);
-            text-wrap: balance;
-            transition: color var(--transition);
-        }
+         h1 { font-size: clamp(2.5rem, 5vw + 1rem, 4.5rem); }
+         h2 { font-size: clamp(2rem, 4vw + 1rem, 3.25rem); }
+         h3 { font-size: clamp(1.25rem, 2vw + 0.5rem, 1.75rem); }
+         p, li, a, input, textarea, label { font-size: clamp(1rem, 1vw + 0.5rem, 1.125rem); }
 
-        h1 { font-size: clamp(2.5rem, 5vw + 1rem, 4.5rem); }
-        h2 { font-size: clamp(2rem, 4vw + 1rem, 3.25rem); } /* Added if section header is above fold */
-        h3 { font-size: clamp(1.25rem, 2vw + 0.5rem, 1.75rem); } /* Added if service cards are above fold */
-        p, li, a, input, textarea, label { font-size: clamp(1rem, 1vw + 0.5rem, 1.125rem); }
+         a {
+             color: var(--color-accent);
+             text-decoration: none;
+             transition: color var(--transition);
+         }
+         a:hover { color: var(--color-accent-hover); }
 
-        a {
-            color: var(--color-accent);
-            text-decoration: none;
-            transition: color var(--transition); /* ADDED */
-        }
-        a:hover { color: var(--color-accent-hover); } /* ADDED */
+         /* 4. Layout - Containers & Section Helpers (only critical parts) */
+         .container {
+             width: 100%;
+             max-width: var(--container-width);
+             margin: 0 auto;
+             padding: 0 clamp(1.5rem, 5vw, 3rem);
+         }
 
-        /* 4. Layout - Containers & Section Helpers (only critical parts) */
-        .container {
-            width: 100%;
-            max-width: var(--container-width);
-            margin: 0 auto;
-            padding: 0 clamp(1.5rem, 5vw, 3rem);
-        }
+         /* section { padding: clamp(4rem, 10vw, 8rem) 0; } */
+         /* .section-header {} */
 
-        /* section { padding: clamp(4rem, 10vw, 8rem) 0; } */ /* Only if section itself is visible */
-        /* .section-header {} */ /* Only if section header itself is visible (usually not the full section) */
+         /* 5. Components - Buttons, Cards, Forms (only critical parts that show above fold) */
 
-        /* 5. Components - Buttons, Cards, Forms (only critical parts that show above fold) */
+         /* -- Accessibility: Visible Focus Styles -- */
+         :focus-visible {
+             outline: 3px solid var(--color-accent);
+             outline-offset: 2px;
+             box-shadow: 0 0 0 5px color-mix(in srgb, var(--color-bg) 50%, transparent);
+         }
 
-        /* -- Accessibility: Visible Focus Styles -- */
-        :focus-visible { /* ADDED */
-            outline: 3px solid var(--color-accent);
-            outline-offset: 2px;
-            box-shadow: 0 0 0 5px color-mix(in srgb, var(--color-bg) 50%, transparent);
-        }
+         /* Remove outline for non-keyboard focus (optional but clean) */
+         :focus:not(:focus-visible) {
+             outline: none;
+         }
 
-        /* Remove outline for non-keyboard focus (optional but clean) */
-        :focus:not(:focus-visible) { /* ADDED */
-            outline: none;
-        }
+         .button {
+             display: inline-block;
+             padding: 0.8em 2em;
+             font-family: var(--font-body);
+             font-weight: 600;
+             border-radius: var(--radius);
+             cursor: pointer;
+             text-align: center;
+             border: 2px solid transparent;
+             transition: all var(--transition);
+             font-size: clamp(1rem, 1vw + 0.5rem, 1.1rem);
+             position: relative;
+         }
 
-        .button {
-            display: inline-block;
-            padding: 0.8em 2em;
-            font-family: var(--font-body);
-            font-weight: 600;
-            border-radius: var(--radius);
-            cursor: pointer;
-            text-align: center;
-            border: 2px solid transparent;
-            transition: all var(--transition);
-            font-size: clamp(1rem, 1vw + 0.5rem, 1.1rem);
-            position: relative;
-        }
+         /* Add this new rule for a subtle click effect */
+         .button:active {
+             transform: scale(0.98);
+             filter: brightness(0.95);
+         }
 
-        /* Add this new rule for a subtle click effect */
-        .button:active { /* ADDED */
-            transform: scale(0.98);
-            filter: brightness(0.95);
-        }
+         .button-primary {
+             background-color: var(--color-accent);
+             color: var(--dark-bg);
+             font-weight: 800;
+             border-color: var(--color-accent);
+         }
+         /* Default styles for secondary/outline buttons */
+         .button:not(.button-primary) {
+             border-color: var(--color-border);
+             background-color: transparent;
+             color: var(--color-heading);
+         }
 
-        .button-primary {
-            background-color: var(--color-accent);
-            color: var(--dark-bg); /* Use var for consistency */
-            font-weight: 800;
-            border-color: var(--color-accent); /* Added for a smooth hover transition */
-        }
-        /* Default styles for secondary/outline buttons */
-        .button:not(.button-primary) { /* ADDED */
-            border-color: var(--color-border);
-            background-color: transparent;
-            color: var(--color-heading);
-        }
+         .button:not(.button-primary):hover {
+             background-color: var(--color-bg-alt);
+             border-color: var(--color-accent);
+             color: var(--color-accent);
+         }
 
-        .button:not(.button-primary):hover { /* ADDED */
-            background-color: var(--color-bg-alt);
-            border-color: var(--color-accent);
-            color: var(--color-accent);
-        }
+         .button-primary:hover {
+             background-color: transparent;
+             color: var(--color-accent);
+             border-color: var(--color-accent);
+             transform: translateY(-2px);
+             box-shadow: none;
+         }
 
-        .button-primary:hover { /* ADDED */
-            background-color: transparent;
-            color: var(--color-accent);
-            border-color: var(--color-accent);
-            transform: translateY(-2px);
-            box-shadow: none;
-        }
+         /* Card styles if any part of a card is visible above the fold (e.g., service cards) */
+         .card {
+             background-color: var(--color-bg-alt);
+             border-radius: var(--radius);
+             box-shadow: var(--shadow);
+             display: flex;
+             flex-direction: column;
+             transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition);
+         }
+         /* If you want card hover effects immediately, add this too. Usually, not critical. */
+         /* .card:hover {
+             transform: translateY(-8px) rotate(-1deg);
+             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+         }
+         .dark-mode .card:hover {
+             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.25);
+         } */
 
-        /* Card styles if any part of a card is visible above the fold (e.g., service cards) */
-        .card { /* ADDED */
-            background-color: var(--color-bg-alt);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            display: flex;
-            flex-direction: column;
-            transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition);
-        }
-        /* If you want card hover effects immediately, add this too. Usually, not critical. */
-        /* .card:hover {
-            transform: translateY(-8px) rotate(-1deg);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-        }
-        .dark-mode .card:hover {
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.25);
-        } */
-
-        /* -- Cookie Consent Banner -- (Only critical initial state if it appears immediately) */
-        .cookie-banner { /* ADDED essential initial styles for cookie banner */
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: var(--color-bg-alt);
-            padding: 1.5rem 0;
-            z-index: 2000;
-            box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
-            border-top: 1px solid var(--color-border);
-            transform: translateY(100%);
-            transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1),
-                        background-color var(--transition),
-                        border-color var(--transition);
-        }
-        .cookie-banner.is-visible {
-            transform: translateY(0);
-        }
-        .cookie-banner-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-            text-align: center;
-        }
-        .cookie-banner-text {
-            margin: 0;
-            font-size: clamp(0.9rem, 1vw + 0.5rem, 1rem);
-        }
-        .cookie-learn-more {
-            text-decoration: underline;
-            font-weight: 600;
-        }
-        .cookie-banner-actions {
-            display: flex;
-            gap: 1rem;
-        }
-        .cookie-banner-actions .button {
-            padding: 0.6em 1.5em;
-            font-size: 0.9rem;
-        }
-        @media (min-width: 768px) {
-            .cookie-banner-container {
-                flex-direction: row;
-                justify-content: space-between;
-                text-align: left;
-            }
-            .cookie-banner-text {
-                margin-right: 2rem;
-            }
-        }
+         /* -- Cookie Consent Banner -- */
+         .cookie-banner {
+             position: fixed;
+             bottom: 0;
+             left: 0;
+             right: 0;
+             background-color: var(--color-bg-alt);
+             padding: 1.5rem 0;
+             z-index: 2000;
+             box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+             border-top: 1px solid var(--color-border);
+             transform: translateY(100%);
+             transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1),
+                         background-color var(--transition),
+                         border-color var(--transition);
+         }
+         .cookie-banner.is-visible {
+             transform: translateY(0);
+         }
+         .cookie-banner-container {
+             display: flex;
+             flex-direction: column;
+             align-items: center;
+             gap: 1rem;
+             text-align: center;
+         }
+         .cookie-banner-text {
+             margin: 0;
+             font-size: clamp(0.9rem, 1vw + 0.5rem, 1rem);
+         }
+         .cookie-learn-more {
+             text-decoration: underline;
+             font-weight: 600;
+         }
+         .cookie-banner-actions {
+             display: flex;
+             gap: 1rem;
+         }
+         .cookie-banner-actions .button {
+             padding: 0.6em 1.5em;
+             font-size: 0.9rem;
+         }
+         @media (min-width: 768px) {
+             .cookie-banner-container {
+                 flex-direction: row;
+                 justify-content: space-between;
+                 text-align: left;
+             }
+             .cookie-banner-text {
+                 margin-right: 2rem;
+             }
+         }
 
 
-        /* -- Floating WhatsApp Button -- (If immediately visible) */
-        .whatsapp-button { /* ADDED for floating WhatsApp button */
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            z-index: 1000;
-            background-color: #25D366; /* Official WhatsApp Green */
-            color: #FFFFFF;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            text-align: center;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 30px;
-            transition: all var(--transition);
-        }
+         /* -- Floating WhatsApp Button -- */
+         .whatsapp-button {
+             position: fixed;
+             bottom: 25px;
+             right: 25px;
+             z-index: 1000;
+             background-color: #25D366;
+             color: #FFFFFF;
+             width: 60px;
+             height: 60px;
+             border-radius: 50%;
+             text-align: center;
+             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             font-size: 30px;
+             transition: all var(--transition);
+         }
 
-        /* 6. Header - Sticky Header & Navigation */
-        #header {
-            position: sticky;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background-color: transparent;
-            border-bottom: 1px solid transparent;
-            transition: all var(--transition);
-        }
-        /* #header.scrolled { ... } */ /* Not critical for initial load */
+         /* 6. Header - Sticky Header & Navigation */
+         #header {
+             position: sticky;
+             top: 0;
+             width: 100%;
+             z-index: 1000;
+             background-color: transparent;
+             border-bottom: 1px solid transparent;
+             transition: all var(--transition);
+         }
+         /* #header.scrolled { ... } */
 
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: var(--header-height);
-        }
+         .header-container {
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+             height: var(--header-height);
+         }
 
-        .header-logo img {
-            height: clamp(30px, 5vw, 40px);
-            width: auto;
-            aspect-ratio: 1 / 1;
-        }
+         .header-logo img {
+             height: clamp(30px, 5vw, 40px);
+             width: auto;
+             aspect-ratio: 1 / 1;
+         }
 
-        .desktop-nav { display: none; }
-        .nav-controls { display: flex; align-items: center; gap: 1rem; }
+         .desktop-nav { display: none; }
+         .nav-controls { display: flex; align-items: center; gap: 1rem; }
 
-        .theme-toggle {
-            background: none;
-            border: none;
-            color: var(--color-heading);
-            cursor: pointer;
-            font-size: 1.5rem;
-            padding: 0.5rem;
-            border-radius: 50%;
-            display: flex;
-            transition: color var(--transition), background-color var(--transition);
-        }
-        .theme-toggle:hover { background-color: color-mix(in srgb, var(--color-border) 50%, transparent); } /* ADDED */
-        .theme-toggle .fa-sun { display: none; }
-        .dark-mode .theme-toggle .fa-moon { display: none; }
-        .dark-mode .theme-toggle .fa-sun { display: block; }
+         .theme-toggle {
+             background: none;
+             border: none;
+             color: var(--color-heading);
+             cursor: pointer;
+             font-size: 1.5rem;
+             padding: 0.5rem;
+             border-radius: 50%;
+             display: flex;
+             transition: color var(--transition), background-color var(--transition);
+         }
+         .theme-toggle:hover { background-color: color-mix(in srgb, var(--color-border) 50%, transparent); }
+         .theme-toggle .fa-sun { display: none; }
+         .dark-mode .theme-toggle .fa-moon { display: none; }
+         .dark-mode .theme-toggle .fa-sun { display: block; }
 
-        .mobile-menu-toggle {
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0.5rem;
-            width: 44px;
-            height: 44px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 5px;
-        }
-        .mobile-menu-toggle .bar {
-            width: 24px;
-            height: 3px;
-            background-color: var(--color-heading);
-            border-radius: 2px;
-            transition: all var(--transition);
-        }
+         .mobile-menu-toggle {
+             background: none;
+             border: none;
+             cursor: pointer;
+             padding: 0.5rem;
+             width: 44px;
+             height: 44px;
+             display: flex;
+             flex-direction: column;
+             justify-content: center;
+             align-items: center;
+             gap: 5px;
+         }
+         .mobile-menu-toggle .bar {
+             width: 24px;
+             height: 3px;
+             background-color: var(--color-heading);
+             border-radius: 2px;
+             transition: all var(--transition);
+         }
 
-        #mobile-menu a { /* ADDED */
-            font-size: 1.5rem;
-            font-weight: 800;
-            font-family: var(--font-heading);
-            color: var(--color-heading);
-        }
+         #mobile-menu a {
+             font-size: 1.5rem;
+             font-weight: 800;
+             font-family: var(--font-heading);
+             color: var(--color-heading);
+         }
 
-        #mobile-menu {
-            position: fixed;
-            top: 0;
-            right: 0;
-            transform: translateX(100%);
-            width: min(80vw, 300px);
-            height: 100vh;
-            background-color: var(--color-bg-alt); /* ADDED */
-            z-index: 1001;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 6rem 2rem;
-            gap: 2rem;
-            transition: transform var(--transition);
-            box-shadow: -10px 0 30px rgba(0,0,0,0.1); /* ADDED */
-        }
+         #mobile-menu {
+             position: fixed;
+             top: 0;
+             right: 0;
+             transform: translateX(100%);
+             width: min(80vw, 300px);
+             height: 100vh;
+             background-color: var(--color-bg-alt);
+             z-index: 1001;
+             display: flex;
+             flex-direction: column;
+             align-items: center;
+             padding: 6rem 2rem;
+             gap: 2rem;
+             transition: transform var(--transition);
+             box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+         }
 
-        /* body.menu-open #mobile-menu { ... } */ /* Not critical for initial load */
-        /* body.menu-open .mobile-menu-toggle .bar:nth-child(1) { ... } */ /* Not critical for initial load */
+         /* body.menu-open #mobile-menu { ... } */
+         /* body.menu-open .mobile-menu-toggle .bar:nth-child(1) { ... } */
 
-        /* -- Menu Overlay & Close Button -- */
-        #menu-overlay { /* ADDED */
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity var(--transition), visibility var(--transition);
-        }
+         /* -- Menu Overlay & Close Button -- */
+         #menu-overlay {
+             position: fixed;
+             top: 0;
+             left: 0;
+             width: 100%;
+             height: 100%;
+             background-color: rgba(0, 0, 0, 0.6);
+             z-index: 1000;
+             opacity: 0;
+             visibility: hidden;
+             transition: opacity var(--transition), visibility var(--transition);
+         }
 
-        .close-menu-btn { /* ADDED */
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            background: none;
-            border: none;
-            padding: 0.5rem;
-            cursor: pointer;
-            color: var(--color-heading);
-        }
+         .close-menu-btn {
+             position: absolute;
+             top: 1.5rem;
+             right: 1.5rem;
+             background: none;
+             border: none;
+             padding: 0.5rem;
+             cursor: pointer;
+             color: var(--color-heading);
+         }
 
-        .close-menu-btn .icon { /* ADDED */
-            width: 1.5rem;
-            height: 1.5rem;
-        }
+         .close-menu-btn .icon {
+             width: 1.5rem;
+             height: 1.5rem;
+         }
 
-        /* Style for the active navigation link */
-        /* .desktop-nav a[aria-current="page"], */ /* Not critical for initial load */
-        /* #mobile-menu a[aria-current="page"] { ... } */ /* Not critical for initial load */
+         /* Style for the active navigation link */
+         /* .desktop-nav a[aria-current="page"], */
+         /* #mobile-menu a[aria-current="page"] { ... } */
 
-        /* -- Style for buttons inside the header -- */
-        #header .button { /* ADDED */
-            font-size: 0.9rem;
-            padding: 0.6em 1.6em;
-        }
+         /* -- Style for buttons inside the header -- */
+         #header .button {
+             font-size: 0.9rem;
+             padding: 0.6em 1.6em;
+         }
 
-        /* 7. Main Content - Hero */
-        #hero {
-            position: relative;
-            min-height: 100svh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #F9FAFB;
-            overflow: hidden;
-            padding-top: 0;
-            padding-bottom: 0;
-            background: var(--dark-bg) url('images/hero-bg-768.webp') no-repeat center center / cover;
-        }
+         /* 7. Main Content - Hero */
+         #hero {
+             position: relative;
+             min-height: 100svh;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             text-align: center;
+             color: #F9FAFB;
+             overflow: hidden;
+             padding-top: 0;
+             padding-bottom: 0;
+             background: var(--dark-bg) url('../images/hero-bg-768.webp') no-repeat center center / cover;
+         }
 
-        /* Load a larger image for tablet-sized screens and up */
-        @media (min-width: 768px) {
-            #hero {
-                background-image: url('../images/hero-bg-1200.webp');
-            }
-        }
+         /* Load a larger image for tablet-sized screens and up */
+         @media (min-width: 768px) {
+             #hero {
+                 background-image: url('../images/hero-bg-1200.webp');
+             }
+         }
 
-        /* Load the largest image for desktop screens and up */
-        @media (min-width: 1200px) {
-            #hero {
-                background-image: url('../images/hero-bg-1920.webp');
-            }
-        }
+         /* Load the largest image for desktop screens and up */
+         @media (min-width: 1200px) {
+             #hero {
+                 background-image: url('../images/hero-bg-1920.webp');
+             }
+         }
 
-        .hero-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: var(--hero-overlay);
-        }
+         .hero-overlay {
+             position: absolute;
+             top: 0; left: 0; width: 100%; height: 100%;
+             background: var(--hero-overlay);
+         }
 
-        .hero-container { position: relative; z-index: 2; }
+         .hero-container { position: relative; z-index: 2; }
 
-        #hero h1,
-        #hero .subtitle {
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7); /* ADDED */
-        }
+         #hero h1,
+         #hero .subtitle {
+             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+         }
 
-        #hero h1 { color: #FFFFFF; }
-        #hero .subtitle {
-            font-size: clamp(1.125rem, 2vw, 1.5rem);
-            max-width: 700px;
-            margin: 1.5rem auto 2.5rem;
-            color: #E5E7EB;
-        }
+         #hero h1 { color: #FFFFFF; }
+         #hero .subtitle {
+             font-size: clamp(1.125rem, 2vw, 1.5rem);
+             max-width: 700px;
+             margin: 1.5rem auto 2.5rem;
+             color: #E5E7EB;
+         }
 
-        /* Services (if visible above fold) */
-        .services-grid { display: grid; gap: 2rem; } /* ADDED if cards are visible */
-        .service-card { padding: 2rem; text-align: center; } /* ADDED if cards are visible */
-        .card-icon-wrapper { /* ADDED if cards are visible */
-            height: 48px;
-            margin-bottom: 1.5rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .service-card .card-icon { /* ADDED if cards are visible */
-            max-height: 100%;
-            width: auto;
-            object-fit: contain;
-        }
-        /* Dark Mode Logo Logic */
-        .logo-dark { display: none; } /* ADDED for service card logos */
-        .dark-mode .logo-light { display: none; } /* ADDED */
-        .dark-mode .logo-dark { display: block; } /* ADDED */
-        .service-card h3 { margin-bottom: 1rem; } /* ADDED */
+         /* Services (if visible above fold) */
+         .services-grid { display: grid; gap: 2rem; }
+         .service-card { padding: 2rem; text-align: center; }
+         .card-icon-wrapper {
+             height: 48px;
+             margin-bottom: 1.5rem;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+         }
+         .service-card .card-icon {
+             max-height: 100%;
+             width: auto;
+             object-fit: contain;
+         }
+         /* Dark Mode Logo Logic */
+         .logo-dark { display: none; }
+         .dark-mode .logo-light { display: none; }
+         .dark-mode .logo-dark { display: block; }
+         .service-card h3 { margin-bottom: 1rem; }
 
 
-        /* 9. Animations - Scroll & Hover Effects */
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s var(--transition), transform 0.8s var(--transition);
-        }
-        .animate-on-scroll.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+         /* 9. Animations - Scroll & Hover Effects */
+         .animate-on-scroll {
+             opacity: 0;
+             transform: translateY(30px);
+             transition: opacity 0.8s var(--transition), transform 0.8s var(--transition);
+         }
+         .animate-on-scroll.is-visible {
+             opacity: 1;
+             transform: translateY(0);
+         }
 
-        /* 10. Media Queries - Responsive Breakpoints */
-        /* Tablet */
-        @media (min-width: 768px) {
-            .desktop-nav { display: flex; align-items: center; gap: 2rem; }
-            .mobile-menu-toggle { display: none; }
-        }
+         /* 10. Media Queries - Responsive Breakpoints */
+         /* Tablet */
+         @media (min-width: 768px) {
+             .desktop-nav { display: flex; align-items: center; gap: 2rem; }
+             .mobile-menu-toggle { display: none; }
+         }
 
-        /* 11. ACCESSIBILITY STYLES */
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border-width: 0;
-        }
-        .skip-to-content {
-            position: absolute;
-            top: -100px;
-            left: 0;
-            background-color: var(--color-accent); /* ADDED */
-            color: var(--dark-bg); /* ADDED */
-            padding: 1rem 1.5rem; /* ADDED */
-            z-index: 9999;
-            transition: top var(--transition); /* ADDED */
-            font-weight: 600; /* ADDED */
-        }
-        .skip-to-content:focus { /* ADDED */
-            top: 0;
-        }
-	</style>
+         /* 11. ACCESSIBILITY STYLES */
+         .sr-only {
+             position: absolute;
+             width: 1px;
+             height: 1px;
+             padding: 0;
+             margin: -1px;
+             overflow: hidden;
+             clip: rect(0, 0, 0, 0);
+             white-space: nowrap;
+             border-width: 0;
+         }
+         .skip-to-content {
+             position: absolute;
+             top: -100px;
+             left: 0;
+             background-color: var(--color-accent);
+             color: var(--dark-bg);
+             padding: 1rem 1.5rem;
+             z-index: 9999;
+             transition: top var(--transition);
+             font-weight: 600;
+         }
+         .skip-to-content:focus {
+             top: 0;
+         }
+    </style>
 
 	<!-- Asynchronously loaded full stylesheet -->
 	<link rel="stylesheet" href="assets/css/style.css" media="print" onload="this.media='all'">

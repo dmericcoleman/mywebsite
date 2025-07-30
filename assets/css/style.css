@@ -389,7 +389,7 @@ section {
     transition: all var(--transition);
 }
 
-.cookie-banner.is-visible + .whatsapp-button,
+.cookie-banner.is-visible ~ .whatsapp-button,
 body.menu-open .whatsapp-button {
     display: none; /* Hide WhatsApp button when cookie banner or mobile menu is open */
 }

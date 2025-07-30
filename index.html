@@ -1232,25 +1232,6 @@
 </a>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-<script>
-	document.addEventListener('DOMContentLoaded', () => {
-        const scrollElements = document.querySelectorAll('.animate-on-scroll');
-        if (scrollElements.length > 0) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-            scrollElements.forEach(element => {
-                observer.observe(element);
-            });
-        }
-    });
-</script>
 <script src="assets/js/app.js" type="module" defer></script>
 </body>
 </html>

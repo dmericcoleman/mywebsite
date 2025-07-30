@@ -25,23 +25,43 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileMenu.hidden = !isMenuOpen;
     };
 
-    menuToggle.addEventListener('click', toggleMenu);
-    menuOverlay.addEventListener('click', toggleMenu);
-    closeMenuBtn.addEventListener('click', toggleMenu);
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (document.body.classList.contains('menu-open')) {
-                toggleMenu();
-            }
+    if (menuToggle && mobileMenu && menuOverlay && closeMenuBtn) {
+        menuToggle.addEventListener('click', toggleMenu);
+        menuOverlay.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', toggleMenu);
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (document.body.classList.contains('menu-open')) {
+                    toggleMenu();
+                }
+            });
         });
-    });
+    }
 
     // --- Theme Toggle ---
     const themeToggle = document.querySelector('.theme-toggle');
-    themeToggle.addEventListener('click', () => {
-        document.documentElement.classList.toggle('dark-mode');
-        const isDarkMode = document.documentElement.classList.contains('dark-mode');
-        localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-    });
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark-mode');
+            const isDarkMode = document.documentElement.classList.contains('dark-mode');
+            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+        });
+    }
 
+    // --- Animate on Scroll ---
+    const scrollElements = document.querySelectorAll('.animate-on-scroll');
+    if (scrollElements.length > 0) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        scrollElements.forEach(element => {
+            observer.observe(element);
+        });
+    }
 });

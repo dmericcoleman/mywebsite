@@ -13,8 +13,6 @@
 ===================================================== */
 
 /* 1. :root - CSS Variables & Theming */
-/* 1. :root - CSS Variables & Theming */
-/* 1. :root - CSS Variables & Theming */
 :root {
     /* Fonts */
     --font-heading: 'Raleway', sans-serif;
@@ -455,8 +453,8 @@ section {
     border: none;
     cursor: pointer;
     padding: 0.5rem;
-    width: 48px; /* Changed from 44px */
-    height: 48px; /* Changed from 44px */
+    width: 48px; /* Standardized for accessibility */
+    height: 48px; /* Standardized for accessibility */
     display: flex;
     flex-direction: column;
     justify-content: center;

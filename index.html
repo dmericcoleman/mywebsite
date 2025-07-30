@@ -41,7 +41,7 @@
 	<!-- ================== FONTS & ICONS ================== -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link rel="preload" as="image" href="assets/images/hero-bg-1920.webp" fetchpriority="high">
+	<!-- <link rel="preload" as="image" href="assets/images/hero-bg-1920.webp" fetchpriority="high">*/ -->
 	<link rel="preload" href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Source+Sans+Pro:wght@400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 	<noscript><link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet"></noscript>
 
@@ -461,7 +461,21 @@
              overflow: hidden;
              padding-top: 0;
              padding-bottom: 0;
-             background: var(--dark-bg) url('assets/images/hero-bg-768.webp') no-repeat center top / cover;
+             background-color: var(--dark-bg); /* Fallback color */
+         }
+
+         .hero-image-wrapper, .hero-bg-img {
+             position: absolute;
+             top: 0;
+             left: 0;
+             width: 100%;
+             height: 100%;
+             z-index: -1;
+         }
+
+         .hero-bg-img {
+             object-fit: cover;
+             object-position: center center;
          }
 
          /* Load a larger image for tablet-sized screens and up */
@@ -568,8 +582,8 @@
     </style>
 
 	<!-- Asynchronously loaded full stylesheet -->
-	<link rel="stylesheet" href="assets/css/style.css" media="print" onload="this.media='all'">
-	<noscript><link rel="stylesheet" href="assets/css/style.css"></noscript>
+	<link rel="stylesheet" href="assets/css/style.css?v=1.1" media="print" onload="this.media='all'">
+	<noscript><link rel="stylesheet" href="assets/css/style.css?v=1.1"></noscript>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 	<script type="application/ld+json">
@@ -795,6 +809,11 @@
 <main id="main-content">
 
 	<section id="hero" aria-labelledby="hero-heading">
+		<picture class="hero-image-wrapper">
+			<source media="(min-width: 1200px)" srcset="assets/images/hero-bg-1920.webp">
+			<source media="(min-width: 768px)" srcset="assets/images/hero-bg-1200.webp">
+			<img src="assets/images/hero-bg-768.webp" alt="Abstract background image representing trust and quality." class="hero-bg-img">
+		</picture>
 		<div class="hero-overlay"></div>
 		<div class="container hero-container">
 			<h1 id="hero-heading">Premium Reviews Store</h1>

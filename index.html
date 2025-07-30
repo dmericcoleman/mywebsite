@@ -448,7 +448,6 @@
          }
 
          /* 7. Main Content - Hero */
-         /* 7. Main Content - Hero */
          #hero {
              position: relative;
              min-height: 100svh;
@@ -460,22 +459,7 @@
              overflow: hidden;
              padding-top: 0;
              padding-bottom: 0;
-             /* Mobile-first background image, aligned to the center */
-             background: var(--dark-bg) url('assets/images/hero-bg-768.webp') no-repeat center center / cover;
-         }
-
-         /* Load a larger image for tablet-sized screens and up */
-         @media (min-width: 768px) {
-             #hero {
-                 background-image: url('assets/images/hero-bg-1200.webp');
-             }
-         }
-
-         /* Load the largest image for desktop screens and up */
-         @media (min-width: 1200px) {
-             #hero {
-                 background-image: url('assets/images/hero-bg-1920.webp');
-             }
+             background-color: var(--dark-bg);
          }
 
          .hero-overlay {

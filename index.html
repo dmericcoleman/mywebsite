@@ -60,6 +60,18 @@
            This block is automatically generated. Do not edit directly.
            ===================================================== */
 
+         /* 1. Defines the fade-in-up animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
          :root {
              /* Fonts */
              --font-heading: 'Raleway', sans-serif;
@@ -509,9 +521,37 @@
 
          /* 9. Animations - Scroll & Hover Effects */
          .animate-on-scroll {
-             opacity: 1; /* Changed from 0 to 1 */
-             transform: translateY(0); /* Changed from 30px to 0 */
-             transition: opacity 0.8s var(--transition), transform 0.8s var(--transition);
+             /* Applies the animation */
+             animation: fadeInUp 0.8s var(--transition) both;
+         }
+
+         /* Staggered Delays for a gradual loading effect */
+         #services {
+            animation-delay: 0.2s;
+         }
+         .feature-section:nth-of-type(1) { /* Google Feature */
+            animation-delay: 0.3s;
+         }
+         .feature-section:nth-of-type(2) { /* Amazon Feature */
+            animation-delay: 0.4s;
+         }
+         .feature-section:nth-of-type(3) { /* Trustpilot Feature */
+            animation-delay: 0.5s;
+         }
+         #testimonials {
+            animation-delay: 0.6s;
+         }
+         #pricing {
+            animation-delay: 0.7s;
+         }
+         #articles {
+            animation-delay: 0.8s;
+         }
+         #contact {
+            animation-delay: 0.9s;
+         }
+         #faq {
+            animation-delay: 1.0s;
          }
          .animate-on-scroll.is-visible {
              opacity: 1;
@@ -1223,6 +1263,5 @@
 </a>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="assets/js/app.js" type="module" defer></script>
 </body>
 </html>

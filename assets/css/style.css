@@ -484,6 +484,12 @@ body.menu-open .whatsapp-button {
     color: var(--color-heading);
 }
 
+#mobile-menu .button {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    padding: 0.8em 2.5em;
+}
+
 #mobile-menu {
     position: fixed;
     top: 0;

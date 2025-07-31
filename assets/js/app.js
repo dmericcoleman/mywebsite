@@ -86,31 +86,4 @@ document.addEventListener('DOMContentLoaded', () => {
             },
         });
     }
-
-    // --- Cookie Consent Banner ---
-    const cookieBanner = document.getElementById('cookie-consent-banner');
-    const acceptBtn = document.getElementById('cookie-accept');
-    const declineBtn = document.getElementById('cookie-decline');
-
-    if (cookieBanner && !localStorage.getItem('cookieConsent')) {
-        cookieBanner.hidden = false;
-        setTimeout(() => {
-            cookieBanner.classList.add('is-visible');
-        }, 100); // Small delay to allow CSS transition
-    }
-
-    const handleConsent = (consent) => {
-        localStorage.setItem('cookieConsent', consent);
-        cookieBanner.classList.remove('is-visible');
-        setTimeout(() => {
-            cookieBanner.hidden = true;
-        }, 500); // Match CSS transition duration
-    };
-
-    if (acceptBtn) {
-        acceptBtn.addEventListener('click', () => handleConsent('accepted'));
-    }
-    if (declineBtn) {
-        declineBtn.addEventListener('click', () => handleConsent('declined'));
-    }
 });

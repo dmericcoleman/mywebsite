@@ -777,7 +777,7 @@ body.menu-open #menu-overlay {
 .custom-plan-cta {
     margin-top: 3rem;
     padding: 2.5rem;
-    border: 2px solid var(--color-border);
+    border: 2px dashed var(--color-border); /* Changed to dashed border */
     border-radius: var(--radius);
     display: flex;
     flex-direction: column;
@@ -789,7 +789,12 @@ body.menu-open #menu-overlay {
 }
 
 .custom-plan-cta h3 {
-    font-size: clamp(1.4rem, 2vw, 1.75rem);
+    font-size: clamp(1.75rem, 3vw, 2.25rem); /* Made title larger */
+    margin-bottom: 0.75rem; /* Adds space below the heading */
+}
+
+.custom-plan-cta p {
+    opacity: 0.9; /* Softens the paragraph text */
 }
 
 @media (min-width: 768px) {
@@ -801,6 +806,13 @@ body.menu-open #menu-overlay {
 
     .custom-plan-cta .button {
         flex-shrink: 0; /* Prevents the button from shrinking */
+    }
+}
+
+/* Make the custom CTA button full-width on mobile */
+@media (max-width: 767px) {
+    .custom-plan-cta .button {
+        width: 100%;
     }
 }
 

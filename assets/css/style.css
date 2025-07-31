@@ -574,6 +574,17 @@ body.menu-open #menu-overlay {
     padding: 0.6em 1.6em;
 }
 
+/* Desktop Navigation Link Styling */
+.desktop-nav a:not(.button) {
+    color: var(--color-text);
+    transition: color 0.3s ease;
+}
+
+.desktop-nav a:not(.button):hover,
+.desktop-nav a:not(.button):focus-visible {
+    color: var(--color-accent); /* Gold color on hover/focus */
+}
+
 /* 7. Main Content - Styles for Each Section */
 /* Hero */
 #hero {
@@ -841,6 +852,12 @@ body.menu-open #menu-overlay {
 
 .read-more i { margin-left: 0.5rem; transition: transform var(--transition); }
 .read-more:hover i { transform: translateX(5px); }
+
+/* Container for the "View All Articles" button */
+.articles-cta-container {
+    margin-top: 3rem;
+    text-align: center;
+}
 
 /* Contact Form */
 fieldset {

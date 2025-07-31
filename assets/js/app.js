@@ -70,25 +70,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Testimonial Slider (SwiperJS) ---
-        if (document.querySelector('.testimonial-slider-wrapper')) {
-            const swiper = new Swiper('.testimonial-slider-wrapper', {
-                // Make the slider loop infinitely
-                loop: true,
-                // Smoother animation speed (600ms)
-                speed: 600,
-                // Change cursor to a "grabbing" hand on hover
-                grabCursor: true,
-                // Autoplay settings
-                autoplay: {
-                    delay: 7000, // Time between slides in milliseconds (7 seconds)
-                    disableOnInteraction: false, // Continue autoplay after user interacts
-                    pauseOnMouseEnter: true, // BEST PRACTICE: Pause when mouse is over the slider
-                },
-                // Navigation arrows
-                navigation: {
-                    nextEl: '.slider-next',
-                    prevEl: '.slider-prev',
-                },
-            });
-        }
+    if (document.querySelector('.testimonial-slider-wrapper')) {
+        const swiper = new Swiper('.testimonial-slider-wrapper', {
+            // Make the slider loop infinitely
+            loop: true,
+            // Autoplay settings
+            autoplay: {
+                delay: 7000, // Time between slides in milliseconds (7 seconds)
+                disableOnInteraction: false, // Continue autoplay after user interacts
+                pauseOnMouseEnter: true, // BEST PRACTICE: Pause when mouse is over the slider
+            },
+            // Navigation arrows
+            navigation: {
+                nextEl: '.slider-next',
+                prevEl: '.slider-prev',
+            },
+        });
+    }
 });

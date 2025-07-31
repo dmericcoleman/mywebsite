@@ -304,6 +304,11 @@ section {
      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.25);
 }
 
+/* Force dark text on the featured badge in dark mode for high contrast */
+.dark-mode .featured-badge {
+    color: var(--color-dark-bg);
+}
+
 /* -- Cookie Consent Banner -- */
 .cookie-banner {
     position: fixed;
@@ -752,7 +757,7 @@ body.menu-open #menu-overlay {
     transform: translate(-50%, -50%); /* Centers the badge on the top border */
 
     background-color: var(--color-accent);
-    color: var(--dark-bg);
+    color: var(--color-white); /* Changed to white */
     padding: 0.4em 1.5em;
     font-size: 0.9rem;
     font-weight: 700;

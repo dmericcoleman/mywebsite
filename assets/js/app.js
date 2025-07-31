@@ -72,19 +72,45 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Testimonial Slider (SwiperJS) ---
     if (document.querySelector('.testimonial-slider-wrapper')) {
         const swiper = new Swiper('.testimonial-slider-wrapper', {
-            // Make the slider loop infinitely
             loop: true,
-            // Autoplay settings
+            speed: 600,
+            grabCursor: true,
             autoplay: {
-                delay: 7000, // Time between slides in milliseconds (7 seconds)
-                disableOnInteraction: false, // Continue autoplay after user interacts
-                pauseOnMouseEnter: true, // BEST PRACTICE: Pause when mouse is over the slider
+                delay: 7000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
             },
-            // Navigation arrows
             navigation: {
                 nextEl: '.slider-next',
                 prevEl: '.slider-prev',
             },
         });
+    }
+
+    // --- Cookie Consent Banner ---
+    const cookieBanner = document.getElementById('cookie-consent-banner');
+    const acceptBtn = document.getElementById('cookie-accept');
+    const declineBtn = document.getElementById('cookie-decline');
+
+    if (cookieBanner && !localStorage.getItem('cookieConsent')) {
+        cookieBanner.hidden = false;
+        setTimeout(() => {
+            cookieBanner.classList.add('is-visible');
+        }, 100); // Small delay to allow CSS transition
+    }
+
+    const handleConsent = (consent) => {
+        localStorage.setItem('cookieConsent', consent);
+        cookieBanner.classList.remove('is-visible');
+        setTimeout(() => {
+            cookieBanner.hidden = true;
+        }, 500); // Match CSS transition duration
+    };
+
+    if (acceptBtn) {
+        acceptBtn.addEventListener('click', () => handleConsent('accepted'));
+    }
+    if (declineBtn) {
+        declineBtn.addEventListener('click', () => handleConsent('declined'));
     }
 });

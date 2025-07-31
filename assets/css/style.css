@@ -18,6 +18,8 @@
     --font-heading: 'Raleway', sans-serif;
     --font-body: 'Source Sans Pro', sans-serif;
 
+    --color-white: #FFFFFF;
+
     /* Light Mode Colors (Default) */
     --color-bg: #F9FAFB;
     --color-bg-alt: #FFFFFF;
@@ -256,7 +258,7 @@ section {
 
 .button-primary {
     background-color: var(--color-accent);
-    color: var(--dark-bg);
+    color: var(--color-white); /* Changed from --dark-bg */
     font-weight: 800;
     border-color: var(--color-accent); /* Added for a smooth hover transition */
 }

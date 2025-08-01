@@ -1,0 +1,70 @@
+/* ==================================================
+   ARTICLE PAGE STYLES
+===================================================== */
+
+.article-page .container {
+    max-width: 800px; /* Optimal width for reading text */
+}
+
+.article-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.article-header h1 {
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+}
+
+.article-meta {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--color-text);
+    opacity: 0.8;
+}
+
+.article-image {
+    margin: 0 auto 3rem;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.article-content h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.article-content p {
+    margin-bottom: 1.5rem;
+}
+
+.article-content a {
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.article-content a:hover {
+    text-decoration: none;
+}
+
+/* Styles for lists inside articles */
+.article-content ul,
+.article-content ol {
+    padding-left: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.article-content li {
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+}
+
+.back-to-articles {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+}

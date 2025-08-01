@@ -828,10 +828,28 @@ body.menu-open #menu-overlay {
 
 /* Articles */
 .articles-grid { display: grid; gap: 2rem; }
-.article-image-link img { aspect-ratio: 16 / 10; object-fit: cover; }
+.article-image-link img { aspect-ratio: 16 / 9; object-fit: cover; }
 .article-card .card-content { padding: 2rem; }
 .article-meta {
     margin-bottom: 0.75rem;
+}
+
+/* New style to ensure consistent card height in the article grid */
+.card-text-wrapper {
+    height: 140px; /* Adjust this value as needed to fit your content */
+    overflow: hidden;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Fallback for multi-line ellipsis in older browsers */
+.card-text-wrapper h3,
+.card-text-wrapper p {
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Adjust this value to control the number of lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .article-meta time {
@@ -854,7 +872,7 @@ body.menu-open #menu-overlay {
 
 /* Container for the "View All Articles" button */
 .articles-cta-container {
-    margin-top: 3rem;
+    margin-top: 2rem;
     text-align: center;
 }
 
@@ -1150,4 +1168,10 @@ fieldset {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Style for the active link in a Table of Contents */
+.toc-link.active {
+    color: var(--color-accent);
+    font-weight: 700;
 }

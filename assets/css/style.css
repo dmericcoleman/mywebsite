@@ -18,19 +18,18 @@
     --font-heading: 'Raleway', sans-serif;
     --font-body: 'Source Sans Pro', sans-serif;
 
-    --color-white: #FFFFFF;
-
     /* Light Mode Colors (Default) */
     --color-bg: #F9FAFB;
     --color-bg-alt: #FFFFFF;
     --color-text: #374151;
     --color-heading: #111827;
     --color-border: #E5E7EB;
-    --color-accent: #A07200; /* UPDATED for significantly better contrast */
-    --color-accent-hover: #8A6200; /* UPDATED hover for new accent */
-    --hero-overlay: linear-gradient(45deg, rgba(17, 24, 39, 0.75), rgba(17, 24, 39, 0.65)); /* Changed */
+    --color-accent: #A07200;
+    --color-accent-hover: #8A6200;
+    --hero-overlay: linear-gradient(45deg, rgba(17, 24, 39, 0.75), rgba(17, 24, 39, 0.65));
 
     /* Neutral & Status Colors */
+    --color-white: #FFFFFF;
     --color-star-rating: #ffc107;
     --color-error: #EF4444;
     --color-error-glow: rgba(239, 68, 68, 0.2);
@@ -38,12 +37,6 @@
     --color-footer-muted: #9CA3AF;
 
     /* Sizing & Effects */
-    /* Dark-specific colors, also defined here so they can be referenced */
-    --color-dark-bg: #111827;
-    --color-dark-text: #D1D5DB;
-    --color-dark-heading: #F9FAFB;
-    --color-dark-accent: #D9A443; /* UPDATED (using previous light mode accent) for better dark mode contrast */
-    --color-dark-border: #374151;
     --spacing-unit: 1rem;
     --container-width: 1200px;
     --header-height: 70px;
@@ -58,10 +51,12 @@
     --color-text: #D1D5DB;
     --color-heading: #F9FAFB;
     --color-border: #374151;
-    --color-accent: #D9A443; /* UPDATED (using previous light mode accent) for better dark mode contrast */
-    --color-accent-hover: #C0903A; /* UPDATED (using previous light mode hover accent) */
-    --hero-overlay: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(17, 24, 39, 0.7)); /* Changed */
+    --color-accent: #D9A443;
+    --color-accent-hover: #C0903A;
+    --hero-overlay: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(17, 24, 39, 0.7));
     --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+    /* Fix for dark mode footer text */
+    --color-footer-muted: #6B7280;
 }
 
 /* 2. Base - Reset & Foundational Styles */
@@ -425,6 +420,10 @@ body.menu-open .whatsapp-button {
     box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
 }
 
+#header.scrolled .desktop-nav a:not(.button) {
+    color: var(--color-heading);
+}
+
 .header-container {
     display: flex;
     justify-content: space-between;
@@ -576,7 +575,7 @@ body.menu-open #menu-overlay {
 
 /* Desktop Navigation Link Styling */
 .desktop-nav a:not(.button) {
-    color: var(--color-text);
+    color: var(--color-heading);
     transition: color 0.3s ease;
 }
 

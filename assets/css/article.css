@@ -1,11 +1,19 @@
 /* ==================================================
-   ARTICLE PAGE STYLES
+   ARTICLE PAGE STYLES (Original Single Column)
 ===================================================== */
+
+/* Container and Layout */
+.article-page {
+    padding-top: 0;
+}
 
 .article-page .container {
     max-width: 800px; /* Optimal width for reading text */
+    margin: 0 auto; /* Centers the content container */
+    padding-top: 4rem;
 }
 
+/* Article Header Styling */
 .article-header {
     text-align: center;
     margin-bottom: 2rem;
@@ -14,16 +22,65 @@
 }
 
 .article-header h1 {
-    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
 }
 
-.article-meta {
+.article-metadata {
+    display: flex;
+    justify-content: center; /* Center the metadata */
+    gap: 1.5rem;
     margin-top: 1rem;
-    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    font-size: 1rem;
     color: var(--color-text);
     opacity: 0.8;
 }
 
+.article-metadata span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.article-metadata .fa-solid {
+    color: var(--color-accent);
+    font-size: 0.9em;
+}
+
+.article-header-image {
+    margin: 0 auto;
+}
+
+.article-header-image figure {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.article-header-image img {
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    max-width: 100%;
+    height: auto;
+}
+
+/* Heading and Paragraph Spacing */
+.article-body h2,
+.article-body h3 {
+    margin-top: 2.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.article-body p {
+    margin-bottom: 1.5rem;
+}
+
+/* Image Styling */
 .article-image {
     margin: 0 auto 3rem;
     border-radius: var(--radius);
@@ -31,40 +88,74 @@
     box-shadow: var(--shadow);
 }
 
-.article-content h2 {
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    margin-top: 3rem;
-    margin-bottom: 1.5rem;
+/* Styling for images placed directly within the article body */
+.article-body img {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-radius: var(--radius);
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
-.article-content p {
-    margin-bottom: 1.5rem;
-}
-
-.article-content a {
-    text-decoration: underline;
-    font-weight: 600;
-}
-
-.article-content a:hover {
-    text-decoration: none;
-}
-
-/* Styles for lists inside articles */
-.article-content ul,
-.article-content ol {
+/* List Styling */
+.article-body ul,
+.article-body ol {
     padding-left: 2rem;
     margin-bottom: 1.5rem;
 }
 
-.article-content li {
+.article-body li {
     margin-bottom: 1rem;
     padding-left: 0.5rem;
 }
 
+/* Link Styling within the Article Body */
+.article-body a:not(.button) {
+    color: var(--color-accent);
+    text-decoration: underline;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.article-body a:not(.button):hover {
+    color: var(--color-accent-hover);
+    text-decoration: none;
+}
+
+/* Table Styling */
+.article-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+}
+
+.article-body th,
+.article-body td {
+    padding: 1rem;
+    border: 1px solid var(--color-border);
+    text-align: left;
+}
+
+.article-body th {
+    background-color: var(--color-bg-alt);
+    font-weight: 700;
+}
+
+/* "Back to Articles" Button Styling */
 .back-to-articles {
     text-align: center;
     margin-top: 4rem;
     padding-top: 2rem;
     border-top: 1px solid var(--color-border);
+}
+
+/* New style for an image caption below the hero image */
+.figcaption {
+    font-size: 0.9rem;
+    color: var(--color-text);
+    opacity: 0.7;
+    text-align: center;
+    margin-top: -2rem; /* Pulls the caption closer to the image */
+    margin-bottom: 3rem; /* Adds space before the next content block */
 }

@@ -4,7 +4,7 @@
     <script>
         (function() {
             try {
-              const theme = localStorage.getItem('theme') || 'dark'; // Default to dark
+              const theme = localStorage.getItem('theme') || 'dark';
               if (theme === 'dark') {
                 document.documentElement.classList.add('dark-mode');
               }
@@ -14,25 +14,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-    <title>The Importance of Customer Reviews | Premium Reviews Store</title>
-    <meta name="description" content="Discover why customer reviews are crucial for building trust, boosting search visibility, and driving sales for your business.">
+    <title>[Your New Article Title] | Premium Reviews Store</title>
+    <meta name="description" content="[Your New Article Description]">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://premiumreviews.store/articles/importance-of-customer-reviews.html">
-    <link rel="alternate" hreflang="en" href="https://premiumreviews.store/articles/importance-of-customer-reviews.html">
-    <link rel="alternate" hreflang="x-default" href="https://premiumreviews.store/articles/importance-of-customer-reviews.html">
+    <link rel="canonical" href="https://premiumreviews.store/articles/[your-new-filename].html">
 
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://premiumreviews.store/articles/importance-of-customer-reviews.html">
-    <meta property="og:title" content="The Importance of Customer Reviews">
-    <meta property="og:description" content="Discover why customer reviews are crucial for building trust, boosting search visibility, and driving sales for your business.">
-    <meta property="og:image" content="https://premiumreviews.store/assets/images/importance-of-customer-reviews.webp">
+    <meta property="og:url" content="https://premiumreviews.store/articles/[your-new-filename].html">
+    <meta property="og:title" content="[Your New Article Title]">
+    <meta property="og:description" content="[Your New Article Description]">
+    <meta property="og:image" content="https://premiumreviews.store/assets/images/[your-new-hero-image-filename].webp">
     <meta property="og:site_name" content="Premium Reviews Store">
-
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://premiumreviews.store/articles/importance-of-customer-reviews.html">
-    <meta name="twitter:title" content="The Importance of Customer Reviews">
-    <meta name="twitter:description" content="Discover why customer reviews are crucial for building trust, boosting search visibility, and driving sales for your business.">
-    <meta name="twitter:image" content="https://premiumreviews.store/assets/images/importance-of-customer-reviews.webp">
+    <meta name="twitter:url" content="https://premiumreviews.store/articles/[your-new-filename].html">
+    <meta name="twitter:title" content="[Your New Article Title]">
+    <meta name="twitter:description" content="[Your New Article Description]">
+    <meta name="twitter:image" content="https://premiumreviews.store/assets/images/[your-new-hero-image-filename].webp">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,17 +38,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" /></noscript>
 
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="../favicon.ico" sizes="any">
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 
     <style id="critical-css">
         :root {
-            /* Fonts */
             --font-heading: 'Raleway', sans-serif;
             --font-body: 'Source Sans Pro', sans-serif;
-
-            /* Light Mode Colors (Default) */
             --color-bg: #F9FAFB;
             --color-bg-alt: #FFFFFF;
             --color-text: #374151;
@@ -60,18 +54,12 @@
             --color-accent: #A07200;
             --color-accent-hover: #8A6200;
             --hero-overlay: linear-gradient(45deg, rgba(17, 24, 39, 0.75), rgba(17, 24, 39, 0.65));
-
-            /* Neutral & Status Colors (Only critical ones if visible above fold) */
             --color-star-rating: #ffc107;
-
-            /* Dark-specific colors, also defined here so they can be referenced */
             --color-dark-bg: #111827;
             --color-dark-text: #D1D5DB;
             --color-dark-heading: #F9FAFB;
             --color-dark-accent: #D9A443;
             --color-dark-border: #374151;
-
-            /* Sizing & Effects */
             --spacing-unit: 1rem;
             --container-width: 1200px;
             --header-height: 70px;
@@ -79,7 +67,6 @@
             --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
             --transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
-
         .dark-mode {
             --color-bg: #111827;
             --color-bg-alt: #1F2937;
@@ -102,9 +89,34 @@
         a { color: var(--color-accent); text-decoration: none; transition: color var(--transition); }
         a:hover { color: var(--color-accent-hover); }
         .container { width: 100%; max-width: var(--container-width); margin: 0 auto; padding: 0 clamp(1.5rem, 5vw, 3rem); }
+        section { padding: clamp(4rem, 10vw, 8rem) 0; }
+        .section-header { text-align: center; max-width: 750px; margin: 0 auto clamp(3rem, 8vw, 5rem); }
+        .section-header p { font-size: clamp(1.1rem, 2vw, 1.3rem); color: var(--color-text); opacity: 0.9; }
         :focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; box-shadow: 0 0 0 5px color-mix(in srgb, var(--color-bg) 50%, transparent); }
         :focus:not(:focus-visible) { outline: none; }
-        #header { position: sticky; top: 0; width: 100%; z-index: 1000; background-color: transparent; border-bottom: 1px solid transparent; transition: all var(--transition); }
+        .button { display: inline-block; padding: 0.8em 2em; font-family: var(--font-body); font-weight: 600; border-radius: var(--radius); cursor: pointer; text-align: center; border: 2px solid transparent; transition: all var(--transition); font-size: clamp(1rem, 1vw + 0.5rem, 1.1rem); position: relative; }
+        .button:active { transform: scale(0.98); filter: brightness(0.95); }
+        .button-primary { background-color: var(--color-accent); color: var(--dark-bg); font-weight: 800; border-color: var(--color-accent); }
+        .button:not(.button-primary) { border-color: var(--color-border); background-color: transparent; color: var(--color-heading); }
+        .button:not(.button-primary):hover { background-color: var(--color-bg-alt); border-color: var(--color-accent); color: var(--color-accent); }
+        .button-primary:hover { background-color: transparent; color: var(--color-accent); border-color: var(--color-accent); transform: translateY(-2px); box-shadow: none; }
+        .card { background-color: var(--color-bg-alt); border-radius: var(--radius); box-shadow: var(--shadow); display: flex; flex-direction: column; transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition); }
+        #header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: var(--color-bg-alt);
+            border-bottom: 1px solid transparent;
+            transition: all var(--transition);
+        }
+        #header.scrolled {
+            background-color: color-mix(in srgb, var(--color-bg) 85%, transparent);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-color: var(--color-border);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        }
         .header-container { display: flex; justify-content: space-between; align-items: center; height: var(--header-height); }
         .header-logo img { height: clamp(30px, 5vw, 40px); width: auto; aspect-ratio: 1 / 1; }
         .desktop-nav { display: none; }
@@ -123,8 +135,6 @@
         .close-menu-btn { position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; padding: 0.5rem; cursor: pointer; color: var(--color-heading); }
         .close-menu-btn .icon { width: 1.5rem; height: 1.5rem; }
         #header .button { font-size: 0.9rem; padding: 0.6em 1.6em; }
-        .animate-on-scroll { opacity: 0; transform: translateY(30px); transition: opacity 0.8s var(--transition), transform 0.8s var(--transition); }
-        .animate-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
         @media (min-width: 768px) {
             .desktop-nav { display: flex; align-items: center; gap: 2rem; }
             .mobile-menu-toggle { display: none; }
@@ -132,31 +142,45 @@
         .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0; }
         .skip-to-content { position: absolute; top: -100px; left: 0; background-color: var(--color-accent); color: var(--dark-bg); padding: 1rem 1.5rem; z-index: 9999; transition: top var(--transition); font-weight: 600; }
         .skip-to-content:focus { top: 0; }
+
     </style>
 
     <link rel="stylesheet" href="../assets/css/style.css?v=1.1" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="../assets/css/style.css?v=1.1"></noscript>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print" onload="this.onload=null;this.media='all'" />
-    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /></noscript>
+    <link rel="stylesheet" href="../assets/css/article.css" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="../assets/css/article.css"></noscript>
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css" media="print" onload="this.onload=null;this.media='all'" />
+    <noscript><link rel="stylesheet" href="../assets/css/swiper-bundle.min.css" /></noscript>
 
+    <script src="../assets/js/app.js" type="module" defer></script>
 </head>
 <body class="no-js">
 <script>document.body.classList.remove('no-js');</script>
+
+<div id="cookie-consent-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie Consent Banner" hidden>
+    <div class="container cookie-banner-container">
+        <p class="cookie-banner-text">We use cookies to enhance your experience. By clicking "Accept", you agree to our use of cookies. <a href="../privacy-policy.html" class="cookie-learn-more">Learn More</a>.</p>
+        <div class="cookie-banner-actions">
+            <button id="cookie-decline" class="button">Decline</button>
+            <button id="cookie-accept" class="button button-primary">Accept</button>
+        </div>
+    </div>
+</div>
 
 <a href="#main-content" class="skip-to-content">Skip to main content</a>
 
 <header id="header" role="banner">
     <div class="container header-container">
-        <a href="https://premiumreviews.store/" class="header-logo" aria-label="Premium Reviews Store Home">
+        <a href="../index.html" class="header-logo" aria-label="Premium Reviews Store Home">
             <img src="../assets/images/logo-symbol.webp" alt="Premium Reviews Store Logo" width="150" height="150">
         </a>
         <div class="nav-controls">
             <nav class="desktop-nav" role="navigation" aria-label="Main Navigation">
-                <a href="#services">Services</a>
-                <a href="#testimonials">Testimonials</a>
-                <a href="#pricing">Pricing</a>
-                <a href="/articles.html" aria-current="page">Articles</a>
-                <a href="#contact" class="button">Contact Us</a>
+                <a href="../index.html#services">Services</a>
+                <a href="../index.html#testimonials">Testimonials</a>
+                <a href="../index.html#pricing">Pricing</a>
+                <a href="../articles.html" aria-current="page">Articles</a>
+                <a href="../index.html#contact" class="button">Contact Us</a>
             </nav>
             <button class="theme-toggle" aria-label="Toggle dark and light mode" title="Toggle Theme">
                 <i class="fa-solid fa-moon" aria-hidden="true"></i>
@@ -173,11 +197,11 @@
     <button class="close-menu-btn" aria-label="Close Menu">
         <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
     </button>
-    <a href="#services">Services</a>
-    <a href="#testimonials">Testimonials</a>
-    <a href="#pricing">Pricing</a>
-    <a href="/articles.html" aria-current="page">Articles</a>
-    <a href="#contact" class="button button-primary">Contact Us</a>
+    <a href="../index.html#services">Services</a>
+    <a href="../index.html#testimonials">Testimonials</a>
+    <a href="../index.html#pricing">Pricing</a>
+    <a href="../articles.html" aria-current="page">Articles</a>
+    <a href="../index.html#contact" class="button button-primary">Contact Us</a>
 </nav>
 
 <div id="menu-overlay"></div>
@@ -185,25 +209,20 @@
 <main id="main-content">
     <section class="article-page" aria-labelledby="article-title">
         <div class="container article-container">
-            <header class="article-header animate-on-scroll">
+            <header class="article-header">
                 <h1 id="article-title">The Importance of Customer Reviews (New Data)</h1>
-                <p class="article-meta">by Ken McMahon</p>
-                <figure class="article-hero-image">
+                <div class="article-metadata">
+                    <span class="author-name"><i class="fa-solid fa-pen-nib" aria-hidden="true"></i> by Ken McMahon</span>
+                    <span class="published-date"><i class="fa-solid fa-calendar-alt" aria-hidden="true"></i> August 1, 2025</span>
+                </div>
+                <figure class="article-image">
                     <img src="../assets/images/importance-of-customer-reviews.webp" alt="A laptop screen displaying customer review data, symbolizing the importance of online reviews." width="1200" height="630">
                     <figcaption>The importance of customer reviews for your business.</figcaption>
                 </figure>
             </header>
 
-            <article class="article-body animate-on-scroll">
-                <p>Do online reviews move the needle? The importance of customer reviews couldn’t be higher. It affects your acquisition, account retention, and brand.</p>
-
-                <p>Customer reviews are one of your most powerful selling tools as a business, but they don’t just happen.</p>
-
-                <p>While unhappy customers are quick to turn to review sites to voice their concerns, happy and loyal customers may not think twice about sharing their incredible experiences — and those are the reviews that potential clients need to see.</p>
-
-                <p>This post discusses why customer reviews are so important for reputation management. We’ll also share how to generate and manage reviews that can help your business.</p>
-
-                <h2>Types of Customer Reviews</h2>
+            <article class="article-body">
+                <h2 id="types-of-reviews">Types of Customer Reviews</h2>
                 <p>There are several different types of customer reviews, including:</p>
                 <ul>
                     <li><strong>Ratings:</strong> Ratings are typically given a one-to-five-star ranking and often include a brief explanation. This is the most common type of customer review.</li>
@@ -213,7 +232,7 @@
                 </ul>
                 <p>You can benefit from having multiple types of customer reviews online, including ones that are published on third-party sites and review platforms.</p>
 
-                <h2>The Impact of Customer Reviews</h2>
+                <h2 id="impact-of-reviews">The Impact of Customer Reviews</h2>
                 <p>The importance of customer reviews can’t be overstated; they are incredibly powerful social proof that your product or service delivers on its promises. Let’s discuss the main benefits of consumer reviews.</p>
 
                 <h3>Build trust and create brand credibility in the marketplace</h3>
@@ -378,9 +397,6 @@
                 <p>Nextiva Reputation Management can help you create profiles on different platforms and integrate all your business reviews into a single dashboard.</p>
                 <p>It’s an AI-powered review management tool that can help you assess customer sentiment, send automated responses based on review sentiment, and receive aggregate CSAT scores from multiple platforms. If you want to learn more, read some of our customer reviews.</p>
                 <p>Generating, managing, and utilizing customer reviews should be a key business function. The right strategies and tools can help. Investing in both the customer experience and customer reviews can yield significant results.</p>
-
-                <h2>FAQs</h2>
-                <p>Still have questions about the importance of customer reviews? We’ve got answers. Keep reading!</p>
             </article>
         </div>
     </section>
@@ -389,7 +405,7 @@
 <footer id="footer" role="contentinfo">
     <div class="container footer-container">
         <div class="footer-column footer-about">
-            <a href="https://premiumreviews.store/" class="footer-logo"><img src="../assets/images/logo-symbol.webp" alt="Premium Reviews Store Logo" width="50" height="50" loading="lazy"></a>
+            <a href="../index.html" class="footer-logo"><img src="../assets/images/logo-symbol.webp" alt="Premium Reviews Store Logo" width="50" height="50" loading="lazy"></a>
             <p>Building trust and driving growth through authentic, high-quality reviews on the world's most important platforms.</p>
         </div>
         <div class="footer-column footer-contact">
@@ -426,8 +442,8 @@
         <div class="container footer-legal-container">
             <p>© <span id="current-year">2025</span> Premium Reviews Store. All Rights Reserved.</p>
             <nav class="footer-legal-nav" aria-label="Legal">
-                <a href="/privacy-policy.html">Privacy Policy</a>
-                <a href="/terms-of-service.html">Terms of Service</a>
+                <a href="../privacy-policy.html">Privacy Policy</a>
+                <a href="../terms-of-service.html">Terms of Service</a>
             </nav>
         </div>
     </div>

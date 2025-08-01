@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <script>
+        (function() {
+            try {
+              const theme = localStorage.getItem('theme') || 'dark'; // Default to dark
+              if (theme === 'dark') {
+                document.documentElement.classList.add('dark-mode');
+              }
+            } catch (e) {}
+          })();
+    </script>
+    <meta charset="UTF-8">
+    <!-- ================== CORE META ================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <!-- ================== SEO & SOCIAL META ================== -->
+    <title>Articles | Premium Reviews Store</title>
+    <meta name="description" content="Discover articles and insights on the power of customer reviews, online reputation management, and driving business growth.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://premiumreviews.store/articles.html">
+    <link rel="alternate" hreflang="en" href="https://premiumreviews.store/articles.html">
+    <link rel="alternate" hreflang="es" href="https://premiumreviews.store/es/articles.html">
+    <link rel="alternate" hreflang="x-default" href="https://premiumreviews.store/articles.html">
+
+    <!-- Open Graph and Twitter Card meta tags for social sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://premiumreviews.store/articles.html">
+    <meta property="og:title" content="Articles | Premium Reviews Store">
+    <meta property="og:description" content="Discover articles and insights on the power of customer reviews, online reputation management, and driving business growth.">
+    <meta property="og:image" content="https://premiumreviews.store/assets/images/social-share-card.png">
+    <meta property="og:site_name" content="Premium Reviews Store">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://premiumreviews.store/articles.html">
+    <meta name="twitter:title" content="Articles | Premium Reviews Store">
+    <meta name="twitter:description" content="Discover articles and insights on the power of customer reviews, online reputation management, and driving business growth.">
+    <meta name="twitter:image" content="https://premiumreviews.store/assets/images/social-share-card.png">
+
+    <!-- ================== FONTS & ICONS ================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Source+Sans+Pro:wght@400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" /></noscript>
+
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <!-- ================== CRITICAL CSS ================== -->
+    <!-- Inlined Critical CSS for above-the-fold content for instant rendering -->
+    <style id="critical-css">
+        /* Copied critical CSS from index.html to ensure instant rendering.
+           This block should match your main site's critical styles. */
+         :root {
+             /* Fonts */
+             --font-heading: 'Raleway', sans-serif;
+             --font-body: 'Source Sans Pro', sans-serif;
+             /* Light Mode Colors (Default) */
+             --color-bg: #F9FAFB;
+             --color-bg-alt: #FFFFFF;
+             --color-text: #374151;
+             --color-heading: #111827;
+             --color-border: #E5E7EB;
+             --color-accent: #A07200;
+             --color-accent-hover: #8A6200;
+             --hero-overlay: linear-gradient(45deg, rgba(17, 24, 39, 0.75), rgba(17, 24, 39, 0.65));
+             --color-star-rating: #ffc107;
+             --color-dark-bg: #111827;
+             --color-dark-text: #D1D5DB;
+             --color-dark-heading: #F9FAFB;
+             --color-dark-accent: #D9A443;
+             --color-dark-border: #374151;
+             --spacing-unit: 1rem;
+             --container-width: 1200px;
+             --header-height: 70px;
+             --radius: 1rem;
+             --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+             --transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+         }
+         .dark-mode {
+             --color-bg: #111827;
+             --color-bg-alt: #1F2937;
+             --color-text: #D1D5DB;
+             --color-heading: #F9FAFB;
+             --color-border: #374151;
+             --color-accent: #D9A443;
+             --color-accent-hover: #C0903A;
+             --hero-overlay: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(17, 24, 39, 0.7));
+             --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
+         }
+         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+         html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-height) + 1rem); }
+         body { font-family: var(--font-body); background-color: var(--color-bg); color: var(--color-text); line-height: 1.7; transition: background-color var(--transition), color var(--transition); }
+         h1, h2, h3 { font-family: var(--font-heading); font-weight: 800; line-height: 1.2; color: var(--color-heading); text-wrap: balance; transition: color var(--transition); }
+         h1 { font-size: clamp(2.5rem, 5vw + 1rem, 4.5rem); }
+         h2 { font-size: clamp(2rem, 4vw + 1rem, 3.25rem); }
+         h3 { font-size: clamp(1.25rem, 2vw + 0.5rem, 1.75rem); }
+         p, li, a, input, textarea, label { font-size: clamp(1rem, 1vw + 0.5rem, 1.125rem); }
+         a { color: var(--color-accent); text-decoration: none; transition: color var(--transition); }
+         a:hover { color: var(--color-accent-hover); }
+         .container { width: 100%; max-width: var(--container-width); margin: 0 auto; padding: 0 clamp(1.5rem, 5vw, 3rem); }
+         section { padding: clamp(4rem, 10vw, 8rem) 0; }
+         .section-header { text-align: center; max-width: 750px; margin: 0 auto clamp(3rem, 8vw, 5rem); }
+         .section-header p { font-size: clamp(1.1rem, 2vw, 1.3rem); color: var(--color-text); opacity: 0.9; }
+         :focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; box-shadow: 0 0 0 5px color-mix(in srgb, var(--color-bg) 50%, transparent); }
+         :focus:not(:focus-visible) { outline: none; }
+         .button { display: inline-block; padding: 0.8em 2em; font-family: var(--font-body); font-weight: 600; border-radius: var(--radius); cursor: pointer; text-align: center; border: 2px solid transparent; transition: all var(--transition); font-size: clamp(1rem, 1vw + 0.5rem, 1.1rem); position: relative; }
+         .button:active { transform: scale(0.98); filter: brightness(0.95); }
+         .button-primary { background-color: var(--color-accent); color: var(--dark-bg); font-weight: 800; border-color: var(--color-accent); }
+         .button:not(.button-primary) { border-color: var(--color-border); background-color: transparent; color: var(--color-heading); }
+         .button:not(.button-primary):hover { background-color: var(--color-bg-alt); border-color: var(--color-accent); color: var(--color-accent); }
+         .button-primary:hover { background-color: transparent; color: var(--color-accent); border-color: var(--color-accent); transform: translateY(-2px); box-shadow: none; }
+         .card { background-color: var(--color-bg-alt); border-radius: var(--radius); box-shadow: var(--shadow); display: flex; flex-direction: column; transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition); }
+         .animate-on-scroll { opacity: 0; transform: translateY(30px); transition: opacity 0.8s var(--transition), transform 0.8s var(--transition); }
+         .animate-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
+         #header { position: sticky; top: 0; width: 100%; z-index: 1000; background-color: transparent; border-bottom: 1px solid transparent; transition: all var(--transition); }
+         .header-container { display: flex; justify-content: space-between; align-items: center; height: var(--header-height); }
+         .header-logo img { height: clamp(30px, 5vw, 40px); width: auto; aspect-ratio: 1 / 1; }
+         .desktop-nav { display: none; }
+         .nav-controls { display: flex; align-items: center; gap: 1rem; }
+         .theme-toggle { background: none; border: none; color: var(--color-heading); cursor: pointer; font-size: 1.5rem; padding: 0.5rem; border-radius: 50%; display: flex; transition: color var(--transition), background-color var(--transition); }
+         .theme-toggle:hover { background-color: color-mix(in srgb, var(--color-border) 50%, transparent); }
+         .theme-toggle .fa-sun { display: none; }
+         .dark-mode .theme-toggle .fa-moon { display: none; }
+         .dark-mode .theme-toggle .fa-sun { display: block; }
+         .mobile-menu-toggle { background: none; border: none; cursor: pointer; padding: 0.5rem; width: 48px; height: 48px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 5px; }
+         .mobile-menu-toggle .bar { width: 24px; height: 3px; background-color: var(--color-heading); border-radius: 2px; transition: all var(--transition); }
+         #mobile-menu a { font-size: 1.5rem; font-weight: 800; font-family: var(--font-heading); color: var(--color-heading); }
+         #mobile-menu .button { font-size: 1.1rem; margin-top: 1rem; padding: 0.8em 2.5em; }
+         #mobile-menu { position: fixed; top: 0; right: 0; transform: translateX(100%); width: min(80vw, 300px); height: 100vh; background-color: var(--color-bg-alt); z-index: 1001; display: flex; flex-direction: column; align-items: center; padding: 6rem 2rem; gap: 2rem; transition: transform var(--transition); box-shadow: -10px 0 30px rgba(0,0,0,0.1); }
+         #menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); z-index: 1000; opacity: 0; visibility: hidden; transition: opacity var(--transition), visibility var(--transition); }
+         .close-menu-btn { position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; padding: 0.5rem; cursor: pointer; color: var(--color-heading); }
+         .close-menu-btn .icon { width: 1.5rem; height: 1.5rem; }
+         #header .button { font-size: 0.9rem; padding: 0.6em 1.6em; }
+         @media (min-width: 768px) {
+             .desktop-nav { display: flex; align-items: center; gap: 2rem; }
+             .mobile-menu-toggle { display: none; }
+         }
+         .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0; }
+         .skip-to-content { position: absolute; top: -100px; left: 0; background-color: var(--color-accent); color: var(--dark-bg); padding: 1rem 1.5rem; z-index: 9999; transition: top var(--transition); font-weight: 600; }
+         .skip-to-content:focus { top: 0; }
+    </style>
+
+    <!-- Asynchronously loaded full stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css?v=1.1" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="assets/css/style.css?v=1.1"></noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print" onload="this.onload=null;this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /></noscript>
+
+</head>
+<body class="no-js">
+<script>document.body.classList.remove('no-js');</script>
+
+<div id="cookie-consent-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie Consent Banner" hidden>
+    <div class="container cookie-banner-container">
+        <p class="cookie-banner-text">We use cookies to enhance your experience. By clicking "Accept", you agree to our use of cookies. <a href="/privacy-policy" class="cookie-learn-more">Learn More</a>.</p>
+        <div class="cookie-banner-actions">
+            <button id="cookie-decline" class="button">Decline</button>
+            <button id="cookie-accept" class="button button-primary">Accept</button>
+        </div>
+    </div>
+</div>
+
+<a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+<header id="header" role="banner">
+    <div class="container header-container">
+        <a href="https://premiumreviews.store/" class="header-logo" aria-label="Premium Reviews Store Home">
+            <img src="assets/images/logo-symbol.webp" alt="Premium Reviews Store Logo" width="150" height="150">
+        </a>
+        <div class="nav-controls">
+            <nav class="desktop-nav" role="navigation" aria-label="Main Navigation">
+                <a href="#services">Services</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#pricing">Pricing</a>
+                <a href="articles.html" aria-current="page">Articles</a>
+                <a href="#contact" class="button">Contact Us</a>
+            </nav>
+            <button class="theme-toggle" aria-label="Toggle dark and light mode" title="Toggle Theme">
+                <i class="fa-solid fa-moon" aria-hidden="true"></i>
+                <i class="fa-solid fa-sun" aria-hidden="true"></i>
+            </button>
+            <button class="mobile-menu-toggle" aria-label="Open Menu" aria-expanded="false" aria-controls="mobile-menu">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<nav id="mobile-menu" role="navigation" aria-label="Mobile Navigation" hidden>
+    <button class="close-menu-btn" aria-label="Close Menu">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
+    </button>
+    <a href="#services">Services</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#pricing">Pricing</a>
+    <a href="articles.html" aria-current="page">Articles</a>
+    <a href="#contact" class="button button-primary">Contact Us</a>
+</nav>
+
+<div id="menu-overlay"></div>
+
+<main id="main-content">
+    <section class="articles-list-section" aria-labelledby="articles-heading">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h1 id="articles-heading">Blog & Insights</h1>
+                <p>Discover why reviews are powerful tools that build trust, attract customers, and drive business growth.</p>
+            </div>
+            <div class="articles-grid">
+                <!-- Blog post card for "7 Reasons Online Reviews are Essential" -->
+                <article class="card article-card animate-on-scroll" aria-labelledby="article-1-heading">
+                    <a href="7-reasons-reviews-are-essential.html" class="article-image-link" aria-label="Read more about 7 Reasons Online Reviews are Essential for Your Brand">
+                        <img src="https://leaddigital.com/wp-content/uploads/2018/10/My-Post-93.jpg" alt="A graphic that says 7 Reasons Online Reviews are Essential for Your Brand" loading="lazy" width="732" height="382">
+                    </a>
+                    <div class="card-content">
+                        <div class="article-meta">
+                            <time datetime="2018-10-07">October 7, 2018</time>
+                        </div>
+                        <h3 id="article-1-heading"><a href="7-reasons-reviews-are-essential.html">7 Reasons Online Reviews are Essential for Your Brand</a></h3>
+                        <p>Online reviews are the biggest source of social proof. Discover the 7 reasons they are vital for building trust and visibility for your business.</p>
+                        <a href="7-reasons-reviews-are-essential.html" class="read-more" aria-label="Learn more about 7 Reasons Online Reviews are Essential for Your Brand">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                    </div>
+                </article>
+
+                <!-- Blog post card for "20 Google Review Statistics" -->
+                <article class="card article-card animate-on-scroll" aria-labelledby="article-2-heading">
+                    <a href="20-google-review-statistics.html" class="article-image-link" aria-label="Read more about 20 Google Review Statistics">
+                        <img src="assets/images/impactful-google-review-statistics.png" alt="A bar chart with rising trends, titled 'Impactful Google Review Statistics'." loading="lazy" width="600" height="338">
+                    </a>
+                    <div class="card-content">
+                        <div class="article-meta">
+                            <time datetime="2025-07-18">July 18, 2025</time>
+                        </div>
+                        <h3 id="article-2-heading"><a href="20-google-review-statistics.html">20 Google Review Statistics You Must Know in 2025</a></h3>
+                        <p>Good reviews on Google are crucial for small businesses as they directly influence a potential customer's decision.</p>
+                        <a href="20-google-review-statistics.html" class="read-more" aria-label="Learn more about 20 Google Review Statistics">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                    </div>
+                </article>
+
+                <!-- Blog post card for "How Amazon Reviews Impact Conversions" -->
+                <article class="card article-card animate-on-scroll" aria-labelledby="article-3-heading">
+                    <a href="how-amazon-reviews-impact-conversions.html" class="article-image-link" aria-label="Read more about How Amazon Reviews Impact Conversions">
+                        <img src="assets/images/Why-Reviews-Are-Important.png" alt="An illustration of a large five-star review symbol next to a shopping cart icon." loading="lazy" width="600" height="338">
+                    </a>
+                    <div class="card-content">
+                        <div class="article-meta">
+                            <time datetime="2025-07-15">July 15, 2025</time>
+                        </div>
+                        <h3 id="article-3-heading"><a href="how-amazon-reviews-impact-conversions.html">How Amazon Reviews Impact Conversions & Ratings</a></h3>
+                        <p>Amazon reviews shape buyer perception and influence the platform's algorithm, impacting both visibility and sales.</p>
+                        <a href="how-amazon-reviews-impact-conversions.html" class="read-more" aria-label="Learn more about How Amazon Reviews Impact Conversions">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                    </div>
+                </article>
+
+                <!-- Blog post card for "The Importance of Customer Reviews" -->
+                <article class="card article-card animate-on-scroll" aria-labelledby="article-4-heading">
+                    <a href="importance-of-customer-reviews.html" class="article-image-link" aria-label="Read more about The Importance of Customer Reviews">
+                        <img src="assets/images/importance-of-customer-reviews.webp" alt="A laptop screen displaying customer review data, symbolizing the importance of online reviews." loading="lazy" width="600" height="338">
+                    </a>
+                    <div class="card-content">
+                        <div class="article-meta">
+                            <time datetime="2024-06-08">June 8, 2024</time>
+                        </div>
+                        <h3 id="article-4-heading"><a href="importance-of-customer-reviews.html">The Importance of Customer Reviews (New Data)</a></h3>
+                        <p>Online reviews are a business's most powerful selling tool, building trust, shortening sales cycles, and boosting search visibility.</p>
+                        <a href="importance-of-customer-reviews.html" class="read-more" aria-label="Learn more about The Importance of Customer Reviews">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- The FAQ and Contact sections from index.html can be added here if you want to reuse them. -->
+</main>
+
+<footer id="footer" role="contentinfo">
+    <div class="container footer-container">
+        <div class="footer-column footer-about">
+            <a href="https://premiumreviews.store/" class="footer-logo"><img src="assets/images/logo-symbol.webp" alt="Premium Reviews Store Logo" width="50" height="50" loading="lazy"></a>
+            <p>Building trust and driving growth through authentic, high-quality reviews on the world's most important platforms.</p>
+        </div>
+        <div class="footer-column footer-contact">
+            <h3>Contact Us</h3>
+            <address>
+                <ul>
+                    <li><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><a href="https://wa.me/19169076120">(916) 907-6120</a></li>
+                    <li><i class="fa-solid fa-envelope" aria-hidden="true"></i><a href="mailto:premiumreviewsstore@gmail.com">premiumreviewsstore@gmail.com</a></li>
+                    <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Staten Island, NY, USA</li>
+                </ul>
+            </address>
+        </div>
+        <div class="footer-column footer-social">
+            <h3>Follow Us</h3>
+            <nav class="social-nav" aria-label="Social Media">
+                <div class="social-icons">
+                    <a href="https://twitter.com/premiumreviewsstore" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-twitter" aria-hidden="true"></i>
+                        <span class="sr-only">Twitter</span>
+                    </a>
+                    <a href="https://facebook.com/premiumreviewsstore" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                        <span class="sr-only">Facebook</span>
+                    </a>
+                    <a href="https://instagram.com/premiumreviewsstore" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                        <span class="sr-only">Instagram</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="footer-legal">
+        <div class="container footer-legal-container">
+            <p>© <span id="current-year">2025</span> Premium Reviews Store. All Rights Reserved.</p>
+            <nav class="footer-legal-nav" aria-label="Legal">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+            </nav>
+        </div>
+    </div>
+</footer>
+
+<a href="https://wa.me/19169076120?text=Hello!%20I'm%20interested%20in%20learning%20more%20about%20your%20review%20services."
+   class="whatsapp-button"
+   target="_blank"
+   aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const scrollElements = document.querySelectorAll('.animate-on-scroll');
+        if (scrollElements.length > 0) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            scrollElements.forEach(element => {
+                observer.observe(element);
+            });
+        }
+    });
+</script>
+<script src="assets/js/app.js" type="module" defer></script>
+</body>
+</html>

@@ -597,7 +597,11 @@ body.menu-open #menu-overlay {
     overflow: hidden;
     padding-top: 0;
     padding-bottom: 0;
-    background: linear-gradient(135deg, #111827, #374151);
+    background-image: url('../images/hero-bg.webp'); /* Set the background image */
+    background-color: var(--color-dark-bg); /* Fallback color */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .hero-overlay {
@@ -619,6 +623,12 @@ body.menu-open #menu-overlay {
     max-width: 700px;
     margin: 1.5rem auto 2.5rem;
     color: #E5E7EB;
+}
+
+@media (max-width: 767px) {
+    #hero {
+        background-image: url('../images/hero-bg-mobile.webp');
+    }
 }
 
 /* Services */

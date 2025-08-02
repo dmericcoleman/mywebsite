@@ -829,7 +829,7 @@ body.menu-open #menu-overlay {
 .custom-plan-cta {
     margin-top: 3rem;
     padding: 2.5rem;
-    border: 2px dashed var(--color-border); /* Changed to dashed border */
+    border: 2px var(--color-border); /* Changed to normal border */
     border-radius: var(--radius);
     display: flex;
     flex-direction: column;

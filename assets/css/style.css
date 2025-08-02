@@ -1040,6 +1040,40 @@ fieldset {
     }
 }
 
+/* --- Footer Payment Icons --- */
+.footer-payment {
+    margin-top: 1.5rem; /* Add space above the payment icons */
+}
+
+.payment-icons-list {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align icons to the left */
+    gap: 0.5rem; /* Tighter gap between items */
+    flex-wrap: wrap;
+}
+
+/* The new container for each icon */
+.payment-icon-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;  /* Uniform width for each icon's 'slot' */
+    height: 38px; /* Uniform height for each icon's 'slot' */
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+/* The image now fits inside its new container */
+.payment-icon-item img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+
 /* 9. Animations - Scroll & Hover Effects */
 .animate-on-scroll {
     opacity: 0;

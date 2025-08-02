@@ -17,10 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileMenu = document.getElementById('mobile-menu');
     const menuOverlay = document.getElementById('menu-overlay');
     const closeMenuBtn = document.querySelector('.close-menu-btn');
-    
+
     if (menuToggle && mobileMenu) {
         const navLinks = mobileMenu.querySelectorAll('a');
-
         const toggleMenu = () => {
             const isMenuOpen = document.body.classList.toggle('menu-open');
             menuToggle.setAttribute('aria-expanded', isMenuOpen);
@@ -30,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         menuToggle.addEventListener('click', toggleMenu);
         if (menuOverlay) menuOverlay.addEventListener('click', toggleMenu);
         if (closeMenuBtn) closeMenuBtn.addEventListener('click', toggleMenu);
-        
+
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 if (document.body.classList.contains('menu-open')) {
@@ -49,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
         });
     }
-    
+
     // --- FAQ Accordion ---
     const faqItems = document.querySelectorAll('.faq-item');
     if (faqItems.length > 0) {
@@ -112,7 +111,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const acceptBtn = document.getElementById('cookie-accept');
         const declineBtn = document.getElementById('cookie-decline');
 
-        if (!localStorage.getItem('cookieConsent')) {
+        // This function updates Google's consent settings if GTM is used
+        const updateGoogleConsent = (consent) => {
+            if (typeof gtag !== 'function') return;
+            if (consent === 'accepted') {
+                gtag('consent', 'update', { 'analytics_storage': 'granted' });
+            }
+        };
+
+        const savedConsent = localStorage.getItem('cookieConsent');
+        if (savedConsent) {
+            updateGoogleConsent(savedConsent);
+        } else {
             cookieBanner.hidden = false;
             setTimeout(() => {
                 cookieBanner.classList.add('is-visible');
@@ -121,6 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const handleConsent = (consent) => {
             localStorage.setItem('cookieConsent', consent);
+            updateGoogleConsent(consent);
             cookieBanner.classList.remove('is-visible');
         };
 

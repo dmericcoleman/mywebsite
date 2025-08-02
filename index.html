@@ -20,7 +20,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-WR2DNZK3');</script>
 	<!-- End Google Tag Manager -->
-	
+
 	<!-- ================== CORE META ================== -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
@@ -473,7 +473,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
              overflow: hidden;
              padding-top: 0;
              padding-bottom: 0;
-             background: linear-gradient(135deg, #111827, #374151);
+             background: var(--dark-bg) url('assets/images/hero-bg-768.webp') no-repeat center center / cover;
+         }
+
+         /* Load a larger image for tablets and up */
+         @media (min-width: 768px) {
+             #hero {
+                 background-image: url('assets/images/hero-bg-1200.webp');
+             }
+         }
+
+         /* Load the largest image for desktops and up */
+         @media (min-width: 1200px) {
+             #hero {
+                 background-image: url('assets/images/hero-bg-1920.webp');
+             }
          }
 
          .hero-overlay {
@@ -856,7 +870,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<div class="feature-content">
 				<h2 id="google-feature-heading">Turn Searchers into Customers</h2>
 				<p>If your Google Business Profile isn’t convincing, you’re losing business. Let us build a profile that makes you the obvious choice, driving local traffic and converting searchers into loyal customers.</p>
-				<a href="#contact" class="button">Boost My Google Profile</a>
+				<a href="#pro-plan-heading" class="button">Boost My Google Profile</a>
 			</div>
 		</div>
 	</section>
@@ -873,7 +887,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<div class="feature-content">
 				<h2 id="amazon-feature-heading">Dominate the Amazon Marketplace</h2>
 				<p>Without reviews, your product is invisible. We help you build the powerful social proof needed to climb Amazon's rankings, build trust, and significantly increase sales velocity.</p>
-				<a href="#contact" class="button">Increase Amazon Sales</a>
+				<a href="#custom-plan-heading" class="button">Increase Amazon Sales</a>
 			</div>
 		</div>
 	</section>
@@ -889,7 +903,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<div class="feature-content">
 				<h2 id="trustpilot-feature-heading">Build Unshakable Trust with Trustpilot</h2>
 				<p>People buy from businesses they trust. We help you gather the verified reviews that signal quality and reliability to customers worldwide, setting you apart from the competition.</p>
-				<a href="#contact" class="button">Improve My TrustScore</a>
+				<a href="#pro-plan-heading" class="button">Improve My TrustScore</a>
 			</div>
 		</div>
 	</section>
@@ -905,7 +919,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<div class="feature-content">
 				<h2 id="tripadvisor-feature-heading">Become the Top Choice on TripAdvisor</h2>
 				<p>On TripAdvisor, reviews decide who gets the booking. More stars mean more trust and higher rankings. Let’s make your profile impossible for potential customers to ignore.</p>
-				<a href="#contact" class="button">Get More Bookings</a>
+				<a href="#pro-plan-heading" class="button">Get More Bookings</a>
 			</div>
 		</div>
 	</section>
@@ -938,7 +952,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 					<article class="swiper-slide" role="group" aria-label="Testimonial 1 of 3">
 						<blockquote>“A total game-changer for our online reputation. The process was seamless, and the impact on sales was immediate. We finally look as good online as we are in reality.”</blockquote>
 						<cite>
-							<img src="assets/images/danny-ocean-ehUYU820lcA-unsplash-100.webp" srcset="assets/images/danny-ocean-ehUYU820lcA-unsplash-100.webp 100w, assets/images/danny-ocean-ehUYU820lcA-unsplash-200.webp 200w" sizes="60px" alt="Headshot of Jane Doe, a satisfied client." width="60" height="60" loading="lazy">
+							<img src="assets/images/default-avatar.webp" srcset="assets/images/default-avatar.webp 100w, assets/images/default-avatar.webp 200w" sizes="60px" alt="Headshot of Jane Doe, a satisfied client." width="60" height="60" loading="lazy">
 							<div class="client-details">
 								<div class="star-rating" aria-label="5 out of 5 stars">
 									<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -952,7 +966,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 					<article class="swiper-slide" role="group" aria-label="Testimonial 2 of 3">
 						<blockquote>“The most reliable and effective review service we've ever used. Their team is professional, the results speak for themselves, and our Amazon rankings have never been better.”</blockquote>
 						<cite>
-							<img src="assets/images/kshitiz-kandel-kK9ub8l0674-unsplash-100.webp" srcset="assets/images/kshitiz-kandel-kK9ub8l0674-unsplash-100.webp 100w, assets/images/kshitiz-kandel-kK9ub8l0674-unsplash-200.webp 200w" sizes="60px" alt="Headshot of John Smith, a satisfied client." width="60" height="60" loading="lazy">
+							<img src="assets/images/default-avatar.webp" srcset="assets/images/default-avatar.webp 100w, assets/images/default-avatar.webp 200w" sizes="60px" alt="Headshot of John Smith, a satisfied client." width="60" height="60" loading="lazy">
 							<div class="client-details">
 								<div class="star-rating" aria-label="5 out of 5 stars">
 									<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -966,7 +980,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 					<article class="swiper-slide" role="group" aria-label="Testimonial 3 of 3">
 						<blockquote>“Our Trustpilot score is now a key asset in our marketing. The investment paid for itself within the first month. I cannot recommend their service enough.”</blockquote>
 						<cite>
-							<img src="assets/images/filip-rankovic-grobgaard-pdyZM-wbgZw-unsplash-100.webp" srcset="assets/images/filip-rankovic-grobgaard-pdyZM-wbgZw-unsplash-100.webp 100w, assets/images/filip-rankovic-grobgaard-pdyZM-wbgZw-unsplash-200.webp 200w" sizes="60px" alt="Headshot of Emily White, a satisfied client." width="60" height="60" loading="lazy">
+							<img src="assets/images/default-avatar.webp" srcset="assets/images/default-avatar.webp 100w, assets/images/default-avatar.webp 200w" sizes="60px" alt="Headshot of Emily White, a satisfied client." width="60" height="60" loading="lazy">
 							<div class="client-details">
 								<div class="star-rating" aria-label="5 out of 5 stars">
 									<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -1250,25 +1264,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </a>
 
 <script src="assets/js/swiper-bundle.min.js"></script>
-
-<script>
-	document.addEventListener('DOMContentLoaded', () => {
-        const scrollElements = document.querySelectorAll('.animate-on-scroll');
-        if (scrollElements.length > 0) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-            scrollElements.forEach(element => {
-                observer.observe(element);
-            });
-        }
-    });
-</script>
 <script src="assets/js/app.js" type="module" defer></script>
 </body>
 </html>

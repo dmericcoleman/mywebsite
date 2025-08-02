@@ -402,6 +402,20 @@ body.menu-open .whatsapp-button {
     color: #FFFFFF; /* Keep icon color white on hover */
 }
 
+/* New rule to highlight a target element on page scroll */
+:target {
+    animation: highlight-target 1s ease-out;
+}
+
+@keyframes highlight-target {
+    0% {
+        box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent) 50%, transparent);
+    }
+    100% {
+        box-shadow: 0 0 0 0px color-mix(in srgb, var(--color-accent) 0%, transparent);
+    }
+}
+
 /* 6. Header - Sticky Header & Navigation */
 #header {
     position: sticky;
@@ -588,7 +602,7 @@ body.menu-open #menu-overlay {
 /* Hero */
 #hero {
     position: relative;
-    min-height: calc(100svh - var(--header-height));
+    min-height: 100svh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -597,11 +611,21 @@ body.menu-open #menu-overlay {
     overflow: hidden;
     padding-top: 0;
     padding-bottom: 0;
-    background-image: url('../images/hero-bg.webp'); /* Set the background image */
-    background-color: var(--color-dark-bg); /* Fallback color */
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background: var(--dark-bg) url('../images/hero-bg-768.webp') no-repeat center center / cover;
+}
+
+/* Load a larger image for tablets and up */
+@media (min-width: 768px) {
+    #hero {
+        background-image: url('../images/hero-bg-1200.webp');
+    }
+}
+
+/* Load the largest image for desktops and up */
+@media (min-width: 1200px) {
+    #hero {
+        background-image: url('../images/hero-bg-1920.webp');
+    }
 }
 
 .hero-overlay {
@@ -720,6 +744,12 @@ body.menu-open #menu-overlay {
 .swiper-slide cite .client-details {
     text-align: left;
 }
+
+/* New rule to set the color of the default avatar */
+.swiper-slide cite {
+    color: var(--color-text);
+}
+
 .swiper-slide cite .client-name,
 .swiper-slide cite .client-title {
     display: block; /* This makes each part take up its own line */

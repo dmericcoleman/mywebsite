@@ -438,6 +438,11 @@ body.menu-open .whatsapp-button {
     color: var(--color-heading);
 }
 
+#header.scrolled .button:not(.button-primary) {
+    color: var(--color-heading); /* Use dark text color from theme */
+    border-color: var(--color-border); /* Use border color from theme */
+}
+
 .header-container {
     display: flex;
     justify-content: space-between;
@@ -589,13 +594,56 @@ body.menu-open #menu-overlay {
 
 /* Desktop Navigation Link Styling */
 .desktop-nav a:not(.button) {
-    color: var(--color-heading);
+    color: var(--color-white); /* Default to white for transparent header */
     transition: color 0.3s ease;
+}
+
+#header.scrolled .desktop-nav a:not(.button) {
+    color: var(--color-heading); /* Switch to theme color on scroll */
 }
 
 .desktop-nav a:not(.button):hover,
 .desktop-nav a:not(.button):focus-visible {
     color: var(--color-accent); /* Gold color on hover/focus */
+}
+
+/* --- Header Transparent & Scrolled States: FINAL FIX --- */
+
+/* 1. Default state for elements in the transparent (unscrolled) header */
+#header:not(.scrolled) .desktop-nav a:not(.button),
+#header:not(.scrolled) .theme-toggle {
+    color: var(--color-white);
+}
+
+#header:not(.scrolled) .button:not(.button-primary) {
+    color: var(--color-white);
+    border-color: var(--color-white);
+}
+
+#header:not(.scrolled) .mobile-menu-toggle .bar {
+    background-color: var(--color-white);
+}
+
+#header:not(.scrolled) .button:not(.button-primary):hover {
+    background-color: var(--color-white);
+    border-color: var(--color-white);
+    color: var(--color-dark-bg);
+}
+
+
+/* 2. Scrolled state: ensure all elements use the theme's colors */
+#header.scrolled .desktop-nav a:not(.button),
+#header.scrolled .theme-toggle {
+    color: var(--color-heading);
+}
+
+#header.scrolled .button:not(.button-primary) {
+    color: var(--color-heading);
+    border-color: var(--color-border);
+}
+
+#header.scrolled .mobile-menu-toggle .bar {
+    background-color: var(--color-heading);
 }
 
 /* 7. Main Content - Styles for Each Section */
@@ -655,6 +703,10 @@ body.menu-open #menu-overlay {
     max-width: 700px;
     margin: 1.5rem auto 2.5rem;
     color: #E5E7EB; /* A slightly off-white for the subtitle */
+}
+
+#hero h1 {
+    color: #F9FAFB;
 }
 
 /* Services */

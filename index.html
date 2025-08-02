@@ -357,6 +357,15 @@
          .dark-mode .theme-toggle .fa-moon { display: none; }
          .dark-mode .theme-toggle .fa-sun { display: block; }
 
+         /* Fix initial state for header buttons */
+         #header .button:not(.button-primary),
+         #header .theme-toggle {
+             color: var(--color-white);
+         }
+         #header .button:not(.button-primary) {
+             border-color: var(--color-white);
+         }
+
          .mobile-menu-toggle {
              background: none;
              border: none;
@@ -493,6 +502,10 @@
              max-width: 700px;
              margin: 1.5rem auto 2.5rem;
              color: #E5E7EB;
+         }
+
+         #hero h1 {
+             color: #F9FAFB;
          }
 
          /* Services (if visible above fold) */

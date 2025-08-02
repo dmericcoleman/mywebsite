@@ -416,9 +416,9 @@ body.menu-open .whatsapp-button {
     }
 }
 
-/* 6. Header - Sticky Header & Navigation */
-#header {
-    position: sticky;
+/* 6. Header - Fixed Header & Navigation */
+         #header {
+             position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
@@ -601,58 +601,53 @@ body.menu-open #menu-overlay {
 /* 7. Main Content - Styles for Each Section */
 /* Hero */
 #hero {
-    position: relative;
-    min-height: calc(100svh - var(--header-height));
+             position: relative;
+             min-height: 100svh; /* Ensures it's at least 100% of the viewport height */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: #F9FAFB;
-    overflow: hidden;
-    padding-top: 0;
-    padding-bottom: 0;
-    background: var(--dark-bg) url('../images/hero-bg-768.webp') no-repeat center 40% / cover; /* Adjusted position */
+    color: #F9FAFB; /* Light text color for contrast */
+    overflow: hidden; /* Prevents content from spilling out */
 }
 
-/* Load a larger image for tablets and up */
-@media (min-width: 768px) {
-    #hero {
-        background-image: url('../images/hero-bg-1200.webp');
-    }
+#hero-bg-picture,
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
-/* Load the largest image for desktops and up */
-@media (min-width: 1200px) {
-    #hero {
-        background-image: url('../images/hero-bg-1920.webp');
-    }
+#hero-bg-picture {
+    z-index: -2; /* Places the image behind the overlay and content */
+}
+
+#hero-bg-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers the area without distortion */
+    object-position: center; /* Keeps the image centered */
 }
 
 .hero-overlay {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: var(--hero-overlay);
+    z-index: -1; /* Sits between the image and the content */
+    background: var(--hero-overlay); /* Uses the gradient from your variables */
 }
 
-.hero-container { position: relative; z-index: 2; }
+/* The .hero-container is centered via flexbox on #hero */
 
 #hero h1,
 #hero .subtitle {
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7); /* Adds shadow for text readability */
 }
 
-#hero h1 { color: #FFFFFF; }
 #hero .subtitle {
     font-size: clamp(1.125rem, 2vw, 1.5rem);
     max-width: 700px;
     margin: 1.5rem auto 2.5rem;
-    color: #E5E7EB;
-}
-
-@media (max-width: 767px) {
-    #hero {
-        background-image: url('../images/hero-bg-mobile.webp');
-    }
+    color: #E5E7EB; /* A slightly off-white for the subtitle */
 }
 
 /* Services */

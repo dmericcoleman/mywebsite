@@ -322,9 +322,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
              transition: all var(--transition);
          }
 
-         /* 6. Header - Sticky Header & Navigation */
-         #header {
-             position: sticky;
+         /* 6. Header - Fixed Header & Navigation */
+#header {
+    position: fixed;
              top: 0;
              width: 100%;
              z-index: 1000;
@@ -464,46 +464,39 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
          /* 7. Main Content - Hero */
          #hero {
              position: relative;
-             min-height: calc(100svh - var(--header-height));
+             min-height: 100svh; /* Ensures it's at least 100% of the viewport height */
              display: flex;
              align-items: center;
              justify-content: center;
              text-align: center;
              color: #F9FAFB;
              overflow: hidden;
-             padding-top: 0;
-             padding-bottom: 0;
-             background: var(--dark-bg) url('assets/images/hero-bg-768.webp') no-repeat center 40% / cover;
          }
-
-         /* Load a larger image for tablets and up */
-         @media (min-width: 768px) {
-             #hero {
-                 background-image: url('assets/images/hero-bg-1200.webp');
-             }
-         }
-
-         /* Load the largest image for desktops and up */
-         @media (min-width: 1200px) {
-             #hero {
-                 background-image: url('assets/images/hero-bg-1920.webp');
-             }
-         }
-
+         #hero-bg-picture,
          .hero-overlay {
              position: absolute;
-             top: 0; left: 0; width: 100%; height: 100%;
+             top: 0;
+             left: 0;
+             width: 100%;
+             height: 100%;
+         }
+         #hero-bg-picture {
+             z-index: -2;
+         }
+         #hero-bg-picture img {
+             width: 100%;
+             height: 100%;
+             object-fit: cover;
+             object-position: center;
+         }
+         .hero-overlay {
+             z-index: -1;
              background: var(--hero-overlay);
          }
-
-         .hero-container { position: relative; z-index: 2; }
-
          #hero h1,
          #hero .subtitle {
              text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
          }
-
-         #hero h1 { color: #FFFFFF; }
          #hero .subtitle {
              font-size: clamp(1.125rem, 2vw, 1.5rem);
              max-width: 700px;
@@ -815,6 +808,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <main id="main-content">
 
 	<section id="hero" aria-labelledby="hero-heading">
+		<picture id="hero-bg-picture">
+			<source media="(min-width: 1200px)" srcset="assets/images/hero-bg-desktop.webp">
+			<source media="(min-width: 768px)" srcset="assets/images/hero-bg-tablet.webp">
+			<img src="assets/images/hero-bg-mobile.webp" alt="" aria-hidden="true" loading="eager" width="768" height="1365">
+		</picture>
 		<div class="hero-overlay"></div>
 		<div class="container hero-container">
 			<h1 id="hero-heading">Premium Reviews Store</h1>

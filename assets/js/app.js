@@ -88,6 +88,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Active Nav Link on Scroll ---
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.desktop-nav a, #mobile-menu a');
+
+        if (sections.length > 0 && navLinks.length > 0) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.removeAttribute('aria-current');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.setAttribute('aria-current', 'page');
+                            }
+                        });
+                    }
+                });
+            }, { rootMargin: '-30% 0px -70% 0px' }); // Highlights when section is in the middle 40% of the screen
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        }
+
     // --- Animate on Scroll ---
     const scrollElements = document.querySelectorAll('.animate-on-scroll');
     if (scrollElements.length > 0) {
@@ -104,6 +127,12 @@ document.addEventListener('DOMContentLoaded', () => {
             observer.observe(element);
         });
     }
+
+    // --- Update Current Year in Footer ---
+        const yearSpan = document.getElementById('current-year');
+        if (yearSpan) {
+            yearSpan.textContent = new Date().getFullYear();
+        }
 
     // --- Cookie Consent Banner ---
     const cookieBanner = document.getElementById('cookie-consent-banner');

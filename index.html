@@ -464,7 +464,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
          /* 7. Main Content - Hero */
          #hero {
              position: relative;
-             min-height: 100svh;
+             min-height: calc(100svh - var(--header-height));
              display: flex;
              align-items: center;
              justify-content: center;
@@ -473,7 +473,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
              overflow: hidden;
              padding-top: 0;
              padding-bottom: 0;
-             background: var(--dark-bg) url('assets/images/hero-bg-768.webp') no-repeat center center / cover;
+             background: var(--dark-bg) url('assets/images/hero-bg-768.webp') no-repeat center 40% / cover;
          }
 
          /* Load a larger image for tablets and up */
@@ -702,11 +702,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							"@type": "BlogPosting",
 							"mainEntityOfPage": {
 								"@type": "WebPage",
-								"@id": "https://premiumreviews.store/articles/7-reasons-reviews-are-essential"
+								"@id": "https://premiumreviews.store/articles/importance-of-customer-reviews.html"
 							},
-							"headline": "7 Reasons Online Reviews are Essential for Your Brand",
+							"headline": "The Importance of Customer Reviews (New Data)",
 							"image": "https://premiumreviews.store/assets/images/importance-of-customer-reviews.webp",
-							"datePublished": "2025-07-22",
+							"datePublished": "2025-08-01",
 							"author": {
 								"@id": "https://premiumreviews.store/#organization"
 							},
@@ -718,11 +718,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							"@type": "BlogPosting",
 							"mainEntityOfPage": {
 								"@type": "WebPage",
-								"@id": "https://premiumreviews.store/articles/20-google-review-statistics"
+								"@id": "https://premiumreviews.store/articles/7-benefits-of-google-reviews.html"
 							},
-							"headline": "20 Google Review Statistics You Must Know in 2025",
-							"image": "https://premiumreviews.store/assets/images/impactful-google-review-statistics.png",
-							"datePublished": "2025-07-18",
+							"headline": "7 Benefits of Google Reviews - Importance & Advantages",
+							"image": "https://premiumreviews.store/assets/images/7-benefits-of-google-reviews.webp",
+							"datePublished": "2025-07-27",
 							"author": {
 								"@id": "https://premiumreviews.store/#organization"
 							},
@@ -734,11 +734,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							"@type": "BlogPosting",
 							"mainEntityOfPage": {
 								"@type": "WebPage",
-								"@id": "https://premiumreviews.store/articles/how-amazon-reviews-impact-conversions"
+								"@id": "https://premiumreviews.store/articles/amazon-reviews-impact.html"
 							},
-							"headline": "How Amazon Reviews Impact Conversions & Ratings",
-							"image": "https://premiumreviews.store/assets/images/Why-Reviews-Are-Important.png",
-							"datePublished": "2025-07-15",
+							"headline": "Amazon Reviews: How Do They Impact Your Sales & Rankings?",
+							"image": "https://premiumreviews.store/assets/images/amazon-reviews-impact.webp",
+							"datePublished": "2025-07-13",
 							"author": {
 								"@id": "https://premiumreviews.store/#organization"
 							},
@@ -832,24 +832,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<div class="services-grid">
 				<article class="card service-card animate-on-scroll" aria-labelledby="google-reviews-heading">
 					<div class="card-icon-wrapper">
-						<img class="card-icon logo-light" src="assets/images/logo-white-google.svg" alt="" width="100" height="34">
-						<img class="card-icon logo-dark" src="assets/images/logo-dark-google.svg" alt="" width="100" height="34">
+						<img class="card-icon logo-light" src="assets/images/logo-white-google.svg" alt="Google logo" width="100" height="34">
+						<img class="card-icon logo-dark" src="assets/images/logo-dark-google.svg" alt="Google logo" width="100" height="34">
 					</div>
 					<h3 id="google-reviews-heading">Google Reviews</h3>
 					<p>Dominate local search and win customer trust. More positive reviews mean higher rankings and more leads.</p>
 				</article>
 				<article class="card service-card animate-on-scroll" aria-labelledby="amazon-reviews-heading">
 					<div class="card-icon-wrapper">
-						<img class="card-icon logo-light" src="assets/images/logo-white-amazon.svg" alt="" width="120" height="36">
-						<img class="card-icon logo-dark" src="assets/images/logo-dark-amazon.svg" alt="" width="120" height="36">
+						<img class="card-icon logo-light" src="assets/images/logo-white-amazon.svg" alt="Amazon logo" width="120" height="36">
+						<img class="card-icon logo-dark" src="assets/images/logo-dark-amazon.svg" alt="Amazon logo" width="120" height="36">
 					</div>
 					<h3 id="amazon-reviews-heading">Amazon Reviews</h3>
 					<p>Turn your product's potential into profit. Build the social proof needed to climb Amazon's rankings and boost conversions.</p>
 				</article>
 				<article class="card service-card animate-on-scroll" aria-labelledby="trustpilot-reviews-heading">
 					<div class="card-icon-wrapper">
-						<img class="card-icon logo-light" src="assets/images/logo-dark-trustpilot.svg" alt="" width="150" height="37">
-						<img class="card-icon logo-dark" src="assets/images/logo-white-trustpilot.svg" alt="" width="150" height="37">
+						<img class="card-icon logo-light" src="assets/images/logo-dark-trustpilot.svg" alt="Trustpilot logo" width="150" height="37">
+						<img class="card-icon logo-dark" src="assets/images/logo-white-trustpilot.svg" alt="Trustpilot logo" width="150" height="37">
 					</div>
 					<h3 id="trustpilot-reviews-heading">Trustpilot Reviews</h3>
 					<p>Establish your brand as a market leader. Verified Trustpilot reviews are the ultimate signal of quality and satisfaction.</p>
@@ -1260,7 +1260,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
    class="whatsapp-button"
    target="_blank"
    aria-label="Chat on WhatsApp">
-	<i class="fa-brands fa-whatsapp"></i>
+	<i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
 </a>
 
 <script src="assets/js/swiper-bundle.min.js"></script>

@@ -631,6 +631,13 @@ body.menu-open #menu-overlay {
     object-position: center; /* Keeps the image centered */
 }
 
+/* Media query for screens up to 767px wide (typical mobile) */
+@media (max-width: 767px) {
+    #hero-bg-picture img {
+        object-position: 57% center; /* Adjust this value to shift the image left */
+    }
+}
+
 .hero-overlay {
     z-index: -1; /* Sits between the image and the content */
     background: var(--hero-overlay); /* Uses the gradient from your variables */
@@ -1076,6 +1083,7 @@ fieldset {
     .articles-grid { grid-template-columns: repeat(3, 1fr); }
     /* The slider navigation is now visible on desktop for better usability. */
 }
+
 
 /* 11. ACCESSIBILITY STYLES */
 /* ================================================== */

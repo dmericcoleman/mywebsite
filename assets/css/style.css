@@ -634,7 +634,7 @@ body.menu-open #menu-overlay {
 /* Media query for screens up to 767px wide (typical mobile) */
 @media (max-width: 767px) {
     #hero-bg-picture img {
-        object-position: 63% center; /* Adjust this value to shift the image left */
+        object-position: 61% center; /* Adjust this value to shift the image left */
     }
 }
 

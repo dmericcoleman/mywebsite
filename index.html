@@ -15,10 +15,10 @@
 
 	<!-- Google Tag Manager -->
 	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WR2DNZK3');</script>
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-WR2DNZK3');</script>
 	<!-- End Google Tag Manager -->
 
 	<!-- ================== CORE META ================== -->
@@ -787,17 +787,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		</a>
 		<div class="nav-controls">
 			<nav class="desktop-nav" role="navigation" aria-label="Main Navigation">
-				<a href="#services">Services</a>
-				<a href="#testimonials">Testimonials</a>
-				<a href="#pricing">Pricing</a>
-				<a href="#articles">Articles</a>
-				<a href="#contact" class="button">Contact Us</a>
+				<a href="#services" id="cta-header-services">Services</a>
+				<a href="#testimonials" id="cta-header-testimonials">Testimonials</a>
+				<a href="#pricing" id="cta-header-pricing">Pricing</a>
+				<a href="#articles" id="cta-header-articles">Articles</a>
+				<a href="#contact" class="button" id="cta-header-contact-us">Contact Us</a>
 			</nav>
-			<button class="theme-toggle" aria-label="Toggle dark and light mode" >
+			<button class="theme-toggle" id="btn-header-theme-toggle" aria-label="Toggle dark and light mode" >
 				<i class="fa-solid fa-moon" aria-hidden="true"></i>
 				<i class="fa-solid fa-sun" aria-hidden="true"></i>
 			</button>
-			<button class="mobile-menu-toggle" aria-label="Open Menu" aria-expanded="false" aria-controls="mobile-menu">
+			<button class="mobile-menu-toggle" id="btn-header-mobile-menu-toggle" aria-label="Open Menu" aria-expanded="false" aria-controls="mobile-menu">
 				<span class="bar"></span><span class="bar"></span><span class="bar"></span>
 			</button>
 		</div>
@@ -808,11 +808,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<button class="close-menu-btn" aria-label="Close Menu">
 		<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" aria-hidden="true" focusable="false"><path fill="currentColor" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
 	</button>
-	<a href="#services">Services</a>
-	<a href="#testimonials">Testimonials</a>
-	<a href="#pricing">Pricing</a>
-	<a href="#articles">Articles</a>
-	<a href="#contact" class="button button-primary">Contact Us</a>
+	<a href="#services" id="cta-mobile-menu-services">Services</a>
+	<a href="#testimonials" id="cta-mobile-menu-testimonials">Testimonials</a>
+	<a href="#pricing" id="cta-mobile-menu-pricing">Pricing</a>
+	<a href="#articles" id="cta-mobile-menu-articles">Articles</a>
+	<a href="#contact" class="button button-primary" id="cta-mobile-menu-contact-us">Contact Us</a>
 </nav>
 
 <div id="menu-overlay"></div>
@@ -829,7 +829,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		<div class="container hero-container">
 			<h1 id="hero-heading">Premium Reviews Store</h1>
 			<p class="subtitle">High-Quality Reviews That Build Unshakable Trust & Drive Growth.</p>
-			<a href="#contact" class="button button-primary">Request a Free Quote</a>
+			<a href="#contact" class="button button-primary" id="cta-hero-request-quote">Request a Free Quote</a>
 		</div>
 	</section>
 
@@ -880,7 +880,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<div class="feature-content">
 				<h2 id="google-feature-heading">Turn Searchers into Customers</h2>
 				<p>If your Google Business Profile isn’t convincing, you’re losing business. Let us build a profile that makes you the obvious choice, driving local traffic and converting searchers into loyal customers.</p>
-				<a href="#pro-plan-heading" class="button">Boost My Google Profile</a>
+				<a href="#pro-plan-heading" class="button" id="cta-services-boost-google-profile">Boost My Google Profile</a>
 			</div>
 		</div>
 	</section>
@@ -897,7 +897,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<div class="feature-content">
 				<h2 id="amazon-feature-heading">Dominate the Amazon Marketplace</h2>
 				<p>Without reviews, your product is invisible. We help you build the powerful social proof needed to climb Amazon's rankings, build trust, and significantly increase sales velocity.</p>
-				<a href="#custom-plan-heading" class="button">Increase Amazon Sales</a>
+				<a href="#custom-plan-heading" class="button" id="cta-services-increase-amazon-sales">Increase Amazon Sales</a>
 			</div>
 		</div>
 	</section>
@@ -913,7 +913,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<div class="feature-content">
 				<h2 id="trustpilot-feature-heading">Build Unshakable Trust with Trustpilot</h2>
 				<p>People buy from businesses they trust. We help you gather the verified reviews that signal quality and reliability to customers worldwide, setting you apart from the competition.</p>
-				<a href="#pro-plan-heading" class="button">Improve My TrustScore</a>
+				<a href="#pro-plan-heading" class="button" id="cta-services-improve-trustscore">Improve My TrustScore</a>
 			</div>
 		</div>
 	</section>
@@ -929,7 +929,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<div class="feature-content">
 				<h2 id="tripadvisor-feature-heading">Become the Top Choice on TripAdvisor</h2>
 				<p>On TripAdvisor, reviews decide who gets the booking. More stars mean more trust and higher rankings. Let’s make your profile impossible for potential customers to ignore.</p>
-				<a href="#pro-plan-heading" class="button">Get More Bookings</a>
+				<a href="#pro-plan-heading" class="button" id="cta-services-get-more-bookings">Get More Bookings</a>
 			</div>
 		</div>
 	</section>
@@ -945,7 +945,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<div class="feature-content">
 				<h2 id="other-platforms-heading">Credibility, on Any Platform</h2>
 				<p>No matter where your customers are looking, reviews drive their decisions. We help you build a powerful and consistent reputation across the entire digital landscape.</p>
-				<a href="#contact" class="button">Discuss My Platform</a>
+				<a href="#contact" class="button" id="cta-contact-discuss-platform">Discuss My Platform</a>
 			</div>
 		</div>
 	</section>
@@ -1028,7 +1028,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						<li>Drip-Feed Delivery</li>
 						<li>Dedicated Support</li>
 					</ul>
-					<a href="#contact" class="button">Get Started</a>
+					<a href="#contact" class="button" id="cta-pricing-starter-get-started">Get Started</a>
 				</article>
 
 				<article class="card pricing-card featured animate-on-scroll" style="transition-delay: 0.2s;" aria-labelledby="pro-plan-heading">
@@ -1042,7 +1042,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						<li>Drip-Feed Delivery</li>
 						<li>Dedicated Support</li>
 					</ul>
-					<a href="#contact" class="button button-primary">Get Started</a>
+					<a href="#contact" class="button button-primary" id="cta-pricing-pro-get-started">Get Started</a>
 				</article>
 
 				<article class="card pricing-card animate-on-scroll" style="transition-delay: 0.4s;" aria-labelledby="enterprise-plan-heading">
@@ -1055,7 +1055,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						<li>Drip-Feed Delivery</li>
 						<li>Priority Support</li>
 					</ul>
-					<a href="#contact" class="button">Get Started</a>
+					<a href="#contact" class="button" id="cta-pricing-enterprise-get-started">Get Started</a>
 				</article>
 
 			</div>
@@ -1065,7 +1065,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 					<h3 id="custom-plan-heading">Need a Custom Solution?</h3>
 					<p>We can build a tailored plan for multiple platforms, bulk orders, or unique schedules. Let's create the perfect solution for your business.</p>
 				</div>
-				<a href="#contact" class="button">Request a Quote</a>
+				<a href="#contact" class="button" id="cta-custom-quote-request-quote">Request a Quote</a>
 			</div>
 		</div>
 	</section>
@@ -1089,7 +1089,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<h3 id="article-1-heading"><a href="articles/importance-of-customer-reviews.html">The Importance of Customer Reviews (New Data)</a></h3>
 							<p>Online reviews are a business's most powerful selling tool, building trust, shortening sales cycles, and boosting search visibility.</p>
 						</div>
-						<a href="articles/importance-of-customer-reviews.html" class="read-more" aria-label="Learn more about The Importance of Customer Reviews">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+						<a href="articles/importance-of-customer-reviews.html" class="read-more" id="cta-articles-learn-more-importance-of-customer-reviews" aria-label="Learn more about The Importance of Customer Reviews">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
 					</div>
 				</article>
 				<article class="card article-card animate-on-scroll" aria-labelledby="article-2-heading">
@@ -1104,7 +1104,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<h3 id="article-2-heading"><a href="articles/7-benefits-of-google-reviews.html">7 Benefits of Google Reviews - Importance & Advantages</a></h3>
 							<p>Discover the 7 key benefits of Google reviews, from boosting online visibility and brand trust to increasing conversion rates and ROI for your business.</p>
 						</div>
-						<a href="articles/7-benefits-of-google-reviews.html" class="read-more" aria-label="Learn more about 7 Benefits of Google Reviews - Importance & Advantages">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+						<a href="articles/7-benefits-of-google-reviews.html" class="read-more" id="cta-articles-learn-more-7-benefits-of-google-reviews" aria-label="Learn more about 7 Benefits of Google Reviews - Importance & Advantages">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
 					</div>
 				</article>
 				<article class="card article-card animate-on-scroll" aria-labelledby="article-3-heading">
@@ -1119,13 +1119,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 							<h3 id="article-3-heading"><a href="articles/amazon-reviews-impact.html">Amazon Reviews: How Do They Impact Your Sales & Rankings?</a></h3>
 							<p>Discover the key reasons why Amazon reviews are crucial for sellers, from boosting sales and search rankings to building trust and improving marketing.</p>
 						</div>
-						<a href="articles/amazon-reviews-impact.html" class="read-more" aria-label="Learn more about Amazon Reviews: How Do They Impact Your Sales & Rankings?">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+						<a href="articles/amazon-reviews-impact.html" class="read-more" id="cta-articles-learn-more-amazon-reviews-impact" aria-label="Learn more about Amazon Reviews: How Do They Impact Your Sales & Rankings?">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
 					</div>
 				</article>
 			</div>
 
 		<div class="articles-cta-container animate-on-scroll">
-			<a href="articles.html" class="button">View All Articles</a>
+			<a href="articles.html" class="button" id="cta-articles-view-all-articles">View All Articles</a>
 		</div>
 		</div>
 	</section>
@@ -1156,7 +1156,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						<div class="error-message" aria-live="polite"></div>
 					</div>
 				</fieldset>
-				<button type="submit" id="submit-button" class="button button-primary">Send Message</button>
+				<button type="submit" id="btn-contact-form-submit" class="button button-primary">Send Message</button>
 				<p id="form-message" class="form-message" role="status" aria-live="polite"></p>
 			</form>
 		</div>
@@ -1249,8 +1249,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<h3>Contact Us</h3>
 			<address>
 				<ul>
-					<li><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><a href="https://wa.me/19169076120">(916) 907-6120</a></li>
-					<li><i class="fa-solid fa-envelope" aria-hidden="true"></i><a href="mailto:premiumreviewsstore@gmail.com">premiumreviewsstore@gmail.com</a></li>
+					<li><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><a href="https://wa.me/19169076120" id="cta-footer-whatsapp">(916) 907-6120</a></li>
+					<li><i class="fa-solid fa-envelope" aria-hidden="true"></i><a href="mailto:premiumreviewsstore@gmail.com" id="cta-footer-email">premiumreviewsstore@gmail.com</a></li>
 					<li><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Staten Island, NY, USA</li>
 				</ul>
 			</address>
@@ -1288,6 +1288,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <a href="https://wa.me/19169076120?text=Hello!%20I'm%20interested%20in%20learning%20more%20about%20your%20review%20services."
    class="whatsapp-button"
+   id="cta-floating-whatsapp"
    target="_blank"
    aria-label="Chat on WhatsApp">
 	<i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
